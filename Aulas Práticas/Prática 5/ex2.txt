@@ -1,0 +1,11 @@
+-- a)
+-π nif, nome, fax, endereco, condpag, tipo (σ fornecedor=null (fornecedor ⟕ (nif=fornecedor) encomenda))
+
+-- b)
+γ nome; avg(item.unidades) -> num_medio_unidades (item ⨝ codProd=codigo produto)
+
+-- c)
+γ avg(total_product)-> num_medio_produtos (γ numEnc; count(numEnc)-> total_product (item))
+
+-- d)
+γ fornecedor.nome,produto.nome; sum(item.unidades)->quantidade (produto⨝codigo=codProd (π nome,codProd,unidades (item⨝numEnc=numero (fornecedor⨝nif=fornecedor encomenda))))

@@ -1,0 +1,14 @@
+-- a)
+π paciente.numUtente, paciente.nome (σ prescricao.numUtente=null (paciente⟕(paciente.numUtente=prescricao.numUtente) prescricao))
+
+-- b)
+γ medico.especialidade; count(medico.especialidade)->num_prescicoes (medico⨝(numSNS=numMedico) prescricao)
+
+-- c)
+σ farmacia≠null (γ prescricao.farmacia; count(prescricao.farmacia)->num_prescicoes prescricao)
+
+-- d)
+π farmaceutica.numReg, farmaceutica.nome, farmaco.nome (σ numPresc≠null (presc_farmaco⟖presc_farmaco.numRegFarm=farmaco.numRegFarm (farmaco⨝numRegFarm=numReg (σ numReg=906 farmaceutica))))
+
+-- e)
+π farmacia.nome, farmaceutica.nome, num_farmacos_vendidos (farmaceutica⨝presc_farmaco.numRegFarm=farmaceutica.numReg (γ farmacia.nome, presc_farmaco.numRegFarm; count(presc_farmaco.nomeFarmaco)->num_farmacos_vendidos (presc_farmaco⨝presc_farmaco.numPresc=prescricao.numPresc (π farmacia.nome,numPresc (farmacia⨝farmacia.nome=prescricao.farmacia prescricao)))))
