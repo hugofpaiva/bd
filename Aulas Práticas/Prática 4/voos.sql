@@ -37,7 +37,8 @@ CREATE TABLE voos.Fare(
 CREATE TABLE voos.Flight_Leg(
 	Leg_no				INT		NOT NULL,
 	Number_Flight		INT		REFERENCES voos.Flight(Number),
-	Airport_code		INT		REFERENCES voos.Airport(Airport_code),
+	Airport_code_arr		INT		NOT NULL REFERENCES voos.Airport(Airport_code),
+	Airport_code_dep		INT		NOT NULL REFERENCES voos.Airport(Airport_code),
 	Scheduled_arr_time	SMALLDATETIME		NOT NULL,
 	Scheduled_dep_time	SMALLDATETIME		NOT NULL,
 	PRIMARY KEY(Leg_no, Number_Flight)
@@ -47,7 +48,8 @@ CREATE TABLE voos.Leg_Instance(
 	Date				SMALLDATETIME		NOT NULL,
 	Leg_no				INT,
 	Number_Flight		INT,
-	Airport_code		INT		REFERENCES voos.Airport(Airport_code),
+	Airport_code_arr		INT		NOT NULL REFERENCES voos.Airport(Airport_code),
+	Airport_code_dep		INT		NOT NULL REFERENCES voos.Airport(Airport_code),
 	Airplane_id			INT		REFERENCES voos.Airplane(Airplane_id),
 	Dep_time			SMALLDATETIME,
 	Arr_time			SMALLDATETIME,
