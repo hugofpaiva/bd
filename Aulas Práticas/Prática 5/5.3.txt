@@ -12,3 +12,6 @@
 
 -- e)
 π farmacia.nome, farmaceutica.nome, num_farmacos_vendidos (farmaceutica⨝presc_farmaco.numRegFarm=farmaceutica.numReg (γ farmacia.nome, presc_farmaco.numRegFarm; count(presc_farmaco.nomeFarmaco)->num_farmacos_vendidos (presc_farmaco⨝presc_farmaco.numPresc=prescricao.numPresc (π farmacia.nome,numPresc (farmacia⨝farmacia.nome=prescricao.farmacia prescricao)))))
+
+-- f)
+σ num_medicos>1 (γ paciente.nome; count(prescricao.numMedico)->num_medicos (paciente⨝paciente.numUtente=prescricao.numUtente prescricao))
