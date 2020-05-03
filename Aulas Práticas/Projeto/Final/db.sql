@@ -1,10 +1,10 @@
-CREATE DATABASE perfumaria;
+CREATE DATABASE Perfumaria;
 GO
 
-IF OBJECT_ID('promocao', 'U') IS NOT NULL
-DROP TABLE promocao
+IF OBJECT_ID('Perfumaria.dbo.promocao', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.promocao
 GO
-CREATE TABLE promocao
+CREATE TABLE Perfumaria.dbo.promocao
 (
     id INT NOT NULL IDENTITY(1,1),
     nome VARCHAR(30) NOT NULL,
@@ -15,10 +15,10 @@ CREATE TABLE promocao
 );
 GO
 
-IF OBJECT_ID('produto_tem_promocao', 'U') IS NOT NULL
-DROP TABLE produto_tem_promocao
+IF OBJECT_ID('Perfumaria.dbo.produto_tem_promocao', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.produto_tem_promocao
 GO
-CREATE TABLE produto_tem_promocao
+CREATE TABLE Perfumaria.dbo.produto_tem_promocao
 (
     produtoid INT NOT NULL,
     promocaoid INT NOT NULL,
@@ -26,10 +26,10 @@ CREATE TABLE produto_tem_promocao
 );
 GO
 
-IF OBJECT_ID('produto', 'U') IS NOT NULL
-DROP TABLE produto
+IF OBJECT_ID('Perfumaria.dbo.produto', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.produto
 GO
-CREATE TABLE produto
+CREATE TABLE Perfumaria.dbo.produto
 (
     id INT NOT NULL IDENTITY(1,1),
     preco INT NOT NULL,
@@ -48,20 +48,20 @@ CREATE TABLE produto
 );
 GO
 
-IF OBJECT_ID('perfume', 'U') IS NOT NULL
-DROP TABLE perfume
+IF OBJECT_ID('Perfumaria.dbo.perfume', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.perfume
 GO
-CREATE TABLE perfume (
+CREATE TABLE Perfumaria.dbo.perfume (
     id  INT NOT NULL,
 
     CONSTRAINT perfume_pk PRIMARY KEY  (id)
 );
 GO
 
-IF OBJECT_ID('cosmetica', 'U') IS NOT NULL
-DROP TABLE cosmetica
+IF OBJECT_ID('Perfumaria.dbo.cosmetica', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.cosmetica
 GO
-CREATE TABLE cosmetica(
+CREATE TABLE Perfumaria.dbo.cosmetica(
     id  INT NOT NULL,
     tipo    VARCHAR(30) NOT NULL,
 
@@ -69,10 +69,10 @@ CREATE TABLE cosmetica(
 )
 GO
 
-IF OBJECT_ID('clientefavorita', 'U') IS NOT NULL
-DROP TABLE clientefavorita
+IF OBJECT_ID('Perfumaria.dbo.clientefavorita', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.clientefavorita
 GO
-CREATE TABLE clientefavorita(
+CREATE TABLE Perfumaria.dbo.clientefavorita(
     clienteemail VARCHAR(255)    NOT NULL,
     produtoid   INT NOT NULL,
 
@@ -80,23 +80,23 @@ CREATE TABLE clientefavorita(
 )
 GO
 
-IF OBJECT_ID('cupao', 'U') IS NOT NULL
-DROP TABLE cupao
+IF OBJECT_ID('Perfumaria.dbo.cupao', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.cupao
 GO
-CREATE TABLE cupao
+CREATE TABLE Perfumaria.dbo.cupao
 (
     id  CHAR(10)    NOT NULL,
     datainicio  SMALLDATETIME   NOT NULL,
     datafim SMALLDATETIME   NOT NULL,
     pontos_atribuidos   INT NOT NULL,
-    CONSTRAINT cupao PRIMARY KEY (id)
+    CONSTRAINT cupao_pk PRIMARY KEY (id)
 );
 GO
 
-IF OBJECT_ID('cliente_usa_cupao', 'U') IS NOT NULL
-DROP TABLE utilizador
+IF OBJECT_ID('Perfumaria.dbo.cliente_usa_cupao', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.cliente_usa_cupao
 GO
-CREATE TABLE cliente_usa_cupao
+CREATE TABLE Perfumaria.dbo.cliente_usa_cupao
 (
     cliente_email   VARCHAR(255)    NOT NULL,
     cupao_id    CHAR(10)    NOT NULL,
@@ -106,10 +106,10 @@ CREATE TABLE cliente_usa_cupao
 );
 GO
 
-IF OBJECT_ID('cliente', 'U') IS NOT NULL
-DROP TABLE cliente
+IF OBJECT_ID('Perfumaria.dbo.cliente', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.cliente
 GO
-CREATE TABLE cliente (
+CREATE TABLE Perfumaria.dbo.cliente (
     email   VARCHAR(255)    NOT NULL,
     pontos  INT NOT NULL,
     newsletter  BIT  NOT NULL,
@@ -119,10 +119,10 @@ CREATE TABLE cliente (
 );
 GO
 
-IF OBJECT_ID('utilizador', 'U') IS NOT NULL
-DROP TABLE utilizador
+IF OBJECT_ID('Perfumaria.dbo.utilizador', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.utilizador
 GO
-CREATE TABLE utilizador
+CREATE TABLE Perfumaria.dbo.utilizador
 (
     email   VARCHAR(255)    NOT NULL,
     contribuinte    CHAR(9)     NOT NULL,
@@ -138,10 +138,10 @@ CREATE TABLE utilizador
 );
 GO
 
-IF OBJECT_ID('funcionario', 'U') IS NOT NULL
-DROP TABLE funcionario
+IF OBJECT_ID('Perfumaria.dbo.funcionario', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.funcionario
 GO
-CREATE TABLE funcionario
+CREATE TABLE Perfumaria.dbo.funcionario
 (
     email   VARCHAR(255)    NOT NULL,
     administrator   TINYINT NOT NULL,
@@ -151,10 +151,10 @@ CREATE TABLE funcionario
 );
 GO
 
-IF OBJECT_ID('contacto', 'U') IS NOT NULL
-DROP TABLE contacto
+IF OBJECT_ID('Perfumaria.dbo.contacto', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.contacto
 GO
-CREATE TABLE contacto
+CREATE TABLE Perfumaria.dbo.contacto
 (
     id   INT IDENTITY(1,1)   NOT NULL,
     utilizador_email    VARCHAR(255)     NOT NULL,
@@ -172,10 +172,10 @@ CREATE TABLE contacto
 GO
 
 
-IF OBJECT_ID('compra_tem_produto', 'U') IS NOT NULL
-DROP TABLE compra_tem_produto
+IF OBJECT_ID('Perfumaria.dbo.compra_tem_produto', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.compra_tem_produto
 GO
-CREATE TABLE compra_tem_produto
+CREATE TABLE Perfumaria.dbo.compra_tem_produto
 (
     compranumero    INT NOT NULL,
     produtoid   INT NOT NULL,
@@ -186,10 +186,10 @@ CREATE TABLE compra_tem_produto
 GO
 
 
-IF OBJECT_ID('compra', 'U') IS NOT NULL
-DROP TABLE compra
+IF OBJECT_ID('Perfumaria.dbo.compra', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.compra
 GO
-CREATE TABLE compra
+CREATE TABLE Perfumaria.dbo.compra
 (
     numero    INT NOT NULL IDENTITY(1,1),
     contribuinte    CHAR(9)     NOT NULL,
@@ -203,28 +203,27 @@ CREATE TABLE compra
 );
 GO
 
-IF OBJECT_ID('servico', 'U') IS NOT NULL
-DROP TABLE servico
+IF OBJECT_ID('Perfumaria.dbo.servico', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.servico
 GO
-CREATE TABLE servico
+CREATE TABLE Perfumaria.dbo.servico
 (
-    funcionario_email    VARCHAR(255)   NOT NULL,
     id  INT IDENTITY(1,1)   NOT NULL,
     tipo VARCHAR(40)    NOT NULL,
     preco   FLOAT   NOT NULL,
     
-    CONSTRAINT servico_pk PRIMARY KEY (funcionario_email, id)
+    CONSTRAINT servico_pk PRIMARY KEY (id)
 );
 GO
 
 
-IF OBJECT_ID('funcionario_faz_servico', 'U') IS NOT NULL
-DROP TABLE funcionario_faz_servico
+IF OBJECT_ID('Perfumaria.dbo.funcionario_faz_servico', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.funcionario_faz_servico
 GO
-CREATE TABLE funcionario_faz_servico
+CREATE TABLE Perfumaria.dbo.funcionario_faz_servico
 (
     funcionario_email   VARCHAR(255)   NOT NULL,
-    servico_id  INT IDENTITY(1,1)   NOT NULL,
+    servico_id  INT	NOT NULL,
     duracao_media   INT   NOT NULL,
     
     CONSTRAINT funcionario_faz_servico_pk PRIMARY KEY (funcionario_email, servico_id)
@@ -232,10 +231,10 @@ CREATE TABLE funcionario_faz_servico
 GO
 
 
-IF OBJECT_ID('compra_online', 'U') IS NOT NULL
-DROP TABLE compra_online
+IF OBJECT_ID('Perfumaria.dbo.compra_online', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.compra_online
 GO
-CREATE TABLE compra_online
+CREATE TABLE Perfumaria.dbo.compra_online
 (
     numero    INT NOT NULL,
     rating    CHAR(1),
@@ -248,10 +247,10 @@ CREATE TABLE compra_online
 );
 GO
 
-IF OBJECT_ID('compra_presencial', 'U') IS NOT NULL
-DROP TABLE compra_presencial
+IF OBJECT_ID('Perfumaria.dbo.compra_presencial', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.compra_presencial
 GO
-CREATE TABLE compra_presencial
+CREATE TABLE Perfumaria.dbo.compra_presencial
 (
     numero    INT NOT NULL,
     funcemail   VARCHAR(255)    NOT NULL, 
@@ -261,14 +260,14 @@ CREATE TABLE compra_presencial
 GO
 
 
-IF OBJECT_ID('marcacao', 'U') IS NOT NULL
-DROP TABLE marcacao
+IF OBJECT_ID('Perfumaria.dbo.marcacao', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.marcacao
 GO
-CREATE TABLE marcacao
+CREATE TABLE Perfumaria.dbo.marcacao
 (
     id  INT NOT NULL    IDENTITY(1,1),
     cliente_email   VARCHAR(255)    NOT NULL,
-    servico_id  INT IDENTITY(1,1)   NOT NULL,
+    servico_id  INT   NOT NULL,
     funcionario_email VARCHAR(255)  NOT NULL,
     data    DATETIME    NOT NULL,
     
@@ -282,43 +281,41 @@ GO
 
 
 
-ALTER TABLE produto_tem_promocao ADD CONSTRAINT produto_tem_promocao_produtoid_fr FOREIGN KEY (produtoid) REFERENCES produto(id);
-ALTER TABLE produto_tem_promocao ADD CONSTRAINT produto_tem_promocao_promocaoid_fr FOREIGN KEY (promocaoid) REFERENCES promocao(id);
+ALTER TABLE Perfumaria.dbo.produto_tem_promocao ADD CONSTRAINT produto_tem_promocao_produtoid_fr FOREIGN KEY (produtoid) REFERENCES Perfumaria.dbo.produto(id);
+ALTER TABLE Perfumaria.dbo.produto_tem_promocao ADD CONSTRAINT produto_tem_promocao_promocaoid_fr FOREIGN KEY (promocaoid) REFERENCES Perfumaria.dbo.promocao(id);
 
-ALTER TABLE perfume ADD CONSTRAINT perfume_id_fr FOREIGN KEY (id) REFERENCES produto(id);
+ALTER TABLE Perfumaria.dbo.perfume ADD CONSTRAINT perfume_id_fr FOREIGN KEY (id) REFERENCES Perfumaria.dbo.produto(id);
 
-ALTER TABLE cosmetica ADD CONSTRAINT cosmetica_id_fr FOREIGN KEY (id) REFERENCES produto(id);
+ALTER TABLE Perfumaria.dbo.cosmetica ADD CONSTRAINT cosmetica_id_fr FOREIGN KEY (id) REFERENCES Perfumaria.dbo.produto(id);
 
-ALTER TABLE clientefavorita ADD CONSTRAINT clientefavorita_clienteemail_fr FOREIGN KEY (clienteemail) REFERENCES cliente(email);
-ALTER TABLE clientefavorita ADD CONSTRAINT clientefavorita_produtoid_fr FOREIGN KEY (produtoid) REFERENCES produto(id);
+ALTER TABLE Perfumaria.dbo.clientefavorita ADD CONSTRAINT clientefavorita_clienteemail_fr FOREIGN KEY (clienteemail) REFERENCES Perfumaria.dbo.cliente(email);
+ALTER TABLE Perfumaria.dbo.clientefavorita ADD CONSTRAINT clientefavorita_produtoid_fr FOREIGN KEY (produtoid) REFERENCES Perfumaria.dbo.produto(id);
 
-ALTER TABLE cliente_usa_cupao ADD CONSTRAINT clienteusacupao_clienteemail_fr FOREIGN KEY (cliente_email) REFERENCES cliente(email);
-ALTER TABLE cliente_usa_cupao ADD CONSTRAINT clienteusacupao_cupaoid_fr FOREIGN KEY (cupao_id) REFERENCES cupao(id);
+ALTER TABLE Perfumaria.dbo.cliente_usa_cupao ADD CONSTRAINT clienteusacupao_clienteemail_fr FOREIGN KEY (cliente_email) REFERENCES Perfumaria.dbo.cliente(email);
+ALTER TABLE Perfumaria.dbo.cliente_usa_cupao ADD CONSTRAINT clienteusacupao_cupaoid_fr FOREIGN KEY (cupao_id) REFERENCES Perfumaria.dbo.cupao(id);
 
-ALTER TABLE cliente ADD CONSTRAINT cliente_email_fr FOREIGN KEY (email) REFERENCES cliente(email);
+ALTER TABLE Perfumaria.dbo.cliente ADD CONSTRAINT cliente_email_fr FOREIGN KEY (email) REFERENCES Perfumaria.dbo.cliente(email);
 
-ALTER TABLE utilizador ADD CONSTRAINT utilizador_contactodefaultid_fr FOREIGN KEY (contacto_default_id) REFERENCES contacto(id);
+ALTER TABLE Perfumaria.dbo.utilizador ADD CONSTRAINT utilizador_contactodefaultid_fr FOREIGN KEY (contacto_default_id) REFERENCES Perfumaria.dbo.contacto(id);
 
-ALTER TABLE funcionario ADD CONSTRAINT funcionario_email_fr FOREIGN KEY (email) REFERENCES utilizador(id);
+ALTER TABLE Perfumaria.dbo.funcionario ADD CONSTRAINT funcionario_email_fr FOREIGN KEY (email) REFERENCES Perfumaria.dbo.utilizador(email);
 
-ALTER TABLE compra_tem_produto ADD CONSTRAINT compra_tem_produto_compranumero_fr FOREIGN KEY (compranumero) REFERENCES compra(numero);
-ALTER TABLE compra_tem_produto ADD CONSTRAINT compra_tem_produto_produtoid_fr FOREIGN KEY (produtoid) REFERENCES produto(id);
+ALTER TABLE Perfumaria.dbo.compra_tem_produto ADD CONSTRAINT compra_tem_produto_compranumero_fr FOREIGN KEY (compranumero) REFERENCES Perfumaria.dbo.compra(numero);
+ALTER TABLE Perfumaria.dbo.compra_tem_produto ADD CONSTRAINT compra_tem_produto_produtoid_fr FOREIGN KEY (produtoid) REFERENCES Perfumaria.dbo.produto(id);
 
-ALTER TABLE contacto ADD CONSTRAINT contacto_utilizadoremail_fr FOREIGN KEY (utilizador_email) REFERENCES utilizador(email);
+ALTER TABLE Perfumaria.dbo.contacto ADD CONSTRAINT contacto_utilizadoremail_fr FOREIGN KEY (utilizador_email) REFERENCES Perfumaria.dbo.utilizador(email);
 
-ALTER TABLE servico ADD CONSTRAINT servico_funcionarioemail_fr FOREIGN KEY (funcionario_email) REFERENCES funcionario(email);
+ALTER TABLE Perfumaria.dbo.compra ADD CONSTRAINT compra_clienteemail_fr FOREIGN KEY (clienteemail) REFERENCES Perfumaria.dbo.cliente(email);
 
-ALTER TABLE compra ADD CONSTRAINT compra_clienteemail_fr FOREIGN KEY (clienteemail) REFERENCES cliente(email);
+ALTER TABLE Perfumaria.dbo.funcionario_faz_servico ADD CONSTRAINT func_faz_serv_servicoid_fr FOREIGN KEY (servico_id) REFERENCES Perfumaria.dbo.servico(id);
+ALTER TABLE Perfumaria.dbo.funcionario_faz_servico ADD CONSTRAINT func_faz_serv_funcionario_email_fr FOREIGN KEY (funcionario_email) REFERENCES Perfumaria.dbo.funcionario(email);
 
-ALTER TABLE funcionario_faz_servico ADD CONSTRAINT func_faz_serv_funcemail_fr FOREIGN KEY (funcionario_email) REFERENCES funcionario(email);
-ALTER TABLE funcionario_faz_servico ADD CONSTRAINT func_faz_serv_servicoid_fr FOREIGN KEY (servico_id) REFERENCES servico(id);
+ALTER TABLE Perfumaria.dbo.compra_online ADD CONSTRAINT compra_online_numero_fr FOREIGN KEY (numero) REFERENCES Perfumaria.dbo.compra(numero);
+ALTER TABLE Perfumaria.dbo.compra_online ADD CONSTRAINT compra_online_contactoid_fr FOREIGN KEY (contactoid) REFERENCES Perfumaria.dbo.contacto(id);
 
-ALTER TABLE compra_online ADD CONSTRAINT compra_online_numero_fr FOREIGN KEY (numero) REFERENCES compra(numero);
-ALTER TABLE compra_online ADD CONSTRAINT compra_online_contactoid_fr FOREIGN KEY (contactoid) REFERENCES contacto(id);
+ALTER TABLE Perfumaria.dbo.compra_presencial ADD CONSTRAINT compra_presencial_numero_fr FOREIGN KEY (numero) REFERENCES Perfumaria.dbo.compra(numero);
+ALTER TABLE Perfumaria.dbo.compra_presencial ADD CONSTRAINT compra_presencial_funcemail_fr FOREIGN KEY (funcemail) REFERENCES Perfumaria.dbo.funcionario(email);
 
-ALTER TABLE compra_presencial ADD CONSTRAINT compra_presencial_numero_fr FOREIGN KEY (numero) REFERENCES compra(numero);
-ALTER TABLE compra_presencial ADD CONSTRAINT compra_presencial_funcemail_fr FOREIGN KEY (funcemail) REFERENCES funcionario(email);
-
-ALTER TABLE marcacao ADD CONSTRAINT marcacao_clienteemail_fr FOREIGN KEY (cliente_email) REFERENCES cliente(email);
-ALTER TABLE marcacao ADD CONSTRAINT marcacao_servicoid_fr FOREIGN KEY (servico_id) REFERENCES servico(id);
-ALTER TABLE marcacao ADD CONSTRAINT marcacao_funcemail_fr FOREIGN KEY (funcionario_email) REFERENCES funcionario(email);
+ALTER TABLE Perfumaria.dbo.marcacao ADD CONSTRAINT marcacao_clienteemail_fr FOREIGN KEY (cliente_email) REFERENCES Perfumaria.dbo.cliente(email);
+ALTER TABLE Perfumaria.dbo.marcacao ADD CONSTRAINT marcacao_servicoid_fr FOREIGN KEY (servico_id) REFERENCES Perfumaria.dbo.servico(id);
+ALTER TABLE Perfumaria.dbo.marcacao ADD CONSTRAINT marcacao_funcemail_fr FOREIGN KEY (funcionario_email) REFERENCES Perfumaria.dbo.funcionario(email);
