@@ -1,0 +1,8 @@
+\\Mac\Home\Downloads\Aula8_Material\ContactsC#\Contacts\bin\Debug\Contacts.exe
+\\Mac\Home\Downloads\Aula8_Material\ContactsC#\Contacts\bin\Debug\Contacts.pdb
+\\Mac\Home\Downloads\Aula8_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.csprojAssemblyReference.cache
+\\Mac\Home\Downloads\Aula8_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.Form1.resources
+\\Mac\Home\Downloads\Aula8_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.Properties.Resources.resources
+\\Mac\Home\Downloads\Aula8_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.csproj.GenerateResource.cache
+\\Mac\Home\Downloads\Aula8_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.exe
+\\Mac\Home\Downloads\Aula8_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.pdb
