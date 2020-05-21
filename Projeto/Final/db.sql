@@ -51,8 +51,9 @@ GO
 IF OBJECT_ID('Perfumaria.dbo.perfume', 'U') IS NOT NULL
 DROP TABLE Perfumaria.dbo.perfume
 GO
-CREATE TABLE Perfumaria.dbo.perfume (
-    id  INT NOT NULL,
+CREATE TABLE Perfumaria.dbo.perfume
+(
+    id INT NOT NULL,
 
     CONSTRAINT perfume_pk PRIMARY KEY  (id)
 );
@@ -61,9 +62,10 @@ GO
 IF OBJECT_ID('Perfumaria.dbo.cosmetica', 'U') IS NOT NULL
 DROP TABLE Perfumaria.dbo.cosmetica
 GO
-CREATE TABLE Perfumaria.dbo.cosmetica(
-    id  INT NOT NULL,
-    tipo    VARCHAR(30) NOT NULL,
+CREATE TABLE Perfumaria.dbo.cosmetica
+(
+    id INT NOT NULL,
+    tipo VARCHAR(30) NOT NULL,
 
     CONSTRAINT cosmetica_pk PRIMARY KEY (id)
 )
@@ -72,9 +74,10 @@ GO
 IF OBJECT_ID('Perfumaria.dbo.clientefavorita', 'U') IS NOT NULL
 DROP TABLE Perfumaria.dbo.clientefavorita
 GO
-CREATE TABLE Perfumaria.dbo.clientefavorita(
-    clienteemail VARCHAR(255)    NOT NULL,
-    produtoid   INT NOT NULL,
+CREATE TABLE Perfumaria.dbo.clientefavorita
+(
+    clienteemail VARCHAR(255) NOT NULL,
+    produtoid INT NOT NULL,
 
     CONSTRAINT clientefavorita_pk PRIMARY KEY (clienteemail, produtoid)
 )
@@ -85,10 +88,10 @@ DROP TABLE Perfumaria.dbo.cupao
 GO
 CREATE TABLE Perfumaria.dbo.cupao
 (
-    id  CHAR(10)    NOT NULL,
-    datainicio  SMALLDATETIME   NOT NULL,
-    datafim SMALLDATETIME   NOT NULL,
-    pontos_atribuidos   INT NOT NULL,
+    id CHAR(10) NOT NULL,
+    datainicio SMALLDATETIME NOT NULL,
+    datafim SMALLDATETIME NOT NULL,
+    pontos_atribuidos INT NOT NULL,
     CONSTRAINT cupao_pk PRIMARY KEY (id)
 );
 GO
@@ -98,23 +101,24 @@ DROP TABLE Perfumaria.dbo.cliente_usa_cupao
 GO
 CREATE TABLE Perfumaria.dbo.cliente_usa_cupao
 (
-    cliente_email   VARCHAR(255)    NOT NULL,
-    cupao_id    CHAR(10)    NOT NULL,
+    cliente_email VARCHAR(255) NOT NULL,
+    cupao_id CHAR(10) NOT NULL,
     CONSTRAINT cliente_usa_cupao_pk PRIMARY KEY (cliente_email, cupao_id)
-    
-    
+
+
 );
 GO
 
 IF OBJECT_ID('Perfumaria.dbo.cliente', 'U') IS NOT NULL
 DROP TABLE Perfumaria.dbo.cliente
 GO
-CREATE TABLE Perfumaria.dbo.cliente (
-    email   VARCHAR(255)    NOT NULL,
-    pontos  INT NOT NULL,
-    newsletter  BIT  NOT NULL,
-    pagamento   VARCHAR(10),
-    
+CREATE TABLE Perfumaria.dbo.cliente
+(
+    email VARCHAR(255) NOT NULL,
+    pontos INT NOT NULL,
+    newsletter BIT NOT NULL,
+    pagamento VARCHAR(10),
+
     CONSTRAINT cliente_pk PRIMARY KEY (email)
 );
 GO
@@ -124,17 +128,17 @@ DROP TABLE Perfumaria.dbo.utilizador
 GO
 CREATE TABLE Perfumaria.dbo.utilizador
 (
-    email   VARCHAR(255)    NOT NULL,
-    contribuinte    CHAR(9)     NOT NULL,
-    fname   VARCHAR(20)     NOT NULL,
-    lname   VARCHAR(20)     NOT NULL,
-    pw  BINARY(64)  NOT NULL,
-    sexo    BIT     NOT NULL,
-    dataNasc    DATETIME    NOT NULL,
-    foto    VARCHAR(100)    NOT NULL,
-    contacto_default_id     INT     NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    contribuinte CHAR(9) NOT NULL,
+    fname VARCHAR(20) NOT NULL,
+    lname VARCHAR(20) NOT NULL,
+    pw BINARY(64) NOT NULL,
+    sexo BIT NOT NULL,
+    dataNasc DATETIME NOT NULL,
+    foto VARCHAR(100) NOT NULL,
+    contacto_default_id INT,
     CONSTRAINT utilizador_pk PRIMARY KEY (email)
-    
+
 );
 GO
 
@@ -143,11 +147,11 @@ DROP TABLE Perfumaria.dbo.funcionario
 GO
 CREATE TABLE Perfumaria.dbo.funcionario
 (
-    email   VARCHAR(255)    NOT NULL,
-    administrator   TINYINT NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    administrator TINYINT NOT NULL,
     salario INT NOT NULL,
     CONSTRAINT funcionario_pk PRIMARY KEY (email)
-    
+
 );
 GO
 
@@ -156,18 +160,18 @@ DROP TABLE Perfumaria.dbo.contacto
 GO
 CREATE TABLE Perfumaria.dbo.contacto
 (
-    id   INT IDENTITY(1,1)   NOT NULL,
-    utilizador_email    VARCHAR(255)     NOT NULL,
-    telemovel   CHAR(9)     NOT NULL,
-    visibilidade    BIT     NOT NULL,
-    codigo_postal   CHAR(8)     NOT NULL,
-    pais    VARCHAR(20)     NOT NULL,
-    endereco    VARCHAR(50)     NOT NULL,
-    apartamento     VARCHAR(10)     NOT NULL,
-    localidade      VARCHAR(20) NOT NULL,
-    
+    id INT IDENTITY(1,1) NOT NULL,
+    utilizador_email VARCHAR(255) NOT NULL,
+    telemovel CHAR(9) NOT NULL,
+    visibilidade BIT NOT NULL,
+    codigo_postal CHAR(8) NOT NULL,
+    pais VARCHAR(20) NOT NULL,
+    endereco VARCHAR(50) NOT NULL,
+    apartamento VARCHAR(10) NOT NULL,
+    localidade VARCHAR(20) NOT NULL,
+
     CONSTRAINT contacto_pk PRIMARY KEY (id)
-    
+
 );
 GO
 
@@ -177,10 +181,10 @@ DROP TABLE Perfumaria.dbo.compra_tem_produto
 GO
 CREATE TABLE Perfumaria.dbo.compra_tem_produto
 (
-    compranumero    INT NOT NULL,
-    produtoid   INT NOT NULL,
+    compranumero INT NOT NULL,
+    produtoid INT NOT NULL,
     unidades INT NOT NULL,
-    
+
     CONSTRAINT compra_tem_produto_pk PRIMARY KEY (compranumero, produtoid)
 );
 GO
@@ -191,14 +195,14 @@ DROP TABLE Perfumaria.dbo.compra
 GO
 CREATE TABLE Perfumaria.dbo.compra
 (
-    numero    INT NOT NULL IDENTITY(1,1),
-    contribuinte    CHAR(9)     NOT NULL,
-    datacompra  DATETIME    NOT NULL,
-    pagamento   VARCHAR(10) NOT NULL,
-    clienteemail    VARCHAR(255)    NOT NULL,
+    numero INT NOT NULL IDENTITY(1,1),
+    contribuinte CHAR(9) NOT NULL,
+    datacompra DATETIME NOT NULL,
+    pagamento VARCHAR(10) NOT NULL,
+    clienteemail VARCHAR(255) NOT NULL,
     pontosgatos INT,
-    pontosacumulados    INT,
-    
+    pontosacumulados INT,
+
     CONSTRAINT compra_pk PRIMARY KEY (numero)
 );
 GO
@@ -208,10 +212,10 @@ DROP TABLE Perfumaria.dbo.servico
 GO
 CREATE TABLE Perfumaria.dbo.servico
 (
-    id  INT IDENTITY(1,1)   NOT NULL,
-    tipo VARCHAR(40)    NOT NULL,
-    preco   FLOAT   NOT NULL,
-    
+    id INT IDENTITY(1,1) NOT NULL,
+    tipo VARCHAR(40) NOT NULL,
+    preco FLOAT NOT NULL,
+
     CONSTRAINT servico_pk PRIMARY KEY (id)
 );
 GO
@@ -222,10 +226,10 @@ DROP TABLE Perfumaria.dbo.funcionario_faz_servico
 GO
 CREATE TABLE Perfumaria.dbo.funcionario_faz_servico
 (
-    funcionario_email   VARCHAR(255)   NOT NULL,
-    servico_id  INT	NOT NULL,
-    duracao_media   INT   NOT NULL,
-    
+    funcionario_email VARCHAR(255) NOT NULL,
+    servico_id INT NOT NULL,
+    duracao_media INT NOT NULL,
+
     CONSTRAINT funcionario_faz_servico_pk PRIMARY KEY (funcionario_email, servico_id)
 );
 GO
@@ -236,13 +240,13 @@ DROP TABLE Perfumaria.dbo.compra_online
 GO
 CREATE TABLE Perfumaria.dbo.compra_online
 (
-    numero    INT NOT NULL,
-    rating    CHAR(1),
+    numero INT NOT NULL,
+    rating CHAR(1),
     descricao VARCHAR(280),
-    rastreamento   VARCHAR(20),
-    presente    BIT NOT NULL,
-    contactoid  INT NOT NULL, 
-    
+    rastreamento VARCHAR(20),
+    presente BIT NOT NULL,
+    contactoid INT NOT NULL,
+
     CONSTRAINT compra_online_pk PRIMARY KEY (numero)
 );
 GO
@@ -252,9 +256,9 @@ DROP TABLE Perfumaria.dbo.compra_presencial
 GO
 CREATE TABLE Perfumaria.dbo.compra_presencial
 (
-    numero    INT NOT NULL,
-    funcemail   VARCHAR(255)    NOT NULL, 
-    
+    numero INT NOT NULL,
+    funcemail VARCHAR(255) NOT NULL,
+
     CONSTRAINT compra_presencial_pk PRIMARY KEY (numero)
 );
 GO
@@ -265,12 +269,12 @@ DROP TABLE Perfumaria.dbo.marcacao
 GO
 CREATE TABLE Perfumaria.dbo.marcacao
 (
-    id  INT NOT NULL    IDENTITY(1,1),
-    cliente_email   VARCHAR(255)    NOT NULL,
-    servico_id  INT   NOT NULL,
-    funcionario_email VARCHAR(255)  NOT NULL,
-    data    DATETIME    NOT NULL,
-    
+    id INT NOT NULL IDENTITY(1,1),
+    cliente_email VARCHAR(255) NOT NULL,
+    servico_id INT NOT NULL,
+    funcionario_email VARCHAR(255) NOT NULL,
+    data DATETIME NOT NULL,
+
     CONSTRAINT marcacao_pk PRIMARY KEY (id)
 );
 GO
@@ -319,3 +323,132 @@ ALTER TABLE Perfumaria.dbo.compra_presencial ADD CONSTRAINT compra_presencial_fu
 ALTER TABLE Perfumaria.dbo.marcacao ADD CONSTRAINT marcacao_clienteemail_fr FOREIGN KEY (cliente_email) REFERENCES Perfumaria.dbo.cliente(email);
 ALTER TABLE Perfumaria.dbo.marcacao ADD CONSTRAINT marcacao_servicoid_fr FOREIGN KEY (servico_id) REFERENCES Perfumaria.dbo.servico(id);
 ALTER TABLE Perfumaria.dbo.marcacao ADD CONSTRAINT marcacao_funcemail_fr FOREIGN KEY (funcionario_email) REFERENCES Perfumaria.dbo.funcionario(email);
+
+
+GO
+CREATE PROCEDURE dbo.RegisterFunc
+    @email VARCHAR(255),
+    @password VARCHAR(25),
+    @contribuinte CHAR(9),
+    @fname VARCHAR(20),
+    @lname VARCHAR(20),
+    @sexo BIT,
+    @dataNasc DATETIME,
+    @foto VARCHAR(100),
+    @salario INT,
+    @administrator TINYINT,
+    @responseMessage NVARCHAR(250) OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON
+
+    BEGIN TRY
+
+        INSERT INTO Perfumaria.dbo.utilizador
+        (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto)
+    VALUES(@email, @contribuinte, @fname, @lname, HASHBYTES('SHA2_512', @password), @sexo, @dataNasc, @foto)
+
+    INSERT INTO Perfumaria.dbo.funcionario
+        (email, administrator, salario)
+    VALUES(@email, @administrator, @salario)
+
+    SET @responseMessage='Success'
+
+    END TRY
+    BEGIN CATCH
+        SET @responseMessage=ERROR_MESSAGE() 
+    END CATCH
+
+END
+
+
+GO
+CREATE PROCEDURE dbo.RegisterClient
+    @email VARCHAR(255),
+    @password VARCHAR(25),
+    @contribuinte CHAR(9),
+    @fname VARCHAR(20),
+    @lname VARCHAR(20),
+    @sexo BIT,
+    @dataNasc DATETIME,
+    @foto VARCHAR(100),
+    @pontos INT,
+    @newsletter BIT,
+    @responseMessage VARCHAR(250) OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON
+
+    BEGIN TRY
+
+        INSERT INTO Perfumaria.dbo.utilizador
+        (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto)
+    VALUES(@email, @contribuinte, @fname, @lname, HASHBYTES('SHA2_512', @password), @sexo, @dataNasc, @foto)
+
+    INSERT INTO Perfumaria.dbo.cliente
+        (email, pontos, newsletter)
+    VALUES(@email, @pontos, @newsletter)
+
+    SET @responseMessage='Success'
+
+    END TRY
+    BEGIN CATCH
+        SET @responseMessage=ERROR_MESSAGE() 
+    END CATCH
+
+END
+
+/*DECLARE @responseMessage NVARCHAR(250)
+
+EXEC dbo.uspAddUser
+          @pLogin = N'Admin',
+          @pPassword = N'123',
+          @pFirstName = N'Admin',
+          @pLastName = N'Administrator',
+          @responseMessage=@responseMessage OUTPUT
+
+SELECT *
+FROM [dbo].[User]*/
+
+GO
+CREATE PROCEDURE dbo.Login
+    @email VARCHAR(255),
+    @password VARCHAR(25),
+    @responseMessage VARCHAR(250)='' OUTPUT,
+    @type BIT OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON
+
+    IF EXISTS (SELECT TOP 1 email FROM Perfumaria.dbo.utilizador WHERE email = @email)
+    BEGIN
+        SET @email=(SELECT email FROM Perfumaria.dbo.utilizador
+        WHERE email=@email AND pw=HASHBYTES('SHA2_512', @password))
+
+        IF(@email IS NULL)
+           SET @responseMessage='Incorrect password'
+       ELSE 
+           SET @responseMessage='User successfully logged in'
+           IF EXISTS (SELECT TOP 1 email FROM Perfumaria.dbo.funcionario WHERE email = @email)
+            SET @type = 1
+           ELSE
+            SET @type = 0
+    END
+    ELSE
+       SET @responseMessage='Invalid login'
+
+END
+
+
+/*
+DECLARE	@responseMessage nvarchar(250)
+
+--Correct login and password
+EXEC	dbo.uspLogin
+		@pLoginName = N'Admin',
+		@pPassword = N'123',
+		@responseMessage = @responseMessage OUTPUT
+
+SELECT	@responseMessage as N'@responseMessage'
+*/
+	
