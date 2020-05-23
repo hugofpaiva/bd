@@ -273,16 +273,11 @@ CREATE TABLE Perfumaria.dbo.marcacao
     cliente_email VARCHAR(255) NOT NULL,
     servico_id INT NOT NULL,
     funcionario_email VARCHAR(255) NOT NULL,
-    data DATETIME NOT NULL,
+    dataMarc DATETIME NOT NULL,
 
     CONSTRAINT marcacao_pk PRIMARY KEY (id)
 );
 GO
-
-
-
-
-
 
 
 ALTER TABLE Perfumaria.dbo.produto_tem_promocao ADD CONSTRAINT produto_tem_promocao_produtoid_fr FOREIGN KEY (produtoid) REFERENCES Perfumaria.dbo.produto(id);
@@ -325,130 +320,3 @@ ALTER TABLE Perfumaria.dbo.marcacao ADD CONSTRAINT marcacao_servicoid_fr FOREIGN
 ALTER TABLE Perfumaria.dbo.marcacao ADD CONSTRAINT marcacao_funcemail_fr FOREIGN KEY (funcionario_email) REFERENCES Perfumaria.dbo.funcionario(email);
 
 
-GO
-CREATE PROCEDURE dbo.RegisterFunc
-    @email VARCHAR(255),
-    @password VARCHAR(25),
-    @contribuinte CHAR(9),
-    @fname VARCHAR(20),
-    @lname VARCHAR(20),
-    @sexo BIT,
-    @dataNasc DATETIME,
-    @foto VARCHAR(100),
-    @salario INT,
-    @administrator TINYINT,
-    @responseMessage NVARCHAR(250) OUTPUT
-AS
-BEGIN
-    SET NOCOUNT ON
-
-    BEGIN TRY
-
-        INSERT INTO Perfumaria.dbo.utilizador
-        (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto)
-    VALUES(@email, @contribuinte, @fname, @lname, HASHBYTES('SHA2_512', @password), @sexo, @dataNasc, @foto)
-
-    INSERT INTO Perfumaria.dbo.funcionario
-        (email, administrator, salario)
-    VALUES(@email, @administrator, @salario)
-
-    SET @responseMessage='Success'
-
-    END TRY
-    BEGIN CATCH
-        SET @responseMessage=ERROR_MESSAGE() 
-    END CATCH
-
-END
-
-
-GO
-CREATE PROCEDURE dbo.RegisterClient
-    @email VARCHAR(255),
-    @password VARCHAR(25),
-    @contribuinte CHAR(9),
-    @fname VARCHAR(20),
-    @lname VARCHAR(20),
-    @sexo BIT,
-    @dataNasc DATETIME,
-    @foto VARCHAR(100),
-    @pontos INT,
-    @newsletter BIT,
-    @responseMessage VARCHAR(250) OUTPUT
-AS
-BEGIN
-    SET NOCOUNT ON
-
-    BEGIN TRY
-
-        INSERT INTO Perfumaria.dbo.utilizador
-        (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto)
-    VALUES(@email, @contribuinte, @fname, @lname, HASHBYTES('SHA2_512', @password), @sexo, @dataNasc, @foto)
-
-    INSERT INTO Perfumaria.dbo.cliente
-        (email, pontos, newsletter)
-    VALUES(@email, @pontos, @newsletter)
-
-    SET @responseMessage='Success'
-
-    END TRY
-    BEGIN CATCH
-        SET @responseMessage=ERROR_MESSAGE() 
-    END CATCH
-
-END
-
-/*DECLARE @responseMessage NVARCHAR(250)
-
-EXEC dbo.uspAddUser
-          @pLogin = N'Admin',
-          @pPassword = N'123',
-          @pFirstName = N'Admin',
-          @pLastName = N'Administrator',
-          @responseMessage=@responseMessage OUTPUT
-
-SELECT *
-FROM [dbo].[User]*/
-
-GO
-CREATE PROCEDURE dbo.Login
-    @email VARCHAR(255),
-    @password VARCHAR(25),
-    @responseMessage VARCHAR(250)='' OUTPUT,
-    @type BIT OUTPUT
-AS
-BEGIN
-    SET NOCOUNT ON
-
-    IF EXISTS (SELECT TOP 1 email FROM Perfumaria.dbo.utilizador WHERE email = @email)
-    BEGIN
-        SET @email=(SELECT email FROM Perfumaria.dbo.utilizador
-        WHERE email=@email AND pw=HASHBYTES('SHA2_512', @password))
-
-        IF(@email IS NULL)
-           SET @responseMessage='Incorrect password'
-       ELSE 
-           SET @responseMessage='User successfully logged in'
-           IF EXISTS (SELECT TOP 1 email FROM Perfumaria.dbo.funcionario WHERE email = @email)
-            SET @type = 1
-           ELSE
-            SET @type = 0
-    END
-    ELSE
-       SET @responseMessage='Invalid login'
-
-END
-
-
-/*
-DECLARE	@responseMessage nvarchar(250)
-
---Correct login and password
-EXEC	dbo.uspLogin
-		@pLoginName = N'Admin',
-		@pPassword = N'123',
-		@responseMessage = @responseMessage OUTPUT
-
-SELECT	@responseMessage as N'@responseMessage'
-*/
-	
