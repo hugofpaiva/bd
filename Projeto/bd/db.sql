@@ -200,7 +200,7 @@ CREATE TABLE Perfumaria.dbo.compra
     datacompra DATETIME NOT NULL,
     pagamento VARCHAR(10) NOT NULL,
     clienteemail VARCHAR(255) NOT NULL,
-    pontosgatos INT,
+    pontosgastos INT,
     pontosacumulados INT,
 
     CONSTRAINT compra_pk PRIMARY KEY (numero)
@@ -242,7 +242,7 @@ CREATE TABLE Perfumaria.dbo.compra_online
 (
     numero INT NOT NULL,
     rating CHAR(1),
-    descricao VARCHAR(280),
+    observacao VARCHAR(280),
     rastreamento VARCHAR(20),
     presente BIT NOT NULL,
     contactoid INT NOT NULL,
