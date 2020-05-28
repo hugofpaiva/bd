@@ -1,19 +1,39 @@
 import pyodbc
-conn = pyodbc.connect('Driver={SQL Server};'
-                      'Server=;'  # TODO Add nome do server
-                      'Database=Perfumaria;'
-                      'Trusted_Connection=yes;')
+import xlrd 
 
-cursor = conn.cursor()
+loc = ("./dados.xlsx") 
 
-cursor.execute('''
-                INSERT INTO TestDB.dbo.Person (Name, Age, City)
-                VALUES
-                ('Bob',55,'Montreal'),
-                ('Jenny',66,'Boston')
-                ''')
-conn.commit()
+# Abrir Workbook
+wb = xlrd.open_workbook(loc) 
 
+
+# Percorrer as sheets todas
+pointSheets = wb.sheet_names()
+counter=0
+for sheet in pointSheets:
+    print(sheet)
+    sheet = wb.sheet_by_index(counter)
+    for row in range(1,sheet.nrows):
+        for column in range(0, sheet.ncols):
+            print(sheet.cell_value(row, column))
+    counter+=1
+
+'''
+# Ligação à base de dados
+try:
+    conn = pyodbc.connect('Driver={SQL Server};'
+                        'Server=;'  #FIXME Adicionar o nome do serviodr
+                        'Database=Perfumaria;'
+                        'Trusted_Connection=yes;')
+    cursor = conn.cursor()
+
+except:
+    print("Erro ao ligar à base de dados!")
+    sys.exit()
+
+
+
+'''
 '''
 cursor.execute('SELECT * FROM TestDB.dbo.Person')
  
