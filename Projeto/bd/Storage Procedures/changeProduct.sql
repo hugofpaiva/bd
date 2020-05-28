@@ -1,5 +1,6 @@
 GO
-CREATE PROCEDURE dbo.addProduct
+CREATE PROCEDURE dbo.changeProduct
+    @id INT,
     @preco INT,
     @familiaolfativa VARCHAR(30) = NULL,
     @categoria VARCHAR(30),
@@ -20,9 +21,9 @@ BEGIN
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.dbo.funcionario WHERE email=@emailFunc AND administrator>0)
             BEGIN
-                INSERT INTO Perfumaria.dbo.produto
-                (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario)
-                VALUES(@preco, @familiaolfativa, @categoria, @nome, @marca, @linha, @tamanho, @descricao, @imagem, @stock, @destinatario) 
+                UPDATE Perfumaria.dbo.produto
+                SET preco=@preco, familiaolfativa=@familiaolfativa, categoria=@categoria, nome=@nome, marca=@marca, linha=@linha, tamanho=@tamanho, descricao=@descricao, imagem=@imagem, stock=@stock, destinatario=@destinatario
+                WHERE id=@id
                 SET @responseMessage='Success'
             END
         ELSE
