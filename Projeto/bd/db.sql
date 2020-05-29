@@ -1,9 +1,157 @@
+IF DB_ID('Perfumaria') IS NULL
 CREATE DATABASE Perfumaria;
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.promocao', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.promocao
+-- DROPS
+IF OBJECT_ID('Perfumaria.dbo.produto_tem_promocao', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.produto_tem_promocao DROP CONSTRAINT produto_tem_promocao_produtoid_fr;
+ALTER TABLE Perfumaria.dbo.produto_tem_promocao DROP CONSTRAINT produto_tem_promocao_promocaoid_fr;
+ALTER TABLE Perfumaria.dbo.produto_tem_promocao DROP CONSTRAINT produto_tem_promocao_pk;
+DROP TABLE Perfumaria.dbo.produto_tem_promocao;
+END
 GO
+
+IF OBJECT_ID('Perfumaria.dbo.perfume', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.perfume DROP CONSTRAINT perfume_id_fr;
+ALTER TABLE Perfumaria.dbo.perfume DROP CONSTRAINT perfume_pk;
+DROP TABLE Perfumaria.dbo.perfume;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.cosmetica', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.cosmetica DROP CONSTRAINT cosmetica_id_fr;
+ALTER TABLE Perfumaria.dbo.cosmetica DROP CONSTRAINT cosmetica_pk;
+DROP TABLE Perfumaria.dbo.cosmetica;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.clientefavorita', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.clientefavorita DROP CONSTRAINT clientefavorita_clienteemail_fr;
+ALTER TABLE Perfumaria.dbo.clientefavorita DROP CONSTRAINT clientefavorita_produtoid_fr;
+ALTER TABLE Perfumaria.dbo.clientefavorita DROP CONSTRAINT clientefavorita_pk;
+DROP TABLE Perfumaria.dbo.clientefavorita;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.cliente_usa_cupao', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.cliente_usa_cupao DROP CONSTRAINT clienteusacupao_clienteemail_fr;
+ALTER TABLE Perfumaria.dbo.cliente_usa_cupao DROP CONSTRAINT clienteusacupao_cupaoid_fr;
+ALTER TABLE Perfumaria.dbo.cliente_usa_cupao DROP CONSTRAINT cliente_usa_cupao_pk;
+DROP TABLE Perfumaria.dbo.cliente_usa_cupao;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.marcacao', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.marcacao DROP CONSTRAINT marcacao_clienteemail_fr;
+ALTER TABLE Perfumaria.dbo.marcacao DROP CONSTRAINT marcacao_servicoid_fr;
+ALTER TABLE Perfumaria.dbo.marcacao DROP CONSTRAINT marcacao_funcemail_fr;
+ALTER TABLE Perfumaria.dbo.marcacao DROP CONSTRAINT marcacao_pk;
+DROP TABLE Perfumaria.dbo.marcacao;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.compra_online', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.compra_online DROP CONSTRAINT compra_online_numero_fr;
+ALTER TABLE Perfumaria.dbo.compra_online DROP CONSTRAINT compra_online_contactoid_fr;
+ALTER TABLE Perfumaria.dbo.compra_online DROP CONSTRAINT compra_online_pk;
+DROP TABLE Perfumaria.dbo.compra_online;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.compra_presencial', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.compra_presencial DROP CONSTRAINT compra_presencial_numero_fr;
+ALTER TABLE Perfumaria.dbo.compra_presencial DROP CONSTRAINT compra_presencial_funcemail_fr;
+ALTER TABLE Perfumaria.dbo.compra_presencial DROP CONSTRAINT compra_presencial_pk;
+DROP TABLE Perfumaria.dbo.compra_presencial;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.compra_tem_produto', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.compra_tem_produto DROP CONSTRAINT compra_tem_produto_compranumero_fr;
+ALTER TABLE Perfumaria.dbo.compra_tem_produto DROP CONSTRAINT compra_tem_produto_produtoid_fr;
+ALTER TABLE Perfumaria.dbo.compra_tem_produto DROP CONSTRAINT compra_tem_produto_pk;
+DROP TABLE Perfumaria.dbo.compra_tem_produto;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.compra', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.compra DROP CONSTRAINT compra_clienteemail_fr;
+ALTER TABLE Perfumaria.dbo.compra DROP CONSTRAINT compra_pk;
+DROP TABLE Perfumaria.dbo.compra;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.cliente', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.cliente DROP CONSTRAINT cliente_email_fr;
+ALTER TABLE Perfumaria.dbo.cliente DROP CONSTRAINT cliente_pk;
+DROP TABLE Perfumaria.dbo.cliente;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.funcionario_faz_servico', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.funcionario_faz_servico DROP CONSTRAINT func_faz_serv_servicoid_fr;
+ALTER TABLE Perfumaria.dbo.funcionario_faz_servico DROP CONSTRAINT func_faz_serv_funcionario_email_fr;
+ALTER TABLE Perfumaria.dbo.funcionario_faz_servico DROP CONSTRAINT funcionario_faz_servico_pk;
+DROP TABLE Perfumaria.dbo.funcionario_faz_servico;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.funcionario', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.funcionario DROP CONSTRAINT funcionario_email_fr;
+ALTER TABLE Perfumaria.dbo.funcionario DROP CONSTRAINT funcionario_pk;
+DROP TABLE Perfumaria.dbo.funcionario;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.utilizador', 'U') IS NOT NULL
+ALTER TABLE Perfumaria.dbo.utilizador DROP CONSTRAINT utilizador_contactodefaultid_fr;
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.contacto', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.contacto DROP CONSTRAINT contacto_utilizadoremail_fr;
+ALTER TABLE Perfumaria.dbo.contacto DROP CONSTRAINT contacto_pk;
+DROP TABLE Perfumaria.dbo.contacto;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.utilizador', 'U') IS NOT NULL
+BEGIN
+ALTER TABLE Perfumaria.dbo.utilizador DROP CONSTRAINT utilizador_pk;
+DROP TABLE Perfumaria.dbo.utilizador;
+END
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.servico', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.servico;
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.cupao', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.cupao;
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.produto', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.produto;
+GO
+
+IF OBJECT_ID('Perfumaria.dbo.promocao', 'U') IS NOT NULL
+DROP TABLE Perfumaria.dbo.promocao;
+GO
+
+-- TABLE CREATION
 CREATE TABLE Perfumaria.dbo.promocao
 (
     id INT NOT NULL IDENTITY(1,1),
@@ -15,20 +163,14 @@ CREATE TABLE Perfumaria.dbo.promocao
 );
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.produto_tem_promocao', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.produto_tem_promocao
-GO
 CREATE TABLE Perfumaria.dbo.produto_tem_promocao
 (
     produtoid INT NOT NULL,
     promocaoid INT NOT NULL,
-    CONSTRAINT produto_tem_promocao_pk PRIMARY KEY  (produtoid, promocaoid)
+    CONSTRAINT produto_tem_promocao_pk PRIMARY KEY (produtoid, promocaoid)
 );
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.produto', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.produto
-GO
 CREATE TABLE Perfumaria.dbo.produto
 (
     id INT NOT NULL IDENTITY(1,1),
@@ -43,25 +185,20 @@ CREATE TABLE Perfumaria.dbo.produto
     imagem VARCHAR(100) NOT NULL,
     stock SMALLINT NOT NULL,
     destinatario VARCHAR(10),
+    deleted BIT NOT NULL,
 
     CONSTRAINT produto_pk PRIMARY KEY  (id)
 );
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.perfume', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.perfume
-GO
 CREATE TABLE Perfumaria.dbo.perfume
 (
     id INT NOT NULL,
 
-    CONSTRAINT perfume_pk PRIMARY KEY  (id)
+    CONSTRAINT perfume_pk PRIMARY KEY (id)
 );
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.cosmetica', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.cosmetica
-GO
 CREATE TABLE Perfumaria.dbo.cosmetica
 (
     id INT NOT NULL,
@@ -71,9 +208,6 @@ CREATE TABLE Perfumaria.dbo.cosmetica
 )
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.clientefavorita', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.clientefavorita
-GO
 CREATE TABLE Perfumaria.dbo.clientefavorita
 (
     clienteemail VARCHAR(255) NOT NULL,
@@ -83,9 +217,6 @@ CREATE TABLE Perfumaria.dbo.clientefavorita
 )
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.cupao', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.cupao
-GO
 CREATE TABLE Perfumaria.dbo.cupao
 (
     id CHAR(10) NOT NULL,
@@ -96,9 +227,6 @@ CREATE TABLE Perfumaria.dbo.cupao
 );
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.cliente_usa_cupao', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.cliente_usa_cupao
-GO
 CREATE TABLE Perfumaria.dbo.cliente_usa_cupao
 (
     cliente_email VARCHAR(255) NOT NULL,
@@ -109,9 +237,6 @@ CREATE TABLE Perfumaria.dbo.cliente_usa_cupao
 );
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.cliente', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.cliente
-GO
 CREATE TABLE Perfumaria.dbo.cliente
 (
     email VARCHAR(255) NOT NULL,
@@ -123,9 +248,6 @@ CREATE TABLE Perfumaria.dbo.cliente
 );
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.utilizador', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.utilizador
-GO
 CREATE TABLE Perfumaria.dbo.utilizador
 (
     email VARCHAR(255) NOT NULL,
@@ -142,9 +264,6 @@ CREATE TABLE Perfumaria.dbo.utilizador
 );
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.funcionario', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.funcionario
-GO
 CREATE TABLE Perfumaria.dbo.funcionario
 (
     email VARCHAR(255) NOT NULL,
@@ -155,9 +274,6 @@ CREATE TABLE Perfumaria.dbo.funcionario
 );
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.contacto', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.contacto
-GO
 CREATE TABLE Perfumaria.dbo.contacto
 (
     id INT IDENTITY(1,1) NOT NULL,
@@ -175,10 +291,6 @@ CREATE TABLE Perfumaria.dbo.contacto
 );
 GO
 
-
-IF OBJECT_ID('Perfumaria.dbo.compra_tem_produto', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.compra_tem_produto
-GO
 CREATE TABLE Perfumaria.dbo.compra_tem_produto
 (
     compranumero INT NOT NULL,
@@ -189,10 +301,6 @@ CREATE TABLE Perfumaria.dbo.compra_tem_produto
 );
 GO
 
-
-IF OBJECT_ID('Perfumaria.dbo.compra', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.compra
-GO
 CREATE TABLE Perfumaria.dbo.compra
 (
     numero INT NOT NULL IDENTITY(1,1),
@@ -207,9 +315,6 @@ CREATE TABLE Perfumaria.dbo.compra
 );
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.servico', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.servico
-GO
 CREATE TABLE Perfumaria.dbo.servico
 (
     id INT IDENTITY(1,1) NOT NULL,
@@ -220,10 +325,6 @@ CREATE TABLE Perfumaria.dbo.servico
 );
 GO
 
-
-IF OBJECT_ID('Perfumaria.dbo.funcionario_faz_servico', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.funcionario_faz_servico
-GO
 CREATE TABLE Perfumaria.dbo.funcionario_faz_servico
 (
     funcionario_email VARCHAR(255) NOT NULL,
@@ -234,10 +335,6 @@ CREATE TABLE Perfumaria.dbo.funcionario_faz_servico
 );
 GO
 
-
-IF OBJECT_ID('Perfumaria.dbo.compra_online', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.compra_online
-GO
 CREATE TABLE Perfumaria.dbo.compra_online
 (
     numero INT NOT NULL,
@@ -251,9 +348,6 @@ CREATE TABLE Perfumaria.dbo.compra_online
 );
 GO
 
-IF OBJECT_ID('Perfumaria.dbo.compra_presencial', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.compra_presencial
-GO
 CREATE TABLE Perfumaria.dbo.compra_presencial
 (
     numero INT NOT NULL,
@@ -263,10 +357,6 @@ CREATE TABLE Perfumaria.dbo.compra_presencial
 );
 GO
 
-
-IF OBJECT_ID('Perfumaria.dbo.marcacao', 'U') IS NOT NULL
-DROP TABLE Perfumaria.dbo.marcacao
-GO
 CREATE TABLE Perfumaria.dbo.marcacao
 (
     id INT NOT NULL IDENTITY(1,1),
@@ -280,6 +370,7 @@ CREATE TABLE Perfumaria.dbo.marcacao
 GO
 
 
+-- CONSTRAINTS
 ALTER TABLE Perfumaria.dbo.produto_tem_promocao ADD CONSTRAINT produto_tem_promocao_produtoid_fr FOREIGN KEY (produtoid) REFERENCES Perfumaria.dbo.produto(id);
 ALTER TABLE Perfumaria.dbo.produto_tem_promocao ADD CONSTRAINT produto_tem_promocao_promocaoid_fr FOREIGN KEY (promocaoid) REFERENCES Perfumaria.dbo.promocao(id);
 
@@ -318,5 +409,4 @@ ALTER TABLE Perfumaria.dbo.compra_presencial ADD CONSTRAINT compra_presencial_fu
 ALTER TABLE Perfumaria.dbo.marcacao ADD CONSTRAINT marcacao_clienteemail_fr FOREIGN KEY (cliente_email) REFERENCES Perfumaria.dbo.cliente(email);
 ALTER TABLE Perfumaria.dbo.marcacao ADD CONSTRAINT marcacao_servicoid_fr FOREIGN KEY (servico_id) REFERENCES Perfumaria.dbo.servico(id);
 ALTER TABLE Perfumaria.dbo.marcacao ADD CONSTRAINT marcacao_funcemail_fr FOREIGN KEY (funcionario_email) REFERENCES Perfumaria.dbo.funcionario(email);
-
 

@@ -1,5 +1,6 @@
 import pyodbc
 import xlrd 
+import sys
 
 loc = ("./dados.xlsx") 
 
@@ -8,16 +9,14 @@ wb = xlrd.open_workbook(loc)
 
 
 # Ligação à base de dados
-try:
-    conn = pyodbc.connect('Driver={SQL Server};'
-                        'Server=;'  #FIXME Adicionar o nome do serviodr
-                        'Database=Perfumaria;'
-                        'Trusted_Connection=yes;')
-    cursor = conn.cursor()
 
-except:
-    print("Erro ao ligar à base de dados!")
-    sys.exit()
+conn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};'
+                    'Server=HUGOPAIVA450A;'  #FIXME Adicionar o nome do serviodr
+                    'Database=Perfumaria;'
+                    'Trusted_Connection=yes;')
+cursor = conn.cursor()
+
+
 
 
 # Funções de Inserção
@@ -27,10 +26,10 @@ def promocao(id, nome, desconto, datainicio, datafim):
 def produto_tem_promocao(produtoid, promocaoid):
     cursor.execute('INSERT INTO produto_tem_promocao VALUES (?,?)', (produtoid, promocaoid))
 
-def produto(id, preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario):
-    call = 'INSERT INTO Customers (id, preco, categoria, nome, marca, linha, imagem, stock'
+def produto(id, preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted):
+    call = 'INSERT INTO produto (id, preco, categoria, nome, marca, linha, imagem, stock, deleted'
     count = 0
-    values = [id, preco, categoria, nome, marca, linha, imagem, stock]
+    values = [id, preco, categoria, nome, marca, linha, imagem, stock, deleted]
     if familiaolfativa != '':
         call+=', familiaolfativa'
         values.append(familiaolfativa)
@@ -47,7 +46,7 @@ def produto(id, preco, familiaolfativa, categoria, nome, marca, linha, tamanho, 
         call+=', destinatario'
         values.append(destinatario)
         count+=1
-    call+=') VALUES (?, ?, ?, ?, ?, ?, ?, ?'
+    call+=') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?'
     for x in range(0, count):
         call+=', ?'
     call+=')'
@@ -165,7 +164,7 @@ def choose(sheet, values):
     elif sheet == "produto_tem_promocao":
         produto_tem_promocao(values[0], values[1])
     elif sheet == "produto":
-        produto(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8], values[9], values[10], values[11])
+        produto(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8], values[9], values[10], values[11], values[12])
     elif sheet == "perfume":
         perfume(values[0])
     elif sheet == "cosmetica":

@@ -21,9 +21,83 @@ BEGIN
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.dbo.funcionario WHERE email=@emailFunc AND administrator>0)
             BEGIN
-                UPDATE Perfumaria.dbo.produto
-                SET preco=@preco, familiaolfativa=@familiaolfativa, categoria=@categoria, nome=@nome, marca=@marca, linha=@linha, tamanho=@tamanho, descricao=@descricao, imagem=@imagem, stock=@stock, destinatario=@destinatario
-                WHERE id=@id
+                IF @preco <> 'None'
+                BEGIN
+                    UPDATE Perfumaria.dbo.produto
+                    SET preco = @preco
+                    WHERE id = @id
+                END
+
+                IF @familiaolfativa <> 'None'
+                BEGIN
+                    UPDATE Perfumaria.dbo.produto
+                    SET familiaolfativa = @familiaolfativa
+                    WHERE id = @id
+                END
+
+                IF @categoria <> 'None'
+                BEGIN
+                    UPDATE Perfumaria.dbo.produto
+                    SET categoria = @categoria
+                    WHERE id = @id
+                END
+
+                IF @nome <> 'None'
+                BEGIN
+                    UPDATE Perfumaria.dbo.produto
+                    SET nome = @nome
+                    WHERE id = @id
+                END
+
+                IF @marca <> 'None'
+                BEGIN
+                    UPDATE Perfumaria.dbo.produto
+                    SET marca = @marca
+                    WHERE id = @id
+                END
+
+                IF @linha <> 'None'
+                BEGIN
+                    UPDATE Perfumaria.dbo.produto
+                    SET linha = @linha
+                    WHERE id = @id
+                END
+                
+                IF @tamanho <> 'None'
+                BEGIN
+                    UPDATE Perfumaria.dbo.produto
+                    SET tamanho = @tamanho
+                    WHERE id = @id
+                END
+
+                IF @descricao <> 'None'
+                BEGIN
+                    UPDATE Perfumaria.dbo.produto
+                    SET descricao = @descricao
+                    WHERE id = @id
+                END
+
+                IF @imagem <> 'None'
+                BEGIN
+                    UPDATE Perfumaria.dbo.produto
+                    SET imagem = @imagem
+                    WHERE id = @id
+                END
+
+                IF @stock <> 'None'
+                BEGIN
+                    UPDATE Perfumaria.dbo.produto
+                    SET stock = @stock
+                    WHERE id = @id
+                END
+
+                IF @destinatario <> 'None'
+                BEGIN
+                    UPDATE Perfumaria.dbo.produto
+                    SET destinatario = @destinatario
+                    WHERE id = @id
+                END
+
                 SET @responseMessage='Success'
             END
         ELSE
