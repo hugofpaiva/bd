@@ -6,7 +6,7 @@ loc = ("./dados.xlsx")
 # Abrir Workbook
 wb = xlrd.open_workbook(loc) 
 
-'''
+
 # Ligação à base de dados
 try:
     conn = pyodbc.connect('Driver={SQL Server};'
@@ -18,67 +18,145 @@ try:
 except:
     print("Erro ao ligar à base de dados!")
     sys.exit()
-'''
+
 
 # Funções de Inserção
-
-
 def promocao(id, nome, desconto, datainicio, datafim):
-    print("Promocao")
+    cursor.execute('INSERT INTO promocao VALUES (?,?,?,?,?)', (id, nome, desconto, datainicio, datafim))
 
 def produto_tem_promocao(produtoid, promocaoid):
-    print("Produtotem")
+    cursor.execute('INSERT INTO produto_tem_promocao VALUES (?,?)', (produtoid, promocaoid))
 
 def produto(id, preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario):
-    print("Produto")
+    call = 'INSERT INTO Customers (id, preco, categoria, nome, marca, linha, imagem, stock'
+    count = 0
+    values = [id, preco, categoria, nome, marca, linha, imagem, stock]
+    if familiaolfativa != '':
+        call+=', familiaolfativa'
+        values.append(familiaolfativa)
+        count+=1
+    if tamanho != '':
+        call+=', tamanho'
+        values.append(tamanho)
+        count+=1
+    if descricao != '':
+        call+=', descricao'
+        values.append(descricao)
+        count+=1
+    if destinatario != '':
+        call+=', destinatario'
+        values.append(destinatario)
+        count+=1
+    call+=') VALUES (?, ?, ?, ?, ?, ?, ?, ?'
+    for x in range(0, count):
+        call+=', ?'
+    call+=')'
+    cursor.execute(call, tuple(values))
+    
 
 def perfume(id):
-    print("Perfume")
+    cursor.execute('INSERT INTO perfume VALUES (?)', (id))
 
 def cosmetica(id, tipo):
-    print("Cosmetica")
+    cursor.execute('INSERT INTO cosmetica VALUES (?, ?)', (id, tipo))
 
 def clientefavorita(clienteemail, produtoid):
-    print("Favorita")
+    cursor.execute('INSERT INTO clientefavorita VALUES (?, ?)', (clienteemail, produtoid))
 
 def cupao(id, datainicio, datafim, pontos_atribuidos):
-    print("CUPAO")
+    cursor.execute('INSERT INTO cupao VALUES (?, ?, ?, ?)', (id, datainicio, datafim, pontos_atribuidos))
 
 def cliente_usa_cupao(cliente_email, cupao_id):
-    print("usacupa")
+    cursor.execute('INSERT INTO cliente_usa_cupao VALUES (?, ?)', (cliente_email, cupao_id))
 
 def cliente(email, pontos, newsletter, pagamento):
-    print("clien")
+    call = 'INSERT INTO cliente (email, pontos, newsletter'
+    count = 0
+    values = [email, pontos, newsletter]
+    if pagamento != '':
+        call+=', pagamento'
+        values.append(pagamento)
+        count+=1
+    call+=') VALUES (?, ?, ?'
+    for x in range(0, count):
+        call+=', ?'
+    call+=')'
+    cursor.execute(call, tuple(values))
 
 def utilizador(email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, contacto_default_id):
-    print("utilizado")
+    call = 'INSERT INTO utilizador (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto'
+    count = 0
+    values = [email, contribuinte, fname, lname, pw, sexo, dataNasc, foto]
+    if contacto_default_id != '':
+        call+=', contacto_default_id'
+        values.append(contacto_default_id)
+        count+=1
+    call+=') VALUES (?, ?, ?, ?, ?, ?, ?, ?'
+    for x in range(0, count):
+        call+=', ?'
+    call+=')'
+    cursor.execute(call, tuple(values))
 
 def funcionario(email, administrator, salario):
-    print("funcionario")
+    cursor.execute('INSERT INTO funcionario VALUES (?, ?, ?)', (email, administrator, salario))
 
 def contacto(id, utilizador_email, telemovel, visibilidade, codigo_postal, pais, endereco, apartamento, localidade):
-    print("contacto")
+    cursor.execute('INSERT INTO contacto VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', (id, utilizador_email, telemovel, visibilidade, codigo_postal, pais, endereco, apartamento, localidade))
 
 def compra_tem_produto(compranumero, produtoid, unidades):
-    print("compra_tem_produto")
+    cursor.execute('INSERT INTO compra_tem_produto VALUES (?, ?, ?)', (compranumero, produtoid, unidades))
 
 def compra(numero, contribuinte, datacompra, pagamento, clienteemail, pontosgastos, pontosacumulados):
-    print("Compra")
+    call = 'INSERT INTO compra (numero, contribuinte, datacompra, pagamento, clienteemail'
+    count = 0
+    values = [numero, contribuinte, datacompra, pagamento, clienteemail]
+    if pontosgastos != '':
+        call+=', pontosgastos'
+        values.append(pontosgastos)
+        count+=1
+    if pontosacumulados != '':
+        call+=', pontosacumulados'
+        values.append(pontosacumulados)
+        count+=1
+    call+=') VALUES (?, ?, ?, ?, ?'
+    for x in range(0, count):
+        call+=', ?'
+    call+=')'
+    cursor.execute(call, tuple(values))
 
 def servico(id, tipo, preco):
-    print("servico")
+    cursor.execute('INSERT INTO servico VALUES (?, ?, ?)', (id, tipo, preco))
 
 def funcionario_faz_servico(funcionario_email, servico_id, duracao_media):
-    print("funcionariofaz")
+    cursor.execute('INSERT INTO funcionario_faz_servico VALUES (?, ?, ?)', (funcionario_email, servico_id, duracao_media))
 
 def compra_online(numero, rating, observacao, rastreamento, presente, contactoid):
-    print("compra_online")
+    call = 'INSERT INTO compra_online (numero, presente, contactoid'
+    count = 0
+    values = [numero, presente, contactoidl]
+    if rating != '':
+        call+=', rating'
+        values.append(rating)
+        count+=1
+    if observacao != '':
+        call+=', observacao'
+        values.append(observacao)
+        count+=1
+    if rastreamento != '':
+        call+=', rastreamento'
+        values.append(rastreamento)
+        count+=1
+    call+=') VALUES (?, ?, ?'
+    for x in range(0, count):
+        call+=', ?'
+    call+=')'
+    cursor.execute(call, tuple(values))
 
 def compra_presencial(numero, funcemail):
-    print("compra_presencial")
+    cursor.execute('INSERT INTO compra_presencial VALUES (?, ?)', (funcionario_email, servico_id, duracao_media))
 
 def marcacao(id, cliente_email, servico_id, funcionario_email, dataMarc):
-    print("marcacao")
+    cursor.execute('INSERT INTO marcacao VALUES (?, ?, ?, ?, ?)', (id, cliente_email, servico_id, funcionario_email, dataMarc))
 
 
 def choose(sheet, values):
@@ -130,47 +208,4 @@ for sheet_name in pointSheets:
     for row in range(1,sheet.nrows):
         call = [sheet.cell_value(row, column) for column in range(0, sheet.ncols)]
         choose(sheet_name, call)
-
     counter+=1
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-cursor.execute('SELECT * FROM TestDB.dbo.Person')
- 
-for row in cursor:
-    print(row)
-
-# Do this instead
-t = ('RHAT',)
-c.execute('SELECT * FROM stocks WHERE symbol=?', t)
-print c.fetchone()
-
-# Larger example that inserts many records at a time
-purchases = [('2006-03-28', 'BUY', 'IBM', 1000, 45.00),
-             ('2006-04-05', 'BUY', 'MSFT', 1000, 72.00),
-             ('2006-04-06', 'SELL', 'IBM', 500, 53.00),
-            ]
-c.executemany('INSERT INTO stocks VALUES (?,?,?,?,?)', purchases)
-
-# Multiple values single statement/execution
-c.execute('SELECT * FROM stocks WHERE symbol=? OR symbol=?', ('RHAT', 'MSO'))
-print c.fetchall()
-c.execute('SELECT * FROM stocks WHERE symbol IN (?, ?)', ('RHAT', 'MSO'))
-print c.fetchall()
-# This also works, though ones above are better as a habit as it's inline with syntax of executemany().. but your choice.
-c.execute('SELECT * FROM stocks WHERE symbol=? OR symbol=?', 'RHAT', 'MSO')
-print c.fetchall()
-# Insert a single item
-c.execute('INSERT INTO stocks VALUES (?,?,?,?,?)', ('2006-03-28', 'BUY', 'IBM', 1000, 45.00))
-'''
