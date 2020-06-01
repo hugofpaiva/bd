@@ -82,19 +82,26 @@ def cliente(email, pontos, newsletter, pagamento):
     call+=')'
     cursor.execute(call, tuple(values))
 
-def utilizador(email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, contacto_default_id):
-    call = 'INSERT INTO utilizador (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto'
-    count = 0
-    values = [email, contribuinte, fname, lname, pw, sexo, dataNasc, foto]
-    if contacto_default_id != '':
-        call+=', contacto_default_id'
-        values.append(contacto_default_id)
-        count+=1
-    call+=') VALUES (?, ?, ?, ?, ?, ?, ?, ?'
-    for x in range(0, count):
-        call+=', ?'
-    call+=')'
-    cursor.execute(call, tuple(values))
+def utilizador(email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, contacto_default_id, pontos, newsletter, pagamento, administrator, salario):
+    if(pontos != ''):
+        call = """\
+    DECLARE @responseMessage VARCHAR(250);
+    EXEC dbo.RegisterClient @responseMessage OUTPUT, @email=?, @contribuinte=?, @fname=?, @lname=?, @password=?, @sexo=?, @dataNasc=?, @foto=?, @pontos=?, @newsletter=?, @pagamento=?, @contacto_default_id=?;
+    SELECT @responseMessage AS rm;
+    """
+        values = (email, contribuinte, fname, lname, pw, sexo, grade, dataNasc, foto, pontos, newsletter, pagamento, contacto_default_id)
+        cursor.execute(call, values)
+        rm = cursor.fetchval()
+    else if(administrator != ''):
+        call = """\
+        DECLARE @responseMessage VARCHAR(250);
+        EXEC dbo.RegisterFunc @responseMessage OUTPUT, @email=?, @contribuinte=?, @fname=?, @lname=?, @password=?, @sexo=?, @dataNasc=?, @foto=?, @administrator=?, @salario=?, @contacto_default_id=?;
+        SELECT @responseMessage AS rm;
+        """
+        values = (email, contribuinte, fname, lname, pw, sexo, grade, dataNasc, foto, administrator, salario, contacto_default_id)
+        cursor.execute(call, values)
+        rm = cursor.fetchval()
+    
 
 def funcionario(email, administrator, salario):
     cursor.execute('INSERT INTO funcionario VALUES (?, ?, ?)', (email, administrator, salario))
@@ -178,7 +185,7 @@ def choose(sheet, values):
     elif sheet == "cliente":
         cliente(values[0], values[1], values[2], values[3])
     elif sheet == "utilizador":
-        utilizador(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8])
+        utilizador(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8], values[9], values[10], values[11], values[12], values[13])
     elif sheet == "funcionario":
         funcionario(values[0], values[1], values[2])
     elif sheet == "contacto":

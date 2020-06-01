@@ -10,6 +10,7 @@ CREATE PROCEDURE dbo.RegisterFunc
     @foto VARCHAR(100),
     @salario INT,
     @administrator TINYINT,
+    @contacto_default_id INT,
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
@@ -18,8 +19,8 @@ BEGIN
     BEGIN TRY
 
         INSERT INTO Perfumaria.dbo.utilizador
-        (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto)
-    VALUES(@email, @contribuinte, @fname, @lname, HASHBYTES('SHA2_512', @password), @sexo, @dataNasc, @foto)
+        (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, contacto_default_id)
+    VALUES(@email, @contribuinte, @fname, @lname, HASHBYTES('SHA2_512', @password), @sexo, @dataNasc, @foto, @contacto_default_id)
 
     INSERT INTO Perfumaria.dbo.funcionario
         (email, administrator, salario)
@@ -47,6 +48,8 @@ CREATE PROCEDURE dbo.RegisterClient
     @foto VARCHAR(100),
     @pontos INT,
     @newsletter BIT,
+    @pagamento VARCHAR(10),
+    @contacto_default_id INT,
     @responseMessage VARCHAR(250) OUTPUT
 AS
 BEGIN
@@ -55,12 +58,12 @@ BEGIN
     BEGIN TRY
 
         INSERT INTO Perfumaria.dbo.utilizador
-        (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto)
-    VALUES(@email, @contribuinte, @fname, @lname, HASHBYTES('SHA2_512', @password), @sexo, @dataNasc, @foto)
+        (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, contacto_default_id)
+    VALUES(@email, @contribuinte, @fname, @lname, HASHBYTES('SHA2_512', @password), @sexo, @dataNasc, @foto, @contacto_default_id)
 
     INSERT INTO Perfumaria.dbo.cliente
-        (email, pontos, newsletter)
-    VALUES(@email, @pontos, @newsletter)
+        (email, pontos, newsletter, pagamento)
+    VALUES(@email, @pontos, @newsletter, @pagamento)
 
     SET @responseMessage='Success'
 
