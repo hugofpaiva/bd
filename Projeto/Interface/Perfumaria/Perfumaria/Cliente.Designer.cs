@@ -50,15 +50,44 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Contactos = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Histórico = new System.Windows.Forms.TabPage();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.Compras = new System.Windows.Forms.TabPage();
+            this.Servicos = new System.Windows.Forms.TabPage();
             this.Loja = new System.Windows.Forms.TabPage();
             this.Marcações = new System.Windows.Forms.TabPage();
             this.Cupões = new System.Windows.Forms.TabPage();
             this.Favoritos = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
-            this.Compras = new System.Windows.Forms.TabPage();
-            this.Servicos = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.marcar = new System.Windows.Forms.TabPage();
+            this.future = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -67,6 +96,17 @@
             this.Contactos.SuspendLayout();
             this.Histórico.SuspendLayout();
             this.tabControl3.SuspendLayout();
+            this.Compras.SuspendLayout();
+            this.Servicos.SuspendLayout();
+            this.Loja.SuspendLayout();
+            this.Marcações.SuspendLayout();
+            this.Cupões.SuspendLayout();
+            this.Favoritos.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tabControl4.SuspendLayout();
+            this.marcar.SuspendLayout();
+            this.future.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -314,53 +354,6 @@
             this.Contactos.Text = "Contactos";
             this.Contactos.UseVisualStyleBackColor = true;
             // 
-            // Histórico
-            // 
-            this.Histórico.Controls.Add(this.tabControl3);
-            this.Histórico.Location = new System.Drawing.Point(4, 22);
-            this.Histórico.Name = "Histórico";
-            this.Histórico.Padding = new System.Windows.Forms.Padding(3);
-            this.Histórico.Size = new System.Drawing.Size(768, 400);
-            this.Histórico.TabIndex = 1;
-            this.Histórico.Text = "Histórico";
-            this.Histórico.UseVisualStyleBackColor = true;
-            // 
-            // Loja
-            // 
-            this.Loja.Location = new System.Drawing.Point(4, 22);
-            this.Loja.Name = "Loja";
-            this.Loja.Size = new System.Drawing.Size(768, 400);
-            this.Loja.TabIndex = 2;
-            this.Loja.Text = "Loja Online";
-            this.Loja.UseVisualStyleBackColor = true;
-            // 
-            // Marcações
-            // 
-            this.Marcações.Location = new System.Drawing.Point(4, 22);
-            this.Marcações.Name = "Marcações";
-            this.Marcações.Size = new System.Drawing.Size(768, 400);
-            this.Marcações.TabIndex = 3;
-            this.Marcações.Text = "Marcações";
-            this.Marcações.UseVisualStyleBackColor = true;
-            // 
-            // Cupões
-            // 
-            this.Cupões.Location = new System.Drawing.Point(4, 22);
-            this.Cupões.Name = "Cupões";
-            this.Cupões.Size = new System.Drawing.Size(768, 400);
-            this.Cupões.TabIndex = 4;
-            this.Cupões.Text = "Cupões";
-            this.Cupões.UseVisualStyleBackColor = true;
-            // 
-            // Favoritos
-            // 
-            this.Favoritos.Location = new System.Drawing.Point(4, 22);
-            this.Favoritos.Name = "Favoritos";
-            this.Favoritos.Size = new System.Drawing.Size(768, 400);
-            this.Favoritos.TabIndex = 5;
-            this.Favoritos.Text = "Favoritos";
-            this.Favoritos.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -374,6 +367,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(764, 378);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // Histórico
+            // 
+            this.Histórico.Controls.Add(this.tabControl3);
+            this.Histórico.Location = new System.Drawing.Point(4, 22);
+            this.Histórico.Name = "Histórico";
+            this.Histórico.Padding = new System.Windows.Forms.Padding(3);
+            this.Histórico.Size = new System.Drawing.Size(768, 400);
+            this.Histórico.TabIndex = 1;
+            this.Histórico.Text = "Histórico";
+            this.Histórico.UseVisualStyleBackColor = true;
+            // 
             // tabControl3
             // 
             this.tabControl3.Controls.Add(this.Compras);
@@ -386,6 +390,7 @@
             // 
             // Compras
             // 
+            this.Compras.Controls.Add(this.tableLayoutPanel2);
             this.Compras.Location = new System.Drawing.Point(4, 22);
             this.Compras.Name = "Compras";
             this.Compras.Padding = new System.Windows.Forms.Padding(3);
@@ -396,6 +401,7 @@
             // 
             // Servicos
             // 
+            this.Servicos.Controls.Add(this.tableLayoutPanel3);
             this.Servicos.Location = new System.Drawing.Point(4, 22);
             this.Servicos.Name = "Servicos";
             this.Servicos.Padding = new System.Windows.Forms.Padding(3);
@@ -403,6 +409,372 @@
             this.Servicos.TabIndex = 1;
             this.Servicos.Text = "Serviços";
             this.Servicos.UseVisualStyleBackColor = true;
+            // 
+            // Loja
+            // 
+            this.Loja.Controls.Add(this.panel1);
+            this.Loja.Controls.Add(this.tableLayoutPanel4);
+            this.Loja.Location = new System.Drawing.Point(4, 22);
+            this.Loja.Name = "Loja";
+            this.Loja.Size = new System.Drawing.Size(768, 400);
+            this.Loja.TabIndex = 2;
+            this.Loja.Text = "Loja Online";
+            this.Loja.UseVisualStyleBackColor = true;
+            // 
+            // Marcações
+            // 
+            this.Marcações.Controls.Add(this.tabControl4);
+            this.Marcações.Location = new System.Drawing.Point(4, 22);
+            this.Marcações.Name = "Marcações";
+            this.Marcações.Size = new System.Drawing.Size(768, 400);
+            this.Marcações.TabIndex = 3;
+            this.Marcações.Text = "Marcações";
+            this.Marcações.UseVisualStyleBackColor = true;
+            // 
+            // Cupões
+            // 
+            this.Cupões.Controls.Add(this.panel2);
+            this.Cupões.Controls.Add(this.tableLayoutPanel6);
+            this.Cupões.Location = new System.Drawing.Point(4, 22);
+            this.Cupões.Name = "Cupões";
+            this.Cupões.Size = new System.Drawing.Size(768, 400);
+            this.Cupões.TabIndex = 4;
+            this.Cupões.Text = "Cupões";
+            this.Cupões.UseVisualStyleBackColor = true;
+            // 
+            // Favoritos
+            // 
+            this.Favoritos.Controls.Add(this.tableLayoutPanel7);
+            this.Favoritos.Location = new System.Drawing.Point(4, 22);
+            this.Favoritos.Name = "Favoritos";
+            this.Favoritos.Size = new System.Drawing.Size(768, 400);
+            this.Favoritos.TabIndex = 5;
+            this.Favoritos.Text = "Favoritos";
+            this.Favoritos.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(764, 378);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(764, 378);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 64);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(768, 336);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(768, 67);
+            this.panel1.TabIndex = 1;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(20, 20);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(212, 27);
+            this.textBox5.TabIndex = 0;
+            this.textBox5.Text = "Pesquisar...";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(451, 26);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(151, 21);
+            this.comboBox2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(489, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Filtros";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(608, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(66, 29);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Crescente";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(680, 21);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(85, 29);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Decrescente";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // tabControl4
+            // 
+            this.tabControl4.Controls.Add(this.marcar);
+            this.tabControl4.Controls.Add(this.future);
+            this.tabControl4.Location = new System.Drawing.Point(0, 0);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(765, 400);
+            this.tabControl4.TabIndex = 0;
+            // 
+            // marcar
+            // 
+            this.marcar.Controls.Add(this.label14);
+            this.marcar.Controls.Add(this.button4);
+            this.marcar.Controls.Add(this.comboBox4);
+            this.marcar.Controls.Add(this.label12);
+            this.marcar.Controls.Add(this.dateTimePicker1);
+            this.marcar.Controls.Add(this.label11);
+            this.marcar.Controls.Add(this.comboBox3);
+            this.marcar.Controls.Add(this.label8);
+            this.marcar.Controls.Add(this.label5);
+            this.marcar.Location = new System.Drawing.Point(4, 22);
+            this.marcar.Name = "marcar";
+            this.marcar.Padding = new System.Windows.Forms.Padding(3);
+            this.marcar.Size = new System.Drawing.Size(757, 374);
+            this.marcar.TabIndex = 0;
+            this.marcar.Text = "Marcar";
+            this.marcar.UseVisualStyleBackColor = true;
+            // 
+            // future
+            // 
+            this.future.Controls.Add(this.tableLayoutPanel5);
+            this.future.Location = new System.Drawing.Point(4, 22);
+            this.future.Name = "future";
+            this.future.Padding = new System.Windows.Forms.Padding(3);
+            this.future.Size = new System.Drawing.Size(757, 374);
+            this.future.TabIndex = 1;
+            this.future.Text = "Marcações Futuras";
+            this.future.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(339, 297);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(64, 16);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Erro...";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(308, 316);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(128, 41);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Marcar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(283, 237);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(173, 21);
+            this.comboBox4.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(294, 211);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(153, 23);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Funcionário";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(491, 158);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 13;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(562, 132);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 23);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Data";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(65, 158);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(173, 21);
+            this.comboBox3.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(103, 132);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 23);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Serviço";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Courier New", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(235, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(281, 36);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Marcar Serviço";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(-1, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(758, 371);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(20, 20);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(212, 27);
+            this.textBox6.TabIndex = 0;
+            this.textBox6.Text = "Inserir Cupão";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.textBox6);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(768, 67);
+            this.panel2.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label15.Location = new System.Drawing.Point(599, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(138, 18);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Pontos Atuais";
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 64);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(768, 336);
+            this.tableLayoutPanel6.TabIndex = 2;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox7.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(594, 31);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(145, 27);
+            this.textBox7.TabIndex = 3;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(248, 23);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(78, 18);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Erro...";
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(768, 400);
+            this.tableLayoutPanel7.TabIndex = 0;
             // 
             // Cliente
             // 
@@ -422,6 +794,20 @@
             this.Contactos.ResumeLayout(false);
             this.Histórico.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
+            this.Compras.ResumeLayout(false);
+            this.Servicos.ResumeLayout(false);
+            this.Loja.ResumeLayout(false);
+            this.Marcações.ResumeLayout(false);
+            this.Cupões.ResumeLayout(false);
+            this.Favoritos.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabControl4.ResumeLayout(false);
+            this.marcar.ResumeLayout(false);
+            this.marcar.PerformLayout();
+            this.future.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -459,5 +845,34 @@
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage Compras;
         private System.Windows.Forms.TabPage Servicos;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabPage marcar;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage future;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
     }
 }

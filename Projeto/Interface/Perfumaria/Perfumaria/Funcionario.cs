@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace Perfumaria
 {
-    public partial class Cliente : Form
+    public partial class Funcionario : Form
     {
-        public Cliente()
+        public Funcionario()
         {
             InitializeComponent();
         }
 
-        private void Cliente_Load(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
+        private void tableLayoutPanel7_Paint(object sender, PaintEventArgs e)
         {
 
         }

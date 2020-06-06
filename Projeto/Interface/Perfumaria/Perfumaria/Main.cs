@@ -71,5 +71,10 @@ namespace Perfumaria
         {
 
         }
+
+        private void Registo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
