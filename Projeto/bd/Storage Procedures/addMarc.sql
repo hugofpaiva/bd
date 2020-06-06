@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.addMarc
+CREATE PROCEDURE perf.addMarc
     @cliente_email VARCHAR(255),
     @servico_id INT,
     @funcionario_email VARCHAR(255),
@@ -11,7 +11,7 @@ BEGIN
     
     BEGIN TRY
 
-        INSERT INTO Perfumaria.dbo.marcacao
+        INSERT INTO Perfumaria.perf.marcacao
         (cliente_email, servico_id, funcionario_email, dataMarc)
         VALUES(@cliente_email, @servico_id, @funcionario_email, @dataMarc)
 

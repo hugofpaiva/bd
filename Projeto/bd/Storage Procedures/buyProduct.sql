@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.addContact
+CREATE PROCEDURE perf.addContact
     @contribuinte CHAR(9),
     @datacompra DATETIME,
     @pagamento VARCHAR(10),
@@ -15,11 +15,11 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        INSERT INTO Perfumaria.dbo.compra
+        INSERT INTO Perfumaria.perf.compra
         (contribuinte, datacompra, pagamento, clienteemail, pontosgastos, pontosacumulados)
         VALUES(@contribuinte, @datacompra, @pagamento, @clienteemail, @pontosgastos, @pontosacumulados) 
 
-        INSERT INTO Perfumaria.dbo.compra_tem_produto
+        INSERT INTO Perfumaria.perf.compra_tem_produto
         (compranumero, produtoid, unidades)
         VALUES(@compranumero, @produtoid, @unidades) 
 

@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.addContact
+CREATE PROCEDURE perf.addContact
     @utilizador_email VARCHAR(255),
     @telemovel CHAR(9),
     @visibilidade BIT,
@@ -14,7 +14,7 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        INSERT INTO Perfumaria.dbo.contacto
+        INSERT INTO Perfumaria.perf.contacto
         (utilizador_email telemovel, visibilidade, codigo_postal, pais, endereco, apartamento, localidade)
         VALUES(@utilizador_email @telemovel, @visibilidade, @codigo_postal, @pais, @endereco, @apartamento, @localidade) 
         SET @responseMessage='Success'

@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.loginbutton = new System.Windows.Forms.Button();
+            this.signup = new System.Windows.Forms.Button();
+            this.emaillogin = new System.Windows.Forms.TextBox();
+            this.pwlogin = new System.Windows.Forms.TextBox();
             this.Login = new System.Windows.Forms.Panel();
             this.Registo = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.nascimento = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.newsletter = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.sex = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.lname = new System.Windows.Forms.TextBox();
+            this.fname = new System.Windows.Forms.TextBox();
+            this.contribuinte = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.confirmpw = new System.Windows.Forms.TextBox();
+            this.pw = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,41 +63,41 @@
             this.Registo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // loginbutton
             // 
-            this.button1.Location = new System.Drawing.Point(253, 283);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 63);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.loginbutton.Location = new System.Drawing.Point(253, 283);
+            this.loginbutton.Name = "loginbutton";
+            this.loginbutton.Size = new System.Drawing.Size(114, 63);
+            this.loginbutton.TabIndex = 0;
+            this.loginbutton.Text = "Login";
+            this.loginbutton.UseVisualStyleBackColor = true;
+            this.loginbutton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // signup
             // 
-            this.button2.Location = new System.Drawing.Point(419, 283);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 63);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Sign Up";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.signup.Location = new System.Drawing.Point(419, 283);
+            this.signup.Name = "signup";
+            this.signup.Size = new System.Drawing.Size(102, 63);
+            this.signup.TabIndex = 1;
+            this.signup.Text = "Sign Up";
+            this.signup.UseVisualStyleBackColor = true;
+            this.signup.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // emaillogin
             // 
-            this.textBox1.Location = new System.Drawing.Point(253, 136);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 30);
-            this.textBox1.TabIndex = 2;
+            this.emaillogin.Location = new System.Drawing.Point(253, 136);
+            this.emaillogin.Multiline = true;
+            this.emaillogin.Name = "emaillogin";
+            this.emaillogin.Size = new System.Drawing.Size(268, 30);
+            this.emaillogin.TabIndex = 2;
             // 
-            // textBox2
+            // pwlogin
             // 
-            this.textBox2.Location = new System.Drawing.Point(253, 208);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(268, 30);
-            this.textBox2.TabIndex = 3;
+            this.pwlogin.Location = new System.Drawing.Point(253, 208);
+            this.pwlogin.Multiline = true;
+            this.pwlogin.Name = "pwlogin";
+            this.pwlogin.Size = new System.Drawing.Size(268, 30);
+            this.pwlogin.TabIndex = 3;
             // 
             // Login
             // 
@@ -105,10 +105,10 @@
             this.Login.Controls.Add(this.label3);
             this.Login.Controls.Add(this.label2);
             this.Login.Controls.Add(this.label1);
-            this.Login.Controls.Add(this.textBox1);
-            this.Login.Controls.Add(this.button1);
-            this.Login.Controls.Add(this.button2);
-            this.Login.Controls.Add(this.textBox2);
+            this.Login.Controls.Add(this.emaillogin);
+            this.Login.Controls.Add(this.loginbutton);
+            this.Login.Controls.Add(this.signup);
+            this.Login.Controls.Add(this.pwlogin);
             this.Login.Location = new System.Drawing.Point(12, 12);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(776, 426);
@@ -119,23 +119,23 @@
             this.Registo.Controls.Add(this.button3);
             this.Registo.Controls.Add(this.label15);
             this.Registo.Controls.Add(this.label14);
-            this.Registo.Controls.Add(this.dateTimePicker1);
+            this.Registo.Controls.Add(this.nascimento);
             this.Registo.Controls.Add(this.label13);
             this.Registo.Controls.Add(this.newsletter);
             this.Registo.Controls.Add(this.label12);
-            this.Registo.Controls.Add(this.comboBox1);
+            this.Registo.Controls.Add(this.sex);
             this.Registo.Controls.Add(this.label11);
             this.Registo.Controls.Add(this.label10);
             this.Registo.Controls.Add(this.label9);
-            this.Registo.Controls.Add(this.textBox8);
-            this.Registo.Controls.Add(this.textBox9);
-            this.Registo.Controls.Add(this.textBox6);
+            this.Registo.Controls.Add(this.lname);
+            this.Registo.Controls.Add(this.fname);
+            this.Registo.Controls.Add(this.contribuinte);
             this.Registo.Controls.Add(this.label8);
             this.Registo.Controls.Add(this.label7);
-            this.Registo.Controls.Add(this.textBox4);
-            this.Registo.Controls.Add(this.textBox12);
+            this.Registo.Controls.Add(this.confirmpw);
+            this.Registo.Controls.Add(this.pw);
             this.Registo.Controls.Add(this.label6);
-            this.Registo.Controls.Add(this.textBox3);
+            this.Registo.Controls.Add(this.email);
             this.Registo.Controls.Add(this.label5);
             this.Registo.Controls.Add(this.label4);
             this.Registo.Location = new System.Drawing.Point(0, 0);
@@ -174,12 +174,12 @@
             this.label14.TabIndex = 34;
             this.label14.Text = "Data de Nascimento";
             // 
-            // dateTimePicker1
+            // nascimento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(68, 341);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(268, 20);
-            this.dateTimePicker1.TabIndex = 33;
+            this.nascimento.Location = new System.Drawing.Point(68, 341);
+            this.nascimento.Name = "nascimento";
+            this.nascimento.Size = new System.Drawing.Size(268, 20);
+            this.nascimento.TabIndex = 33;
             // 
             // label13
             // 
@@ -213,16 +213,16 @@
             this.label12.TabIndex = 30;
             this.label12.Text = "Sexo";
             // 
-            // comboBox1
+            // sex
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.sex.FormattingEnabled = true;
+            this.sex.Items.AddRange(new object[] {
             "Masculino",
             "Feminino"});
-            this.comboBox1.Location = new System.Drawing.Point(589, 342);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 21);
-            this.comboBox1.TabIndex = 29;
+            this.sex.Location = new System.Drawing.Point(589, 342);
+            this.sex.Name = "sex";
+            this.sex.Size = new System.Drawing.Size(125, 21);
+            this.sex.TabIndex = 29;
             // 
             // label11
             // 
@@ -255,29 +255,29 @@
             this.label9.Text = "Primeiro Nome";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // textBox8
+            // lname
             // 
-            this.textBox8.Location = new System.Drawing.Point(446, 281);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(268, 30);
-            this.textBox8.TabIndex = 25;
+            this.lname.Location = new System.Drawing.Point(446, 281);
+            this.lname.Multiline = true;
+            this.lname.Name = "lname";
+            this.lname.Size = new System.Drawing.Size(268, 30);
+            this.lname.TabIndex = 25;
             // 
-            // textBox9
+            // fname
             // 
-            this.textBox9.Location = new System.Drawing.Point(446, 218);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(268, 30);
-            this.textBox9.TabIndex = 24;
+            this.fname.Location = new System.Drawing.Point(446, 218);
+            this.fname.Multiline = true;
+            this.fname.Name = "fname";
+            this.fname.Size = new System.Drawing.Size(268, 30);
+            this.fname.TabIndex = 24;
             // 
-            // textBox6
+            // contribuinte
             // 
-            this.textBox6.Location = new System.Drawing.Point(446, 154);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(268, 30);
-            this.textBox6.TabIndex = 23;
+            this.contribuinte.Location = new System.Drawing.Point(446, 154);
+            this.contribuinte.Multiline = true;
+            this.contribuinte.Name = "contribuinte";
+            this.contribuinte.Size = new System.Drawing.Size(268, 30);
+            this.contribuinte.TabIndex = 23;
             // 
             // label8
             // 
@@ -300,21 +300,21 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "Password";
             // 
-            // textBox4
+            // confirmpw
             // 
-            this.textBox4.Location = new System.Drawing.Point(68, 281);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(268, 30);
-            this.textBox4.TabIndex = 19;
+            this.confirmpw.Location = new System.Drawing.Point(68, 281);
+            this.confirmpw.Multiline = true;
+            this.confirmpw.Name = "confirmpw";
+            this.confirmpw.Size = new System.Drawing.Size(268, 30);
+            this.confirmpw.TabIndex = 19;
             // 
-            // textBox12
+            // pw
             // 
-            this.textBox12.Location = new System.Drawing.Point(68, 218);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(268, 30);
-            this.textBox12.TabIndex = 18;
+            this.pw.Location = new System.Drawing.Point(68, 218);
+            this.pw.Multiline = true;
+            this.pw.Name = "pw";
+            this.pw.Size = new System.Drawing.Size(268, 30);
+            this.pw.TabIndex = 18;
             // 
             // label6
             // 
@@ -326,13 +326,13 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Email";
             // 
-            // textBox3
+            // email
             // 
-            this.textBox3.Location = new System.Drawing.Point(68, 154);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(268, 30);
-            this.textBox3.TabIndex = 16;
+            this.email.Location = new System.Drawing.Point(68, 154);
+            this.email.Multiline = true;
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(268, 30);
+            this.email.TabIndex = 16;
             // 
             // label5
             // 
@@ -353,6 +353,7 @@
             this.label4.Size = new System.Drawing.Size(410, 69);
             this.label4.TabIndex = 5;
             this.label4.Text = "Perfumaria";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -406,36 +407,36 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button loginbutton;
+        private System.Windows.Forms.Button signup;
+        private System.Windows.Forms.TextBox emaillogin;
+        private System.Windows.Forms.TextBox pwlogin;
         private System.Windows.Forms.Panel Login;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel Registo;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox confirmpw;
+        private System.Windows.Forms.TextBox pw;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox lname;
+        private System.Windows.Forms.TextBox fname;
+        private System.Windows.Forms.TextBox contribuinte;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox newsletter;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox sex;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker nascimento;
     }
 }

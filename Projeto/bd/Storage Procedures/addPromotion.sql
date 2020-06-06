@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.addPromotion
+CREATE PROCEDURE perf.addPromotion
     @id INT,
     @nome VARCHAR(30),
     @desconto TINYINT,
@@ -12,9 +12,9 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        IF EXISTS(SELECT email FROM Perfumaria.dbo.funcionario WHERE email=@emailFunc AND administrator=2)
+        IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
-                INSERT INTO Perfumaria.dbo.promocao
+                INSERT INTO Perfumaria.perf.promocao
                 (id, nome, desconto, datainicio, datafim)
                 VALUES(@id, @nome, @desconto, @datainicio, @datafim) 
                 SET @responseMessage='Success'

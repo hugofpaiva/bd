@@ -1,8 +1,8 @@
-DROP PROCEDURE dbo.updateFunc;
+DROP PROCEDURE perf.updateFunc;
 GO
 
 GO
-CREATE PROCEDURE dbo.updateFunc
+CREATE PROCEDURE perf.updateFunc
 	@email VARCHAR(255), 
     @password VARCHAR(25), 
     @fname VARCHAR(20),
@@ -20,37 +20,37 @@ BEGIN
 
 		IF @fname <> 'None'
 		BEGIN
-			UPDATE Perfumaria.dbo.utilizador
+			UPDATE Perfumaria.perf.utilizador
 			SET fname = @fname
 			WHERE email = @email
 		END
 
 		IF @lname <> 'None'
 		BEGIN
-			UPDATE Perfumaria.dbo.utilizador
+			UPDATE Perfumaria.perf.utilizador
 			SET lname = @lname
 			WHERE  email = @email
 		END
 
 		IF @password <> 'None'
 		BEGIN
-			UPDATE Perfumaria.dbo.utilizador
+			UPDATE Perfumaria.perf.utilizador
 			SET pw = hashbytes('SHA2_512', @password)
 			WHERE  email = @email
 		END
 
 		IF @photo <> 'None'
 		BEGIN
-			UPDATE Perfumaria.dbo.utilizador
+			UPDATE Perfumaria.perf.utilizador
 			SET foto = @photo
 			WHERE  email = @email
 		END
 
         IF @admin <> 'None'
 		BEGIN
-            IF EXISTS (SELECT administrator FROM Perfumaria.dbo.funcionario WHERE email = @email AND administrator = 2)
+            IF EXISTS (SELECT administrator FROM Perfumaria.perf.funcionario WHERE email = @email AND administrator = 2)
             BEGIN
-                UPDATE Perfumaria.dbo.funcionario
+                UPDATE Perfumaria.perf.funcionario
                 SET administrator = @admin
                 WHERE  email = @emailOP
             END
@@ -60,9 +60,9 @@ BEGIN
 
         IF @salario <> 'None'
 		BEGIN
-            IF EXISTS (SELECT administrator FROM Perfumaria.dbo.funcionario WHERE email = @email AND administrator = 2)
+            IF EXISTS (SELECT administrator FROM Perfumaria.perf.funcionario WHERE email = @email AND administrator = 2)
             BEGIN
-                UPDATE Perfumaria.dbo.funcionario
+                UPDATE Perfumaria.perf.funcionario
                 SET salario = @salario
                 WHERE  email = @emailOP
             END

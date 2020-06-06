@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.addNewFunc
+CREATE PROCEDURE perf.addNewFunc
     @email VARCHAR(255),
     @contribuinte CHAR(9),
     @fname VARCHAR(20),
@@ -18,13 +18,13 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        IF EXISTS(SELECT email FROM Perfumaria.dbo.funcionario WHERE email=@emailFunc AND administrator>2)
+        IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator>2)
             BEGIN
-                INSERT INTO Perfumaria.dbo.utilizador
+                INSERT INTO Perfumaria.perf.utilizador
                 (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, contacto_default_id)
                 VALUES(@email, @contribuinte, @fname, @lname, @pw, @sexo, @dataNasc, @foto, @contacto_default_id) 
 
-                INSERT INTO Perfumaria.dbo.funcionario
+                INSERT INTO Perfumaria.perf.funcionario
                 (email, administrator, salario)
                 VALUES(@email, @administrator, @salario) 
 

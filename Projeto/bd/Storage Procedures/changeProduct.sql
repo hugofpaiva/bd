@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.changeProduct
+CREATE PROCEDURE perf.changeProduct
     @id INT,
     @preco INT,
     @familiaolfativa VARCHAR(30) = NULL,
@@ -19,81 +19,81 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        IF EXISTS(SELECT email FROM Perfumaria.dbo.funcionario WHERE email=@emailFunc AND administrator>0)
+        IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator>0)
             BEGIN
                 IF @preco <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.produto
+                    UPDATE Perfumaria.perf.produto
                     SET preco = @preco
                     WHERE id = @id
                 END
 
                 IF @familiaolfativa <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.produto
+                    UPDATE Perfumaria.perf.produto
                     SET familiaolfativa = @familiaolfativa
                     WHERE id = @id
                 END
 
                 IF @categoria <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.produto
+                    UPDATE Perfumaria.perf.produto
                     SET categoria = @categoria
                     WHERE id = @id
                 END
 
                 IF @nome <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.produto
+                    UPDATE Perfumaria.perf.produto
                     SET nome = @nome
                     WHERE id = @id
                 END
 
                 IF @marca <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.produto
+                    UPDATE Perfumaria.perf.produto
                     SET marca = @marca
                     WHERE id = @id
                 END
 
                 IF @linha <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.produto
+                    UPDATE Perfumaria.perf.produto
                     SET linha = @linha
                     WHERE id = @id
                 END
                 
                 IF @tamanho <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.produto
+                    UPDATE Perfumaria.perf.produto
                     SET tamanho = @tamanho
                     WHERE id = @id
                 END
 
                 IF @descricao <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.produto
+                    UPDATE Perfumaria.perf.produto
                     SET descricao = @descricao
                     WHERE id = @id
                 END
 
                 IF @imagem <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.produto
+                    UPDATE Perfumaria.perf.produto
                     SET imagem = @imagem
                     WHERE id = @id
                 END
 
                 IF @stock <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.produto
+                    UPDATE Perfumaria.perf.produto
                     SET stock = @stock
                     WHERE id = @id
                 END
 
                 IF @destinatario <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.produto
+                    UPDATE Perfumaria.perf.produto
                     SET destinatario = @destinatario
                     WHERE id = @id
                 END

@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.addFuncService
+CREATE PROCEDURE perf.addFuncService
     @funcionario_email VARCHAR(255),
     @servico_id INT,
     @duracao_media INT,
@@ -10,9 +10,9 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        IF EXISTS(SELECT email FROM Perfumaria.dbo.funcionario WHERE email=@emailFunc AND administrator=2)
+        IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
-                INSERT INTO Perfumaria.dbo.funcionario_faz_servico
+                INSERT INTO Perfumaria.perf.funcionario_faz_servico
                 (funcionario_email, servico_id, duracao_media)
                 VALUES(@funcionario_email, @servico_id, @duracao_media) 
                 SET @responseMessage='Success'

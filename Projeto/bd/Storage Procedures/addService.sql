@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.addCupon
+CREATE PROCEDURE perf.addCupon
     @tipo INT,
     @preco VARCHAR(30),
     @emailFunc VARCHAR(255),
@@ -9,9 +9,9 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        IF EXISTS(SELECT email FROM Perfumaria.dbo.funcionario WHERE email=@emailFunc AND administrator=2)
+        IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
-                INSERT INTO Perfumaria.dbo.servico
+                INSERT INTO Perfumaria.perf.servico
                 (tipo, preco)
                 VALUES(@tipo, @preco) 
                 SET @responseMessage='Success'

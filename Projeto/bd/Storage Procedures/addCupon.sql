@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.addCupon
+CREATE PROCEDURE perf.addCupon
     @id CHAR(10),
     @datainicio SMALLDATETIME,
     @datafim SMALLDATETIME,
@@ -11,9 +11,9 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        IF EXISTS(SELECT email FROM Perfumaria.dbo.funcionario WHERE email=@emailFunc AND administrator=2)
+        IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
-                INSERT INTO Perfumaria.dbo.cupao
+                INSERT INTO Perfumaria.perf.cupao
                 (id, datainicio, datafim, pontos_atribuidos)
                 VALUES(@id, @datainicio, @datafim, @pontos_atribuidos) 
                 SET @responseMessage='Success'

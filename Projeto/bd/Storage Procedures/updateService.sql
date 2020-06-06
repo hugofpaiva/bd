@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.updateService
+CREATE PROCEDURE perf.updateService
     @id INT,
     @tipo INT,
     @preco VARCHAR(30),
@@ -10,18 +10,18 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        IF EXISTS(SELECT email FROM Perfumaria.dbo.funcionario WHERE email=@emailFunc AND administrator=2)
+        IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
                 IF @tipo <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.servico
+                    UPDATE Perfumaria.perf.servico
                     SET tipo = @tipo
                     WHERE id = @id
                 END
 
                 IF @preco <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.servico
+                    UPDATE Perfumaria.perf.servico
                     SET preco = @preco
                     WHERE id = @id
                 END

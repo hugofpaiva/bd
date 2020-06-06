@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.removeProduct
+CREATE PROCEDURE perf.removeProduct
     @id INT,
     @emailFunc VARCHAR(255),
     @responseMessage NVARCHAR(250) OUTPUT
@@ -8,9 +8,9 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        IF EXISTS(SELECT email FROM Perfumaria.dbo.funcionario WHERE email=@emailFunc AND administrator>0)
+        IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator>0)
             BEGIN
-                UPDATE Perfumaria.dbo.produto
+                UPDATE Perfumaria.perf.produto
                 SET deleted=1
                 WHERE id=@id
                 SET @responseMessage='Success'

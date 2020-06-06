@@ -1,8 +1,8 @@
-DROP PROCEDURE dbo.RegisterFunc
+DROP PROCEDURE perf.RegisterFunc
 GO
 
 GO
-CREATE PROCEDURE dbo.RegisterFunc
+CREATE PROCEDURE perf.RegisterFunc
     @email VARCHAR(255),
     @password VARCHAR(25),
     @contribuinte CHAR(9),
@@ -20,11 +20,11 @@ BEGIN
 
     BEGIN TRY
 
-        INSERT INTO Perfumaria.dbo.utilizador
+        INSERT INTO Perfumaria.perf.utilizador
         (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto)
     VALUES(@email, @contribuinte, @fname, @lname, HASHBYTES('SHA2_512', @password), @sexo, @dataNasc, @foto)
 
-    INSERT INTO Perfumaria.dbo.funcionario
+    INSERT INTO Perfumaria.perf.funcionario
         (email, administrator, salario)
     VALUES(@email, @administrator, @salario)
 
@@ -37,11 +37,11 @@ BEGIN
 
 END
 
-DROP PROCEDURE dbo.RegisterClient
+DROP PROCEDURE perf.RegisterClient
 GO
 
 GO
-CREATE PROCEDURE dbo.RegisterClient
+CREATE PROCEDURE perf.RegisterClient
     @email VARCHAR(255),
     @password VARCHAR(25),
     @contribuinte CHAR(9),
@@ -60,11 +60,11 @@ BEGIN
 
     BEGIN TRY
 
-        INSERT INTO Perfumaria.dbo.utilizador
+        INSERT INTO Perfumaria.perf.utilizador
         (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto)
     VALUES(@email, @contribuinte, @fname, @lname, HASHBYTES('SHA2_512', @password), @sexo, @dataNasc, @foto)
 
-    INSERT INTO Perfumaria.dbo.cliente
+    INSERT INTO Perfumaria.perf.cliente
         (email, pontos, newsletter, pagamento)
     VALUES(@email, @pontos, @newsletter, @pagamento)
 
@@ -79,7 +79,7 @@ END
 
 /*DECLARE @responseMessage NVARCHAR(250)
 
-EXEC dbo.uspAddUser
+EXEC perf.uspAddUser
           @pLogin = N'Admin',
           @pPassword = N'123',
           @pFirstName = N'Admin',
@@ -87,4 +87,4 @@ EXEC dbo.uspAddUser
           @responseMessage=@responseMessage OUTPUT
 
 SELECT *
-FROM [dbo].[User]*/
+FROM [perf].[User]*/

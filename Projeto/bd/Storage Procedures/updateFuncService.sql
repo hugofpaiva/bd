@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.updateFuncService
+CREATE PROCEDURE perf.updateFuncService
     @funcionario_email VARCHAR(255), -- pessoa sobre a qual a ação vai ser feita
     @servico_id INT,
     @duracao_media INT,
@@ -10,18 +10,18 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        IF EXISTS(SELECT email FROM Perfumaria.dbo.funcionario WHERE email=@emailFunc AND administrator=2)
+        IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
                 IF @funcionario_email <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.funcionario_faz_servico
+                    UPDATE Perfumaria.perf.funcionario_faz_servico
                     SET funcionario_email = @funcionario_email
                     WHERE servico_id = @servico_id
                 END
 
                 IF @duracao_media <> 'None'
                 BEGIN
-                    UPDATE Perfumaria.dbo.funcionario_faz_servico
+                    UPDATE Perfumaria.perf.funcionario_faz_servico
                     SET duracao_media = @duracao_media
                     WHERE servico_id = @servico_id
                 END

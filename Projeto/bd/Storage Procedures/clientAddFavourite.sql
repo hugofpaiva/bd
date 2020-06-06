@@ -1,5 +1,5 @@
 GO
-CREATE PROCEDURE dbo.clientAddFavourite
+CREATE PROCEDURE perf.clientAddFavourite
     @clienteemail VARCHAR(255),
     @produtoid INT,
     @responseMessage NVARCHAR(250) OUTPUT
@@ -8,9 +8,9 @@ BEGIN
     SET NOCOUNT ON
     
     BEGIN TRY
-        IF NOT EXISTS(SELECT produtoid FROM Perfumaria.dbo.clientefavorita WHERE clienteemail=@clienteemail)
+        IF NOT EXISTS(SELECT produtoid FROM Perfumaria.perf.clientefavorita WHERE clienteemail=@clienteemail)
             BEGIN
-                INSERT INTO Perfumaria.dbo.clientefavorita
+                INSERT INTO Perfumaria.perf.clientefavorita
                 (clienteemail, produtoid)
                 VALUES(@clienteemail, @produtoid) 
                 SET @responseMessage='Success'

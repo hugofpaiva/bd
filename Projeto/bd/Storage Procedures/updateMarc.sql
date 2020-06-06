@@ -1,8 +1,8 @@
-DROP PROCEDURE dbo.updateMarc;
+DROP PROCEDURE perf.updateMarc;
 GO
 
 GO
-CREATE PROCEDURE dbo.updateMarc
+CREATE PROCEDURE perf.updateMarc
     @idMarc INT,
 	@cliente_email VARCHAR(255),
     @servico_id INT,
@@ -17,28 +17,28 @@ BEGIN
 
 		IF @cliente_email <> 'None'
 		BEGIN
-			UPDATE Perfumaria.dbo.marcacao
+			UPDATE Perfumaria.perf.marcacao
 			SET cliente_email = @cliente_email
 			WHERE  id = @idMarc 
 		END
 
 		IF @servico_id <> 'None'
 		BEGIN
-			UPDATE Perfumaria.dbo.marcacao
+			UPDATE Perfumaria.perf.marcacao
 			SET servico_id = @servico_id
 			WHERE  id = @idMarc 
 		END
 
 		IF @funcionario_email <> 'None'
 		BEGIN
-			UPDATE Perfumaria.dbo.marcacao
+			UPDATE Perfumaria.perf.marcacao
 			SET funcionario_email = @funcionario_email
 			WHERE   id = @idMarc 
 		END
 
 		IF @photo <> 'None'
 		BEGIN
-			UPDATE Perfumaria.dbo.marcacao
+			UPDATE Perfumaria.perf.marcacao
 			SET dataMarc = @dataMarc
 			WHERE  id = @idMarc
 		END

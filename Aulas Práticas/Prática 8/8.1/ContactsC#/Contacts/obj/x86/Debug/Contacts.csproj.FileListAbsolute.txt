@@ -6,3 +6,11 @@
 \\Mac\Home\Downloads\Aula8_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.csproj.GenerateResource.cache
 \\Mac\Home\Downloads\Aula8_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.exe
 \\Mac\Home\Downloads\Aula8_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.pdb
+Y:\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Aulas Práticas\Prática 8\8.1\ContactsC#\Contacts\bin\Debug\Contacts.exe
+Y:\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Aulas Práticas\Prática 8\8.1\ContactsC#\Contacts\bin\Debug\Contacts.pdb
+Y:\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Aulas Práticas\Prática 8\8.1\ContactsC#\Contacts\obj\x86\Debug\Contacts.csprojAssemblyReference.cache
+Y:\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Aulas Práticas\Prática 8\8.1\ContactsC#\Contacts\obj\x86\Debug\Contacts.Form1.resources
+Y:\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Aulas Práticas\Prática 8\8.1\ContactsC#\Contacts\obj\x86\Debug\Contacts.Properties.Resources.resources
+Y:\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Aulas Práticas\Prática 8\8.1\ContactsC#\Contacts\obj\x86\Debug\Contacts.csproj.GenerateResource.cache
+Y:\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Aulas Práticas\Prática 8\8.1\ContactsC#\Contacts\obj\x86\Debug\Contacts.exe
+Y:\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Aulas Práticas\Prática 8\8.1\ContactsC#\Contacts\obj\x86\Debug\Contacts.pdb
