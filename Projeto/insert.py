@@ -51,6 +51,7 @@ def produto(id, preco, familiaolfativa, categoria, nome, marca, linha, tamanho, 
         call+=', ?'
     call+=')'
     cursor.execute(call, tuple(values))
+    cursor.execute("SELECT * FROM Perfumaria.dbo.produto;")
     
 
 def perfume(id):
@@ -82,23 +83,23 @@ def cliente(email, pontos, newsletter, pagamento):
     call+=')'
     cursor.execute(call, tuple(values))
 
-def utilizador(email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, contacto_default_id, pontos, newsletter, pagamento, administrator, salario):
+def utilizador(email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, pontos, newsletter, pagamento, administrator, salario):
     if(pontos != ''):
         call = """\
         DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @responseMessage OUTPUT, @email=?, @contribuinte=?, @fname=?, @lname=?, @password=?, @sexo=?, @dataNasc=?, @foto=?, @pontos=?, @newsletter=?, @pagamento=?, @contacto_default_id=?;
+        EXEC dbo.RegisterClient @email=?, @contribuinte=?, @fname=?, @lname=?, @password=?, @sexo=?, @dataNasc=?, @foto=?, @pontos=?, @newsletter=?, @pagamento=?, @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
         """
-        values = (email, contribuinte, fname, lname, pw, sexo, grade, dataNasc, foto, pontos, newsletter, pagamento, contacto_default_id)
+        values = (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, pontos, newsletter, pagamento)
         cursor.execute(call, values)
         rm = cursor.fetchval()
     elif(administrator != ''):
         call = """\
         DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterFunc @responseMessage OUTPUT, @email=?, @contribuinte=?, @fname=?, @lname=?, @password=?, @sexo=?, @dataNasc=?, @foto=?, @administrator=?, @salario=?, @contacto_default_id=?;
+        EXEC dbo.RegisterFunc @email=?, @contribuinte=?, @fname=?, @lname=?, @password=?, @sexo=?, @dataNasc=?, @foto=?, @administrator=?, @salario=?, @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
         """
-        values = (email, contribuinte, fname, lname, pw, sexo, grade, dataNasc, foto, administrator, salario, contacto_default_id)
+        values = (email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, administrator, salario)
         cursor.execute(call, values)
         rm = cursor.fetchval()
     
@@ -185,7 +186,7 @@ def choose(sheet, values):
     elif sheet == "cliente":
         cliente(values[0], values[1], values[2], values[3])
     elif sheet == "utilizador":
-        utilizador(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8], values[9], values[10], values[11], values[12], values[13])
+        utilizador(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8], values[9], values[10], values[11], values[12])
     elif sheet == "funcionario":
         funcionario(values[0], values[1], values[2])
     elif sheet == "contacto":
