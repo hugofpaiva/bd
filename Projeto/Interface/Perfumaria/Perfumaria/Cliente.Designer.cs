@@ -32,13 +32,14 @@
             this.Conta = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.Informações = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Contactos = new System.Windows.Forms.TabPage();
-            this.Histórico = new System.Windows.Forms.TabPage();
-            this.Loja = new System.Windows.Forms.TabPage();
-            this.Marcações = new System.Windows.Forms.TabPage();
-            this.Cupões = new System.Windows.Forms.TabPage();
-            this.Favoritos = new System.Windows.Forms.TabPage();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.newsletter = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -47,19 +48,25 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Contactos = new System.Windows.Forms.TabPage();
+            this.Histórico = new System.Windows.Forms.TabPage();
+            this.Loja = new System.Windows.Forms.TabPage();
+            this.Marcações = new System.Windows.Forms.TabPage();
+            this.Cupões = new System.Windows.Forms.TabPage();
+            this.Favoritos = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.Compras = new System.Windows.Forms.TabPage();
+            this.Servicos = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.Informações.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Contactos.SuspendLayout();
+            this.Histórico.SuspendLayout();
+            this.tabControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -124,69 +131,89 @@
             this.Informações.Text = "Informações";
             this.Informações.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // textBox4
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(28, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.textBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(24, 319);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(242, 50);
+            this.textBox4.TabIndex = 61;
+            this.textBox4.Text = "Contacto Predefinido";
             // 
-            // Contactos
+            // textBox2
             // 
-            this.Contactos.Location = new System.Drawing.Point(4, 22);
-            this.Contactos.Name = "Contactos";
-            this.Contactos.Padding = new System.Windows.Forms.Padding(3);
-            this.Contactos.Size = new System.Drawing.Size(764, 378);
-            this.Contactos.TabIndex = 1;
-            this.Contactos.Text = "Contactos";
-            this.Contactos.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(248, 180);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(268, 30);
+            this.textBox2.TabIndex = 60;
             // 
-            // Histórico
+            // label4
             // 
-            this.Histórico.Location = new System.Drawing.Point(4, 22);
-            this.Histórico.Name = "Histórico";
-            this.Histórico.Padding = new System.Windows.Forms.Padding(3);
-            this.Histórico.Size = new System.Drawing.Size(768, 400);
-            this.Histórico.TabIndex = 1;
-            this.Histórico.Text = "Histórico";
-            this.Histórico.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(572, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(166, 23);
+            this.label4.TabIndex = 59;
+            this.label4.Text = "Estatísticas";
             // 
-            // Loja
+            // textBox1
             // 
-            this.Loja.Location = new System.Drawing.Point(4, 22);
-            this.Loja.Name = "Loja";
-            this.Loja.Size = new System.Drawing.Size(768, 400);
-            this.Loja.TabIndex = 2;
-            this.Loja.Text = "Loja Online";
-            this.Loja.UseVisualStyleBackColor = true;
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(590, 45);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(124, 30);
+            this.textBox1.TabIndex = 58;
             // 
-            // Marcações
+            // label3
             // 
-            this.Marcações.Location = new System.Drawing.Point(4, 22);
-            this.Marcações.Name = "Marcações";
-            this.Marcações.Size = new System.Drawing.Size(768, 400);
-            this.Marcações.TabIndex = 3;
-            this.Marcações.Text = "Marcações";
-            this.Marcações.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(608, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 23);
+            this.label3.TabIndex = 57;
+            this.label3.Text = "Pontos";
             // 
-            // Cupões
+            // comboBox1
             // 
-            this.Cupões.Location = new System.Drawing.Point(4, 22);
-            this.Cupões.Name = "Cupões";
-            this.Cupões.Size = new System.Drawing.Size(768, 400);
-            this.Cupões.TabIndex = 4;
-            this.Cupões.Text = "Cupões";
-            this.Cupões.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.IntegralHeight = false;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Paypal",
+            "MasterCard",
+            "MB Way"});
+            this.comboBox1.Location = new System.Drawing.Point(248, 278);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(268, 21);
+            this.comboBox1.TabIndex = 56;
             // 
-            // Favoritos
+            // label2
             // 
-            this.Favoritos.Location = new System.Drawing.Point(4, 22);
-            this.Favoritos.Name = "Favoritos";
-            this.Favoritos.Size = new System.Drawing.Size(768, 400);
-            this.Favoritos.TabIndex = 5;
-            this.Favoritos.Text = "Favoritos";
-            this.Favoritos.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 276);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(218, 23);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Método Pagamento";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(268, 68);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 23);
+            this.button1.TabIndex = 53;
+            this.button1.Text = "Clicar para alterar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -268,89 +295,114 @@
             this.textBox3.Size = new System.Drawing.Size(242, 30);
             this.textBox3.TabIndex = 35;
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.Location = new System.Drawing.Point(268, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 23);
-            this.button1.TabIndex = 53;
-            this.button1.Text = "Clicar para alterar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // Contactos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 276);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 23);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Método Pagamento";
+            this.Contactos.Controls.Add(this.tableLayoutPanel1);
+            this.Contactos.Location = new System.Drawing.Point(4, 22);
+            this.Contactos.Name = "Contactos";
+            this.Contactos.Padding = new System.Windows.Forms.Padding(3);
+            this.Contactos.Size = new System.Drawing.Size(764, 378);
+            this.Contactos.TabIndex = 1;
+            this.Contactos.Text = "Contactos";
+            this.Contactos.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // Histórico
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.IntegralHeight = false;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Paypal",
-            "MasterCard",
-            "MB Way"});
-            this.comboBox1.Location = new System.Drawing.Point(248, 278);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(268, 21);
-            this.comboBox1.TabIndex = 56;
+            this.Histórico.Controls.Add(this.tabControl3);
+            this.Histórico.Location = new System.Drawing.Point(4, 22);
+            this.Histórico.Name = "Histórico";
+            this.Histórico.Padding = new System.Windows.Forms.Padding(3);
+            this.Histórico.Size = new System.Drawing.Size(768, 400);
+            this.Histórico.TabIndex = 1;
+            this.Histórico.Text = "Histórico";
+            this.Histórico.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // Loja
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(608, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 23);
-            this.label3.TabIndex = 57;
-            this.label3.Text = "Pontos";
+            this.Loja.Location = new System.Drawing.Point(4, 22);
+            this.Loja.Name = "Loja";
+            this.Loja.Size = new System.Drawing.Size(768, 400);
+            this.Loja.TabIndex = 2;
+            this.Loja.Text = "Loja Online";
+            this.Loja.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // Marcações
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(590, 45);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(124, 30);
-            this.textBox1.TabIndex = 58;
+            this.Marcações.Location = new System.Drawing.Point(4, 22);
+            this.Marcações.Name = "Marcações";
+            this.Marcações.Size = new System.Drawing.Size(768, 400);
+            this.Marcações.TabIndex = 3;
+            this.Marcações.Text = "Marcações";
+            this.Marcações.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // Cupões
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(572, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 23);
-            this.label4.TabIndex = 59;
-            this.label4.Text = "Estatísticas";
+            this.Cupões.Location = new System.Drawing.Point(4, 22);
+            this.Cupões.Name = "Cupões";
+            this.Cupões.Size = new System.Drawing.Size(768, 400);
+            this.Cupões.TabIndex = 4;
+            this.Cupões.Text = "Cupões";
+            this.Cupões.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // Favoritos
             // 
-            this.textBox2.Location = new System.Drawing.Point(248, 180);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(268, 30);
-            this.textBox2.TabIndex = 60;
+            this.Favoritos.Location = new System.Drawing.Point(4, 22);
+            this.Favoritos.Name = "Favoritos";
+            this.Favoritos.Size = new System.Drawing.Size(768, 400);
+            this.Favoritos.TabIndex = 5;
+            this.Favoritos.Text = "Favoritos";
+            this.Favoritos.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // tableLayoutPanel1
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(24, 319);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(242, 50);
-            this.textBox4.TabIndex = 61;
-            this.textBox4.Text = "Contacto Predefinido";
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(764, 378);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tabControl3
+            // 
+            this.tabControl3.Controls.Add(this.Compras);
+            this.tabControl3.Controls.Add(this.Servicos);
+            this.tabControl3.Location = new System.Drawing.Point(0, 0);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(772, 404);
+            this.tabControl3.TabIndex = 0;
+            // 
+            // Compras
+            // 
+            this.Compras.Location = new System.Drawing.Point(4, 22);
+            this.Compras.Name = "Compras";
+            this.Compras.Padding = new System.Windows.Forms.Padding(3);
+            this.Compras.Size = new System.Drawing.Size(764, 378);
+            this.Compras.TabIndex = 0;
+            this.Compras.Text = "Compras";
+            this.Compras.UseVisualStyleBackColor = true;
+            // 
+            // Servicos
+            // 
+            this.Servicos.Location = new System.Drawing.Point(4, 22);
+            this.Servicos.Name = "Servicos";
+            this.Servicos.Padding = new System.Windows.Forms.Padding(3);
+            this.Servicos.Size = new System.Drawing.Size(764, 378);
+            this.Servicos.TabIndex = 1;
+            this.Servicos.Text = "Serviços";
+            this.Servicos.UseVisualStyleBackColor = true;
             // 
             // Cliente
             // 
@@ -367,6 +419,9 @@
             this.Informações.ResumeLayout(false);
             this.Informações.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Contactos.ResumeLayout(false);
+            this.Histórico.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -400,5 +455,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage Compras;
+        private System.Windows.Forms.TabPage Servicos;
     }
 }

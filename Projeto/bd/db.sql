@@ -174,7 +174,7 @@ GO
 CREATE TABLE Perfumaria.dbo.produto
 (
     id INT NOT NULL IDENTITY(1,1),
-    preco INT NOT NULL,
+    preco REAL NOT NULL,
     familiaolfativa VARCHAR(30),
     categoria VARCHAR(30) NOT NULL,
     nome VARCHAR(30) NOT NULL,
@@ -185,7 +185,7 @@ CREATE TABLE Perfumaria.dbo.produto
     imagem VARCHAR(100) NOT NULL,
     stock SMALLINT NOT NULL,
     destinatario VARCHAR(10),
-    deleted BIT NOT NULL,
+    deleted BIT NOT NULL DEFAULT 0,
 
     CONSTRAINT produto_pk PRIMARY KEY  (id)
 );
@@ -283,7 +283,7 @@ CREATE TABLE Perfumaria.dbo.contacto
     codigo_postal CHAR(8) NOT NULL,
     pais VARCHAR(20) NOT NULL,
     endereco VARCHAR(50) NOT NULL,
-    apartamento VARCHAR(10) NOT NULL,
+    apartamento VARCHAR(50) NOT NULL,
     localidade VARCHAR(20) NOT NULL,
 
     CONSTRAINT contacto_pk PRIMARY KEY (id)

@@ -21,15 +21,15 @@ cursor = conn.cursor()
 
 # Funções de Inserção
 def promocao(id, nome, desconto, datainicio, datafim):
-    cursor.execute('INSERT INTO promocao VALUES (?,?,?,?,?)', (id, nome, desconto, datainicio, datafim))
+    cursor.execute('INSERT INTO Perfumaria.dbo.promocao (nome, desconto, datainicio, datafim) VALUES (?,?,?,?)', (nome, desconto, datainicio, datafim))
 
 def produto_tem_promocao(produtoid, promocaoid):
-    cursor.execute('INSERT INTO produto_tem_promocao VALUES (?,?)', (produtoid, promocaoid))
+    cursor.execute('INSERT INTO Perfumaria.dbo.produto_tem_promocao VALUES (?,?)', (produtoid, promocaoid))
 
 def produto(id, preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted):
-    call = 'INSERT INTO produto (id, preco, categoria, nome, marca, linha, imagem, stock, deleted'
+    call = 'INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, imagem, stock, deleted'
     count = 0
-    values = [id, preco, categoria, nome, marca, linha, imagem, stock, deleted]
+    values = [preco, categoria, nome, marca, linha, imagem, stock, deleted]
     if familiaolfativa != '':
         call+=', familiaolfativa'
         values.append(familiaolfativa)
@@ -46,7 +46,7 @@ def produto(id, preco, familiaolfativa, categoria, nome, marca, linha, tamanho, 
         call+=', destinatario'
         values.append(destinatario)
         count+=1
-    call+=') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?'
+    call+=') VALUES (?, ?, ?, ?, ?, ?, ?, ?'
     for x in range(0, count):
         call+=', ?'
     call+=')'
@@ -54,22 +54,22 @@ def produto(id, preco, familiaolfativa, categoria, nome, marca, linha, tamanho, 
     
 
 def perfume(id):
-    cursor.execute('INSERT INTO perfume VALUES (?)', (id))
+    cursor.execute('INSERT INTO Perfumaria.dbo.perfume VALUES (?)', (id))
 
 def cosmetica(id, tipo):
-    cursor.execute('INSERT INTO cosmetica VALUES (?, ?)', (id, tipo))
+    cursor.execute('INSERT INTO Perfumaria.dbo.cosmetica VALUES (?, ?)', (id, tipo))
 
 def clientefavorita(clienteemail, produtoid):
-    cursor.execute('INSERT INTO clientefavorita VALUES (?, ?)', (clienteemail, produtoid))
+    cursor.execute('INSERT INTO Perfumaria.dbo.clientefavorita VALUES (?, ?)', (clienteemail, produtoid))
 
 def cupao(id, datainicio, datafim, pontos_atribuidos):
-    cursor.execute('INSERT INTO cupao VALUES (?, ?, ?, ?)', (id, datainicio, datafim, pontos_atribuidos))
+    cursor.execute('INSERT INTO Perfumaria.dbo.cupao VALUES (?, ?, ?, ?)', (id, datainicio, datafim, pontos_atribuidos))
 
 def cliente_usa_cupao(cliente_email, cupao_id):
-    cursor.execute('INSERT INTO cliente_usa_cupao VALUES (?, ?)', (cliente_email, cupao_id))
+    cursor.execute('INSERT INTO Perfumaria.dbo.cliente_usa_cupao VALUES (?, ?)', (cliente_email, cupao_id))
 
 def cliente(email, pontos, newsletter, pagamento):
-    call = 'INSERT INTO cliente (email, pontos, newsletter'
+    call = 'INSERT INTO Perfumaria.dbo.cliente (email, pontos, newsletter'
     count = 0
     values = [email, pontos, newsletter]
     if pagamento != '':
@@ -85,14 +85,14 @@ def cliente(email, pontos, newsletter, pagamento):
 def utilizador(email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, contacto_default_id, pontos, newsletter, pagamento, administrator, salario):
     if(pontos != ''):
         call = """\
-    DECLARE @responseMessage VARCHAR(250);
-    EXEC dbo.RegisterClient @responseMessage OUTPUT, @email=?, @contribuinte=?, @fname=?, @lname=?, @password=?, @sexo=?, @dataNasc=?, @foto=?, @pontos=?, @newsletter=?, @pagamento=?, @contacto_default_id=?;
-    SELECT @responseMessage AS rm;
-    """
+        DECLARE @responseMessage VARCHAR(250);
+        EXEC dbo.RegisterClient @responseMessage OUTPUT, @email=?, @contribuinte=?, @fname=?, @lname=?, @password=?, @sexo=?, @dataNasc=?, @foto=?, @pontos=?, @newsletter=?, @pagamento=?, @contacto_default_id=?;
+        SELECT @responseMessage AS rm;
+        """
         values = (email, contribuinte, fname, lname, pw, sexo, grade, dataNasc, foto, pontos, newsletter, pagamento, contacto_default_id)
         cursor.execute(call, values)
         rm = cursor.fetchval()
-    else if(administrator != ''):
+    elif(administrator != ''):
         call = """\
         DECLARE @responseMessage VARCHAR(250);
         EXEC dbo.RegisterFunc @responseMessage OUTPUT, @email=?, @contribuinte=?, @fname=?, @lname=?, @password=?, @sexo=?, @dataNasc=?, @foto=?, @administrator=?, @salario=?, @contacto_default_id=?;
@@ -104,18 +104,18 @@ def utilizador(email, contribuinte, fname, lname, pw, sexo, dataNasc, foto, cont
     
 
 def funcionario(email, administrator, salario):
-    cursor.execute('INSERT INTO funcionario VALUES (?, ?, ?)', (email, administrator, salario))
+    cursor.execute('INSERT INTO Perfumaria.dbo.funcionario VALUES (?, ?, ?)', (email, administrator, salario))
 
 def contacto(id, utilizador_email, telemovel, visibilidade, codigo_postal, pais, endereco, apartamento, localidade):
-    cursor.execute('INSERT INTO contacto VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', (id, utilizador_email, telemovel, visibilidade, codigo_postal, pais, endereco, apartamento, localidade))
+    cursor.execute('INSERT INTO Perfumaria.dbo.contacto (utilizador_email, telemovel, visibilidade, codigo_postal, pais, endereco, apartamento, localidade) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)', (utilizador_email, telemovel, visibilidade, codigo_postal, pais, endereco, apartamento, localidade))
 
 def compra_tem_produto(compranumero, produtoid, unidades):
-    cursor.execute('INSERT INTO compra_tem_produto VALUES (?, ?, ?)', (compranumero, produtoid, unidades))
+    cursor.execute('INSERT INTO Perfumaria.dbo.compra_tem_produto VALUES (?, ?, ?)', (compranumero, produtoid, unidades))
 
 def compra(numero, contribuinte, datacompra, pagamento, clienteemail, pontosgastos, pontosacumulados):
-    call = 'INSERT INTO compra (numero, contribuinte, datacompra, pagamento, clienteemail'
+    call = 'INSERT INTO Perfumaria.dbo.compra (contribuinte, datacompra, pagamento, clienteemail'
     count = 0
-    values = [numero, contribuinte, datacompra, pagamento, clienteemail]
+    values = [contribuinte, datacompra, pagamento, clienteemail]
     if pontosgastos != '':
         call+=', pontosgastos'
         values.append(pontosgastos)
@@ -124,20 +124,20 @@ def compra(numero, contribuinte, datacompra, pagamento, clienteemail, pontosgast
         call+=', pontosacumulados'
         values.append(pontosacumulados)
         count+=1
-    call+=') VALUES (?, ?, ?, ?, ?'
+    call+=') VALUES (?, ?, ?, ?'
     for x in range(0, count):
         call+=', ?'
     call+=')'
     cursor.execute(call, tuple(values))
 
 def servico(id, tipo, preco):
-    cursor.execute('INSERT INTO servico VALUES (?, ?, ?)', (id, tipo, preco))
+    cursor.execute('INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES (?, ?)', (tipo, preco))
 
 def funcionario_faz_servico(funcionario_email, servico_id, duracao_media):
-    cursor.execute('INSERT INTO funcionario_faz_servico VALUES (?, ?, ?)', (funcionario_email, servico_id, duracao_media))
+    cursor.execute('INSERT INTO Perfumaria.dbo.funcionario_faz_servico VALUES (?, ?, ?)', (funcionario_email, servico_id, duracao_media))
 
 def compra_online(numero, rating, observacao, rastreamento, presente, contactoid):
-    call = 'INSERT INTO compra_online (numero, presente, contactoid'
+    call = 'INSERT INTO Perfumaria.dbo.compra_online (numero, presente, contactoid'
     count = 0
     values = [numero, presente, contactoidl]
     if rating != '':
@@ -159,10 +159,10 @@ def compra_online(numero, rating, observacao, rastreamento, presente, contactoid
     cursor.execute(call, tuple(values))
 
 def compra_presencial(numero, funcemail):
-    cursor.execute('INSERT INTO compra_presencial VALUES (?, ?)', (funcionario_email, servico_id, duracao_media))
+    cursor.execute('INSERT INTO Perfumaria.dbo.compra_presencial VALUES (?, ?)', (funcionario_email, servico_id, duracao_media))
 
 def marcacao(id, cliente_email, servico_id, funcionario_email, dataMarc):
-    cursor.execute('INSERT INTO marcacao VALUES (?, ?, ?, ?, ?)', (id, cliente_email, servico_id, funcionario_email, dataMarc))
+    cursor.execute('INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES (?, ?, ?, ?)', (cliente_email, servico_id, funcionario_email, dataMarc))
 
 
 def choose(sheet, values):
