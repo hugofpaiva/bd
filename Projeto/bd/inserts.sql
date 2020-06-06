@@ -1,30 +1,30 @@
 -- produto
 
-INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (75,25, 'Cítrico Masculino', 'Eau de Toilette', 'Wanted', 'AZZARO', 'Azzaro Wanted', 100, 'Azzaro Wanted é um tributo a uma nova forma de masculinidade livre e resplandecente. Uma eau de toilette amadeirada, cítrica e condimentada com um rasto cativante e elegante.', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500002696.jpg', 2, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (71,3, 'Amadeirado Masculino', 'Eau de Toilette', 'Wanted', 'AZZARO', 'Azzaro Wanted', 100, 'Azzaro Wanted é um tributo a uma nova forma de masculinidade livre e resplandecente. Uma eau de toilette amadeirada, cítrica e condimentada com um rasto cativante e elegante.', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500002696.jpg', 3, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (81,65, 'Amadeirado Masculino', 'Eau de Toilette', 'Pour Homme', 'AZZARO', 'Azzaro Pour Homme', 100, 'Azzaro Pour Homme é um perfume de sedução em estado puro, talhado pela elegância e pelo requinte italiano.', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500980543_1.jpg', 1, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (27,2, 'Deo Spray', 'Pour Homme', 'AZZARO', 'Azzaro Pour Homme', 150, 'Num gesto só, este spray oferece uma proteção eficaz de longa duração e uma sensação de frescura, durante todo o dia. ', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500002771_1.jpg', 4, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (77,3, 'Floral Feminino', 'Eau de Parfum', '212 Vip Rosé', 'CAROLINA HERRERA', 50, 'Atrevida, sofisticada, sempre pronta para a acção de noite & dia, o NOVO 212 VIP ROSÉ Eau de Parfum introduz uma ainda maior sedução ao universo! ', 'https://www.perfumesecompanhia.pt/fotos/produtos/8411061777176.jpg', 10, 'Mulher', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (75,25, 'Eau de Toilette', 'Under The Pole', 'AZZARO', 'Azzaro Chrome', 100, 'A assinatura emblemática de Chrome —um acorde cítrico e amadeirado, ao qual se acrescenta um grande coração aquático, que inspira frescura e força — é reinterpretada numa fórmula original 100% sem álcool, substituído pela água. ', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500009756_1.jpg', 3, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (78,71, 'Oriental Masculino', 'Eau de Toilette', 'The Scent', 'HUGO BOSS', 'The Scent', 50, 'Uma fragrância irresistível e inesquecível como o sabor da sedução. Notas exclusivas de gengibre, Maninka e couro que se revelam ao longo do tempo, seduzindo os sentidos.', 'https://www.perfumesecompanhia.pt/fotos/produtos/0737052972268.jpg', 3, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (104,95, 'Oriental Masculino', 'Eau de Toilette', 'The Scent', 'HUGO BOSS', 'The Scent', 100, 'Uma fragrância irresistível e inesquecível como o sabor da sedução. Notas exclusivas de gengibre, Maninka e couro que se revelam ao longo do tempo, seduzindo os sentidos.', 'https://www.perfumesecompanhia.pt/fotos/produtos/0737052972268.jpg', 4, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (140,65, 'Oriental Masculino', 'Eau de Toilette', 'The Scent', 'HUGO BOSS', 'The Scent', 200, 'Uma fragrância irresistível e inesquecível como o sabor da sedução. Notas exclusivas de gengibre, Maninka e couro que se revelam ao longo do tempo, seduzindo os sentidos.', 'https://www.perfumesecompanhia.pt/fotos/produtos/0737052972268.jpg', 5, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (27,3, 'Oriental Masculino', 'Deo Stick', 'The Scent', 'HUGO BOSS', 'The Scent', 75, 'Uma fragrância irresistível e inesquecível como o sabor da sedução. Notas exclusivas de gengibre, Maninka e couro que se revelam ao longo do tempo, seduzindo os sentidos.', 'https://www.perfumesecompanhia.pt/fotos/produtos/0737052993546_1.jpg', 6, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (27,3, 'Oriental Masculino', 'Deo Spray', 'The Scent', 'HUGO BOSS', 'The Scent', 150, 'Uma fragrância irresistível e inesquecível como o sabor da sedução. Notas exclusivas de gengibre, Maninka e couro que se revelam ao longo do tempo, seduzindo os sentidos.', 'https://www.perfumesecompanhia.pt/fotos/produtos/0737052992785_1.jpg', 7, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, imagem, stock, destinatario, deleted) VALUES (72,5, 'Eau de Toilette', 'Bad Boy', 'CAROLINA HERRERA', 'Bad Boy', 50, 'https://www.perfumesecompanhia.pt/fotos/produtos/8411061926093_1.jpg', 2, 'Mulher', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, imagem, stock, destinatario, deleted) VALUES (47,5, 'Body Cream', 'Light Blue', 'DOLCE&GABBANA', 'Light Blue', 200, 'https://www.perfumesecompanhia.pt/fotos/produtos/3423473020219_1.jpg', 5, 'Mulher', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, imagem, stock, destinatario, deleted) VALUES (77,9, 'Coffret', 'The Scent', 'HUGO BOSS', 'The Scent', 'https://www.perfumesecompanhia.pt/fotos/produtos/3614229279337_1.jpg', 5, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, imagem, stock, destinatario, deleted) VALUES (22,28, 'Eau de Toilette', 'Tommy', 'TOMMY HILFIGER', 'Tommy', 30, 'https://www.perfumesecompanhia.pt/fotos/produtos/0022548055373.jpg', 2, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, imagem, stock, destinatario, deleted) VALUES (39,95, 'Eau de Toilette', 'Tommy', 'TOMMY HILFIGER', 'Tommy', 50, 'https://www.perfumesecompanhia.pt/fotos/produtos/0022548055373.jpg', 3, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, imagem, stock, destinatario, deleted) VALUES (50,2, 'Eau de Toilette', 'Tommy', 'TOMMY HILFIGER', 'Tommy', 100, 'https://www.perfumesecompanhia.pt/fotos/produtos/0022548055373.jpg', 4, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (75.25, 'Cítrico Masculino', 'Eau de Toilette', 'Wanted', 'AZZARO', 'Azzaro Wanted', 100, 'Azzaro Wanted é um tributo a uma nova forma de masculinidade livre e resplandecente. Uma eau de toilette amadeirada, cítrica e condimentada com um rasto cativante e elegante.', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500002696.jpg', 2, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (71.3, 'Amadeirado Masculino', 'Eau de Toilette', 'Wanted', 'AZZARO', 'Azzaro Wanted', 100, 'Azzaro Wanted é um tributo a uma nova forma de masculinidade livre e resplandecente. Uma eau de toilette amadeirada, cítrica e condimentada com um rasto cativante e elegante.', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500002696.jpg', 3, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (81.65, 'Amadeirado Masculino', 'Eau de Toilette', 'Pour Homme', 'AZZARO', 'Azzaro Pour Homme', 100, 'Azzaro Pour Homme é um perfume de sedução em estado puro, talhado pela elegância e pelo requinte italiano.', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500980543_1.jpg', 1, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (27.2, 'Deo Spray', 'Pour Homme', 'AZZARO', 'Azzaro Pour Homme', 150, 'Num gesto só, este spray oferece uma proteção eficaz de longa duração e uma sensação de frescura, durante todo o dia. ', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500002771_1.jpg', 4, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (77.3, 'Floral Feminino', 'Eau de Parfum', '212 Vip Rosé', 'CAROLINA HERRERA', 50, 'Atrevida, sofisticada, sempre pronta para a acção de noite & dia, o NOVO 212 VIP ROSÉ Eau de Parfum introduz uma ainda maior sedução ao universo! ', 'https://www.perfumesecompanhia.pt/fotos/produtos/8411061777176.jpg', 10, 'Mulher', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (75.25, 'Eau de Toilette', 'Under The Pole', 'AZZARO', 'Azzaro Chrome', 100, 'A assinatura emblemática de Chrome —um acorde cítrico e amadeirado, ao qual se acrescenta um grande coração aquático, que inspira frescura e força — é reinterpretada numa fórmula original 100% sem álcool, substituído pela água. ', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500009756_1.jpg', 3, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (78.71, 'Oriental Masculino', 'Eau de Toilette', 'The Scent', 'HUGO BOSS', 'The Scent', 50, 'Uma fragrância irresistível e inesquecível como o sabor da sedução. Notas exclusivas de gengibre, Maninka e couro que se revelam ao longo do tempo, seduzindo os sentidos.', 'https://www.perfumesecompanhia.pt/fotos/produtos/0737052972268.jpg', 3, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (104.95, 'Oriental Masculino', 'Eau de Toilette', 'The Scent', 'HUGO BOSS', 'The Scent', 100, 'Uma fragrância irresistível e inesquecível como o sabor da sedução. Notas exclusivas de gengibre, Maninka e couro que se revelam ao longo do tempo, seduzindo os sentidos.', 'https://www.perfumesecompanhia.pt/fotos/produtos/0737052972268.jpg', 4, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (140.65, 'Oriental Masculino', 'Eau de Toilette', 'The Scent', 'HUGO BOSS', 'The Scent', 200, 'Uma fragrância irresistível e inesquecível como o sabor da sedução. Notas exclusivas de gengibre, Maninka e couro que se revelam ao longo do tempo, seduzindo os sentidos.', 'https://www.perfumesecompanhia.pt/fotos/produtos/0737052972268.jpg', 5, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (27.3, 'Oriental Masculino', 'Deo Stick', 'The Scent', 'HUGO BOSS', 'The Scent', 75, 'Uma fragrância irresistível e inesquecível como o sabor da sedução. Notas exclusivas de gengibre, Maninka e couro que se revelam ao longo do tempo, seduzindo os sentidos.', 'https://www.perfumesecompanhia.pt/fotos/produtos/0737052993546_1.jpg', 6, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (27.3, 'Oriental Masculino', 'Deo Spray', 'The Scent', 'HUGO BOSS', 'The Scent', 150, 'Uma fragrância irresistível e inesquecível como o sabor da sedução. Notas exclusivas de gengibre, Maninka e couro que se revelam ao longo do tempo, seduzindo os sentidos.', 'https://www.perfumesecompanhia.pt/fotos/produtos/0737052992785_1.jpg', 7, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, imagem, stock, destinatario, deleted) VALUES (72.5, 'Eau de Toilette', 'Bad Boy', 'CAROLINA HERRERA', 'Bad Boy', 50, 'https://www.perfumesecompanhia.pt/fotos/produtos/8411061926093_1.jpg', 2, 'Mulher', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, imagem, stock, destinatario, deleted) VALUES (47.5, 'Body Cream', 'Light Blue', 'DOLCE&GABBANA', 'Light Blue', 200, 'https://www.perfumesecompanhia.pt/fotos/produtos/3423473020219_1.jpg', 5, 'Mulher', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, imagem, stock, destinatario, deleted) VALUES (77.9, 'Coffret', 'The Scent', 'HUGO BOSS', 'The Scent', 'https://www.perfumesecompanhia.pt/fotos/produtos/3614229279337_1.jpg', 5, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, imagem, stock, destinatario, deleted) VALUES (22.28, 'Eau de Toilette', 'Tommy', 'TOMMY HILFIGER', 'Tommy', 30, 'https://www.perfumesecompanhia.pt/fotos/produtos/0022548055373.jpg', 2, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, imagem, stock, destinatario, deleted) VALUES (39.95, 'Eau de Toilette', 'Tommy', 'TOMMY HILFIGER', 'Tommy', 50, 'https://www.perfumesecompanhia.pt/fotos/produtos/0022548055373.jpg', 3, 'Homem', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, imagem, stock, destinatario, deleted) VALUES (50.2, 'Eau de Toilette', 'Tommy', 'TOMMY HILFIGER', 'Tommy', 100, 'https://www.perfumesecompanhia.pt/fotos/produtos/0022548055373.jpg', 4, 'Homem', 0)
 INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, linha, tamanho, imagem, stock, destinatario, deleted) VALUES (24, 'Anti-Perspirant Deodorant ', 'Tommy', 'TOMMY HILFIGER', 'Tommy', 75, 'https://www.perfumesecompanhia.pt/fotos/produtos/0022548024355_1.jpg', 2, 'Homem', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, tamanho, imagem, stock, destinatario, deleted) VALUES (29,7, 'Eau de Toilette', 'Tommy Girl', 'TOMMY HILFIGER', 30, 'https://www.perfumesecompanhia.pt/fotos/produtos/0022548055380.jpg', 5, 'Mulher', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, tamanho, imagem, stock, destinatario, deleted) VALUES (39,95, 'Eau de Toilette', 'Tommy Girl', 'TOMMY HILFIGER', 50, 'https://www.perfumesecompanhia.pt/fotos/produtos/0022548055380.jpg', 6, 'Mulher', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (47,45, 'Eau de Cologne', 'Baby', 'TOUS', 100, 'Ninguém é mais espontâneo que os pequenos da casa. Eles e o seu mundo contagiam-nos de alegria e entusiasmo, delicadeza e ternura. Fazem-nos recordar nas memórias mais profundas, a criança que todos temos dentro de nós.', 'https://www.perfumesecompanhia.pt/fotos/produtos/8436038831125.jpg', 4, 'Criança', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, tamanho, imagem, stock, destinatario, deleted) VALUES (29.7, 'Eau de Toilette', 'Tommy Girl', 'TOMMY HILFIGER', 30, 'https://www.perfumesecompanhia.pt/fotos/produtos/0022548055380.jpg', 5, 'Mulher', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, tamanho, imagem, stock, destinatario, deleted) VALUES (39.95, 'Eau de Toilette', 'Tommy Girl', 'TOMMY HILFIGER', 50, 'https://www.perfumesecompanhia.pt/fotos/produtos/0022548055380.jpg', 6, 'Mulher', 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (47.45, 'Eau de Cologne', 'Baby', 'TOUS', 100, 'Ninguém é mais espontâneo que os pequenos da casa. Eles e o seu mundo contagiam-nos de alegria e entusiasmo, delicadeza e ternura. Fazem-nos recordar nas memórias mais profundas, a criança que todos temos dentro de nós.', 'https://www.perfumesecompanhia.pt/fotos/produtos/8436038831125.jpg', 4, 'Criança', 0)
 INSERT INTO Perfumaria.dbo.produto (preco, familiaolfativa, categoria, nome, marca, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (43, 'Floral Feminino', 'Eau de Senteur', 'Bébé', 'JACADI', 100, 'Perfume sem alcool para bébé (a partir dos 3 meses). Unisexo', 'https://www.perfumesecompanhia.pt/fotos/produtos/7613107400012_1.jpg', 5, 'Criança', 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, tamanho, imagem, stock, deleted) VALUES (38,65, 'Desmaquilhante Olhos', 'Bi-Facil', 'LANCÔME', 125, 'https://www.perfumesecompanhia.pt/fotos/produtos/3147758030334.jpg', 6, 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, tamanho, imagem, stock, deleted) VALUES (38.65, 'Desmaquilhante Olhos', 'Bi-Facil', 'LANCÔME', 125, 'https://www.perfumesecompanhia.pt/fotos/produtos/3147758030334.jpg', 6, 0)
 INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, tamanho, descricao, imagem, stock, deleted) VALUES (22, 'Tónico de Banho', 'Corpo', 'CLARINS', 200, 'Para transformar cada cm² da sua pele e a tornar mais lisa e bela - mais tonificada, mais fina e maravilhosamente nutrida. ', 'https://www.perfumesecompanhia.pt/fotos/produtos/3380810667103.jpg', 1, 0)
-INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, tamanho, imagem, stock, deleted) VALUES (32,95, 'Cuidados de Pés', 'Bálsamo de Pés', 'GAMILA SECRET', 100, 'https://www.perfumesecompanhia.pt/fotos/produtos/8717625545688_1.jpg', 3, 0)
+INSERT INTO Perfumaria.dbo.produto (preco, categoria, nome, marca, tamanho, imagem, stock, deleted) VALUES (32.95, 'Cuidados de Pés', 'Bálsamo de Pés', 'GAMILA SECRET', 100, 'https://www.perfumesecompanhia.pt/fotos/produtos/8717625545688_1.jpg', 3, 0)
 
 --promoção
 -- INSERT INTO Perfumaria.dbo.promocao (nome, desconto, datainicio, datafim) VALUES ()
@@ -55,6 +55,72 @@ INSERT INTO Perfumaria.dbo.cupao (id, datainicio, datafim, pontos_atribuidos) VA
 INSERT INTO Perfumaria.dbo.cupao (id, datainicio, datafim, pontos_atribuidos) VALUES ('JCZTW2BT7D', '2020-02-24 06:30:50.000', '2025-08-24 06:30:50.000', 50)
 INSERT INTO Perfumaria.dbo.cupao (id, datainicio, datafim, pontos_atribuidos) VALUES ('1U37L2GRMQ', '2020-01-24 06:30:50.000', '2022-08-24 06:30:50.000', 100)
 
+--utilizador (cliente e funcionario)
+
+DECLARE @responseMessage VARCHAR(250);
+        EXEC dbo.RegisterFunc @email='franciscopereira@gmail.com', @contribuinte='287567665', @fname='Francisco', @lname='Pereira', @password='fpereira10', @sexo=1, @dataNasc='1987-05-08', @foto='https://www.pexels.com/photo/adult-beard-boy-casual-220453/', @administrator=0, @salario=700, @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='joseferreira@hotmail.pt', @contribuinte='457253189', @fname='José', @lname='Ferreira', @password='zeferreira01', @sexo=1, @dataNasc='1994-02-03', @foto='https://www.pexels.com/photo/man-wearing-black-zip-up-jacket-near-beach-smiling-at-the-photo-736716/', @pontos=50, @newsletter=0, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterFunc @email='beatrizsantos_01@outlook.com', @contribuinte='998232166', @fname='Beatriz', @lname='Santos', @password='beaSantos!', @sexo=0, @dataNasc='2002-01-23', @foto='https://www.pexels.com/photo/closeup-photo-of-woman-with-brown-coat-and-gray-top-733872/',  @administrator=2, @salario=1200, @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='pedrofernandes230@gmail.com', @contribuinte='397543100', @fname='Pedro', @lname='Fernandes', @password='pedrito02', @sexo=1, @dataNasc='1998-12-06', @foto='https://www.pexels.com/photo/man-wearing-a-jacket-sitting-on-brown-wooden-crate-594610/', @pontos=0, @newsletter=0, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='antonio_ze@gmail.com', @contribuinte='302167890', @fname='Antonio', @lname='Silva', @password='Antonioze2', @sexo=1, @dataNasc='1960-11-04', @foto='https://www.pexels.com/photo/selective-focus-photograph-of-man-wearing-gray-suit-jacket-1138903/', @pontos=100, @newsletter=0, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='carolinasilva09@hotmail.com', @contribuinte='592165320', @fname='Carolina', @lname='Silva', @password='carolSilvaaa', @sexo=0, @dataNasc='1995-09-14', @foto='https://www.pexels.com/photo/women-s-white-and-black-button-up-collared-shirt-774909/', @pontos=100, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='sofiabarbosa@live.pt', @contribuinte='943212111', @fname='Sofia', @lname='Barbosa', @password='sofiBarbosa', @sexo=0, @dataNasc='1999-05-12', @foto='https://www.pexels.com/photo/woman-wearing-blue-shawl-lapel-suit-jacket-1036622/', @pontos=0, @newsletter=0, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='sarapereiraa5@gmail.pt', @contribuinte='123222985', @fname='Sara', @lname='Pereira', @password='SaraaPer1', @sexo=0, @dataNasc='2005-12-22', @foto='https://www.pexels.com/photo/woman-wearing-black-eyeglasses-1239291/', @pontos=200, @newsletter=1, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='pipamoreira@gmail.com', @contribuinte='445976504', @fname='Filipa', @lname='Moreira', @password='pipamor', @sexo=0, @dataNasc='1990-07-07', @foto='https://www.pexels.com/photo/adult-attractive-beautiful-beauty-415829/', @pontos=150, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='beazinha@hotmail.com', @contribuinte='455129988', @fname='Beatriz', @lname='Ferreira', @password='beazinha', @sexo=0, @dataNasc='2000-05-05', @foto='https://www.pexels.com/photo/woman-sitting-and-smiling-1858175/', @pontos=50, @newsletter=0, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='alexandraneves@gmail.com', @contribuinte='178495829', @fname='Alexandra', @lname='Neves', @password='aneves2004', @sexo=0, @dataNasc='2004-10-06', @foto='https://www.pexels.com/photo/close-up-photography-of-a-woman-near-wall-1065084/', @pontos=100, @newsletter=0, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='carlosa24@outmail.com', @contribuinte='125873530', @fname='Carlos', @lname='Amorim', @password='carlosa24', @sexo=1, @dataNasc='1972-06-24', @foto='https://www.pexels.com/photo/shallow-focus-photography-of-man-1300402/', @pontos=0, @newsletter=1, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterFunc @email='adrialmeida08@live.pt', @contribuinte='573975939', @fname='Adriana', @lname='Almeida', @password='adri08', @sexo=0, @dataNasc='1999-02-08', @foto='https://www.pexels.com/photo/closeup-photo-of-smiling-woman-wearing-blue-denim-jacket-1130626/',  @administrator=1, @salario=850, @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='anagonçalves1985@gmail.com', @contribuinte='258759872', @fname='Ana', @lname='Gonçalves', @password='ana1985', @sexo=0, @dataNasc='1985-01-20', @foto='https://www.pexels.com/photo/smiling-woman-wearing-black-sweater-1587009/', @pontos=250, @newsletter=0, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='aliceamaral1@hotmail.com', @contribuinte='287352385', @fname='Alice', @lname='Amaral', @password='amaralice', @sexo=0, @dataNasc='2000-05-01', @foto='https://www.pexels.com/photo/woman-holding-disposable-cup-712513/', @pontos=0, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='afonsomelooo@outlook.com', @contribuinte='821358756', @fname='Afonso', @lname='Melo', @password='melooo15', @sexo=1, @dataNasc='1989-09-15', @foto='https://www.pexels.com/photo/man-sitting-on-bench-having-a-cup-of-coffee-374044/', @pontos=0, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='andralves@gmail.com', @contribuinte='602941753', @fname='André', @lname='Alves', @password='Andralves', @sexo=1, @dataNasc='2002-02-02', @foto='https://www.pexels.com/photo/man-leaning-on-white-wall-1384219/', @pontos=50, @newsletter=0, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='alexandrelima25@hotmail.com', @contribuinte='219589974', @fname='Alexandre', @lname='Lima', @password='alexxlima', @sexo=1, @dataNasc='1965-12-25', @foto='https://www.pexels.com/photo/man-sitting-on-chair-beside-table-834863/', @pontos=100, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='anitinhasousa@live.pt', @contribuinte='476638927', @fname='Anita', @lname='Sousa', @password='anitinha1', @sexo=0, @dataNasc='1998-03-14', @foto='https://www.pexels.com/photo/woman-wearing-white-turtle-neck-sweater-709802/', @pontos=0, @newsletter=1, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterClient @email='paulomatos31@gmail.com', @contribuinte='593967351', @fname='Paulo', @lname='Matos', @password='pauloo', @sexo=1, @dataNasc='1979-05-31', @foto='https://www.pexels.com/photo/photography-of-a-guy-wearing-green-shirt-1222271/', @pontos=0, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
+        EXEC dbo.RegisterFunc @email='Criscosta@outlook.com', @contribuinte='129885782', @fname='Cristiana', @lname='Costa', @password='cris16', @sexo=0, @dataNasc='1970-10-16', @foto='https://www.pexels.com/photo/man-wearing-black-zip-up-jacket-near-beach-smiling-at-the-photo-736716/',  @administrator=0, @salario=750, @responseMessage = @responseMessage OUTPUT;
+        SELECT @responseMessage AS rm;
+
 --contacto
 --INSERT INTO Perfumaria.dbo.contacto (utilizador_email, telemovel, visibilidade, codigo_postal, pais, endereco, apartamento, localidade) VALUES ('', '', , '', '', '', '', '')
 
@@ -79,72 +145,6 @@ INSERT INTO Perfumaria.dbo.contacto (utilizador_email, telemovel, visibilidade, 
 INSERT INTO Perfumaria.dbo.contacto (utilizador_email, telemovel, visibilidade, codigo_postal, pais, endereco, apartamento, localidade) VALUES ('anitinhasousa@live.pt', '963215352', 1, '3750-864', 'Portugal', 'Travessa do Amaínho', 'Nº 2', 'Borralha')
 INSERT INTO Perfumaria.dbo.contacto (utilizador_email, telemovel, visibilidade, codigo_postal, pais, endereco, localidade) VALUES ('pipamoreira@gmail.com', '924583100', 1, '3750-492', 'Portugal', 'Travessa dos Agueiros', 'Fermentelos')
 
---utilizador (cliente e funcionario)
-
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterFunc @email='franciscopereira@gmail.com', @contribuinte='287567665', @fname='Francisco', @lname='Pereira', @password='fpereira10', @sexo=1, @dataNasc='08/05/1987', @foto='https://www.pexels.com/photo/adult-beard-boy-casual-220453/', @administrador=0, @salario=700, @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='joseferreira@hotmail.pt', @contribuinte='457253189', @fname='José', @lname='Ferreira', @password='zeferreira01', @sexo=1, @dataNasc='03/02/1994', @foto='https://www.pexels.com/photo/man-wearing-black-zip-up-jacket-near-beach-smiling-at-the-photo-736716/', @pontos=50, @newsletter=0, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterFunc @email='beatrizsantos_01@outlook.com', @contribuinte='998232166', @fname='Beatriz', @lname='Santos', @password='beaSantos!', @sexo=0, @dataNasc='23/01/2002', @foto='https://www.pexels.com/photo/closeup-photo-of-woman-with-brown-coat-and-gray-top-733872/',  @administrador=2, @salario=1200, @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='pedrofernandes230@gmail.com', @contribuinte='397543100', @fname='Pedro', @lname='Fernandes', @password='pedrito02', @sexo=1, @dataNasc='06/12/1998', @foto='https://www.pexels.com/photo/man-wearing-a-jacket-sitting-on-brown-wooden-crate-594610/', @pontos=0, @newsletter=0, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='antonio_ze@gmail.com', @contribuinte='302167890', @fname='Antonio', @lname='Silva', @password='Antonioze2', @sexo=1, @dataNasc='04/11/1960', @foto='https://www.pexels.com/photo/selective-focus-photograph-of-man-wearing-gray-suit-jacket-1138903/', @pontos=100, @newsletter=0, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='carolinasilva09@hotmail.com', @contribuinte='592165320', @fname='Carolina', @lname='Silva', @password='carolSilvaaa', @sexo=0, @dataNasc='14/09/1995', @foto='https://www.pexels.com/photo/women-s-white-and-black-button-up-collared-shirt-774909/', @pontos=100, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='sofiabarbosa@live.pt', @contribuinte='943212111', @fname='Sofia', @lname='Barbosa', @password='sofiBarbosa', @sexo=0, @dataNasc='12/05/1999', @foto='https://www.pexels.com/photo/woman-wearing-blue-shawl-lapel-suit-jacket-1036622/', @pontos=0, @newsletter=0, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='sarapereiraa5@gmail.pt', @contribuinte='123222985', @fname='Sara', @lname='Pereira', @password='SaraaPer1', @sexo=0, @dataNasc='22/12/2005', @foto='https://www.pexels.com/photo/woman-wearing-black-eyeglasses-1239291/', @pontos=200, @newsletter=1, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='pipamoreira@gmail.com', @contribuinte='445976504', @fname='Filipa', @lname='Moreira', @password='pipamor', @sexo=0, @dataNasc='07/07/1990', @foto='https://www.pexels.com/photo/adult-attractive-beautiful-beauty-415829/', @pontos=150, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='beazinha@hotmail.com', @contribuinte='455129988', @fname='Beatriz', @lname='Ferreira', @password='beazinha', @sexo=0, @dataNasc='05/05/2000', @foto='https://www.pexels.com/photo/woman-sitting-and-smiling-1858175/', @pontos=50, @newsletter=0, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='alexandraneves@gmail.com', @contribuinte='178495829', @fname='Alexandra', @lname='Neves', @password='aneves2004', @sexo=0, @dataNasc='06/10/2004', @foto='https://www.pexels.com/photo/close-up-photography-of-a-woman-near-wall-1065084/', @pontos=100, @newsletter=0, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='carlosa24@outmail.com', @contribuinte='125873530', @fname='Carlos', @lname='Amorim', @password='carlosa24', @sexo=1, @dataNasc='24/06/1972', @foto='https://www.pexels.com/photo/shallow-focus-photography-of-man-1300402/', @pontos=0, @newsletter=1, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterFunc @email='adrialmeida08@live.pt', @contribuinte='573975939', @fname='Adriana', @lname='Almeida', @password='adri08', @sexo=0, @dataNasc='08/02/1999', @foto='https://www.pexels.com/photo/closeup-photo-of-smiling-woman-wearing-blue-denim-jacket-1130626/',  @administrador=1, @salario=850, @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='anagonçalves1985@gmail.com', @contribuinte='258759872', @fname='Ana', @lname='Gonçalves', @password='ana1985', @sexo=0, @dataNasc='30/01/1985', @foto='https://www.pexels.com/photo/smiling-woman-wearing-black-sweater-1587009/', @pontos=250, @newsletter=0, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='aliceamaral1@hotmail.com', @contribuinte='287352385', @fname='Alice', @lname='Amaral', @password='amaralice', @sexo=0, @dataNasc='01/05/2000', @foto='https://www.pexels.com/photo/woman-holding-disposable-cup-712513/', @pontos=0, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='afonsomelooo@outlook.com', @contribuinte='821358756', @fname='Afonso', @lname='Melo', @password='melooo15', @sexo=1, @dataNasc='15/09/1989', @foto='https://www.pexels.com/photo/man-sitting-on-bench-having-a-cup-of-coffee-374044/', @pontos=0, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='andralves@gmail.com', @contribuinte='602941753', @fname='André', @lname='Alves', @password='Andralves', @sexo=1, @dataNasc='02/02/2002', @foto='https://www.pexels.com/photo/man-leaning-on-white-wall-1384219/', @pontos=50, @newsletter=0, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='alexandrelima25@hotmail.com', @contribuinte='219589974', @fname='Alexandre', @lname='Lima', @password='alexxlima', @sexo=1, @dataNasc='25/12/1965', @foto='https://www.pexels.com/photo/man-sitting-on-chair-beside-table-834863/', @pontos=100, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='anitinhasousa@live.pt', @contribuinte='476638927', @fname='Anita', @lname='Sousa', @password='anitinha1', @sexo=0, @dataNasc='14/03/1998', @foto='https://www.pexels.com/photo/woman-wearing-white-turtle-neck-sweater-709802/', @pontos=0, @newsletter=1, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterClient @email='paulomatos31@gmail.com', @contribuinte='593967351', @fname='Paulo', @lname='Matos', @password='pauloo', @sexo=1, @dataNasc='31/05/1979', @foto='https://www.pexels.com/photo/photography-of-a-guy-wearing-green-shirt-1222271/', @pontos=0, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-DECLARE @responseMessage VARCHAR(250);
-        EXEC dbo.RegisterFunc @email='Criscosta@outlook.com', @contribuinte='129885782', @fname='Cristiana', @lname='Costa', @password='cris16', @sexo=0, @dataNasc='16/10/1970', @foto='https://www.pexels.com/photo/man-wearing-black-zip-up-jacket-near-beach-smiling-at-the-photo-736716/',  @administrador=0, @salario=750, @responseMessage = @responseMessage OUTPUT;
-        SELECT @responseMessage AS rm;
-
 --compra
 
 INSERT INTO Perfumaria.dbo.compra (contribuinte, datacompra, pagamento, clienteemail, pontosgastos, pontosacumulados) VALUES ('397543100', '2020-03-24 06:30:50.000', 'Paypal', 'pedrofernandes230@gmail.com', 0, 5)
@@ -165,24 +165,24 @@ INSERT INTO Perfumaria.dbo.compra (contribuinte, datacompra, pagamento, clientee
 
 --serviço
 
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Depilação', 45,5)
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Sobrancelhas', 7,5)
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Axilas', 12,8)
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Máscara de Rosto', 9,5)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Depilação', 45.5)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Sobrancelhas', 7.5)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Axilas', 12.8)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Máscara de Rosto', 9.5)
 INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Manicure', 15)
 INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Pedicure', 10)
 INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Fotodepilação', 85)
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Massagem Costas', 35,7)
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Pressoterapia', 24,5)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Massagem Costas', 35.7)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Pressoterapia', 24.5)
 INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Tratamento anti-celulite', 47)
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Lifting Pestanas', 14,99)
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Maquilhagem', 17,9)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Lifting Pestanas', 14.99)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Maquilhagem', 17.9)
 INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Verniz gel', 13)
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Gel', 19,99)
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Acrílico', 25,15)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Gel', 19.99)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Acrílico', 25.15)
 INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Massagem Rosto', 23)
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Drenagem Linfática', 67,9)
-INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Peeling Corporal', 20,15)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Drenagem Linfática', 67.9)
+INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Peeling Corporal', 20.15)
 INSERT INTO Perfumaria.dbo.servico (tipo, preco) VALUES ('Limpeza de pele', 71)
 
 --cliente_usa_cupao
@@ -357,13 +357,13 @@ INSERT INTO Perfumaria.dbo.funcionario_faz_servico (funcionario_email, servico_i
 
 --marcacao
 
-INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('joseferreira@hotmail.pt', 1, 'franciscopereira@gmail.com', '15/05/2020 16:30')
-INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('antonio_ze@gmail.com', 12, 'Criscosta@outlook.com', '14/06/2020 09:30')
-INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('aliceamaral1@hotmail.com', 16, 'Criscosta@outlook.com', '11/05/2020 19:00')
-INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('paulomatos31@gmail.com', 3, 'adrialmeida08@live.pt', '03/06/2020 15:00')
-INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('alexandrelima25@hotmail.com', 9, 'franciscopereira@gmail.com', '02/07/2020 11:30')
-INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('joseferreira@hotmail.pt', 4, 'Criscosta@outlook.com', '15/05/2020 17:30')
-INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('alexandrelima25@hotmail.com', 20, 'franciscopereira@gmail.com', '23/05/2020 14:15')
+INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('joseferreira@hotmail.pt', 1, 'franciscopereira@gmail.com', '2020-05-15 16:30:00')
+INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('antonio_ze@gmail.com', 12, 'Criscosta@outlook.com', '2020-06-14 09:30:00')
+INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('aliceamaral1@hotmail.com', 16, 'Criscosta@outlook.com', '2020-05-11 19:00:00')
+INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('paulomatos31@gmail.com', 3, 'adrialmeida08@live.pt', '2020-06-03 15:00:00')
+INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('alexandrelima25@hotmail.com', 9, 'franciscopereira@gmail.com', '2020-07-02 11:30:00')
+INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('joseferreira@hotmail.pt', 4, 'Criscosta@outlook.com', '2020-05-17 17:30:00')
+INSERT INTO Perfumaria.dbo.marcacao (cliente_email, servico_id, funcionario_email, dataMarc) VALUES ('alexandrelima25@hotmail.com', 19, 'franciscopereira@gmail.com', '2020-05-23 14:15:00')
 
 
 

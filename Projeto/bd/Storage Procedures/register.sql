@@ -1,3 +1,6 @@
+DROP PROCEDURE dbo.RegisterFunc
+GO
+
 GO
 CREATE PROCEDURE dbo.RegisterFunc
     @email VARCHAR(255),
@@ -6,7 +9,7 @@ CREATE PROCEDURE dbo.RegisterFunc
     @fname VARCHAR(20),
     @lname VARCHAR(20),
     @sexo BIT,
-    @dataNasc DATETIME,
+    @dataNasc DATE,
     @foto VARCHAR(100),
     @salario INT,
     @administrator TINYINT,
@@ -34,6 +37,8 @@ BEGIN
 
 END
 
+DROP PROCEDURE dbo.RegisterClient
+GO
 
 GO
 CREATE PROCEDURE dbo.RegisterClient
@@ -43,7 +48,7 @@ CREATE PROCEDURE dbo.RegisterClient
     @fname VARCHAR(20),
     @lname VARCHAR(20),
     @sexo BIT,
-    @dataNasc DATETIME,
+    @dataNasc DATE,
     @foto VARCHAR(100),
     @pontos INT,
     @newsletter BIT,

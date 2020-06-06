@@ -174,12 +174,12 @@ GO
 CREATE TABLE Perfumaria.dbo.produto
 (
     id INT NOT NULL IDENTITY(1,1),
-    preco REAL NOT NULL,
+    preco FLOAT NOT NULL,
     familiaolfativa VARCHAR(30),
     categoria VARCHAR(30) NOT NULL,
     nome VARCHAR(30) NOT NULL,
     marca VARCHAR(30) NOT NULL,
-    linha VARCHAR(30) NOT NULL,
+    linha VARCHAR(30),
     tamanho SMALLINT,
     descricao VARCHAR(280),
     imagem VARCHAR(100) NOT NULL,
@@ -256,7 +256,7 @@ CREATE TABLE Perfumaria.dbo.utilizador
     lname VARCHAR(20) NOT NULL,
     pw BINARY(64) NOT NULL,
     sexo BIT NOT NULL,
-    dataNasc DATETIME NOT NULL,
+    dataNasc DATE NOT NULL,
     foto VARCHAR(100) NOT NULL,
     contacto_default_id INT,
     CONSTRAINT utilizador_pk PRIMARY KEY (email)
@@ -283,7 +283,7 @@ CREATE TABLE Perfumaria.dbo.contacto
     codigo_postal CHAR(8) NOT NULL,
     pais VARCHAR(20) NOT NULL,
     endereco VARCHAR(50) NOT NULL,
-    apartamento VARCHAR(50) NOT NULL,
+    apartamento VARCHAR(50),
     localidade VARCHAR(20) NOT NULL,
 
     CONSTRAINT contacto_pk PRIMARY KEY (id)
@@ -305,7 +305,7 @@ CREATE TABLE Perfumaria.dbo.compra
 (
     numero INT NOT NULL IDENTITY(1,1),
     contribuinte CHAR(9) NOT NULL,
-    datacompra DATETIME NOT NULL,
+    datacompra SMALLDATETIME NOT NULL,
     pagamento VARCHAR(10) NOT NULL,
     clienteemail VARCHAR(255) NOT NULL,
     pontosgastos INT,
@@ -363,7 +363,7 @@ CREATE TABLE Perfumaria.dbo.marcacao
     cliente_email VARCHAR(255) NOT NULL,
     servico_id INT NOT NULL,
     funcionario_email VARCHAR(255) NOT NULL,
-    dataMarc DATETIME NOT NULL,
+    dataMarc SMALLDATETIME NOT NULL,
 
     CONSTRAINT marcacao_pk PRIMARY KEY (id)
 );

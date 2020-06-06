@@ -18,3 +18,4 @@
 \\Mac\Home\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Projeto\Interface\Perfumaria\Perfumaria\obj\Debug\Perfumaria.pdb
 \\Mac\Home\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Projeto\Interface\Perfumaria\Perfumaria\obj\Debug\Perfumaria.Main.resources
 \\Mac\Home\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Projeto\Interface\Perfumaria\Perfumaria\obj\Debug\Perfumaria.Cliente.resources
+\\Mac\Home\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Projeto\Interface\Perfumaria\Perfumaria\obj\Debug\Perfumaria.Funcionario.resources
