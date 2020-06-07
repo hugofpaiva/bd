@@ -15,8 +15,8 @@ BEGIN
     
     BEGIN TRY
         INSERT INTO Perfumaria.perf.contacto
-        (utilizador_email telemovel, visibilidade, codigo_postal, pais, endereco, apartamento, localidade)
-        VALUES(@utilizador_email @telemovel, @visibilidade, @codigo_postal, @pais, @endereco, @apartamento, @localidade) 
+        (utilizador_email, telemovel, visibilidade, codigo_postal, pais, endereco, apartamento, localidade)
+        VALUES(@utilizador_email, @telemovel, @visibilidade, @codigo_postal, @pais, @endereco, @apartamento, @localidade) 
         SET @responseMessage='Success'
     END TRY
     BEGIN CATCH
