@@ -1,4 +1,4 @@
-CREATE FUNCTION dbo.getAllProducts () RETURNS @table TABLE (preco INT NOT NULL, familiaolfativa VARCHAR(30), categoria VARCHAR(30) NOT NULL,
+CREATE FUNCTION perf.getAllProducts () RETURNS @table TABLE (preco INT NOT NULL, familiaolfativa VARCHAR(30), categoria VARCHAR(30) NOT NULL,
                                                             nome VARCHAR(30) NOT NULL, marca VARCHAR(30) NOT NULL, linha VARCHAR(30) NOT NULL,
                                                             tamanho SMALLINT, descricao VARCHAR(280), imagem VARCHAR(100) NOT NULL,
                                                             stock SMALLINT NOT NULL, destinatario VARCHAR(10))
@@ -10,7 +10,7 @@ CREATE FUNCTION dbo.getAllProducts () RETURNS @table TABLE (preco INT NOT NULL, 
             @stock AS SMALLINT, @destinatario AS VARCHAR(10);
             
             INSERT @table SELECT preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario
-                            FROM Perfumaria.dbo.produto
+                            FROM Perfumaria.perf.produto
             RETURN;
         END;
 GO

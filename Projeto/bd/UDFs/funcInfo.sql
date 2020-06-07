@@ -1,12 +1,12 @@
-DROP PROCEDURE dbo.getFuncInfo;
+DROP PROCEDURE perf.getFuncInfo;
 GO
 
-CREATE FUNCTION dbo.getFuncInfo (@email VARCHAR(255)) RETURNS Table 
+CREATE FUNCTION perf.getFuncInfo (@email VARCHAR(255)) RETURNS Table 
 AS
     RETURN (SELECT * 
-                    FROM Perfumaria.dbo.utilizador
-                    JOIN Perfumaria.dbo.funcionario ON utilizador.email = funcionario.email
+                    FROM Perfumaria.perf.utilizador
+                    JOIN Perfumaria.perf.funcionario ON utilizador.email = funcionario.email
                     WHERE @email = utilizador.email) 
 GO           
                 
---SELECT * FROM dbo.AveragePricebyItems (15.00)
+--SELECT * FROM perf.AveragePricebyItems (15.00)
