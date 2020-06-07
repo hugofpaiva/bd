@@ -54,9 +54,8 @@
             this.Contactos = new System.Windows.Forms.TabPage();
             this.contacts = new System.Windows.Forms.DataGridView();
             this.Histórico = new System.Windows.Forms.TabPage();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.historico = new System.Windows.Forms.TabControl();
             this.Compras = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Servicos = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Loja = new System.Windows.Forms.TabPage();
@@ -68,7 +67,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.Marcações = new System.Windows.Forms.TabPage();
-            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.marcacoes = new System.Windows.Forms.TabControl();
             this.marcar = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -99,6 +98,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.buyHistory = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -107,19 +107,20 @@
             this.Contactos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contacts)).BeginInit();
             this.Histórico.SuspendLayout();
-            this.tabControl3.SuspendLayout();
+            this.historico.SuspendLayout();
             this.Compras.SuspendLayout();
             this.Servicos.SuspendLayout();
             this.Loja.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Marcações.SuspendLayout();
-            this.tabControl4.SuspendLayout();
+            this.marcacoes.SuspendLayout();
             this.marcar.SuspendLayout();
             this.future.SuspendLayout();
             this.Cupões.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Favoritos.SuspendLayout();
             this.changepw.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buyHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -411,7 +412,7 @@
             // 
             // Histórico
             // 
-            this.Histórico.Controls.Add(this.tabControl3);
+            this.Histórico.Controls.Add(this.historico);
             this.Histórico.Location = new System.Drawing.Point(4, 22);
             this.Histórico.Name = "Histórico";
             this.Histórico.Padding = new System.Windows.Forms.Padding(3);
@@ -420,19 +421,19 @@
             this.Histórico.Text = "Histórico";
             this.Histórico.UseVisualStyleBackColor = true;
             // 
-            // tabControl3
+            // historico
             // 
-            this.tabControl3.Controls.Add(this.Compras);
-            this.tabControl3.Controls.Add(this.Servicos);
-            this.tabControl3.Location = new System.Drawing.Point(0, 0);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(772, 404);
-            this.tabControl3.TabIndex = 0;
+            this.historico.Controls.Add(this.Compras);
+            this.historico.Controls.Add(this.Servicos);
+            this.historico.Location = new System.Drawing.Point(0, 0);
+            this.historico.Name = "historico";
+            this.historico.SelectedIndex = 0;
+            this.historico.Size = new System.Drawing.Size(772, 404);
+            this.historico.TabIndex = 0;
             // 
             // Compras
             // 
-            this.Compras.Controls.Add(this.tableLayoutPanel2);
+            this.Compras.Controls.Add(this.buyHistory);
             this.Compras.Location = new System.Drawing.Point(4, 22);
             this.Compras.Name = "Compras";
             this.Compras.Padding = new System.Windows.Forms.Padding(3);
@@ -440,19 +441,6 @@
             this.Compras.TabIndex = 0;
             this.Compras.Text = "Compras";
             this.Compras.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(764, 378);
-            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // Servicos
             // 
@@ -566,7 +554,7 @@
             // 
             // Marcações
             // 
-            this.Marcações.Controls.Add(this.tabControl4);
+            this.Marcações.Controls.Add(this.marcacoes);
             this.Marcações.Location = new System.Drawing.Point(4, 22);
             this.Marcações.Name = "Marcações";
             this.Marcações.Size = new System.Drawing.Size(768, 400);
@@ -574,15 +562,15 @@
             this.Marcações.Text = "Marcações";
             this.Marcações.UseVisualStyleBackColor = true;
             // 
-            // tabControl4
+            // marcacoes
             // 
-            this.tabControl4.Controls.Add(this.marcar);
-            this.tabControl4.Controls.Add(this.future);
-            this.tabControl4.Location = new System.Drawing.Point(0, 0);
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(765, 400);
-            this.tabControl4.TabIndex = 0;
+            this.marcacoes.Controls.Add(this.marcar);
+            this.marcacoes.Controls.Add(this.future);
+            this.marcacoes.Location = new System.Drawing.Point(0, 0);
+            this.marcacoes.Name = "marcacoes";
+            this.marcacoes.SelectedIndex = 0;
+            this.marcacoes.Size = new System.Drawing.Size(765, 400);
+            this.marcacoes.TabIndex = 0;
             // 
             // marcar
             // 
@@ -917,6 +905,14 @@
             this.label19.TabIndex = 48;
             this.label19.Text = "Confirmar Nova Password";
             // 
+            // buyHistory
+            // 
+            this.buyHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.buyHistory.Location = new System.Drawing.Point(-1, 0);
+            this.buyHistory.Name = "buyHistory";
+            this.buyHistory.Size = new System.Drawing.Size(765, 378);
+            this.buyHistory.TabIndex = 0;
+            // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -935,14 +931,14 @@
             this.Contactos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.contacts)).EndInit();
             this.Histórico.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
+            this.historico.ResumeLayout(false);
             this.Compras.ResumeLayout(false);
             this.Servicos.ResumeLayout(false);
             this.Loja.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.Marcações.ResumeLayout(false);
-            this.tabControl4.ResumeLayout(false);
+            this.marcacoes.ResumeLayout(false);
             this.marcar.ResumeLayout(false);
             this.marcar.PerformLayout();
             this.future.ResumeLayout(false);
@@ -952,6 +948,7 @@
             this.Favoritos.ResumeLayout(false);
             this.changepw.ResumeLayout(false);
             this.changepw.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buyHistory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -985,10 +982,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox emailbox;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabControl historico;
         private System.Windows.Forms.TabPage Compras;
         private System.Windows.Forms.TabPage Servicos;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
@@ -997,7 +993,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabControl marcacoes;
         private System.Windows.Forms.TabPage marcar;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button4;
@@ -1029,5 +1025,6 @@
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DataGridView buyHistory;
     }
 }

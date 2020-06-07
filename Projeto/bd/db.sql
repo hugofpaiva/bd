@@ -373,12 +373,9 @@ CREATE TABLE Perfumaria.perf.marcacao
     cliente_email VARCHAR(255) NOT NULL,
     servico_id INT NOT NULL,
     funcionario_email VARCHAR(255) NOT NULL,
-<<<<<<< HEAD
-    dataMarc DATETIME NOT NULL,
-    deleted BIT NOT NULL DEFAULT 0,
-=======
     dataMarc SMALLDATETIME NOT NULL,
->>>>>>> 0809b69736627fe7ae8ed6c7921a21c913b930be
+    deleted BIT NOT NULL DEFAULT 0,
+    
 
     CONSTRAINT marcacao_pk PRIMARY KEY (id)
 );

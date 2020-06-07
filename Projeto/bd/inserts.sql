@@ -58,67 +58,67 @@ INSERT INTO Perfumaria.perf.cupao (id, datainicio, datafim, pontos_atribuidos) V
 --utilizador (cliente e funcionario)
 
 DECLARE @responseMessage VARCHAR(250);
-        EXEC perf.RegisterFunc @email='franciscopereira@gmail.com', @contribuinte='287567665', @fname='Francisco', @lname='Pereira', @password='fpereira10', @sexo=1, @dataNasc='1987-05-08', @foto='https://www.pexels.com/photo/adult-beard-boy-casual-220453/', @administrator=0, @salario=700, @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterFunc @email='franciscopereira@gmail.com', @contribuinte='287567665', @fname='Francisco', @lname='Pereira', @password='fpereira10', @sexo=1, @dataNasc='1987-05-08', @foto='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @administrator=0, @salario=700, @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='joseferreira@hotmail.pt', @contribuinte='457253189', @fname='José', @lname='Ferreira', @password='zeferreira01', @sexo=1, @dataNasc='1994-02-03', @foto='https://www.pexels.com/photo/man-wearing-black-zip-up-jacket-near-beach-smiling-at-the-photo-736716/', @pontos=50, @newsletter=0, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='joseferreira@hotmail.pt', @contribuinte='457253189', @fname='José', @lname='Ferreira', @password='zeferreira01', @sexo=1, @dataNasc='1994-02-03', @foto='https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=50, @newsletter=0, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterFunc @email='beatrizsantos_01@outlook.com', @contribuinte='998232166', @fname='Beatriz', @lname='Santos', @password='beaSantos!', @sexo=0, @dataNasc='2002-01-23', @foto='https://www.pexels.com/photo/closeup-photo-of-woman-with-brown-coat-and-gray-top-733872/',  @administrator=2, @salario=1200, @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterFunc @email='beatrizsantos_01@outlook.com', @contribuinte='998232166', @fname='Beatriz', @lname='Santos', @password='beaSantos!', @sexo=0, @dataNasc='2002-01-23', @foto='https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',  @administrator=2, @salario=1200, @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='pedrofernandes230@gmail.com', @contribuinte='397543100', @fname='Pedro', @lname='Fernandes', @password='pedrito02', @sexo=1, @dataNasc='1998-12-06', @foto='https://www.pexels.com/photo/man-wearing-a-jacket-sitting-on-brown-wooden-crate-594610/', @pontos=0, @newsletter=0, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='pedrofernandes230@gmail.com', @contribuinte='397543100', @fname='Pedro', @lname='Fernandes', @password='pedrito02', @sexo=1, @dataNasc='1998-12-06', @foto='https://images.pexels.com/photos/594610/pexels-photo-594610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=0, @newsletter=0, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='antonio_ze@gmail.com', @contribuinte='302167890', @fname='Antonio', @lname='Silva', @password='Antonioze2', @sexo=1, @dataNasc='1960-11-04', @foto='https://www.pexels.com/photo/selective-focus-photograph-of-man-wearing-gray-suit-jacket-1138903/', @pontos=100, @newsletter=0, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='antonio_ze@gmail.com', @contribuinte='302167890', @fname='Antonio', @lname='Silva', @password='Antonioze2', @sexo=1, @dataNasc='1960-11-04', @foto='https://images.pexels.com/photos/1138903/pexels-photo-1138903.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=100, @newsletter=0, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='carolinasilva09@hotmail.com', @contribuinte='592165320', @fname='Carolina', @lname='Silva', @password='carolSilvaaa', @sexo=0, @dataNasc='1995-09-14', @foto='https://www.pexels.com/photo/women-s-white-and-black-button-up-collared-shirt-774909/', @pontos=100, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='carolinasilva09@hotmail.com', @contribuinte='592165320', @fname='Carolina', @lname='Silva', @password='carolSilvaaa', @sexo=0, @dataNasc='1995-09-14', @foto='https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=100, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='sofiabarbosa@live.pt', @contribuinte='943212111', @fname='Sofia', @lname='Barbosa', @password='sofiBarbosa', @sexo=0, @dataNasc='1999-05-12', @foto='https://www.pexels.com/photo/woman-wearing-blue-shawl-lapel-suit-jacket-1036622/', @pontos=0, @newsletter=0, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='sofiabarbosa@live.pt', @contribuinte='943212111', @fname='Sofia', @lname='Barbosa', @password='sofiBarbosa', @sexo=0, @dataNasc='1999-05-12', @foto='https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=0, @newsletter=0, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='sarapereiraa5@gmail.pt', @contribuinte='123222985', @fname='Sara', @lname='Pereira', @password='SaraaPer1', @sexo=0, @dataNasc='2005-12-22', @foto='https://www.pexels.com/photo/woman-wearing-black-eyeglasses-1239291/', @pontos=200, @newsletter=1, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='sarapereiraa5@gmail.pt', @contribuinte='123222985', @fname='Sara', @lname='Pereira', @password='SaraaPer1', @sexo=0, @dataNasc='2005-12-22', @foto='https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=200, @newsletter=1, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='pipamoreira@gmail.com', @contribuinte='445976504', @fname='Filipa', @lname='Moreira', @password='pipamor', @sexo=0, @dataNasc='1990-07-07', @foto='https://www.pexels.com/photo/adult-attractive-beautiful-beauty-415829/', @pontos=150, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='pipamoreira@gmail.com', @contribuinte='445976504', @fname='Filipa', @lname='Moreira', @password='pipamor', @sexo=0, @dataNasc='1990-07-07', @foto='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=150, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='beazinha@hotmail.com', @contribuinte='455129988', @fname='Beatriz', @lname='Ferreira', @password='beazinha', @sexo=0, @dataNasc='2000-05-05', @foto='https://www.pexels.com/photo/woman-sitting-and-smiling-1858175/', @pontos=50, @newsletter=0, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='beazinha@hotmail.com', @contribuinte='455129988', @fname='Beatriz', @lname='Ferreira', @password='beazinha', @sexo=0, @dataNasc='2000-05-05', @foto='https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=50, @newsletter=0, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='alexandraneves@gmail.com', @contribuinte='178495829', @fname='Alexandra', @lname='Neves', @password='aneves2004', @sexo=0, @dataNasc='2004-10-06', @foto='https://www.pexels.com/photo/close-up-photography-of-a-woman-near-wall-1065084/', @pontos=100, @newsletter=0, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='alexandraneves@gmail.com', @contribuinte='178495829', @fname='Alexandra', @lname='Neves', @password='aneves2004', @sexo=0, @dataNasc='2004-10-06', @foto='https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260', @pontos=100, @newsletter=0, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='carlosa24@outmail.com', @contribuinte='125873530', @fname='Carlos', @lname='Amorim', @password='carlosa24', @sexo=1, @dataNasc='1972-06-24', @foto='https://www.pexels.com/photo/shallow-focus-photography-of-man-1300402/', @pontos=0, @newsletter=1, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='carlosa24@outmail.com', @contribuinte='125873530', @fname='Carlos', @lname='Amorim', @password='carlosa24', @sexo=1, @dataNasc='1972-06-24', @foto='https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=0, @newsletter=1, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterFunc @email='adrialmeida08@live.pt', @contribuinte='573975939', @fname='Adriana', @lname='Almeida', @password='adri08', @sexo=0, @dataNasc='1999-02-08', @foto='https://www.pexels.com/photo/closeup-photo-of-smiling-woman-wearing-blue-denim-jacket-1130626/',  @administrator=1, @salario=850, @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterFunc @email='adrialmeida08@live.pt', @contribuinte='573975939', @fname='Adriana', @lname='Almeida', @password='adri08', @sexo=0, @dataNasc='1999-02-08', @foto='https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',  @administrator=1, @salario=850, @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='anagonçalves1985@gmail.com', @contribuinte='258759872', @fname='Ana', @lname='Gonçalves', @password='ana1985', @sexo=0, @dataNasc='1985-01-20', @foto='https://www.pexels.com/photo/smiling-woman-wearing-black-sweater-1587009/', @pontos=250, @newsletter=0, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='anagonçalves1985@gmail.com', @contribuinte='258759872', @fname='Ana', @lname='Gonçalves', @password='ana1985', @sexo=0, @dataNasc='1985-01-20', @foto='https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=250, @newsletter=0, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='aliceamaral1@hotmail.com', @contribuinte='287352385', @fname='Alice', @lname='Amaral', @password='amaralice', @sexo=0, @dataNasc='2000-05-01', @foto='https://www.pexels.com/photo/woman-holding-disposable-cup-712513/', @pontos=0, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='aliceamaral1@hotmail.com', @contribuinte='287352385', @fname='Alice', @lname='Amaral', @password='amaralice', @sexo=0, @dataNasc='2000-05-01', @foto='https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=0, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='afonsomelooo@outlook.com', @contribuinte='821358756', @fname='Afonso', @lname='Melo', @password='melooo15', @sexo=1, @dataNasc='1989-09-15', @foto='https://www.pexels.com/photo/man-sitting-on-bench-having-a-cup-of-coffee-374044/', @pontos=0, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='afonsomelooo@outlook.com', @contribuinte='821358756', @fname='Afonso', @lname='Melo', @password='melooo15', @sexo=1, @dataNasc='1989-09-15', @foto='https://images.pexels.com/photos/374044/pexels-photo-374044.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=0, @newsletter=1, @pagamento='MB Way', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='andralves@gmail.com', @contribuinte='602941753', @fname='André', @lname='Alves', @password='Andralves', @sexo=1, @dataNasc='2002-02-02', @foto='https://www.pexels.com/photo/man-leaning-on-white-wall-1384219/', @pontos=50, @newsletter=0, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='andralves@gmail.com', @contribuinte='602941753', @fname='André', @lname='Alves', @password='Andralves', @sexo=1, @dataNasc='2002-02-02', @foto='https://images.pexels.com/photos/1384219/pexels-photo-1384219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=50, @newsletter=0, @pagamento='Paypal', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='alexandrelima25@hotmail.com', @contribuinte='219589974', @fname='Alexandre', @lname='Lima', @password='alexxlima', @sexo=1, @dataNasc='1965-12-25', @foto='https://www.pexels.com/photo/man-sitting-on-chair-beside-table-834863/', @pontos=100, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='alexandrelima25@hotmail.com', @contribuinte='219589974', @fname='Alexandre', @lname='Lima', @password='alexxlima', @sexo=1, @dataNasc='1965-12-25', @foto='https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=100, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='anitinhasousa@live.pt', @contribuinte='476638927', @fname='Anita', @lname='Sousa', @password='anitinha1', @sexo=0, @dataNasc='1998-03-14', @foto='https://www.pexels.com/photo/woman-wearing-white-turtle-neck-sweater-709802/', @pontos=0, @newsletter=1, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='anitinhasousa@live.pt', @contribuinte='476638927', @fname='Anita', @lname='Sousa', @password='anitinha1', @sexo=0, @dataNasc='1998-03-14', @foto='https://images.pexels.com/photos/709802/pexels-photo-709802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=0, @newsletter=1, @pagamento='MasterCard', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterClient @email='paulomatos31@gmail.com', @contribuinte='593967351', @fname='Paulo', @lname='Matos', @password='pauloo', @sexo=1, @dataNasc='1979-05-31', @foto='https://www.pexels.com/photo/photography-of-a-guy-wearing-green-shirt-1222271/', @pontos=0, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterClient @email='paulomatos31@gmail.com', @contribuinte='593967351', @fname='Paulo', @lname='Matos', @password='pauloo', @sexo=1, @dataNasc='1979-05-31', @foto='https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', @pontos=0, @newsletter=1, @pagamento='Visa', @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
-        EXEC perf.RegisterFunc @email='Criscosta@outlook.com', @contribuinte='129885782', @fname='Cristiana', @lname='Costa', @password='cris16', @sexo=0, @dataNasc='1970-10-16', @foto='https://www.pexels.com/photo/man-wearing-black-zip-up-jacket-near-beach-smiling-at-the-photo-736716/',  @administrator=0, @salario=750, @responseMessage = @responseMessage OUTPUT;
+        EXEC perf.RegisterFunc @email='Criscosta@outlook.com', @contribuinte='129885782', @fname='Cristiana', @lname='Costa', @password='cris16', @sexo=0, @dataNasc='1970-10-16', @foto='https://images.pexels.com/photos/247322/pexels-photo-247322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',  @administrator=0, @salario=750, @responseMessage = @responseMessage OUTPUT;
         SELECT @responseMessage AS rm;
 
 --contacto

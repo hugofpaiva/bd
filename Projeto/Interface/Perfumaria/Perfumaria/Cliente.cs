@@ -77,7 +77,7 @@ namespace Perfumaria
                 newsletter.Checked = false;
             pontosbox.Text = C.Pontos.ToString();
             selectPayment();
-            pictureBox1.Image = Image.FromFile(C.Foto);
+            pictureBox1.Load(C.Foto);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
         }
@@ -176,13 +176,48 @@ namespace Perfumaria
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
         {
 
-            MessageBox.Show("You are in the TabControl.SelectedIndexChanged event.");
+            switch ((sender as TabControl).SelectedIndex)
+            {
+                case 0:
+
+                    break;
+                case 1:
+                    buyHistory.DataSource = getClientBuyHistory();
+                    break;
+            }
         }
 
         private void tabControl2_SelectedIndexChanged(Object sender, EventArgs e)
         {
+            switch ((sender as TabControl).SelectedIndex)
+            {
+                case 0:
+                    
+                    break;
+                case 1:
+                    
+                    break;
+            }
 
             MessageBox.Show("You are in the TabControl.SelectedIndexChanged event.");
+        }
+
+        private DataTable getClientBuyHistory()
+        {
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM perf.clientBuyHistory ('" + C.Email + "')", cn);
+   
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+            cn.Close();
+            return dtRecord;
+
+            
+
         }
     }
 }
