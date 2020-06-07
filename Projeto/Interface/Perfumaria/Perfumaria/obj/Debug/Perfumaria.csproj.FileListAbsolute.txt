@@ -11,7 +11,6 @@
 \\Mac\Home\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Projeto\Interface\Perfumaria\Perfumaria\bin\Debug\Perfumaria.exe
 \\Mac\Home\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Projeto\Interface\Perfumaria\Perfumaria\bin\Debug\Perfumaria.pdb
 \\Mac\Home\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Projeto\Interface\Perfumaria\Perfumaria\obj\Debug\Perfumaria.csprojAssemblyReference.cache
-\\Mac\Home\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Projeto\Interface\Perfumaria\Perfumaria\obj\Debug\Perfumaria.Form1.resources
 \\Mac\Home\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Projeto\Interface\Perfumaria\Perfumaria\obj\Debug\Perfumaria.Properties.Resources.resources
 \\Mac\Home\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Projeto\Interface\Perfumaria\Perfumaria\obj\Debug\Perfumaria.csproj.GenerateResource.cache
 \\Mac\Home\Documents\Universidade\Engenharia Informática\2º Ano\2º Semestre\Base de Dados\bd\Projeto\Interface\Perfumaria\Perfumaria\obj\Debug\Perfumaria.exe

@@ -265,6 +265,7 @@ CREATE TABLE Perfumaria.perf.utilizador
     dataNasc DATE NOT NULL,
     foto VARCHAR(100) NOT NULL,
     contacto_default_id INT,
+    deleted BIT NOT NULL DEFAULT 0,
     CONSTRAINT utilizador_pk PRIMARY KEY (email)
 
 );
@@ -291,6 +292,7 @@ CREATE TABLE Perfumaria.perf.contacto
     endereco VARCHAR(50) NOT NULL,
     apartamento VARCHAR(50),
     localidade VARCHAR(20) NOT NULL,
+    deleted BIT NOT NULL DEFAULT 0,
 
     CONSTRAINT contacto_pk PRIMARY KEY (id)
 
@@ -326,6 +328,7 @@ CREATE TABLE Perfumaria.perf.servico
     id INT IDENTITY(1,1) NOT NULL,
     tipo VARCHAR(40) NOT NULL,
     preco FLOAT NOT NULL,
+    deleted BIT NOT NULL DEFAULT 0,
 
     CONSTRAINT servico_pk PRIMARY KEY (id)
 );
@@ -336,6 +339,7 @@ CREATE TABLE Perfumaria.perf.funcionario_faz_servico
     funcionario_email VARCHAR(255) NOT NULL,
     servico_id INT NOT NULL,
     duracao_media INT NOT NULL,
+    deleted BIT NOT NULL DEFAULT 0,
 
     CONSTRAINT funcionario_faz_servico_pk PRIMARY KEY (funcionario_email, servico_id)
 );
@@ -369,7 +373,12 @@ CREATE TABLE Perfumaria.perf.marcacao
     cliente_email VARCHAR(255) NOT NULL,
     servico_id INT NOT NULL,
     funcionario_email VARCHAR(255) NOT NULL,
+<<<<<<< HEAD
+    dataMarc DATETIME NOT NULL,
+    deleted BIT NOT NULL DEFAULT 0,
+=======
     dataMarc SMALLDATETIME NOT NULL,
+>>>>>>> 0809b69736627fe7ae8ed6c7921a21c913b930be
 
     CONSTRAINT marcacao_pk PRIMARY KEY (id)
 );

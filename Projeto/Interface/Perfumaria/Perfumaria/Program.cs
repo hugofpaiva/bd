@@ -11,6 +11,9 @@ namespace Perfumaria
 
         public static bool OpenClient { get; set; }
         public static bool OpenFunc { get; set; }
+        public static String ClientMail { get; set; }
+        public static String FuncMail { get; set; }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -25,10 +28,13 @@ namespace Perfumaria
 
             if (OpenClient)
             {
-                Application.Run(new Cliente());
+                if (ClientMail != null)
+                    Application.Run(new Cliente());
+
             } else if(OpenFunc)
             {
-                Application.Run(new Funcionario());
+                if(FuncMail!=null)
+                    Application.Run(new Funcionario());
             }
         }
 

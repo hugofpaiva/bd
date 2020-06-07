@@ -93,6 +93,7 @@ namespace Perfumaria
                         result = MessageBox.Show(rm, "caption", MessageBoxButtons.OK);
                         if (result == DialogResult.OK)
                         {
+                            Program.FuncMail = emaillogin.Text;
                             Program.OpenFunc = true;
                             this.Close();
                         }
@@ -103,12 +104,11 @@ namespace Perfumaria
                         result = MessageBox.Show(rm, "caption", MessageBoxButtons.OK);
                         if (result == DialogResult.OK)
                         {
+                            Program.ClientMail = emaillogin.Text;
                             Program.OpenClient = true;
                             this.Close();
                         }
                     }
-
-
                 }
                 else
                 {
@@ -185,6 +185,7 @@ namespace Perfumaria
 
         }
 
+        // Registrar
         private void Registrar_Click(object sender, EventArgs e)
         {
 
@@ -254,7 +255,7 @@ namespace Perfumaria
         private void button3_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Images (*.BMP;*.JPG;*.JPEG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPEG;*.JPG;*.GIF;*.PNG;*.TIFF";//your filter
+            open.Filter = "Images (*.BMP;*.JPG;*.JPEG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPEG;*.JPG;*.GIF;*.PNG;*.TIFF";
             open.FilterIndex = 1;
             open.Multiselect = false;
             open.RestoreDirectory = true;
