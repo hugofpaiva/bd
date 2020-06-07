@@ -15,16 +15,24 @@ namespace Perfumaria
 			private String lname;
 			private bool sexo;
 			private String dataNasc;
+			private String foto;
 			private int contacto_default_id;
 			private int pontos;
 			private bool newsletter;
 			private String pagamento;
+			private bool deleted;
 
 
 		public String Email
 		{
 			get { return email; }
 			set { email = value; }
+		}
+
+		public bool Deleted
+		{
+			get { return deleted; }
+			set { deleted = value; }
 		}
 
 		public String Contribuinte
@@ -37,6 +45,12 @@ namespace Perfumaria
 		{
 			get { return fname; }
 			set { fname = value; }
+		}
+
+		public String Foto
+		{
+			get { return foto; }
+			set { foto = value; }
 		}
 
 		public String Lname

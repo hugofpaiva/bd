@@ -217,7 +217,6 @@ namespace Perfumaria
                 return;
 
             cmd.Parameters.AddWithValue("@dataNasc", nascimento.Value.ToString("yyyy-MM-dd"));
-            Console.WriteLine(path);
 
             cmd.Parameters.AddWithValue("@foto", path);
 

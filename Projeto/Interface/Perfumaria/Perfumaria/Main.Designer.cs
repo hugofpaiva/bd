@@ -34,6 +34,8 @@
             this.pwlogin = new System.Windows.Forms.TextBox();
             this.Login = new System.Windows.Forms.Panel();
             this.Registo = new System.Windows.Forms.Panel();
+            this.Registar = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -59,8 +61,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.back = new System.Windows.Forms.Button();
-            this.Registrar = new System.Windows.Forms.Button();
             this.Login.SuspendLayout();
             this.Registo.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
             this.signup.Name = "signup";
             this.signup.Size = new System.Drawing.Size(102, 63);
             this.signup.TabIndex = 1;
-            this.signup.Text = "Sign Up";
+            this.signup.Text = "Registo";
             this.signup.UseVisualStyleBackColor = true;
             this.signup.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -118,7 +118,7 @@
             // 
             // Registo
             // 
-            this.Registo.Controls.Add(this.Registrar);
+            this.Registo.Controls.Add(this.Registar);
             this.Registo.Controls.Add(this.back);
             this.Registo.Controls.Add(this.button3);
             this.Registo.Controls.Add(this.label15);
@@ -148,6 +148,28 @@
             this.Registo.TabIndex = 7;
             this.Registo.Visible = false;
             this.Registo.Paint += new System.Windows.Forms.PaintEventHandler(this.Registo_Paint);
+            // 
+            // Registar
+            // 
+            this.Registar.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registar.Location = new System.Drawing.Point(22, 34);
+            this.Registar.Name = "Registar";
+            this.Registar.Size = new System.Drawing.Size(120, 34);
+            this.Registar.TabIndex = 38;
+            this.Registar.Text = "Registar";
+            this.Registar.UseVisualStyleBackColor = true;
+            this.Registar.Click += new System.EventHandler(this.Registrar_Click);
+            // 
+            // back
+            // 
+            this.back.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back.Location = new System.Drawing.Point(657, 34);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(94, 34);
+            this.back.TabIndex = 37;
+            this.back.Text = "Voltar";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // button3
             // 
@@ -394,28 +416,6 @@
             this.label1.Text = "Perfumaria";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // back
-            // 
-            this.back.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.back.Location = new System.Drawing.Point(657, 34);
-            this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(94, 34);
-            this.back.TabIndex = 37;
-            this.back.Text = "Voltar";
-            this.back.UseVisualStyleBackColor = true;
-            this.back.Click += new System.EventHandler(this.back_Click);
-            // 
-            // Registrar
-            // 
-            this.Registrar.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Registrar.Location = new System.Drawing.Point(22, 34);
-            this.Registrar.Name = "Registrar";
-            this.Registrar.Size = new System.Drawing.Size(120, 34);
-            this.Registrar.TabIndex = 38;
-            this.Registrar.Text = "Registrar";
-            this.Registrar.UseVisualStyleBackColor = true;
-            this.Registrar.Click += new System.EventHandler(this.Registrar_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,6 +467,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker nascimento;
         private System.Windows.Forms.Button back;
-        private System.Windows.Forms.Button Registrar;
+        private System.Windows.Forms.Button Registar;
     }
 }
