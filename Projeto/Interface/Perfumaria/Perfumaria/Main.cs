@@ -13,6 +13,7 @@ namespace Perfumaria
 {
     public partial class Main : Form
     {
+        private String path;
 
         private SqlConnection cn;
         public Main()
@@ -76,8 +77,7 @@ namespace Perfumaria
                 cmd.ExecuteNonQuery();
                 rm = cmd.Parameters["@responseMessage"].Value.ToString();
                 type = (bool)cmd.Parameters["@type"].Value;
-                Console.WriteLine(rm);
-                
+
             }
             catch (Exception ex)
             {
@@ -85,34 +85,36 @@ namespace Perfumaria
             }
             finally
             {
-                if(!rm.Equals("Invalid login")) {
+                if (!rm.Equals("Invalid login"))
+                {
                     // Funcionário
                     if (type)
                     {
                         result = MessageBox.Show(rm, "caption", MessageBoxButtons.OK);
-                    if (result == DialogResult.OK)
-                    {
+                        if (result == DialogResult.OK)
+                        {
                             Program.OpenFunc = true;
                             this.Close();
-                    }
+                        }
                     }
                     // Cliente
                     else
                     {
                         result = MessageBox.Show(rm, "caption", MessageBoxButtons.OK);
-                    if (result == DialogResult.OK)
-                    {
+                        if (result == DialogResult.OK)
+                        {
                             Program.OpenClient = true;
                             this.Close();
-                    }
+                        }
                     }
 
 
-                } 
-                else {
+                }
+                else
+                {
                     MessageBox.Show(rm);
-                }  
-                
+                }
+
                 cn.Close();
             }
         }
@@ -185,22 +187,24 @@ namespace Perfumaria
 
         private void Registrar_Click(object sender, EventArgs e)
         {
-            
+
             if (!verifySGBDConnection())
                 return;
 
-            
+            String rm = null;
+            DialogResult result;
+
             SqlCommand cmd = new SqlCommand("perf.RegisterClient", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@email", email.Text);
-            if(pw.Text.Equals(confirmpw.Text))
+            if (pw.Text.Equals(confirmpw.Text))
             {
                 cmd.Parameters.AddWithValue("@password", pw.Text);
             }
             cmd.Parameters.AddWithValue("@contribuinte", contribuinte.Text);
             cmd.Parameters.AddWithValue("@fname", fname.Text);
             cmd.Parameters.AddWithValue("@lname", lname.Text);
-            if(newsletter.Checked)
+            if (newsletter.Checked)
                 cmd.Parameters.AddWithValue("@newsletter", 1);
             else
                 cmd.Parameters.AddWithValue("@newsletter", 0);
@@ -212,8 +216,39 @@ namespace Perfumaria
                 return;
 
             cmd.Parameters.AddWithValue("@dataNasc", nascimento.Value.ToString("yyyy-MM-dd"));
+            Console.WriteLine(path);
+
+            cmd.Parameters.AddWithValue("@foto", path);
+
             cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
-           
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                rm = cmd.Parameters["@responseMessage"].Value.ToString();
+                Console.WriteLine(rm);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to Register. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                if (rm.Equals("Success"))
+                {
+                    result = MessageBox.Show(rm, "caption", MessageBoxButtons.OK);
+                    if (result == DialogResult.OK)
+                        Registo.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show(rm);
+                }
+
+                cn.Close();
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -229,9 +264,11 @@ namespace Perfumaria
             DialogResult result = open.ShowDialog();
             if (result == DialogResult.OK)
             {
-                string path = open.FileName;
+                path = open.FileName;
 
             }
         }
+
+
     }
 }

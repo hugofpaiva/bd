@@ -9,8 +9,6 @@ namespace Perfumaria
 	[Serializable()]
 	class Client
     {
-		
-		
 			private String email;
 			private String contribuinte;
 			private String fname;
