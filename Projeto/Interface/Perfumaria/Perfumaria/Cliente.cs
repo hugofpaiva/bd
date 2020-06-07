@@ -22,6 +22,7 @@ namespace Perfumaria
             InitializeComponent();
             tabControl1.SelectedIndexChanged += new EventHandler(tabControl1_SelectedIndexChanged);
             tabControl2.SelectedIndexChanged += new EventHandler(tabControl2_SelectedIndexChanged);
+            historico.SelectedIndexChanged += new EventHandler(historico_SelectedIndexChanged);
         }
 
     
@@ -182,7 +183,7 @@ namespace Perfumaria
 
                     break;
                 case 1:
-                    buyHistory.DataSource = getClientBuyHistory();
+                    historico_SelectedIndexChanged(historico, null);
                     break;
             }
         }
@@ -202,6 +203,21 @@ namespace Perfumaria
             MessageBox.Show("You are in the TabControl.SelectedIndexChanged event.");
         }
 
+        private void historico_SelectedIndexChanged(Object sender, EventArgs e)
+        {
+            switch ((sender as TabControl).SelectedIndex)
+            {
+                case 0:
+                    buyHistory.DataSource = getClientBuyHistory();
+                    break;
+                case 1:
+                    servicosgrid.DataSource = getClientServicesHistory();
+                    break;
+            }
+
+            
+        }
+
         private DataTable getClientBuyHistory()
         {
             if (!verifySGBDConnection())
@@ -214,9 +230,28 @@ namespace Perfumaria
             DataTable dtRecord = new DataTable();
             sqlDataAdap.Fill(dtRecord);
             cn.Close();
+            return dtRecord;  
+
+        }
+
+        private DataTable getClientServicesHistory()
+        {
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM perf.clientServicesHistory ('" + C.Email + "')", cn);
+
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+            cn.Close();
             return dtRecord;
 
-            
+        }
+
+        private void buyHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

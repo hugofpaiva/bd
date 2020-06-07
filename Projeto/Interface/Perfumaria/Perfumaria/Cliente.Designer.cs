@@ -28,10 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Conta = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.Informações = new System.Windows.Forms.TabPage();
+            this.changepw = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.change = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -56,8 +67,8 @@
             this.Histórico = new System.Windows.Forms.TabPage();
             this.historico = new System.Windows.Forms.TabControl();
             this.Compras = new System.Windows.Forms.TabPage();
+            this.buyHistory = new System.Windows.Forms.DataGridView();
             this.Servicos = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Loja = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -89,26 +100,21 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.Favoritos = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.changepw = new System.Windows.Forms.Panel();
-            this.cancel = new System.Windows.Forms.Button();
-            this.change = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.buyHistory = new System.Windows.Forms.DataGridView();
+            this.Detalhes = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.servicosgrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.Informações.SuspendLayout();
+            this.changepw.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Contactos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contacts)).BeginInit();
             this.Histórico.SuspendLayout();
             this.historico.SuspendLayout();
             this.Compras.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buyHistory)).BeginInit();
             this.Servicos.SuspendLayout();
             this.Loja.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -119,8 +125,7 @@
             this.Cupões.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Favoritos.SuspendLayout();
-            this.changepw.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buyHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -187,6 +192,105 @@
             this.Informações.TabIndex = 0;
             this.Informações.Text = "Informações";
             this.Informações.UseVisualStyleBackColor = true;
+            // 
+            // changepw
+            // 
+            this.changepw.Controls.Add(this.label19);
+            this.changepw.Controls.Add(this.label18);
+            this.changepw.Controls.Add(this.label17);
+            this.changepw.Controls.Add(this.textBox3);
+            this.changepw.Controls.Add(this.textBox2);
+            this.changepw.Controls.Add(this.textBox1);
+            this.changepw.Controls.Add(this.change);
+            this.changepw.Controls.Add(this.cancel);
+            this.changepw.Location = new System.Drawing.Point(28, 16);
+            this.changepw.Name = "changepw";
+            this.changepw.Size = new System.Drawing.Size(710, 353);
+            this.changepw.TabIndex = 64;
+            this.changepw.Visible = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(241, 164);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(238, 18);
+            this.label19.TabIndex = 48;
+            this.label19.Text = "Confirmar Nova Password";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(291, 107);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(138, 18);
+            this.label18.TabIndex = 47;
+            this.label18.Text = "Nova Password";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(314, 12);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(88, 18);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Password";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(224, 185);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(268, 30);
+            this.textBox3.TabIndex = 45;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(224, 128);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(268, 30);
+            this.textBox2.TabIndex = 44;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(224, 45);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(268, 30);
+            this.textBox1.TabIndex = 43;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // change
+            // 
+            this.change.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.change.Location = new System.Drawing.Point(244, 289);
+            this.change.Name = "change";
+            this.change.Size = new System.Drawing.Size(94, 38);
+            this.change.TabIndex = 1;
+            this.change.Text = "Alterar";
+            this.change.UseVisualStyleBackColor = true;
+            this.change.Click += new System.EventHandler(this.change_Click);
+            // 
+            // cancel
+            // 
+            this.cancel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel.Location = new System.Drawing.Point(389, 289);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(103, 38);
+            this.cancel.TabIndex = 0;
+            this.cancel.Text = "Cancelar";
+            this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // button5
             // 
@@ -377,7 +481,7 @@
             this.emailbox.Multiline = true;
             this.emailbox.Name = "emailbox";
             this.emailbox.ReadOnly = true;
-            this.emailbox.Size = new System.Drawing.Size(242, 30);
+            this.emailbox.Size = new System.Drawing.Size(284, 30);
             this.emailbox.TabIndex = 35;
             this.emailbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -442,9 +546,28 @@
             this.Compras.Text = "Compras";
             this.Compras.UseVisualStyleBackColor = true;
             // 
+            // buyHistory
+            // 
+            this.buyHistory.AllowUserToAddRows = false;
+            this.buyHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.buyHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.buyHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.buyHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Detalhes});
+            this.buyHistory.Location = new System.Drawing.Point(-1, 0);
+            this.buyHistory.MultiSelect = false;
+            this.buyHistory.Name = "buyHistory";
+            this.buyHistory.ReadOnly = true;
+            this.buyHistory.RowHeadersVisible = false;
+            this.buyHistory.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.buyHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.buyHistory.Size = new System.Drawing.Size(765, 378);
+            this.buyHistory.TabIndex = 0;
+            this.buyHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.buyHistory_CellContentClick);
+            // 
             // Servicos
             // 
-            this.Servicos.Controls.Add(this.tableLayoutPanel3);
+            this.Servicos.Controls.Add(this.servicosgrid);
             this.Servicos.Location = new System.Drawing.Point(4, 22);
             this.Servicos.Name = "Servicos";
             this.Servicos.Padding = new System.Windows.Forms.Padding(3);
@@ -452,19 +575,6 @@
             this.Servicos.TabIndex = 1;
             this.Servicos.Text = "Serviços";
             this.Servicos.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(764, 378);
-            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // Loja
             // 
@@ -806,112 +916,47 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(768, 400);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
-            // changepw
+            // Detalhes
             // 
-            this.changepw.Controls.Add(this.label19);
-            this.changepw.Controls.Add(this.label18);
-            this.changepw.Controls.Add(this.label17);
-            this.changepw.Controls.Add(this.textBox3);
-            this.changepw.Controls.Add(this.textBox2);
-            this.changepw.Controls.Add(this.textBox1);
-            this.changepw.Controls.Add(this.change);
-            this.changepw.Controls.Add(this.cancel);
-            this.changepw.Location = new System.Drawing.Point(28, 16);
-            this.changepw.Name = "changepw";
-            this.changepw.Size = new System.Drawing.Size(710, 353);
-            this.changepw.TabIndex = 64;
-            this.changepw.Visible = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Detalhes.HeaderText = "Detalhes";
+            this.Detalhes.Name = "Detalhes";
+            this.Detalhes.ReadOnly = true;
+            this.Detalhes.Text = "Ver detalhes";
+            this.Detalhes.ToolTipText = "Ver detalhes";
+            this.Detalhes.UseColumnTextForButtonValue = true;
             // 
-            // cancel
+            // servicosgrid
             // 
-            this.cancel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel.Location = new System.Drawing.Point(389, 289);
-            this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(103, 38);
-            this.cancel.TabIndex = 0;
-            this.cancel.Text = "Cancelar";
-            this.cancel.UseVisualStyleBackColor = true;
-            this.cancel.Click += new System.EventHandler(this.cancel_Click);
+            this.servicosgrid.AllowUserToAddRows = false;
+            this.servicosgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.servicosgrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.servicosgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.servicosgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewButtonColumn1});
+            this.servicosgrid.Location = new System.Drawing.Point(0, 0);
+            this.servicosgrid.MultiSelect = false;
+            this.servicosgrid.Name = "servicosgrid";
+            this.servicosgrid.ReadOnly = true;
+            this.servicosgrid.RowHeadersVisible = false;
+            this.servicosgrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.servicosgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.servicosgrid.Size = new System.Drawing.Size(765, 378);
+            this.servicosgrid.TabIndex = 1;
             // 
-            // change
+            // dataGridViewButtonColumn1
             // 
-            this.change.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.change.Location = new System.Drawing.Point(244, 289);
-            this.change.Name = "change";
-            this.change.Size = new System.Drawing.Size(94, 38);
-            this.change.TabIndex = 1;
-            this.change.Text = "Alterar";
-            this.change.UseVisualStyleBackColor = true;
-            this.change.Click += new System.EventHandler(this.change_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(224, 45);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 30);
-            this.textBox1.TabIndex = 43;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(224, 128);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(268, 30);
-            this.textBox2.TabIndex = 44;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(224, 185);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(268, 30);
-            this.textBox3.TabIndex = 45;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(314, 12);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(88, 18);
-            this.label17.TabIndex = 46;
-            this.label17.Text = "Password";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(291, 107);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(138, 18);
-            this.label18.TabIndex = 47;
-            this.label18.Text = "Nova Password";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(241, 164);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(238, 18);
-            this.label19.TabIndex = 48;
-            this.label19.Text = "Confirmar Nova Password";
-            // 
-            // buyHistory
-            // 
-            this.buyHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.buyHistory.Location = new System.Drawing.Point(-1, 0);
-            this.buyHistory.Name = "buyHistory";
-            this.buyHistory.Size = new System.Drawing.Size(765, 378);
-            this.buyHistory.TabIndex = 0;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewButtonColumn1.HeaderText = "Detalhes";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Text = "Ver detalhes";
+            this.dataGridViewButtonColumn1.ToolTipText = "Ver detalhes";
+            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             // 
             // Cliente
             // 
@@ -927,12 +972,15 @@
             this.tabControl2.ResumeLayout(false);
             this.Informações.ResumeLayout(false);
             this.Informações.PerformLayout();
+            this.changepw.ResumeLayout(false);
+            this.changepw.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Contactos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.contacts)).EndInit();
             this.Histórico.ResumeLayout(false);
             this.historico.ResumeLayout(false);
             this.Compras.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.buyHistory)).EndInit();
             this.Servicos.ResumeLayout(false);
             this.Loja.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -946,9 +994,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.Favoritos.ResumeLayout(false);
-            this.changepw.ResumeLayout(false);
-            this.changepw.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buyHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -985,7 +1031,6 @@
         private System.Windows.Forms.TabControl historico;
         private System.Windows.Forms.TabPage Compras;
         private System.Windows.Forms.TabPage Servicos;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -1026,5 +1071,8 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DataGridView buyHistory;
+        private System.Windows.Forms.DataGridViewButtonColumn Detalhes;
+        private System.Windows.Forms.DataGridView servicosgrid;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
     }
 }
