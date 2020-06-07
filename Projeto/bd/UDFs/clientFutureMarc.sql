@@ -1,3 +1,5 @@
+-- REVER ESTA MERDA E DPS FAZER DROP DA MINHA BD
+
 CREATE FUNCTION perf.clientFutureMarc (@email VARCHAR(255)) RETURNS TABLE 
 AS
     RETURN (SELECT tipo, preço, fname, lname, photo, dataMarc

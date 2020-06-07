@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Conta = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -63,12 +65,14 @@
             this.emailbox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Contactos = new System.Windows.Forms.TabPage();
-            this.contacts = new System.Windows.Forms.DataGridView();
             this.Histórico = new System.Windows.Forms.TabPage();
             this.historico = new System.Windows.Forms.TabControl();
             this.Compras = new System.Windows.Forms.TabPage();
             this.buyHistory = new System.Windows.Forms.DataGridView();
+            this.Detalhes = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Servicos = new System.Windows.Forms.TabPage();
+            this.servicosgrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Loja = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -90,7 +94,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.future = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Cupões = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
@@ -100,9 +103,10 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.Favoritos = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.Detalhes = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.servicosgrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.contactsgrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.futureMarcGrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -110,12 +114,12 @@
             this.changepw.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Contactos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contacts)).BeginInit();
             this.Histórico.SuspendLayout();
             this.historico.SuspendLayout();
             this.Compras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buyHistory)).BeginInit();
             this.Servicos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).BeginInit();
             this.Loja.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Marcações.SuspendLayout();
@@ -125,7 +129,8 @@
             this.Cupões.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Favoritos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactsgrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.futureMarcGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -496,7 +501,7 @@
             // 
             // Contactos
             // 
-            this.Contactos.Controls.Add(this.contacts);
+            this.Contactos.Controls.Add(this.contactsgrid);
             this.Contactos.Location = new System.Drawing.Point(4, 22);
             this.Contactos.Name = "Contactos";
             this.Contactos.Padding = new System.Windows.Forms.Padding(3);
@@ -504,15 +509,6 @@
             this.Contactos.TabIndex = 1;
             this.Contactos.Text = "Contactos";
             this.Contactos.UseVisualStyleBackColor = true;
-            // 
-            // contacts
-            // 
-            this.contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.contacts.Location = new System.Drawing.Point(0, 0);
-            this.contacts.Name = "contacts";
-            this.contacts.Size = new System.Drawing.Size(764, 378);
-            this.contacts.TabIndex = 0;
-            this.contacts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Histórico
             // 
@@ -565,6 +561,18 @@
             this.buyHistory.TabIndex = 0;
             this.buyHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.buyHistory_CellContentClick);
             // 
+            // Detalhes
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Detalhes.HeaderText = "Detalhes";
+            this.Detalhes.Name = "Detalhes";
+            this.Detalhes.ReadOnly = true;
+            this.Detalhes.Text = "Ver detalhes";
+            this.Detalhes.ToolTipText = "Ver detalhes";
+            this.Detalhes.UseColumnTextForButtonValue = true;
+            // 
             // Servicos
             // 
             this.Servicos.Controls.Add(this.servicosgrid);
@@ -575,6 +583,36 @@
             this.Servicos.TabIndex = 1;
             this.Servicos.Text = "Serviços";
             this.Servicos.UseVisualStyleBackColor = true;
+            // 
+            // servicosgrid
+            // 
+            this.servicosgrid.AllowUserToAddRows = false;
+            this.servicosgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.servicosgrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.servicosgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.servicosgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewButtonColumn1});
+            this.servicosgrid.Location = new System.Drawing.Point(0, 0);
+            this.servicosgrid.MultiSelect = false;
+            this.servicosgrid.Name = "servicosgrid";
+            this.servicosgrid.ReadOnly = true;
+            this.servicosgrid.RowHeadersVisible = false;
+            this.servicosgrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.servicosgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.servicosgrid.Size = new System.Drawing.Size(765, 378);
+            this.servicosgrid.TabIndex = 1;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewButtonColumn1.HeaderText = "Detalhes";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Text = "Ver detalhes";
+            this.dataGridViewButtonColumn1.ToolTipText = "Ver detalhes";
+            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             // 
             // Loja
             // 
@@ -788,7 +826,7 @@
             // 
             // future
             // 
-            this.future.Controls.Add(this.tableLayoutPanel5);
+            this.future.Controls.Add(this.futureMarcGrid);
             this.future.Location = new System.Drawing.Point(4, 22);
             this.future.Name = "future";
             this.future.Padding = new System.Windows.Forms.Padding(3);
@@ -796,19 +834,6 @@
             this.future.TabIndex = 1;
             this.future.Text = "Marcações Futuras";
             this.future.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(-1, 0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(758, 371);
-            this.tableLayoutPanel5.TabIndex = 0;
             // 
             // Cupões
             // 
@@ -916,47 +941,65 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(768, 400);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
-            // Detalhes
+            // contactsgrid
+            // 
+            this.contactsgrid.AllowUserToAddRows = false;
+            this.contactsgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.contactsgrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.contactsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contactsgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewButtonColumn2});
+            this.contactsgrid.Location = new System.Drawing.Point(0, 0);
+            this.contactsgrid.MultiSelect = false;
+            this.contactsgrid.Name = "contactsgrid";
+            this.contactsgrid.ReadOnly = true;
+            this.contactsgrid.RowHeadersVisible = false;
+            this.contactsgrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.contactsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.contactsgrid.Size = new System.Drawing.Size(765, 378);
+            this.contactsgrid.TabIndex = 1;
+            // 
+            // dataGridViewButtonColumn2
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
-            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Detalhes.HeaderText = "Detalhes";
-            this.Detalhes.Name = "Detalhes";
-            this.Detalhes.ReadOnly = true;
-            this.Detalhes.Text = "Ver detalhes";
-            this.Detalhes.ToolTipText = "Ver detalhes";
-            this.Detalhes.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewButtonColumn2.HeaderText = "Detalhes";
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
+            this.dataGridViewButtonColumn2.Text = "Ver detalhes";
+            this.dataGridViewButtonColumn2.ToolTipText = "Ver detalhes";
+            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             // 
-            // servicosgrid
+            // futureMarcGrid
             // 
-            this.servicosgrid.AllowUserToAddRows = false;
-            this.servicosgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.servicosgrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.servicosgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.servicosgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewButtonColumn1});
-            this.servicosgrid.Location = new System.Drawing.Point(0, 0);
-            this.servicosgrid.MultiSelect = false;
-            this.servicosgrid.Name = "servicosgrid";
-            this.servicosgrid.ReadOnly = true;
-            this.servicosgrid.RowHeadersVisible = false;
-            this.servicosgrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.servicosgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.servicosgrid.Size = new System.Drawing.Size(765, 378);
-            this.servicosgrid.TabIndex = 1;
+            this.futureMarcGrid.AllowUserToAddRows = false;
+            this.futureMarcGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.futureMarcGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.futureMarcGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.futureMarcGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewButtonColumn3});
+            this.futureMarcGrid.Location = new System.Drawing.Point(-4, -2);
+            this.futureMarcGrid.MultiSelect = false;
+            this.futureMarcGrid.Name = "futureMarcGrid";
+            this.futureMarcGrid.ReadOnly = true;
+            this.futureMarcGrid.RowHeadersVisible = false;
+            this.futureMarcGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.futureMarcGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.futureMarcGrid.Size = new System.Drawing.Size(765, 378);
+            this.futureMarcGrid.TabIndex = 2;
             // 
-            // dataGridViewButtonColumn1
+            // dataGridViewButtonColumn3
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewButtonColumn1.HeaderText = "Detalhes";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Text = "Ver detalhes";
-            this.dataGridViewButtonColumn1.ToolTipText = "Ver detalhes";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewButtonColumn3.HeaderText = "Detalhes";
+            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
+            this.dataGridViewButtonColumn3.ReadOnly = true;
+            this.dataGridViewButtonColumn3.Text = "Ver detalhes";
+            this.dataGridViewButtonColumn3.ToolTipText = "Ver detalhes";
+            this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
             // 
             // Cliente
             // 
@@ -976,12 +1019,12 @@
             this.changepw.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Contactos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.contacts)).EndInit();
             this.Histórico.ResumeLayout(false);
             this.historico.ResumeLayout(false);
             this.Compras.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buyHistory)).EndInit();
             this.Servicos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).EndInit();
             this.Loja.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -994,7 +1037,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.Favoritos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactsgrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.futureMarcGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1050,7 +1094,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage future;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox7;
@@ -1060,7 +1103,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.DataGridView contacts;
         private System.Windows.Forms.Panel changepw;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox3;
@@ -1074,5 +1116,9 @@
         private System.Windows.Forms.DataGridViewButtonColumn Detalhes;
         private System.Windows.Forms.DataGridView servicosgrid;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridView contactsgrid;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.DataGridView futureMarcGrid;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
     }
 }

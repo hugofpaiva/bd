@@ -180,7 +180,7 @@ namespace Perfumaria
             switch ((sender as TabControl).SelectedIndex)
             {
                 case 0:
-
+                    tabControl2_SelectedIndexChanged(tabControl2, null);
                     break;
                 case 1:
                     historico_SelectedIndexChanged(historico, null);
@@ -193,7 +193,7 @@ namespace Perfumaria
             switch ((sender as TabControl).SelectedIndex)
             {
                 case 0:
-                    
+                    showMainInfo();
                     break;
                 case 1:
                     
@@ -248,6 +248,21 @@ namespace Perfumaria
             cn.Close();
             return dtRecord;
 
+        }
+
+        private DataTable getClientContacts()
+        {
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM perf.clientServicesHistory ('" + C.Email + "')", cn);
+
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+            cn.Close();
+            return dtRecord;
         }
 
         private void buyHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
