@@ -50,7 +50,7 @@ CREATE PROCEDURE perf.RegisterClient
     @sexo BIT,
     @dataNasc DATE,
     @foto VARCHAR(100),
-    @pontos INT,
+    @pontos INT = 0,
     @newsletter BIT,
     @pagamento VARCHAR(10) = null,
     @responseMessage VARCHAR(250) OUTPUT

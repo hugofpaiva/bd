@@ -6,7 +6,7 @@ CREATE PROCEDURE perf.Login
     @email VARCHAR(255),
     @password VARCHAR(25),
     @responseMessage VARCHAR(250)='' OUTPUT,
-    @type BIT OUTPUT
+    @type BIT=0 OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON
@@ -28,8 +28,10 @@ BEGIN
         END
     END
     ELSE
-		SET @type=0
-		SET @responseMessage='Invalid login'
+        BEGIN
+		    SET @type=0
+		    SET @responseMessage='Invalid login'
+        END
 
 END
 

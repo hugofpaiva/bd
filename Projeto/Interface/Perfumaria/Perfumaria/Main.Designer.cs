@@ -59,6 +59,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.back = new System.Windows.Forms.Button();
+            this.Registrar = new System.Windows.Forms.Button();
             this.Login.SuspendLayout();
             this.Registo.SuspendLayout();
             this.SuspendLayout();
@@ -116,6 +118,8 @@
             // 
             // Registo
             // 
+            this.Registo.Controls.Add(this.Registrar);
+            this.Registo.Controls.Add(this.back);
             this.Registo.Controls.Add(this.button3);
             this.Registo.Controls.Add(this.label15);
             this.Registo.Controls.Add(this.label14);
@@ -153,6 +157,7 @@
             this.button3.TabIndex = 36;
             this.button3.Text = "Inserir Imagem";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label15
             // 
@@ -223,6 +228,7 @@
             this.sex.Name = "sex";
             this.sex.Size = new System.Drawing.Size(125, 21);
             this.sex.TabIndex = 29;
+            this.sex.SelectedIndexChanged += new System.EventHandler(this.sex_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -388,6 +394,28 @@
             this.label1.Text = "Perfumaria";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // back
+            // 
+            this.back.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back.Location = new System.Drawing.Point(657, 34);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(94, 34);
+            this.back.TabIndex = 37;
+            this.back.Text = "Voltar";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
+            // Registrar
+            // 
+            this.Registrar.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registrar.Location = new System.Drawing.Point(22, 34);
+            this.Registrar.Name = "Registrar";
+            this.Registrar.Size = new System.Drawing.Size(120, 34);
+            this.Registrar.TabIndex = 38;
+            this.Registrar.Text = "Registrar";
+            this.Registrar.UseVisualStyleBackColor = true;
+            this.Registrar.Click += new System.EventHandler(this.Registrar_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,5 +466,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker nascimento;
+        private System.Windows.Forms.Button back;
+        private System.Windows.Forms.Button Registrar;
     }
 }

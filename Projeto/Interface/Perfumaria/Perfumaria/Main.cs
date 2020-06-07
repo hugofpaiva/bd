@@ -88,17 +88,26 @@ namespace Perfumaria
                 if(!rm.Equals("Invalid login")) {
                     // Funcionário
                     if (type)
+                    {
                         result = MessageBox.Show(rm, "caption", MessageBoxButtons.OK);
-                    // Cliente
-                    else
-                        result = MessageBox.Show(rm, "caption", MessageBoxButtons.OK);
-                    
                     if (result == DialogResult.OK)
                     {
-                        this.Close();
-                        Cliente cliente = new Cliente();
-                        cliente.Show();
+                            Program.OpenFunc = true;
+                            this.Close();
                     }
+                    }
+                    // Cliente
+                    else
+                    {
+                        result = MessageBox.Show(rm, "caption", MessageBoxButtons.OK);
+                    if (result == DialogResult.OK)
+                    {
+                            Program.OpenClient = true;
+                            this.Close();
+                    }
+                    }
+
+
                 } 
                 else {
                     MessageBox.Show(rm);
@@ -111,7 +120,7 @@ namespace Perfumaria
         //REGISTO
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Registo.Visible = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -162,6 +171,67 @@ namespace Perfumaria
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            Registo.Visible = false;
+        }
+
+        private void sex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Registrar_Click(object sender, EventArgs e)
+        {
+            
+            if (!verifySGBDConnection())
+                return;
+
+            
+            SqlCommand cmd = new SqlCommand("perf.RegisterClient", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@email", email.Text);
+            if(pw.Text.Equals(confirmpw.Text))
+            {
+                cmd.Parameters.AddWithValue("@password", pw.Text);
+            }
+            cmd.Parameters.AddWithValue("@contribuinte", contribuinte.Text);
+            cmd.Parameters.AddWithValue("@fname", fname.Text);
+            cmd.Parameters.AddWithValue("@lname", lname.Text);
+            if(newsletter.Checked)
+                cmd.Parameters.AddWithValue("@newsletter", 1);
+            else
+                cmd.Parameters.AddWithValue("@newsletter", 0);
+            if (sex.SelectedIndex == 0)
+                cmd.Parameters.AddWithValue("@sexo", 1);
+            else if (sex.SelectedIndex == 1)
+                cmd.Parameters.AddWithValue("@sexo", 0);
+            else
+                return;
+
+            cmd.Parameters.AddWithValue("@dataNasc", nascimento.Value.ToString("yyyy-MM-dd"));
+            cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+           
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Images (*.BMP;*.JPG;*.JPEG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPEG;*.JPG;*.GIF;*.PNG;*.TIFF";//your filter
+            open.FilterIndex = 1;
+            open.Multiselect = false;
+            open.RestoreDirectory = true;
+            open.CheckPathExists = true;
+            open.CheckFileExists = true;
+            open.Title = "Escolher uma imagem de perfil";
+            DialogResult result = open.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string path = open.FileName;
+
+            }
         }
     }
 }
