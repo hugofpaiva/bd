@@ -72,6 +72,53 @@
             this.Histórico = new System.Windows.Forms.TabPage();
             this.historico = new System.Windows.Forms.TabControl();
             this.Compras = new System.Windows.Forms.TabPage();
+            this.compraoffline = new System.Windows.Forms.Panel();
+            this.compraonline = new System.Windows.Forms.Panel();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label39 = new System.Windows.Forms.Label();
+            this.enderecocompraon = new System.Windows.Forms.TextBox();
+            this.postalcompraon = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.telmcompraon = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.observacaocompraon = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.presentecompraon = new System.Windows.Forms.CheckBox();
+            this.ratingbutton = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.rastreamentocompraon = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.rating = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.contribuintecompraon = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.pagamentocompraon = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.numerocompraon = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.datacompraon = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.CompraDetails1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.funcionariocompraoff = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.contribuintecompraoff = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.pagamentocompraoff = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.numcompraoff = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.datacompraoff = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.buyHistory = new System.Windows.Forms.DataGridView();
             this.Detalhes = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Servicos = new System.Windows.Forms.TabPage();
@@ -115,53 +162,8 @@
             this.Favoritos = new System.Windows.Forms.TabPage();
             this.Favourites = new System.Windows.Forms.DataGridView();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.compraoffline = new System.Windows.Forms.Panel();
-            this.CompraDetails1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.datacompraoff = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.numcompraoff = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.pagamentocompraoff = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.contribuintecompraoff = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.funcionariocompraoff = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.compraonline = new System.Windows.Forms.Panel();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.contribuintecompraon = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.pagamentocompraon = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.numerocompraon = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.datacompraon = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label28 = new System.Windows.Forms.Label();
-            this.rating = new System.Windows.Forms.ComboBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.rastreamentocompraon = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.ratingbutton = new System.Windows.Forms.Button();
-            this.presentecompraon = new System.Windows.Forms.CheckBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.observacaocompraon = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.telmcompraon = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.postalcompraon = new System.Windows.Forms.TextBox();
-            this.enderecocompraon = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
+            this.fecharonline = new System.Windows.Forms.Button();
+            this.fecharoffline = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -173,6 +175,16 @@
             this.Histórico.SuspendLayout();
             this.historico.SuspendLayout();
             this.Compras.SuspendLayout();
+            this.compraoffline.SuspendLayout();
+            this.compraonline.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.CompraDetails1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buyHistory)).BeginInit();
             this.Servicos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).BeginInit();
@@ -187,16 +199,6 @@
             this.panel2.SuspendLayout();
             this.Favoritos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Favourites)).BeginInit();
-            this.compraoffline.SuspendLayout();
-            this.CompraDetails1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.compraonline.SuspendLayout();
-            this.tabControl3.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -629,6 +631,7 @@
             // 
             // Compras
             // 
+            this.Compras.Controls.Add(this.compraonline);
             this.Compras.Controls.Add(this.compraoffline);
             this.Compras.Controls.Add(this.buyHistory);
             this.Compras.Location = new System.Drawing.Point(4, 22);
@@ -638,6 +641,579 @@
             this.Compras.TabIndex = 0;
             this.Compras.Text = "Compras";
             this.Compras.UseVisualStyleBackColor = true;
+            // 
+            // compraoffline
+            // 
+            this.compraoffline.Controls.Add(this.CompraDetails1);
+            this.compraoffline.Location = new System.Drawing.Point(6, 23);
+            this.compraoffline.Name = "compraoffline";
+            this.compraoffline.Size = new System.Drawing.Size(755, 355);
+            this.compraoffline.TabIndex = 1;
+            this.compraoffline.Visible = false;
+            // 
+            // compraonline
+            // 
+            this.compraonline.Controls.Add(this.tabControl3);
+            this.compraonline.Location = new System.Drawing.Point(3, 23);
+            this.compraonline.Name = "compraonline";
+            this.compraonline.Size = new System.Drawing.Size(755, 355);
+            this.compraonline.TabIndex = 2;
+            this.compraonline.Visible = false;
+            // 
+            // tabControl3
+            // 
+            this.tabControl3.Controls.Add(this.tabPage3);
+            this.tabControl3.Controls.Add(this.tabPage4);
+            this.tabControl3.Location = new System.Drawing.Point(12, 15);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(725, 334);
+            this.tabControl3.TabIndex = 1;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.fecharonline);
+            this.tabPage3.Controls.Add(this.label39);
+            this.tabPage3.Controls.Add(this.enderecocompraon);
+            this.tabPage3.Controls.Add(this.postalcompraon);
+            this.tabPage3.Controls.Add(this.label38);
+            this.tabPage3.Controls.Add(this.telmcompraon);
+            this.tabPage3.Controls.Add(this.label37);
+            this.tabPage3.Controls.Add(this.observacaocompraon);
+            this.tabPage3.Controls.Add(this.label36);
+            this.tabPage3.Controls.Add(this.presentecompraon);
+            this.tabPage3.Controls.Add(this.ratingbutton);
+            this.tabPage3.Controls.Add(this.label35);
+            this.tabPage3.Controls.Add(this.rastreamentocompraon);
+            this.tabPage3.Controls.Add(this.label34);
+            this.tabPage3.Controls.Add(this.rating);
+            this.tabPage3.Controls.Add(this.label28);
+            this.tabPage3.Controls.Add(this.contribuintecompraon);
+            this.tabPage3.Controls.Add(this.label29);
+            this.tabPage3.Controls.Add(this.pagamentocompraon);
+            this.tabPage3.Controls.Add(this.label30);
+            this.tabPage3.Controls.Add(this.numerocompraon);
+            this.tabPage3.Controls.Add(this.label31);
+            this.tabPage3.Controls.Add(this.datacompraon);
+            this.tabPage3.Controls.Add(this.label32);
+            this.tabPage3.Controls.Add(this.label33);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(717, 308);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Detalhes da Compra";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(105, 223);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(88, 18);
+            this.label39.TabIndex = 57;
+            this.label39.Text = "Endereço";
+            // 
+            // enderecocompraon
+            // 
+            this.enderecocompraon.BackColor = System.Drawing.SystemColors.Control;
+            this.enderecocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enderecocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enderecocompraon.Location = new System.Drawing.Point(54, 244);
+            this.enderecocompraon.Multiline = true;
+            this.enderecocompraon.Name = "enderecocompraon";
+            this.enderecocompraon.ReadOnly = true;
+            this.enderecocompraon.Size = new System.Drawing.Size(198, 58);
+            this.enderecocompraon.TabIndex = 56;
+            this.enderecocompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // postalcompraon
+            // 
+            this.postalcompraon.BackColor = System.Drawing.SystemColors.Control;
+            this.postalcompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.postalcompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postalcompraon.Location = new System.Drawing.Point(290, 244);
+            this.postalcompraon.Multiline = true;
+            this.postalcompraon.Name = "postalcompraon";
+            this.postalcompraon.ReadOnly = true;
+            this.postalcompraon.Size = new System.Drawing.Size(144, 30);
+            this.postalcompraon.TabIndex = 55;
+            this.postalcompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(299, 223);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(118, 18);
+            this.label38.TabIndex = 54;
+            this.label38.Text = "Cod. Postal";
+            // 
+            // telmcompraon
+            // 
+            this.telmcompraon.BackColor = System.Drawing.SystemColors.Control;
+            this.telmcompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.telmcompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telmcompraon.Location = new System.Drawing.Point(96, 188);
+            this.telmcompraon.Multiline = true;
+            this.telmcompraon.Name = "telmcompraon";
+            this.telmcompraon.ReadOnly = true;
+            this.telmcompraon.Size = new System.Drawing.Size(144, 30);
+            this.telmcompraon.TabIndex = 53;
+            this.telmcompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(24, 188);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(58, 18);
+            this.label37.TabIndex = 52;
+            this.label37.Text = "Telm.";
+            // 
+            // observacaocompraon
+            // 
+            this.observacaocompraon.BackColor = System.Drawing.SystemColors.Control;
+            this.observacaocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.observacaocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.observacaocompraon.Location = new System.Drawing.Point(468, 244);
+            this.observacaocompraon.Multiline = true;
+            this.observacaocompraon.Name = "observacaocompraon";
+            this.observacaocompraon.ReadOnly = true;
+            this.observacaocompraon.Size = new System.Drawing.Size(198, 58);
+            this.observacaocompraon.TabIndex = 51;
+            this.observacaocompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(511, 223);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(108, 18);
+            this.label36.TabIndex = 50;
+            this.label36.Text = "Observação";
+            // 
+            // presentecompraon
+            // 
+            this.presentecompraon.AutoSize = true;
+            this.presentecompraon.Enabled = false;
+            this.presentecompraon.Location = new System.Drawing.Point(503, 199);
+            this.presentecompraon.Name = "presentecompraon";
+            this.presentecompraon.Size = new System.Drawing.Size(15, 14);
+            this.presentecompraon.TabIndex = 49;
+            this.presentecompraon.ThreeState = true;
+            this.presentecompraon.UseVisualStyleBackColor = true;
+            // 
+            // ratingbutton
+            // 
+            this.ratingbutton.Location = new System.Drawing.Point(248, 139);
+            this.ratingbutton.Name = "ratingbutton";
+            this.ratingbutton.Size = new System.Drawing.Size(75, 23);
+            this.ratingbutton.TabIndex = 48;
+            this.ratingbutton.Text = "Adicionar";
+            this.ratingbutton.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(397, 195);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(88, 18);
+            this.label35.TabIndex = 47;
+            this.label35.Text = "Presente";
+            // 
+            // rastreamentocompraon
+            // 
+            this.rastreamentocompraon.BackColor = System.Drawing.SystemColors.Control;
+            this.rastreamentocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rastreamentocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rastreamentocompraon.Location = new System.Drawing.Point(503, 140);
+            this.rastreamentocompraon.Multiline = true;
+            this.rastreamentocompraon.Name = "rastreamentocompraon";
+            this.rastreamentocompraon.ReadOnly = true;
+            this.rastreamentocompraon.Size = new System.Drawing.Size(198, 30);
+            this.rastreamentocompraon.TabIndex = 46;
+            this.rastreamentocompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(357, 143);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(128, 18);
+            this.label34.TabIndex = 45;
+            this.label34.Text = "Rastreamento";
+            // 
+            // rating
+            // 
+            this.rating.FormattingEnabled = true;
+            this.rating.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.rating.Location = new System.Drawing.Point(96, 140);
+            this.rating.Name = "rating";
+            this.rating.Size = new System.Drawing.Size(144, 21);
+            this.rating.TabIndex = 44;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(19, 141);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(68, 18);
+            this.label28.TabIndex = 43;
+            this.label28.Text = "Rating";
+            // 
+            // contribuintecompraon
+            // 
+            this.contribuintecompraon.BackColor = System.Drawing.SystemColors.Control;
+            this.contribuintecompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.contribuintecompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contribuintecompraon.Location = new System.Drawing.Point(503, 93);
+            this.contribuintecompraon.Multiline = true;
+            this.contribuintecompraon.Name = "contribuintecompraon";
+            this.contribuintecompraon.ReadOnly = true;
+            this.contribuintecompraon.Size = new System.Drawing.Size(198, 30);
+            this.contribuintecompraon.TabIndex = 42;
+            this.contribuintecompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(357, 97);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(128, 18);
+            this.label29.TabIndex = 41;
+            this.label29.Text = "Contribuinte";
+            // 
+            // pagamentocompraon
+            // 
+            this.pagamentocompraon.BackColor = System.Drawing.SystemColors.Control;
+            this.pagamentocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pagamentocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pagamentocompraon.Location = new System.Drawing.Point(503, 46);
+            this.pagamentocompraon.Multiline = true;
+            this.pagamentocompraon.Name = "pagamentocompraon";
+            this.pagamentocompraon.ReadOnly = true;
+            this.pagamentocompraon.Size = new System.Drawing.Size(198, 30);
+            this.pagamentocompraon.TabIndex = 40;
+            this.pagamentocompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(287, 50);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(198, 18);
+            this.label30.TabIndex = 39;
+            this.label30.Text = "Método de Pagamento";
+            // 
+            // numerocompraon
+            // 
+            this.numerocompraon.BackColor = System.Drawing.SystemColors.Control;
+            this.numerocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numerocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numerocompraon.Location = new System.Drawing.Point(96, 86);
+            this.numerocompraon.Multiline = true;
+            this.numerocompraon.Name = "numerocompraon";
+            this.numerocompraon.ReadOnly = true;
+            this.numerocompraon.Size = new System.Drawing.Size(144, 30);
+            this.numerocompraon.TabIndex = 38;
+            this.numerocompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(19, 86);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(68, 18);
+            this.label31.TabIndex = 37;
+            this.label31.Text = "Número";
+            // 
+            // datacompraon
+            // 
+            this.datacompraon.BackColor = System.Drawing.SystemColors.Control;
+            this.datacompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datacompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datacompraon.Location = new System.Drawing.Point(96, 46);
+            this.datacompraon.Multiline = true;
+            this.datacompraon.Name = "datacompraon";
+            this.datacompraon.ReadOnly = true;
+            this.datacompraon.Size = new System.Drawing.Size(144, 30);
+            this.datacompraon.TabIndex = 36;
+            this.datacompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(39, 50);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(48, 18);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "Data";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(227, 9);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(221, 30);
+            this.label33.TabIndex = 0;
+            this.label33.Text = "Compra Online";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dataGridView2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(717, 308);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Produtos";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewButtonColumn5});
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(751, 346);
+            this.dataGridView2.TabIndex = 2;
+            // 
+            // dataGridViewButtonColumn5
+            // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridViewButtonColumn5.HeaderText = "Detalhes";
+            this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
+            this.dataGridViewButtonColumn5.ReadOnly = true;
+            this.dataGridViewButtonColumn5.Text = "Ver detalhes";
+            this.dataGridViewButtonColumn5.ToolTipText = "Ver detalhes";
+            this.dataGridViewButtonColumn5.UseColumnTextForButtonValue = true;
+            // 
+            // CompraDetails1
+            // 
+            this.CompraDetails1.Controls.Add(this.tabPage1);
+            this.CompraDetails1.Controls.Add(this.tabPage2);
+            this.CompraDetails1.Location = new System.Drawing.Point(12, 15);
+            this.CompraDetails1.Name = "CompraDetails1";
+            this.CompraDetails1.SelectedIndex = 0;
+            this.CompraDetails1.Size = new System.Drawing.Size(725, 334);
+            this.CompraDetails1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.fecharoffline);
+            this.tabPage1.Controls.Add(this.funcionariocompraoff);
+            this.tabPage1.Controls.Add(this.label27);
+            this.tabPage1.Controls.Add(this.contribuintecompraoff);
+            this.tabPage1.Controls.Add(this.label26);
+            this.tabPage1.Controls.Add(this.pagamentocompraoff);
+            this.tabPage1.Controls.Add(this.label25);
+            this.tabPage1.Controls.Add(this.numcompraoff);
+            this.tabPage1.Controls.Add(this.label24);
+            this.tabPage1.Controls.Add(this.datacompraoff);
+            this.tabPage1.Controls.Add(this.label23);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(717, 308);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Detalhes da Compra";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // funcionariocompraoff
+            // 
+            this.funcionariocompraoff.BackColor = System.Drawing.SystemColors.Control;
+            this.funcionariocompraoff.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.funcionariocompraoff.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionariocompraoff.Location = new System.Drawing.Point(248, 244);
+            this.funcionariocompraoff.Multiline = true;
+            this.funcionariocompraoff.Name = "funcionariocompraoff";
+            this.funcionariocompraoff.ReadOnly = true;
+            this.funcionariocompraoff.Size = new System.Drawing.Size(214, 30);
+            this.funcionariocompraoff.TabIndex = 44;
+            this.funcionariocompraoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(298, 213);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(118, 18);
+            this.label27.TabIndex = 43;
+            this.label27.Text = "Funcionário";
+            // 
+            // contribuintecompraoff
+            // 
+            this.contribuintecompraoff.BackColor = System.Drawing.SystemColors.Control;
+            this.contribuintecompraoff.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.contribuintecompraoff.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contribuintecompraoff.Location = new System.Drawing.Point(503, 129);
+            this.contribuintecompraoff.Multiline = true;
+            this.contribuintecompraoff.Name = "contribuintecompraoff";
+            this.contribuintecompraoff.ReadOnly = true;
+            this.contribuintecompraoff.Size = new System.Drawing.Size(198, 30);
+            this.contribuintecompraoff.TabIndex = 42;
+            this.contribuintecompraoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(299, 133);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(128, 18);
+            this.label26.TabIndex = 41;
+            this.label26.Text = "Contribuinte";
+            // 
+            // pagamentocompraoff
+            // 
+            this.pagamentocompraoff.BackColor = System.Drawing.SystemColors.Control;
+            this.pagamentocompraoff.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pagamentocompraoff.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pagamentocompraoff.Location = new System.Drawing.Point(503, 74);
+            this.pagamentocompraoff.Multiline = true;
+            this.pagamentocompraoff.Name = "pagamentocompraoff";
+            this.pagamentocompraoff.ReadOnly = true;
+            this.pagamentocompraoff.Size = new System.Drawing.Size(198, 30);
+            this.pagamentocompraoff.TabIndex = 40;
+            this.pagamentocompraoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(299, 79);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(198, 18);
+            this.label25.TabIndex = 39;
+            this.label25.Text = "Método de Pagamento";
+            // 
+            // numcompraoff
+            // 
+            this.numcompraoff.BackColor = System.Drawing.SystemColors.Control;
+            this.numcompraoff.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numcompraoff.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numcompraoff.Location = new System.Drawing.Point(108, 129);
+            this.numcompraoff.Multiline = true;
+            this.numcompraoff.Name = "numcompraoff";
+            this.numcompraoff.ReadOnly = true;
+            this.numcompraoff.Size = new System.Drawing.Size(144, 30);
+            this.numcompraoff.TabIndex = 38;
+            this.numcompraoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(34, 133);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(68, 18);
+            this.label24.TabIndex = 37;
+            this.label24.Text = "Número";
+            // 
+            // datacompraoff
+            // 
+            this.datacompraoff.BackColor = System.Drawing.SystemColors.Control;
+            this.datacompraoff.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datacompraoff.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datacompraoff.Location = new System.Drawing.Point(108, 74);
+            this.datacompraoff.Multiline = true;
+            this.datacompraoff.Name = "datacompraoff";
+            this.datacompraoff.ReadOnly = true;
+            this.datacompraoff.Size = new System.Drawing.Size(144, 30);
+            this.datacompraoff.TabIndex = 36;
+            this.datacompraoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(34, 79);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(48, 18);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "Data";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(227, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(285, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Compra Presencial";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(717, 308);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Produtos";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewButtonColumn4});
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(751, 346);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // dataGridViewButtonColumn4
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewButtonColumn4.HeaderText = "Detalhes";
+            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
+            this.dataGridViewButtonColumn4.ReadOnly = true;
+            this.dataGridViewButtonColumn4.Text = "Ver detalhes";
+            this.dataGridViewButtonColumn4.ToolTipText = "Ver detalhes";
+            this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
             // 
             // buyHistory
             // 
@@ -660,9 +1236,9 @@
             // 
             // Detalhes
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(10);
-            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle16;
             this.Detalhes.HeaderText = "Detalhes";
             this.Detalhes.Name = "Detalhes";
             this.Detalhes.ReadOnly = true;
@@ -701,9 +1277,9 @@
             // 
             // dataGridViewButtonColumn1
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridViewButtonColumn1.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
             this.dataGridViewButtonColumn1.ReadOnly = true;
@@ -1133,9 +1709,9 @@
             // 
             // dataGridViewButtonColumn3
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewButtonColumn3.HeaderText = "Comprar";
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
             this.dataGridViewButtonColumn3.ReadOnly = true;
@@ -1143,579 +1719,26 @@
             this.dataGridViewButtonColumn3.ToolTipText = "Comprar";
             this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
             // 
-            // compraoffline
-            // 
-            this.compraoffline.Controls.Add(this.compraonline);
-            this.compraoffline.Controls.Add(this.CompraDetails1);
-            this.compraoffline.Location = new System.Drawing.Point(6, 23);
-            this.compraoffline.Name = "compraoffline";
-            this.compraoffline.Size = new System.Drawing.Size(755, 355);
-            this.compraoffline.TabIndex = 1;
-            this.compraoffline.Visible = false;
-            // 
-            // CompraDetails1
-            // 
-            this.CompraDetails1.Controls.Add(this.tabPage1);
-            this.CompraDetails1.Controls.Add(this.tabPage2);
-            this.CompraDetails1.Location = new System.Drawing.Point(12, 15);
-            this.CompraDetails1.Name = "CompraDetails1";
-            this.CompraDetails1.SelectedIndex = 0;
-            this.CompraDetails1.Size = new System.Drawing.Size(725, 334);
-            this.CompraDetails1.TabIndex = 1;
-            this.CompraDetails1.Visible = false;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.funcionariocompraoff);
-            this.tabPage1.Controls.Add(this.label27);
-            this.tabPage1.Controls.Add(this.contribuintecompraoff);
-            this.tabPage1.Controls.Add(this.label26);
-            this.tabPage1.Controls.Add(this.pagamentocompraoff);
-            this.tabPage1.Controls.Add(this.label25);
-            this.tabPage1.Controls.Add(this.numcompraoff);
-            this.tabPage1.Controls.Add(this.label24);
-            this.tabPage1.Controls.Add(this.datacompraoff);
-            this.tabPage1.Controls.Add(this.label23);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(717, 308);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Detalhes da Compra";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(717, 308);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Produtos";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(227, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Compra Presencial";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(34, 79);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(48, 18);
-            this.label23.TabIndex = 1;
-            this.label23.Text = "Data";
-            // 
-            // datacompraoff
-            // 
-            this.datacompraoff.BackColor = System.Drawing.SystemColors.Control;
-            this.datacompraoff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datacompraoff.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datacompraoff.Location = new System.Drawing.Point(108, 74);
-            this.datacompraoff.Multiline = true;
-            this.datacompraoff.Name = "datacompraoff";
-            this.datacompraoff.ReadOnly = true;
-            this.datacompraoff.Size = new System.Drawing.Size(144, 30);
-            this.datacompraoff.TabIndex = 36;
-            this.datacompraoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(34, 133);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(68, 18);
-            this.label24.TabIndex = 37;
-            this.label24.Text = "Número";
-            // 
-            // numcompraoff
-            // 
-            this.numcompraoff.BackColor = System.Drawing.SystemColors.Control;
-            this.numcompraoff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numcompraoff.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numcompraoff.Location = new System.Drawing.Point(108, 129);
-            this.numcompraoff.Multiline = true;
-            this.numcompraoff.Name = "numcompraoff";
-            this.numcompraoff.ReadOnly = true;
-            this.numcompraoff.Size = new System.Drawing.Size(144, 30);
-            this.numcompraoff.TabIndex = 38;
-            this.numcompraoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(299, 79);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(198, 18);
-            this.label25.TabIndex = 39;
-            this.label25.Text = "Método de Pagamento";
-            // 
-            // pagamentocompraoff
-            // 
-            this.pagamentocompraoff.BackColor = System.Drawing.SystemColors.Control;
-            this.pagamentocompraoff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pagamentocompraoff.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagamentocompraoff.Location = new System.Drawing.Point(503, 74);
-            this.pagamentocompraoff.Multiline = true;
-            this.pagamentocompraoff.Name = "pagamentocompraoff";
-            this.pagamentocompraoff.ReadOnly = true;
-            this.pagamentocompraoff.Size = new System.Drawing.Size(198, 30);
-            this.pagamentocompraoff.TabIndex = 40;
-            this.pagamentocompraoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(299, 133);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(128, 18);
-            this.label26.TabIndex = 41;
-            this.label26.Text = "Contribuinte";
-            // 
-            // contribuintecompraoff
-            // 
-            this.contribuintecompraoff.BackColor = System.Drawing.SystemColors.Control;
-            this.contribuintecompraoff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.contribuintecompraoff.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contribuintecompraoff.Location = new System.Drawing.Point(503, 129);
-            this.contribuintecompraoff.Multiline = true;
-            this.contribuintecompraoff.Name = "contribuintecompraoff";
-            this.contribuintecompraoff.ReadOnly = true;
-            this.contribuintecompraoff.Size = new System.Drawing.Size(198, 30);
-            this.contribuintecompraoff.TabIndex = 42;
-            this.contribuintecompraoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(298, 213);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(118, 18);
-            this.label27.TabIndex = 43;
-            this.label27.Text = "Funcionário";
-            // 
-            // funcionariocompraoff
-            // 
-            this.funcionariocompraoff.BackColor = System.Drawing.SystemColors.Control;
-            this.funcionariocompraoff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.funcionariocompraoff.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.funcionariocompraoff.Location = new System.Drawing.Point(248, 244);
-            this.funcionariocompraoff.Multiline = true;
-            this.funcionariocompraoff.Name = "funcionariocompraoff";
-            this.funcionariocompraoff.ReadOnly = true;
-            this.funcionariocompraoff.Size = new System.Drawing.Size(214, 30);
-            this.funcionariocompraoff.TabIndex = 44;
-            this.funcionariocompraoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewButtonColumn4});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(751, 346);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // dataGridViewButtonColumn4
-            // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridViewButtonColumn4.HeaderText = "Detalhes";
-            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
-            this.dataGridViewButtonColumn4.ReadOnly = true;
-            this.dataGridViewButtonColumn4.Text = "Ver detalhes";
-            this.dataGridViewButtonColumn4.ToolTipText = "Ver detalhes";
-            this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
-            // 
-            // compraonline
-            // 
-            this.compraonline.Controls.Add(this.tabControl3);
-            this.compraonline.Location = new System.Drawing.Point(0, 0);
-            this.compraonline.Name = "compraonline";
-            this.compraonline.Size = new System.Drawing.Size(755, 355);
-            this.compraonline.TabIndex = 2;
-            this.compraonline.Visible = false;
-            // 
-            // tabControl3
-            // 
-            this.tabControl3.Controls.Add(this.tabPage3);
-            this.tabControl3.Controls.Add(this.tabPage4);
-            this.tabControl3.Location = new System.Drawing.Point(12, 15);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(725, 334);
-            this.tabControl3.TabIndex = 1;
-            this.tabControl3.Visible = false;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.label39);
-            this.tabPage3.Controls.Add(this.enderecocompraon);
-            this.tabPage3.Controls.Add(this.postalcompraon);
-            this.tabPage3.Controls.Add(this.label38);
-            this.tabPage3.Controls.Add(this.telmcompraon);
-            this.tabPage3.Controls.Add(this.label37);
-            this.tabPage3.Controls.Add(this.observacaocompraon);
-            this.tabPage3.Controls.Add(this.label36);
-            this.tabPage3.Controls.Add(this.presentecompraon);
-            this.tabPage3.Controls.Add(this.ratingbutton);
-            this.tabPage3.Controls.Add(this.label35);
-            this.tabPage3.Controls.Add(this.rastreamentocompraon);
-            this.tabPage3.Controls.Add(this.label34);
-            this.tabPage3.Controls.Add(this.rating);
-            this.tabPage3.Controls.Add(this.label28);
-            this.tabPage3.Controls.Add(this.contribuintecompraon);
-            this.tabPage3.Controls.Add(this.label29);
-            this.tabPage3.Controls.Add(this.pagamentocompraon);
-            this.tabPage3.Controls.Add(this.label30);
-            this.tabPage3.Controls.Add(this.numerocompraon);
-            this.tabPage3.Controls.Add(this.label31);
-            this.tabPage3.Controls.Add(this.datacompraon);
-            this.tabPage3.Controls.Add(this.label32);
-            this.tabPage3.Controls.Add(this.label33);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(717, 308);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Detalhes da Compra";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // contribuintecompraon
-            // 
-            this.contribuintecompraon.BackColor = System.Drawing.SystemColors.Control;
-            this.contribuintecompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.contribuintecompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contribuintecompraon.Location = new System.Drawing.Point(503, 93);
-            this.contribuintecompraon.Multiline = true;
-            this.contribuintecompraon.Name = "contribuintecompraon";
-            this.contribuintecompraon.ReadOnly = true;
-            this.contribuintecompraon.Size = new System.Drawing.Size(198, 30);
-            this.contribuintecompraon.TabIndex = 42;
-            this.contribuintecompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(357, 97);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(128, 18);
-            this.label29.TabIndex = 41;
-            this.label29.Text = "Contribuinte";
-            // 
-            // pagamentocompraon
-            // 
-            this.pagamentocompraon.BackColor = System.Drawing.SystemColors.Control;
-            this.pagamentocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pagamentocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagamentocompraon.Location = new System.Drawing.Point(503, 46);
-            this.pagamentocompraon.Multiline = true;
-            this.pagamentocompraon.Name = "pagamentocompraon";
-            this.pagamentocompraon.ReadOnly = true;
-            this.pagamentocompraon.Size = new System.Drawing.Size(198, 30);
-            this.pagamentocompraon.TabIndex = 40;
-            this.pagamentocompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(287, 50);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(198, 18);
-            this.label30.TabIndex = 39;
-            this.label30.Text = "Método de Pagamento";
-            // 
-            // numerocompraon
-            // 
-            this.numerocompraon.BackColor = System.Drawing.SystemColors.Control;
-            this.numerocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numerocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numerocompraon.Location = new System.Drawing.Point(96, 86);
-            this.numerocompraon.Multiline = true;
-            this.numerocompraon.Name = "numerocompraon";
-            this.numerocompraon.ReadOnly = true;
-            this.numerocompraon.Size = new System.Drawing.Size(144, 30);
-            this.numerocompraon.TabIndex = 38;
-            this.numerocompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(19, 86);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(68, 18);
-            this.label31.TabIndex = 37;
-            this.label31.Text = "Número";
-            // 
-            // datacompraon
-            // 
-            this.datacompraon.BackColor = System.Drawing.SystemColors.Control;
-            this.datacompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datacompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datacompraon.Location = new System.Drawing.Point(96, 46);
-            this.datacompraon.Multiline = true;
-            this.datacompraon.Name = "datacompraon";
-            this.datacompraon.ReadOnly = true;
-            this.datacompraon.Size = new System.Drawing.Size(144, 30);
-            this.datacompraon.TabIndex = 36;
-            this.datacompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(39, 50);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(48, 18);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "Data";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(227, 9);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(221, 30);
-            this.label33.TabIndex = 0;
-            this.label33.Text = "Compra Online";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.dataGridView2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(717, 308);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Produtos";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewButtonColumn5});
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(751, 346);
-            this.dataGridView2.TabIndex = 2;
-            // 
-            // dataGridViewButtonColumn5
-            // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridViewButtonColumn5.HeaderText = "Detalhes";
-            this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
-            this.dataGridViewButtonColumn5.ReadOnly = true;
-            this.dataGridViewButtonColumn5.Text = "Ver detalhes";
-            this.dataGridViewButtonColumn5.ToolTipText = "Ver detalhes";
-            this.dataGridViewButtonColumn5.UseColumnTextForButtonValue = true;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(19, 141);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(68, 18);
-            this.label28.TabIndex = 43;
-            this.label28.Text = "Rating";
-            // 
-            // rating
-            // 
-            this.rating.FormattingEnabled = true;
-            this.rating.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.rating.Location = new System.Drawing.Point(96, 140);
-            this.rating.Name = "rating";
-            this.rating.Size = new System.Drawing.Size(144, 21);
-            this.rating.TabIndex = 44;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(357, 143);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(128, 18);
-            this.label34.TabIndex = 45;
-            this.label34.Text = "Rastreamento";
-            // 
-            // rastreamentocompraon
-            // 
-            this.rastreamentocompraon.BackColor = System.Drawing.SystemColors.Control;
-            this.rastreamentocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rastreamentocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rastreamentocompraon.Location = new System.Drawing.Point(503, 140);
-            this.rastreamentocompraon.Multiline = true;
-            this.rastreamentocompraon.Name = "rastreamentocompraon";
-            this.rastreamentocompraon.ReadOnly = true;
-            this.rastreamentocompraon.Size = new System.Drawing.Size(198, 30);
-            this.rastreamentocompraon.TabIndex = 46;
-            this.rastreamentocompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(397, 195);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(88, 18);
-            this.label35.TabIndex = 47;
-            this.label35.Text = "Presente";
-            // 
-            // ratingbutton
-            // 
-            this.ratingbutton.Location = new System.Drawing.Point(248, 139);
-            this.ratingbutton.Name = "ratingbutton";
-            this.ratingbutton.Size = new System.Drawing.Size(75, 23);
-            this.ratingbutton.TabIndex = 48;
-            this.ratingbutton.Text = "Adicionar";
-            this.ratingbutton.UseVisualStyleBackColor = true;
-            // 
-            // presentecompraon
-            // 
-            this.presentecompraon.AutoSize = true;
-            this.presentecompraon.Enabled = false;
-            this.presentecompraon.Location = new System.Drawing.Point(503, 199);
-            this.presentecompraon.Name = "presentecompraon";
-            this.presentecompraon.Size = new System.Drawing.Size(15, 14);
-            this.presentecompraon.TabIndex = 49;
-            this.presentecompraon.ThreeState = true;
-            this.presentecompraon.UseVisualStyleBackColor = true;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(511, 223);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(108, 18);
-            this.label36.TabIndex = 50;
-            this.label36.Text = "Observação";
-            // 
-            // observacaocompraon
-            // 
-            this.observacaocompraon.BackColor = System.Drawing.SystemColors.Control;
-            this.observacaocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.observacaocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.observacaocompraon.Location = new System.Drawing.Point(468, 244);
-            this.observacaocompraon.Multiline = true;
-            this.observacaocompraon.Name = "observacaocompraon";
-            this.observacaocompraon.ReadOnly = true;
-            this.observacaocompraon.Size = new System.Drawing.Size(198, 58);
-            this.observacaocompraon.TabIndex = 51;
-            this.observacaocompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(24, 188);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(58, 18);
-            this.label37.TabIndex = 52;
-            this.label37.Text = "Telm.";
-            // 
-            // telmcompraon
-            // 
-            this.telmcompraon.BackColor = System.Drawing.SystemColors.Control;
-            this.telmcompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.telmcompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telmcompraon.Location = new System.Drawing.Point(96, 188);
-            this.telmcompraon.Multiline = true;
-            this.telmcompraon.Name = "telmcompraon";
-            this.telmcompraon.ReadOnly = true;
-            this.telmcompraon.Size = new System.Drawing.Size(144, 30);
-            this.telmcompraon.TabIndex = 53;
-            this.telmcompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(299, 223);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(118, 18);
-            this.label38.TabIndex = 54;
-            this.label38.Text = "Cod. Postal";
-            // 
-            // postalcompraon
-            // 
-            this.postalcompraon.BackColor = System.Drawing.SystemColors.Control;
-            this.postalcompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.postalcompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.postalcompraon.Location = new System.Drawing.Point(290, 244);
-            this.postalcompraon.Multiline = true;
-            this.postalcompraon.Name = "postalcompraon";
-            this.postalcompraon.ReadOnly = true;
-            this.postalcompraon.Size = new System.Drawing.Size(144, 30);
-            this.postalcompraon.TabIndex = 55;
-            this.postalcompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // enderecocompraon
-            // 
-            this.enderecocompraon.BackColor = System.Drawing.SystemColors.Control;
-            this.enderecocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.enderecocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enderecocompraon.Location = new System.Drawing.Point(54, 244);
-            this.enderecocompraon.Multiline = true;
-            this.enderecocompraon.Name = "enderecocompraon";
-            this.enderecocompraon.ReadOnly = true;
-            this.enderecocompraon.Size = new System.Drawing.Size(198, 58);
-            this.enderecocompraon.TabIndex = 56;
-            this.enderecocompraon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(105, 223);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(88, 18);
-            this.label39.TabIndex = 57;
-            this.label39.Text = "Endereço";
+            // fecharonline
+            // 
+            this.fecharonline.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecharonline.Location = new System.Drawing.Point(611, 15);
+            this.fecharonline.Name = "fecharonline";
+            this.fecharonline.Size = new System.Drawing.Size(79, 25);
+            this.fecharonline.TabIndex = 58;
+            this.fecharonline.Text = "Fechar";
+            this.fecharonline.UseVisualStyleBackColor = true;
+            this.fecharonline.Click += new System.EventHandler(this.fecharonline_Click);
+            // 
+            // fecharoffline
+            // 
+            this.fecharoffline.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecharoffline.Location = new System.Drawing.Point(619, 19);
+            this.fecharoffline.Name = "fecharoffline";
+            this.fecharoffline.Size = new System.Drawing.Size(79, 30);
+            this.fecharoffline.TabIndex = 59;
+            this.fecharoffline.Text = "Fechar";
+            this.fecharoffline.UseVisualStyleBackColor = true;
             // 
             // Cliente
             // 
@@ -1739,6 +1762,18 @@
             this.Histórico.ResumeLayout(false);
             this.historico.ResumeLayout(false);
             this.Compras.ResumeLayout(false);
+            this.compraoffline.ResumeLayout(false);
+            this.compraonline.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.CompraDetails1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buyHistory)).EndInit();
             this.Servicos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).EndInit();
@@ -1756,18 +1791,6 @@
             this.panel2.PerformLayout();
             this.Favoritos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Favourites)).EndInit();
-            this.compraoffline.ResumeLayout(false);
-            this.CompraDetails1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.compraonline.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1902,5 +1925,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn4;
+        private System.Windows.Forms.Button fecharonline;
+        private System.Windows.Forms.Button fecharoffline;
     }
 }

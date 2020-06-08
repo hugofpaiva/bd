@@ -389,19 +389,21 @@ namespace Perfumaria
             SqlCommand cmd = new SqlCommand("perf.getDetailsFromBuy", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@numero", compra);
+            
 
             try
             {
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 reader.Read();
+                
 
                 Compra.Pagamento = reader["pagamento"].ToString();
                 Compra.Contribuinte = reader["contribuinte"].ToString();
                 Compra.Numero = (int)reader["numero"];
                 Compra.Datacompra = reader["datacompra"].ToString();
 
-                if (!DBNull.Value.Equals(reader["fname"]))
+                if (reader.GetSchemaTable().Columns.Contains("fname"))
                 {
                     Compra.Funcionario = reader["fname"].ToString();
                     compraPresencialDetalhes();
@@ -416,8 +418,8 @@ namespace Perfumaria
                 Contacto.Telemovel = reader["telemovel"].ToString();
                 Contacto.Codigopostal = reader["codigo_postal"].ToString();
                 Contacto.Endereco = reader["endereco"].ToString();
-                Compra.Pontosacumulados = (int)reader["endereco"];
-                Compra.Pontosgastos = (int)reader["endereco"];
+                Compra.Pontosacumulados = (int)reader["pontosacumulados"];
+                Compra.Pontosgastos = (int)reader["pontosgastos"];
                 compraOnlineDetalhes();
                 }
 
@@ -440,9 +442,18 @@ namespace Perfumaria
         }
 
         public void compraOnlineDetalhes()
-        {
+        {   
             compraonline.Visible = true;
         }
 
+        private void fecharonline_Click(object sender, EventArgs e)
+        {
+            compraonline.Visible = false;
+        }
+
+        private void fecharoffline_Click(object sender, EventArgs e)
+        {
+            compraoffline.Visible = false;
+        }
     }
 }
