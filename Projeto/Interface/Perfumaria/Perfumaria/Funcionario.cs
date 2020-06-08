@@ -26,5 +26,10 @@ namespace Perfumaria
         {
 
         }
+
+        private void Funcionario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

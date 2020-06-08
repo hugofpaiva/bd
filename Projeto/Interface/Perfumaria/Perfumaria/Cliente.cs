@@ -19,6 +19,7 @@ namespace Perfumaria
         private Client C = new Client();
         private Compra Compra = new Compra();
         private Contacto Contacto = new Contacto();
+        List<Contacto> ContactosList = new List<Contacto>();
         public Cliente()
         {
             InitializeComponent();
@@ -26,6 +27,8 @@ namespace Perfumaria
             tabControl2.SelectedIndexChanged += new EventHandler(tabControl2_SelectedIndexChanged);
             historico.SelectedIndexChanged += new EventHandler(historico_SelectedIndexChanged);
             marcacoes.SelectedIndexChanged += new EventHandler(marcacoes_SelectedIndexChanged);
+            onlinetab.SelectedIndexChanged += new EventHandler(onlinetab_SelectedIndexChanged);
+            offlinetab.SelectedIndexChanged += new EventHandler(offlinetab_SelectedIndexChanged);
         }
 
     
@@ -36,20 +39,16 @@ namespace Perfumaria
         {
 
             cn = getSGBDConnection();
+
             if (verifySGBDConnection())
             {
-                Console.WriteLine("Conexão");
-            }
-            else
-            {
-                Console.WriteLine("NOP");
+                loadInfo(Program.ClientMail);
+                showMainInfo();
             }
 
             cn.Close();
 
-            loadInfo(Program.ClientMail);
-
-            showMainInfo();
+            
 
 
         }
@@ -212,11 +211,10 @@ namespace Perfumaria
                     showMainInfo();
                     break;
                 case 1:
-                    
+                    getClientContacts();
+                    contactsgrid.DataSource = ContactosList;
                     break;
             }
-
-            MessageBox.Show("You are in the TabControl.SelectedIndexChanged event.");
         }
 
         private void historico_SelectedIndexChanged(Object sender, EventArgs e)
@@ -243,6 +241,36 @@ namespace Perfumaria
                     break;
                 case 1:
                     futureMarcGrid.DataSource = getClientFutureMarc();
+                    break;
+            }
+
+
+        }
+
+        private void onlinetab_SelectedIndexChanged(Object sender, EventArgs e)
+        {
+            switch ((sender as TabControl).SelectedIndex)
+            {
+                case 0:
+                    compraOnlineDetalhes();
+                    break;
+                case 1:
+                    compraonlinegrid.DataSource = getCompraProducts();
+                    break;
+            }
+
+
+        }
+
+        private void offlinetab_SelectedIndexChanged(Object sender, EventArgs e)
+        {
+            switch ((sender as TabControl).SelectedIndex)
+            {
+                case 0:
+                    compraPresencialDetalhes();
+                    break;
+                case 1:
+                    compraofflinegrid.DataSource = getCompraProducts();
                     break;
             }
 
@@ -281,19 +309,34 @@ namespace Perfumaria
 
         }
 
-        private DataTable getClientContacts()
+        private void getClientContacts()
         {
             if (!verifySGBDConnection())
                 throw new Exception("Failed to connect to database. \n ERROR");
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM perf.clientServicesHistory ('" + C.Email + "')", cn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM perf.clientContacts ('" + C.Email + "')", cn);
 
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
+            SqlDataReader reader = cmd.ExecuteReader();
+            ContactosList.Clear();
 
-            DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
+            while (reader.Read())
+            {
+                Contacto C = new Contacto();
+                C.Id = (int)reader["id"];
+                C.Telemovel = reader["telemovel"].ToString();
+                C.Visibilidade = (bool)reader["visibilidade"];
+                C.Codigopostal = reader["codigopostal"].ToString();
+                C.Pais = reader["pais"].ToString();
+                C.Endereco = reader["endereco"].ToString();
+                C.Apartamento = reader["apartamento"].ToString();
+                C.Localidade = reader["localidade"].ToString();
+   
+                ContactosList.Add(C);
+            }
+
+
             cn.Close();
-            return dtRecord;
+
         }
 
         private DataTable getClientFutureMarc()
@@ -317,6 +360,21 @@ namespace Perfumaria
                 throw new Exception("Failed to connect to database. \n ERROR");
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM perf.clientFavourites ('" + C.Email + "')", cn);
+
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+            cn.Close();
+            return dtRecord;
+        }
+
+        private DataTable getCompraProducts()
+        {
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM perf.getProductsFromBuy ('" + Compra.Numero + "')", cn);
 
             SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
 
@@ -457,7 +515,8 @@ namespace Perfumaria
             compraonline.Visible = false;
         }
 
-        private void fecharoffline_Click(object sender, EventArgs e)
+
+        private void fecharoffline_Click_1(object sender, EventArgs e)
         {
             compraoffline.Visible = false;
         }

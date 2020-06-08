@@ -286,13 +286,12 @@ CREATE TABLE Perfumaria.perf.contacto
     id INT IDENTITY(1,1) NOT NULL,
     utilizador_email VARCHAR(255) NOT NULL,
     telemovel CHAR(9) NOT NULL,
-    visibilidade BIT NOT NULL,
+    visibilidade BIT NOT NULL DEFAULT 1,
     codigo_postal CHAR(8) NOT NULL,
     pais VARCHAR(20) NOT NULL,
     endereco VARCHAR(50) NOT NULL,
     apartamento VARCHAR(50),
     localidade VARCHAR(20) NOT NULL,
-    deleted BIT NOT NULL DEFAULT 0,
 
     CONSTRAINT contacto_pk PRIMARY KEY (id)
 

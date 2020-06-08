@@ -18,7 +18,6 @@ namespace Perfumaria
 		private String endereco;
 		private String apartamento;
 		private String localidade;
-		private bool deleted;
 
 
 
@@ -37,6 +36,5 @@ namespace Perfumaria
 		public string Endereco { get => endereco; set => endereco = value; }
 		public string Apartamento { get => apartamento; set => apartamento = value; }
 		public string Localidade { get => localidade; set => localidade = value; }
-		public bool Deleted { get => deleted; set => deleted = value; }
 	}
 }

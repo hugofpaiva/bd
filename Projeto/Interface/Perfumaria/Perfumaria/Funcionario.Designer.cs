@@ -55,6 +55,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Loja = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,37 +63,38 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.Marcações = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Cupões = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.Promocao = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.func = new System.Windows.Forms.TabPage();
-            this.servico = new System.Windows.Forms.TabPage();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.Promocao = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.add = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.history = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.func = new System.Windows.Forms.TabPage();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.funcs = new System.Windows.Forms.TabPage();
             this.addfunc = new System.Windows.Forms.TabPage();
             this.Registo = new System.Windows.Forms.Panel();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -114,9 +116,7 @@
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.servico = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -133,10 +133,10 @@
             this.Cupões.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Promocao.SuspendLayout();
-            this.func.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.add.SuspendLayout();
             this.history.SuspendLayout();
+            this.func.SuspendLayout();
             this.tabControl5.SuspendLayout();
             this.addfunc.SuspendLayout();
             this.Registo.SuspendLayout();
@@ -448,6 +448,16 @@
             this.panel1.Size = new System.Drawing.Size(768, 67);
             this.panel1.TabIndex = 1;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(661, 9);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(90, 46);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Adicionar Produto";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(486, 20);
@@ -519,6 +529,19 @@
             this.Marcações.Text = "Marcações";
             this.Marcações.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(768, 400);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
             // Cupões
             // 
             this.Cupões.Controls.Add(this.panel2);
@@ -552,62 +575,90 @@
             this.panel2.Size = new System.Drawing.Size(768, 118);
             this.panel2.TabIndex = 3;
             // 
-            // textBox6
+            // textBox7
             // 
-            this.textBox6.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(160, 27);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(157, 27);
-            this.textBox6.TabIndex = 0;
-            this.textBox6.Text = "Inserir Cupão";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox7.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(160, 84);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(157, 27);
+            this.textBox7.TabIndex = 17;
+            this.textBox7.Text = "Inserir Pontos";
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tableLayoutPanel6
+            // label13
             // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 64);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(768, 336);
-            this.tableLayoutPanel6.TabIndex = 2;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(206, 64);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 18);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Pontos";
             // 
-            // Promocao
+            // button7
             // 
-            this.Promocao.Controls.Add(this.tabControl4);
-            this.Promocao.Location = new System.Drawing.Point(4, 22);
-            this.Promocao.Name = "Promocao";
-            this.Promocao.Size = new System.Drawing.Size(768, 400);
-            this.Promocao.TabIndex = 5;
-            this.Promocao.Text = "Promoções";
-            this.Promocao.UseVisualStyleBackColor = true;
+            this.button7.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(21, 85);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(106, 23);
+            this.button7.TabIndex = 15;
+            this.button7.Text = "Adicionar";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel5
+            // label12
             // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(768, 400);
-            this.tableLayoutPanel5.TabIndex = 1;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(5, 29);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(148, 18);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Data de Início";
             // 
-            // button4
+            // dateTimePicker2
             // 
-            this.button4.Location = new System.Drawing.Point(661, 9);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 46);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Adicionar Produto";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.dateTimePicker2.Location = new System.Drawing.Point(6, 56);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(146, 20);
+            this.dateTimePicker2.TabIndex = 13;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(338, 28);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(118, 18);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Data de Fim";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(326, 55);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(146, 20);
+            this.dateTimePicker1.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(139, 1);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(205, 23);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Adicionar Cupão";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(104, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 18);
+            this.label5.TabIndex = 9;
             // 
             // button5
             // 
@@ -646,109 +697,39 @@
             this.comboBox1.Size = new System.Drawing.Size(151, 21);
             this.comboBox1.TabIndex = 5;
             // 
-            // label5
+            // textBox6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(104, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 18);
-            this.label5.TabIndex = 9;
+            this.textBox6.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(160, 27);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(157, 27);
+            this.textBox6.TabIndex = 0;
+            this.textBox6.Text = "Inserir Cupão";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label8
+            // tableLayoutPanel6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(139, 1);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(205, 23);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Adicionar Cupão";
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 64);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(768, 336);
+            this.tableLayoutPanel6.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // Promocao
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(326, 55);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(146, 20);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(338, 28);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 18);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Data de Fim";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(5, 29);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(148, 18);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Data de Início";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(6, 56);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(146, 20);
-            this.dateTimePicker2.TabIndex = 13;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(21, 85);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(106, 23);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "Adicionar";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(206, 64);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 18);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "Pontos";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(160, 84);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(157, 27);
-            this.textBox7.TabIndex = 17;
-            this.textBox7.Text = "Inserir Pontos";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // func
-            // 
-            this.func.Controls.Add(this.tabControl5);
-            this.func.Location = new System.Drawing.Point(4, 22);
-            this.func.Name = "func";
-            this.func.Size = new System.Drawing.Size(768, 400);
-            this.func.TabIndex = 6;
-            this.func.Text = "Funcionários";
-            this.func.UseVisualStyleBackColor = true;
-            // 
-            // servico
-            // 
-            this.servico.Location = new System.Drawing.Point(4, 22);
-            this.servico.Name = "servico";
-            this.servico.Size = new System.Drawing.Size(768, 400);
-            this.servico.TabIndex = 7;
-            this.servico.Text = "Serviços";
-            this.servico.UseVisualStyleBackColor = true;
+            this.Promocao.Controls.Add(this.tabControl4);
+            this.Promocao.Location = new System.Drawing.Point(4, 22);
+            this.Promocao.Name = "Promocao";
+            this.Promocao.Size = new System.Drawing.Size(768, 400);
+            this.Promocao.TabIndex = 5;
+            this.Promocao.Text = "Promoções";
+            this.Promocao.UseVisualStyleBackColor = true;
             // 
             // tabControl4
             // 
@@ -771,6 +752,13 @@
             this.add.Text = "Adicionar";
             this.add.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(768, 378);
+            this.flowLayoutPanel2.TabIndex = 1;
+            // 
             // history
             // 
             this.history.Controls.Add(this.flowLayoutPanel1);
@@ -789,12 +777,15 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(768, 378);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // flowLayoutPanel2
+            // func
             // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(768, 378);
-            this.flowLayoutPanel2.TabIndex = 1;
+            this.func.Controls.Add(this.tabControl5);
+            this.func.Location = new System.Drawing.Point(4, 22);
+            this.func.Name = "func";
+            this.func.Size = new System.Drawing.Size(768, 400);
+            this.func.TabIndex = 6;
+            this.func.Text = "Funcionários";
+            this.func.UseVisualStyleBackColor = true;
             // 
             // tabControl5
             // 
@@ -858,6 +849,36 @@
             this.Registo.Size = new System.Drawing.Size(776, 426);
             this.Registo.TabIndex = 8;
             this.Registo.Visible = false;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(464, 364);
+            this.textBox15.Multiline = true;
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(268, 30);
+            this.textBox15.TabIndex = 39;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(553, 340);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(101, 23);
+            this.label26.TabIndex = 38;
+            this.label26.Text = "Salário";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
+            this.comboBox4.Location = new System.Drawing.Point(476, 316);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 37;
             // 
             // button8
             // 
@@ -1054,35 +1075,14 @@
             this.label25.TabIndex = 5;
             this.label25.Text = "Perfumaria";
             // 
-            // comboBox4
+            // servico
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2"});
-            this.comboBox4.Location = new System.Drawing.Point(476, 316);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 37;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(553, 340);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(101, 23);
-            this.label26.TabIndex = 38;
-            this.label26.Text = "Salário";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(464, 364);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(268, 30);
-            this.textBox15.TabIndex = 39;
+            this.servico.Location = new System.Drawing.Point(4, 22);
+            this.servico.Name = "servico";
+            this.servico.Size = new System.Drawing.Size(768, 400);
+            this.servico.TabIndex = 7;
+            this.servico.Text = "Serviços";
+            this.servico.UseVisualStyleBackColor = true;
             // 
             // Funcionario
             // 
@@ -1092,6 +1092,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Funcionario";
             this.Text = "Funcionario";
+            this.Load += new System.EventHandler(this.Funcionario_Load);
             this.tabControl1.ResumeLayout(false);
             this.Conta.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
@@ -1111,10 +1112,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.Promocao.ResumeLayout(false);
-            this.func.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.add.ResumeLayout(false);
             this.history.ResumeLayout(false);
+            this.func.ResumeLayout(false);
             this.tabControl5.ResumeLayout(false);
             this.addfunc.ResumeLayout(false);
             this.Registo.ResumeLayout(false);

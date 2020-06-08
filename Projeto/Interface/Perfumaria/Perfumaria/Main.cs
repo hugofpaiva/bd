@@ -30,7 +30,13 @@ namespace Perfumaria
             }
             else
             {
-                Console.WriteLine("NOP");
+                DialogResult result;
+                result = MessageBox.Show("Sem conexão à Base de Dados", "Erro!", MessageBoxButtons.OK);
+                if (result == DialogResult.OK)
+                {
+                    System.Environment.Exit(1);
+                }
+
             }
 
             cn.Close();

@@ -76,6 +76,7 @@ BEGIN
     END CATCH
 
 END
+GO
 
 /*DECLARE @responseMessage NVARCHAR(250)
 
