@@ -17,12 +17,15 @@ namespace Perfumaria
     {
         private SqlConnection cn;
         private Client C = new Client();
+        private Compra Compra = new Compra();
+        private Contacto Contacto = new Contacto();
         public Cliente()
         {
             InitializeComponent();
             tabControl1.SelectedIndexChanged += new EventHandler(tabControl1_SelectedIndexChanged);
             tabControl2.SelectedIndexChanged += new EventHandler(tabControl2_SelectedIndexChanged);
             historico.SelectedIndexChanged += new EventHandler(historico_SelectedIndexChanged);
+            marcacoes.SelectedIndexChanged += new EventHandler(marcacoes_SelectedIndexChanged);
         }
 
     
@@ -174,6 +177,7 @@ namespace Perfumaria
             changepw.Visible = false;
         }
 
+        // TAB PRINCIPAL
         private void tabControl1_SelectedIndexChanged(Object sender, EventArgs e)
         {
 
@@ -185,9 +189,21 @@ namespace Perfumaria
                 case 1:
                     historico_SelectedIndexChanged(historico, null);
                     break;
+                case 2:
+                    orderdescasc.SelectedIndex = 0;
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    Favourites.DataSource = getClientFavourites();
+                    break;
+
             }
         }
 
+        //TAB MAIN INFORMÇÕES CLIENTE
         private void tabControl2_SelectedIndexChanged(Object sender, EventArgs e)
         {
             switch ((sender as TabControl).SelectedIndex)
@@ -216,6 +232,21 @@ namespace Perfumaria
             }
 
             
+        }
+
+        private void marcacoes_SelectedIndexChanged(Object sender, EventArgs e)
+        {
+            switch ((sender as TabControl).SelectedIndex)
+            {
+                case 0:
+                    dateTimePicker1.MinDate = DateTime.Today;
+                    break;
+                case 1:
+                    futureMarcGrid.DataSource = getClientFutureMarc();
+                    break;
+            }
+
+
         }
 
         private DataTable getClientBuyHistory()
@@ -265,9 +296,153 @@ namespace Perfumaria
             return dtRecord;
         }
 
+        private DataTable getClientFutureMarc()
+        {
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM perf.clientFutureMarc ('" + C.Email + "')", cn);
+
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+            cn.Close();
+            return dtRecord;
+        }
+
+        private DataTable getClientFavourites()
+        {
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM perf.clientFavourites ('" + C.Email + "')", cn);
+
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+            cn.Close();
+            return dtRecord;
+        }
+
+        /*private  DataTable getAllAvailableProducts()
+        {
+
+
+
+
+
+            if (dtRecord.Columns.Contains("deleted"))
+            {
+                dtRecord.Columns.Remove("deleted");
+                dtRecord.AcceptChanges();
+            }
+        }*/
+
         private void buyHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ignore clicks that are not in our 
+            if (e.ColumnIndex == buyHistory.Columns["Detalhes"].Index && e.RowIndex >= 0)
+            {
+                selectPanel((int)buyHistory.Rows[e.RowIndex].Cells[3].Value);
+                
+            }
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void search_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void selectPanel(int compra)
+        {
+            if (!verifySGBDConnection())
+                return;
+
+            SqlCommand cmd = new SqlCommand("perf.getDetailsFromBuy", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@numero", compra);
+
+            try
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                reader.Read();
+
+                Compra.Pagamento = reader["pagamento"].ToString();
+                Compra.Contribuinte = reader["contribuinte"].ToString();
+                Compra.Numero = (int)reader["numero"];
+                Compra.Datacompra = reader["datacompra"].ToString();
+
+                if (!DBNull.Value.Equals(reader["fname"]))
+                {
+                    Compra.Funcionario = reader["fname"].ToString();
+                    compraPresencialDetalhes();
+                    
+                } else
+                {
+
+                Compra.Rating = reader["rating"].ToString();
+                Compra.Observacao = reader["observacao"].ToString();
+                Compra.Rastreamento = reader["rastreamento"].ToString();
+                Compra.Presente = (bool)reader["presente"];
+                Contacto.Telemovel = reader["telemovel"].ToString();
+                Contacto.Codigopostal = reader["codigo_postal"].ToString();
+                Contacto.Endereco = reader["endereco"].ToString();
+                Compra.Pontosacumulados = (int)reader["endereco"];
+                Compra.Pontosgastos = (int)reader["endereco"];
+                compraOnlineDetalhes();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to get Compra. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+           
+           
+
+            cn.Close();
+
+        }
+
+        public void compraPresencialDetalhes()
+        {
+            compraoffline.Visible = true;
+        }
+
+        public void compraOnlineDetalhes()
+        {
+            compraonline.Visible = true;
+        }
+
     }
 }

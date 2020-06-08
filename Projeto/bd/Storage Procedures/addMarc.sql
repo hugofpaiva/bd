@@ -3,7 +3,7 @@ CREATE PROCEDURE perf.addMarc
     @cliente_email VARCHAR(255),
     @servico_id INT,
     @funcionario_email VARCHAR(255),
-    @dataMarc DATETIME,
+    @dataMarc SMALLDATETIME,
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN

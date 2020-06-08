@@ -85,7 +85,7 @@ namespace Perfumaria
             }
             finally
             {
-                if (!rm.Equals("Invalid login"))
+                if (!rm.Equals("Invalid login") && !rm.Equals("Incorrect password"))
                 {
                     // Funcionário
                     if (type)
@@ -122,7 +122,10 @@ namespace Perfumaria
         //REGISTO
         private void button2_Click(object sender, EventArgs e)
         {
+           
             Registo.Visible = true;
+             var myDate = DateTime.Now;
+            nascimento.MaxDate = myDate.AddYears(-18);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -269,6 +272,9 @@ namespace Perfumaria
             }
         }
 
-
+        private void nascimento_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

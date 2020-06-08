@@ -17,7 +17,10 @@ BEGIN
         WHERE email=@email AND pw=HASHBYTES('SHA2_512', @password))
 
         IF(@email IS NULL)
-           SET @responseMessage='Incorrect password'
+        BEGIN
+            SET @type=0
+            SET @responseMessage='Incorrect password'
+        END
         ELSE 
         BEGIN
            SET @responseMessage='User successfully logged in'

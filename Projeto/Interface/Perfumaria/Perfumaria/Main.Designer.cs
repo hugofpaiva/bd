@@ -204,9 +204,11 @@
             // nascimento
             // 
             this.nascimento.Location = new System.Drawing.Point(68, 341);
+            this.nascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.nascimento.Name = "nascimento";
             this.nascimento.Size = new System.Drawing.Size(268, 20);
             this.nascimento.TabIndex = 33;
+            this.nascimento.ValueChanged += new System.EventHandler(this.nascimento_ValueChanged);
             // 
             // label13
             // 
