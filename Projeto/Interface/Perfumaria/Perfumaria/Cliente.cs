@@ -326,20 +326,6 @@ namespace Perfumaria
             return dtRecord;
         }
 
-        /*private  DataTable getAllAvailableProducts()
-        {
-
-
-
-
-
-            if (dtRecord.Columns.Contains("deleted"))
-            {
-                dtRecord.Columns.Remove("deleted");
-                dtRecord.AcceptChanges();
-            }
-        }*/
-
         private void buyHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Ignore clicks that are not in our 
@@ -403,7 +389,8 @@ namespace Perfumaria
                 Compra.Numero = (int)reader["numero"];
                 Compra.Datacompra = reader["datacompra"].ToString();
 
-                if (reader.GetSchemaTable().Columns.Contains("fname"))
+
+                if (reader.GetName(2).Equals("fname", StringComparison.InvariantCultureIgnoreCase))
                 {
                     Compra.Funcionario = reader["fname"].ToString();
                     compraPresencialDetalhes();
@@ -439,11 +426,30 @@ namespace Perfumaria
         public void compraPresencialDetalhes()
         {
             compraoffline.Visible = true;
+            datacompraoff.Text = Compra.Datacompra;
+            numcompraoff.Text = Compra.Numero.ToString();
+            funcionariocompraoff.Text = Compra.Funcionario;
+            contribuintecompraoff.Text = Compra.Contribuinte;
+            pagamentocompraoff.Text = Compra.Pagamento;
         }
 
         public void compraOnlineDetalhes()
         {   
             compraonline.Visible = true;
+            datacompraon.Text = Compra.Datacompra;
+            numerocompraon.Text = Compra.Numero.ToString();
+            if(!String.IsNullOrEmpty(Compra.Rating))
+                rating.SelectedIndex = (int)(Int32.Parse(Compra.Rating) - 1);
+            telmcompraon.Text = Contacto.Telemovel;
+            enderecocompraon.Text = Contacto.Endereco;
+            postalcompraon.Text = Contacto.Codigopostal;
+            observacaocompraon.Text = Compra.Observacao;
+            presentecompraon.Checked = (bool)Compra.Presente;
+            rastreamentocompraon.Text = Compra.Rastreamento;
+            contribuintecompraon.Text = Compra.Contribuinte;
+            pagamentocompraon.Text = Compra.Pagamento;
+
+
         }
 
         private void fecharonline_Click(object sender, EventArgs e)

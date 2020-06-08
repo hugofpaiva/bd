@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Conta = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -72,10 +71,10 @@
             this.Histórico = new System.Windows.Forms.TabPage();
             this.historico = new System.Windows.Forms.TabControl();
             this.Compras = new System.Windows.Forms.TabPage();
-            this.compraoffline = new System.Windows.Forms.Panel();
             this.compraonline = new System.Windows.Forms.Panel();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.fecharonline = new System.Windows.Forms.Button();
             this.label39 = new System.Windows.Forms.Label();
             this.enderecocompraon = new System.Windows.Forms.TextBox();
             this.postalcompraon = new System.Windows.Forms.TextBox();
@@ -103,8 +102,10 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.compraoffline = new System.Windows.Forms.Panel();
             this.CompraDetails1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.fecharoffline = new System.Windows.Forms.Button();
             this.funcionariocompraoff = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.contribuintecompraoff = new System.Windows.Forms.TextBox();
@@ -123,7 +124,6 @@
             this.Detalhes = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Servicos = new System.Windows.Forms.TabPage();
             this.servicosgrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Loja = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.orderdescasc = new System.Windows.Forms.ComboBox();
@@ -162,8 +162,6 @@
             this.Favoritos = new System.Windows.Forms.TabPage();
             this.Favourites = new System.Windows.Forms.DataGridView();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.fecharonline = new System.Windows.Forms.Button();
-            this.fecharoffline = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -175,12 +173,12 @@
             this.Histórico.SuspendLayout();
             this.historico.SuspendLayout();
             this.Compras.SuspendLayout();
-            this.compraoffline.SuspendLayout();
             this.compraonline.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.compraoffline.SuspendLayout();
             this.CompraDetails1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -598,9 +596,9 @@
             // 
             // dataGridViewButtonColumn2
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewButtonColumn2.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             this.dataGridViewButtonColumn2.ReadOnly = true;
@@ -641,15 +639,6 @@
             this.Compras.TabIndex = 0;
             this.Compras.Text = "Compras";
             this.Compras.UseVisualStyleBackColor = true;
-            // 
-            // compraoffline
-            // 
-            this.compraoffline.Controls.Add(this.CompraDetails1);
-            this.compraoffline.Location = new System.Drawing.Point(6, 23);
-            this.compraoffline.Name = "compraoffline";
-            this.compraoffline.Size = new System.Drawing.Size(755, 355);
-            this.compraoffline.TabIndex = 1;
-            this.compraoffline.Visible = false;
             // 
             // compraonline
             // 
@@ -705,6 +694,17 @@
             this.tabPage3.Text = "Detalhes da Compra";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // fecharonline
+            // 
+            this.fecharonline.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecharonline.Location = new System.Drawing.Point(611, 15);
+            this.fecharonline.Name = "fecharonline";
+            this.fecharonline.Size = new System.Drawing.Size(79, 25);
+            this.fecharonline.TabIndex = 58;
+            this.fecharonline.Text = "Fechar";
+            this.fecharonline.UseVisualStyleBackColor = true;
+            this.fecharonline.Click += new System.EventHandler(this.fecharonline_Click);
+            // 
             // label39
             // 
             this.label39.AutoSize = true;
@@ -719,7 +719,7 @@
             // 
             this.enderecocompraon.BackColor = System.Drawing.SystemColors.Control;
             this.enderecocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.enderecocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enderecocompraon.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enderecocompraon.Location = new System.Drawing.Point(54, 244);
             this.enderecocompraon.Multiline = true;
             this.enderecocompraon.Name = "enderecocompraon";
@@ -732,7 +732,7 @@
             // 
             this.postalcompraon.BackColor = System.Drawing.SystemColors.Control;
             this.postalcompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.postalcompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postalcompraon.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postalcompraon.Location = new System.Drawing.Point(290, 244);
             this.postalcompraon.Multiline = true;
             this.postalcompraon.Name = "postalcompraon";
@@ -755,7 +755,7 @@
             // 
             this.telmcompraon.BackColor = System.Drawing.SystemColors.Control;
             this.telmcompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.telmcompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telmcompraon.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telmcompraon.Location = new System.Drawing.Point(96, 188);
             this.telmcompraon.Multiline = true;
             this.telmcompraon.Name = "telmcompraon";
@@ -778,7 +778,7 @@
             // 
             this.observacaocompraon.BackColor = System.Drawing.SystemColors.Control;
             this.observacaocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.observacaocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.observacaocompraon.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.observacaocompraon.Location = new System.Drawing.Point(468, 244);
             this.observacaocompraon.Multiline = true;
             this.observacaocompraon.Name = "observacaocompraon";
@@ -831,7 +831,7 @@
             // 
             this.rastreamentocompraon.BackColor = System.Drawing.SystemColors.Control;
             this.rastreamentocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rastreamentocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rastreamentocompraon.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rastreamentocompraon.Location = new System.Drawing.Point(503, 140);
             this.rastreamentocompraon.Multiline = true;
             this.rastreamentocompraon.Name = "rastreamentocompraon";
@@ -878,7 +878,7 @@
             // 
             this.contribuintecompraon.BackColor = System.Drawing.SystemColors.Control;
             this.contribuintecompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.contribuintecompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contribuintecompraon.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contribuintecompraon.Location = new System.Drawing.Point(503, 93);
             this.contribuintecompraon.Multiline = true;
             this.contribuintecompraon.Name = "contribuintecompraon";
@@ -901,7 +901,7 @@
             // 
             this.pagamentocompraon.BackColor = System.Drawing.SystemColors.Control;
             this.pagamentocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pagamentocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pagamentocompraon.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pagamentocompraon.Location = new System.Drawing.Point(503, 46);
             this.pagamentocompraon.Multiline = true;
             this.pagamentocompraon.Name = "pagamentocompraon";
@@ -924,7 +924,7 @@
             // 
             this.numerocompraon.BackColor = System.Drawing.SystemColors.Control;
             this.numerocompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numerocompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numerocompraon.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numerocompraon.Location = new System.Drawing.Point(96, 86);
             this.numerocompraon.Multiline = true;
             this.numerocompraon.Name = "numerocompraon";
@@ -947,7 +947,7 @@
             // 
             this.datacompraon.BackColor = System.Drawing.SystemColors.Control;
             this.datacompraon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datacompraon.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datacompraon.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datacompraon.Location = new System.Drawing.Point(96, 46);
             this.datacompraon.Multiline = true;
             this.datacompraon.Name = "datacompraon";
@@ -1007,15 +1007,24 @@
             // 
             // dataGridViewButtonColumn5
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewButtonColumn5.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
             this.dataGridViewButtonColumn5.ReadOnly = true;
             this.dataGridViewButtonColumn5.Text = "Ver detalhes";
             this.dataGridViewButtonColumn5.ToolTipText = "Ver detalhes";
             this.dataGridViewButtonColumn5.UseColumnTextForButtonValue = true;
+            // 
+            // compraoffline
+            // 
+            this.compraoffline.Controls.Add(this.CompraDetails1);
+            this.compraoffline.Location = new System.Drawing.Point(6, 23);
+            this.compraoffline.Name = "compraoffline";
+            this.compraoffline.Size = new System.Drawing.Size(755, 355);
+            this.compraoffline.TabIndex = 1;
+            this.compraoffline.Visible = false;
             // 
             // CompraDetails1
             // 
@@ -1048,6 +1057,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Detalhes da Compra";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // fecharoffline
+            // 
+            this.fecharoffline.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecharoffline.Location = new System.Drawing.Point(619, 19);
+            this.fecharoffline.Name = "fecharoffline";
+            this.fecharoffline.Size = new System.Drawing.Size(79, 30);
+            this.fecharoffline.TabIndex = 59;
+            this.fecharoffline.Text = "Fechar";
+            this.fecharoffline.UseVisualStyleBackColor = true;
             // 
             // funcionariocompraoff
             // 
@@ -1205,9 +1224,9 @@
             // 
             // dataGridViewButtonColumn4
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewButtonColumn4.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             this.dataGridViewButtonColumn4.ReadOnly = true;
@@ -1236,9 +1255,9 @@
             // 
             // Detalhes
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(10);
-            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle9;
             this.Detalhes.HeaderText = "Detalhes";
             this.Detalhes.Name = "Detalhes";
             this.Detalhes.ReadOnly = true;
@@ -1263,8 +1282,6 @@
             this.servicosgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.servicosgrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.servicosgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.servicosgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewButtonColumn1});
             this.servicosgrid.Location = new System.Drawing.Point(0, 0);
             this.servicosgrid.MultiSelect = false;
             this.servicosgrid.Name = "servicosgrid";
@@ -1274,18 +1291,6 @@
             this.servicosgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.servicosgrid.Size = new System.Drawing.Size(765, 378);
             this.servicosgrid.TabIndex = 1;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridViewButtonColumn1.HeaderText = "Detalhes";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Text = "Ver detalhes";
-            this.dataGridViewButtonColumn1.ToolTipText = "Ver detalhes";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             // 
             // Loja
             // 
@@ -1709,36 +1714,15 @@
             // 
             // dataGridViewButtonColumn3
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewButtonColumn3.HeaderText = "Comprar";
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
             this.dataGridViewButtonColumn3.ReadOnly = true;
             this.dataGridViewButtonColumn3.Text = "Comprar";
             this.dataGridViewButtonColumn3.ToolTipText = "Comprar";
             this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
-            // 
-            // fecharonline
-            // 
-            this.fecharonline.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecharonline.Location = new System.Drawing.Point(611, 15);
-            this.fecharonline.Name = "fecharonline";
-            this.fecharonline.Size = new System.Drawing.Size(79, 25);
-            this.fecharonline.TabIndex = 58;
-            this.fecharonline.Text = "Fechar";
-            this.fecharonline.UseVisualStyleBackColor = true;
-            this.fecharonline.Click += new System.EventHandler(this.fecharonline_Click);
-            // 
-            // fecharoffline
-            // 
-            this.fecharoffline.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecharoffline.Location = new System.Drawing.Point(619, 19);
-            this.fecharoffline.Name = "fecharoffline";
-            this.fecharoffline.Size = new System.Drawing.Size(79, 30);
-            this.fecharoffline.TabIndex = 59;
-            this.fecharoffline.Text = "Fechar";
-            this.fecharoffline.UseVisualStyleBackColor = true;
             // 
             // Cliente
             // 
@@ -1762,13 +1746,13 @@
             this.Histórico.ResumeLayout(false);
             this.historico.ResumeLayout(false);
             this.Compras.ResumeLayout(false);
-            this.compraoffline.ResumeLayout(false);
             this.compraonline.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.compraoffline.ResumeLayout(false);
             this.CompraDetails1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1864,7 +1848,6 @@
         private System.Windows.Forms.DataGridView buyHistory;
         private System.Windows.Forms.DataGridViewButtonColumn Detalhes;
         private System.Windows.Forms.DataGridView servicosgrid;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.DataGridView contactsgrid;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
         private System.Windows.Forms.DataGridView futureMarcGrid;
