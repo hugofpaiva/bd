@@ -1,7 +1,7 @@
 DROP PROCEDURE perf.RegisterFunc
 GO
 
-GO
+
 CREATE PROCEDURE perf.RegisterFunc
     @email VARCHAR(255),
     @password VARCHAR(25),
@@ -36,11 +36,12 @@ BEGIN
     END CATCH
 
 END
+GO
 
 DROP PROCEDURE perf.RegisterClient
 GO
 
-GO
+
 CREATE PROCEDURE perf.RegisterClient
     @email VARCHAR(255),
     @password VARCHAR(25),

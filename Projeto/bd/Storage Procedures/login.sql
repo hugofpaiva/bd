@@ -1,7 +1,7 @@
 DROP PROCEDURE perf.Login;
 GO
 
-GO
+
 CREATE PROCEDURE perf.Login
     @email VARCHAR(255),
     @password VARCHAR(25),
@@ -37,6 +37,7 @@ BEGIN
         END
 
 END
+GO
 
 
 

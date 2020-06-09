@@ -325,7 +325,7 @@ namespace Perfumaria
                 C.Id = (int)reader["id"];
                 C.Telemovel = reader["telemovel"].ToString();
                 C.Visibilidade = (bool)reader["visibilidade"];
-                C.Codigopostal = reader["codigopostal"].ToString();
+                C.Codigopostal = reader["codigo_postal"].ToString();
                 C.Pais = reader["pais"].ToString();
                 C.Endereco = reader["endereco"].ToString();
                 C.Apartamento = reader["apartamento"].ToString();

@@ -1,4 +1,3 @@
-GO
 CREATE PROCEDURE perf.getDetailsFromBuy
     @numero INT
 AS
@@ -17,6 +16,7 @@ BEGIN
                     WHERE compra.numero=@numero
                 END
 END
+GO
 
 ---------------
 --pronta a usar

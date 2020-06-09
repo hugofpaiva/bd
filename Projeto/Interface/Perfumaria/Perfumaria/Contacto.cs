@@ -9,10 +9,10 @@ namespace Perfumaria
 	[Serializable()]
 	class Contacto
 	{
+		private bool visibilidade;
 		private int id;
 		private String utilizadoremail;
 		private String telemovel;
-		private bool visibilidade;
 		private String codigopostal;
 		private String pais;
 		private String endereco;
