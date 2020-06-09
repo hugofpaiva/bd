@@ -194,6 +194,7 @@ namespace Perfumaria
                 case 3:
                     break;
                 case 4:
+                    cupoesgrid.DataSource = getClientCupons();
                     break;
                 case 5:
                     Favourites.DataSource = getClientFavourites();
@@ -212,7 +213,8 @@ namespace Perfumaria
                     break;
                 case 1:
                     getClientContacts();
-                    contactsgrid.DataSource = ContactosList;
+                    contactsgrid.DataSource = ContactosList.Select(o => new
+                    { Predefinido = o.Default, Telemóvel = o.Telemovel, CódigoPostal = o.Codigopostal, País = o.Pais, Endereço = o.Endereco, Apartamento = o.Apartamento, Localidade = o.Localidade }).ToList();
                     break;
             }
         }
@@ -293,6 +295,22 @@ namespace Perfumaria
 
         }
 
+        private DataTable getClientCupons()
+        {
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM perf.getClientCupon ('" + C.Email + "')", cn);
+
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+            cn.Close();
+            return dtRecord;
+
+        }
+
         private DataTable getClientServicesHistory()
         {
             if (!verifySGBDConnection())
@@ -314,6 +332,23 @@ namespace Perfumaria
             if (!verifySGBDConnection())
                 throw new Exception("Failed to connect to database. \n ERROR");
 
+            SqlCommand cmdDefault = new SqlCommand("SELECT * FROM perf.clientDefaultContact ('" + C.Email + "')", cn);
+            SqlDataReader readerdef = cmdDefault.ExecuteReader();
+            readerdef.Read();
+            int contactid = -1;
+            try
+            {
+               contactid = (int)readerdef["id"];
+            }
+            catch (InvalidOperationException)
+            {
+            }
+
+            cn.Close();
+
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
             SqlCommand cmd = new SqlCommand("SELECT * FROM perf.clientContacts ('" + C.Email + "')", cn);
 
             SqlDataReader reader = cmd.ExecuteReader();
@@ -323,8 +358,11 @@ namespace Perfumaria
             {
                 Contacto C = new Contacto();
                 C.Id = (int)reader["id"];
+                if (contactid == C.Id)
+                    C.Default = true;
+                else
+                    C.Default = false;
                 C.Telemovel = reader["telemovel"].ToString();
-                C.Visibilidade = (bool)reader["visibilidade"];
                 C.Codigopostal = reader["codigo_postal"].ToString();
                 C.Pais = reader["pais"].ToString();
                 C.Endereco = reader["endereco"].ToString();
@@ -338,6 +376,8 @@ namespace Perfumaria
             cn.Close();
 
         }
+
+
 
         private DataTable getClientFutureMarc()
         {

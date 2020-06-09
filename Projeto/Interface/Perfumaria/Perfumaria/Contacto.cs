@@ -9,9 +9,8 @@ namespace Perfumaria
 	[Serializable()]
 	class Contacto
 	{
-		private bool visibilidade;
 		private int id;
-		private String utilizadoremail;
+		private bool predefinido;
 		private String telemovel;
 		private String codigopostal;
 		private String pais;
@@ -28,9 +27,9 @@ namespace Perfumaria
 		}
 
 		public int Id { get => id; set => id = value; }
-		public string Utilizadoremail { get => utilizadoremail; set => utilizadoremail = value; }
+
+		public bool Default { get => predefinido; set => predefinido = value; }
 		public string Telemovel { get => telemovel; set => telemovel = value; }
-		public bool Visibilidade { get => visibilidade; set => visibilidade = value; }
 		public string Codigopostal { get => codigopostal; set => codigopostal = value; }
 		public string Pais { get => pais; set => pais = value; }
 		public string Endereco { get => endereco; set => endereco = value; }
