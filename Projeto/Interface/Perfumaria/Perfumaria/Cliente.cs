@@ -86,7 +86,7 @@ namespace Perfumaria
             pontosbox.Text = C.Pontos.ToString();
             selectPayment();
             pictureBox1.Load(C.Foto);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
         }
 
