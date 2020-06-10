@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Conta = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -126,8 +126,6 @@
             this.Servicos = new System.Windows.Forms.TabPage();
             this.servicosgrid = new System.Windows.Forms.DataGridView();
             this.Loja = new System.Windows.Forms.TabPage();
-            this.lojagrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.orderdescasc = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -140,6 +138,8 @@
             this.order = new System.Windows.Forms.Label();
             this.orderby = new System.Windows.Forms.ComboBox();
             this.pesquisa = new System.Windows.Forms.TextBox();
+            this.lojagrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Marcações = new System.Windows.Forms.TabPage();
             this.marcacoes = new System.Windows.Forms.TabControl();
             this.marcar = new System.Windows.Forms.TabPage();
@@ -157,6 +157,7 @@
             this.Cupões = new System.Windows.Forms.TabPage();
             this.cupoesgrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.addcupon = new System.Windows.Forms.Button();
             this.cupoespontos = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cupontextbox = new System.Windows.Forms.TextBox();
@@ -164,7 +165,19 @@
             this.Favourites = new System.Windows.Forms.DataGridView();
             this.Remover = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.addcupon = new System.Windows.Forms.Button();
+            this.Produto = new System.Windows.Forms.Panel();
+            this.fecharproduto = new System.Windows.Forms.Button();
+            this.fotoproduto = new System.Windows.Forms.PictureBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -190,8 +203,8 @@
             this.Servicos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).BeginInit();
             this.Loja.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lojagrid)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lojagrid)).BeginInit();
             this.Marcações.SuspendLayout();
             this.marcacoes.SuspendLayout();
             this.marcar.SuspendLayout();
@@ -202,6 +215,8 @@
             this.panel2.SuspendLayout();
             this.Favoritos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Favourites)).BeginInit();
+            this.Produto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoproduto)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -599,9 +614,9 @@
             // 
             // dataGridViewButtonColumn2
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewButtonColumn2.HeaderText = "Eliminar";
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             this.dataGridViewButtonColumn2.ReadOnly = true;
@@ -1010,9 +1025,9 @@
             // 
             // dataGridViewButtonColumn5
             // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewButtonColumn5.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
             this.dataGridViewButtonColumn5.ReadOnly = true;
@@ -1228,9 +1243,9 @@
             // 
             // dataGridViewButtonColumn4
             // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewButtonColumn4.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             this.dataGridViewButtonColumn4.ReadOnly = true;
@@ -1259,9 +1274,9 @@
             // 
             // Detalhes
             // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.Padding = new System.Windows.Forms.Padding(10);
-            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle4;
             this.Detalhes.HeaderText = "Detalhes";
             this.Detalhes.Name = "Detalhes";
             this.Detalhes.ReadOnly = true;
@@ -1298,44 +1313,15 @@
             // 
             // Loja
             // 
-            this.Loja.Controls.Add(this.lojagrid);
+            this.Loja.Controls.Add(this.Produto);
             this.Loja.Controls.Add(this.panel1);
+            this.Loja.Controls.Add(this.lojagrid);
             this.Loja.Location = new System.Drawing.Point(4, 22);
             this.Loja.Name = "Loja";
             this.Loja.Size = new System.Drawing.Size(768, 400);
             this.Loja.TabIndex = 2;
             this.Loja.Text = "Loja Online";
             this.Loja.UseVisualStyleBackColor = true;
-            // 
-            // lojagrid
-            // 
-            this.lojagrid.AllowUserToAddRows = false;
-            this.lojagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.lojagrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.lojagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lojagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewButtonColumn6});
-            this.lojagrid.Location = new System.Drawing.Point(2, 109);
-            this.lojagrid.MultiSelect = false;
-            this.lojagrid.Name = "lojagrid";
-            this.lojagrid.ReadOnly = true;
-            this.lojagrid.RowHeadersVisible = false;
-            this.lojagrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.lojagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.lojagrid.Size = new System.Drawing.Size(765, 291);
-            this.lojagrid.TabIndex = 2;
-            // 
-            // dataGridViewButtonColumn6
-            // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle23;
-            this.dataGridViewButtonColumn6.HeaderText = "Comprar";
-            this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
-            this.dataGridViewButtonColumn6.ReadOnly = true;
-            this.dataGridViewButtonColumn6.Text = "Comprar";
-            this.dataGridViewButtonColumn6.ToolTipText = "Comprar";
-            this.dataGridViewButtonColumn6.UseColumnTextForButtonValue = true;
             // 
             // panel1
             // 
@@ -1468,6 +1454,36 @@
             this.pesquisa.TabIndex = 0;
             this.pesquisa.Text = "Pesquisar...";
             this.pesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lojagrid
+            // 
+            this.lojagrid.AllowUserToAddRows = false;
+            this.lojagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.lojagrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.lojagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lojagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewButtonColumn6});
+            this.lojagrid.Location = new System.Drawing.Point(0, 109);
+            this.lojagrid.MultiSelect = false;
+            this.lojagrid.Name = "lojagrid";
+            this.lojagrid.ReadOnly = true;
+            this.lojagrid.RowHeadersVisible = false;
+            this.lojagrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.lojagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.lojagrid.Size = new System.Drawing.Size(767, 291);
+            this.lojagrid.TabIndex = 2;
+            // 
+            // dataGridViewButtonColumn6
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewButtonColumn6.HeaderText = "Comprar";
+            this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
+            this.dataGridViewButtonColumn6.ReadOnly = true;
+            this.dataGridViewButtonColumn6.Text = "Comprar";
+            this.dataGridViewButtonColumn6.ToolTipText = "Comprar";
+            this.dataGridViewButtonColumn6.UseColumnTextForButtonValue = true;
             // 
             // Marcações
             // 
@@ -1662,6 +1678,17 @@
             this.panel2.Size = new System.Drawing.Size(768, 67);
             this.panel2.TabIndex = 3;
             // 
+            // addcupon
+            // 
+            this.addcupon.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addcupon.Location = new System.Drawing.Point(242, 22);
+            this.addcupon.Name = "addcupon";
+            this.addcupon.Size = new System.Drawing.Size(88, 23);
+            this.addcupon.TabIndex = 5;
+            this.addcupon.Text = "Adicionar";
+            this.addcupon.UseVisualStyleBackColor = true;
+            this.addcupon.Click += new System.EventHandler(this.addcupon_Click);
+            // 
             // cupoespontos
             // 
             this.cupoespontos.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -1737,9 +1764,9 @@
             // 
             // dataGridViewButtonColumn3
             // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewButtonColumn3.HeaderText = "Comprar";
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
             this.dataGridViewButtonColumn3.ReadOnly = true;
@@ -1747,16 +1774,154 @@
             this.dataGridViewButtonColumn3.ToolTipText = "Comprar";
             this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
             // 
-            // addcupon
+            // Produto
             // 
-            this.addcupon.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addcupon.Location = new System.Drawing.Point(242, 22);
-            this.addcupon.Name = "addcupon";
-            this.addcupon.Size = new System.Drawing.Size(88, 23);
-            this.addcupon.TabIndex = 5;
-            this.addcupon.Text = "Adicionar";
-            this.addcupon.UseVisualStyleBackColor = true;
-            this.addcupon.Click += new System.EventHandler(this.addcupon_Click);
+            this.Produto.Controls.Add(this.textBox9);
+            this.Produto.Controls.Add(this.label43);
+            this.Produto.Controls.Add(this.textBox7);
+            this.Produto.Controls.Add(this.label42);
+            this.Produto.Controls.Add(this.textBox6);
+            this.Produto.Controls.Add(this.label41);
+            this.Produto.Controls.Add(this.button2);
+            this.Produto.Controls.Add(this.label40);
+            this.Produto.Controls.Add(this.textBox5);
+            this.Produto.Controls.Add(this.label16);
+            this.Produto.Controls.Add(this.fotoproduto);
+            this.Produto.Controls.Add(this.fecharproduto);
+            this.Produto.Location = new System.Drawing.Point(10, 5);
+            this.Produto.Name = "Produto";
+            this.Produto.Size = new System.Drawing.Size(749, 379);
+            this.Produto.TabIndex = 3;
+            // 
+            // fecharproduto
+            // 
+            this.fecharproduto.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecharproduto.Location = new System.Drawing.Point(639, 13);
+            this.fecharproduto.Name = "fecharproduto";
+            this.fecharproduto.Size = new System.Drawing.Size(79, 25);
+            this.fecharproduto.TabIndex = 59;
+            this.fecharproduto.Text = "Fechar";
+            this.fecharproduto.UseVisualStyleBackColor = true;
+            // 
+            // fotoproduto
+            // 
+            this.fotoproduto.Location = new System.Drawing.Point(33, 21);
+            this.fotoproduto.Name = "fotoproduto";
+            this.fotoproduto.Size = new System.Drawing.Size(100, 100);
+            this.fotoproduto.TabIndex = 60;
+            this.fotoproduto.TabStop = false;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(113, 144);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(144, 30);
+            this.textBox5.TabIndex = 62;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(57, 149);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(48, 18);
+            this.label16.TabIndex = 61;
+            this.label16.Text = "Nome";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(468, 338);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(88, 18);
+            this.label40.TabIndex = 63;
+            this.label40.Text = "Unidades";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(631, 335);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 25);
+            this.button2.TabIndex = 64;
+            this.button2.Text = "Comprar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(113, 189);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(144, 30);
+            this.textBox6.TabIndex = 66;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(47, 194);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(58, 18);
+            this.label41.TabIndex = 65;
+            this.label41.Text = "Marca";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(113, 236);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(144, 30);
+            this.textBox7.TabIndex = 68;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(7, 243);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(98, 18);
+            this.label42.TabIndex = 67;
+            this.label42.Text = "Categoria";
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(113, 283);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(144, 30);
+            this.textBox9.TabIndex = 70;
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(47, 290);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(58, 18);
+            this.label43.TabIndex = 69;
+            this.label43.Text = "Stock";
             // 
             // Cliente
             // 
@@ -1796,9 +1961,9 @@
             this.Servicos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).EndInit();
             this.Loja.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lojagrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lojagrid)).EndInit();
             this.Marcações.ResumeLayout(false);
             this.marcacoes.ResumeLayout(false);
             this.marcar.ResumeLayout(false);
@@ -1811,6 +1976,9 @@
             this.panel2.PerformLayout();
             this.Favoritos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Favourites)).EndInit();
+            this.Produto.ResumeLayout(false);
+            this.Produto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoproduto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1948,5 +2116,18 @@
         private System.Windows.Forms.DataGridView lojagrid;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn6;
         private System.Windows.Forms.Button addcupon;
+        private System.Windows.Forms.Panel Produto;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox fotoproduto;
+        private System.Windows.Forms.Button fecharproduto;
     }
 }
