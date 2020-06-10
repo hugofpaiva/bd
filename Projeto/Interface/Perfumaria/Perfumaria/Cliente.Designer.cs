@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -127,15 +128,27 @@
             this.servicosgrid = new System.Windows.Forms.DataGridView();
             this.Loja = new System.Windows.Forms.TabPage();
             this.Produto = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.unidades = new System.Windows.Forms.NumericUpDown();
+            this.semstock = new System.Windows.Forms.Label();
+            this.destinatarioproduto = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.precoproduto = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.familiaproduto = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.descricaoproduto = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.tamanhoproduto = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.linhaproduto = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.categoriaproduto = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.marcaproduto = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.nomeproduto = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.fotoproduto = new System.Windows.Forms.PictureBox();
             this.fecharproduto = new System.Windows.Forms.Button();
@@ -178,6 +191,7 @@
             this.Favourites = new System.Windows.Forms.DataGridView();
             this.Remover = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -204,6 +218,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).BeginInit();
             this.Loja.SuspendLayout();
             this.Produto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoproduto)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lojagrid)).BeginInit();
@@ -1325,15 +1340,27 @@
             // 
             // Produto
             // 
-            this.Produto.Controls.Add(this.textBox9);
+            this.Produto.Controls.Add(this.unidades);
+            this.Produto.Controls.Add(this.semstock);
+            this.Produto.Controls.Add(this.destinatarioproduto);
+            this.Produto.Controls.Add(this.label48);
+            this.Produto.Controls.Add(this.precoproduto);
+            this.Produto.Controls.Add(this.label47);
+            this.Produto.Controls.Add(this.familiaproduto);
+            this.Produto.Controls.Add(this.label46);
+            this.Produto.Controls.Add(this.descricaoproduto);
+            this.Produto.Controls.Add(this.label45);
+            this.Produto.Controls.Add(this.tamanhoproduto);
+            this.Produto.Controls.Add(this.label44);
+            this.Produto.Controls.Add(this.linhaproduto);
             this.Produto.Controls.Add(this.label43);
-            this.Produto.Controls.Add(this.textBox7);
+            this.Produto.Controls.Add(this.categoriaproduto);
             this.Produto.Controls.Add(this.label42);
-            this.Produto.Controls.Add(this.textBox6);
+            this.Produto.Controls.Add(this.marcaproduto);
             this.Produto.Controls.Add(this.label41);
             this.Produto.Controls.Add(this.button2);
             this.Produto.Controls.Add(this.label40);
-            this.Produto.Controls.Add(this.textBox5);
+            this.Produto.Controls.Add(this.nomeproduto);
             this.Produto.Controls.Add(this.label16);
             this.Produto.Controls.Add(this.fotoproduto);
             this.Produto.Controls.Add(this.fecharproduto);
@@ -1343,41 +1370,176 @@
             this.Produto.TabIndex = 3;
             this.Produto.Visible = false;
             // 
-            // textBox9
+            // unidades
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(113, 283);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(144, 30);
-            this.textBox9.TabIndex = 70;
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.unidades.Location = new System.Drawing.Point(556, 338);
+            this.unidades.Name = "unidades";
+            this.unidades.Size = new System.Drawing.Size(58, 20);
+            this.unidades.TabIndex = 82;
+            this.unidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // semstock
+            // 
+            this.semstock.AutoSize = true;
+            this.semstock.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.semstock.ForeColor = System.Drawing.Color.DarkRed;
+            this.semstock.Location = new System.Drawing.Point(548, 361);
+            this.semstock.Name = "semstock";
+            this.semstock.Size = new System.Drawing.Size(77, 14);
+            this.semstock.TabIndex = 81;
+            this.semstock.Text = "Sem Stock!";
+            this.semstock.Visible = false;
+            // 
+            // destinatarioproduto
+            // 
+            this.destinatarioproduto.BackColor = System.Drawing.SystemColors.Control;
+            this.destinatarioproduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.destinatarioproduto.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.destinatarioproduto.Location = new System.Drawing.Point(544, 231);
+            this.destinatarioproduto.Multiline = true;
+            this.destinatarioproduto.Name = "destinatarioproduto";
+            this.destinatarioproduto.ReadOnly = true;
+            this.destinatarioproduto.Size = new System.Drawing.Size(174, 30);
+            this.destinatarioproduto.TabIndex = 80;
+            this.destinatarioproduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(410, 237);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(128, 18);
+            this.label48.TabIndex = 79;
+            this.label48.Text = "Destinatário";
+            // 
+            // precoproduto
+            // 
+            this.precoproduto.BackColor = System.Drawing.SystemColors.Control;
+            this.precoproduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.precoproduto.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precoproduto.Location = new System.Drawing.Point(544, 283);
+            this.precoproduto.Multiline = true;
+            this.precoproduto.Name = "precoproduto";
+            this.precoproduto.ReadOnly = true;
+            this.precoproduto.Size = new System.Drawing.Size(174, 30);
+            this.precoproduto.TabIndex = 78;
+            this.precoproduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(480, 289);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(58, 18);
+            this.label47.TabIndex = 77;
+            this.label47.Text = "Preço";
+            // 
+            // familiaproduto
+            // 
+            this.familiaproduto.BackColor = System.Drawing.SystemColors.Control;
+            this.familiaproduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.familiaproduto.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.familiaproduto.Location = new System.Drawing.Point(544, 129);
+            this.familiaproduto.Multiline = true;
+            this.familiaproduto.Name = "familiaproduto";
+            this.familiaproduto.ReadOnly = true;
+            this.familiaproduto.Size = new System.Drawing.Size(174, 83);
+            this.familiaproduto.TabIndex = 76;
+            this.familiaproduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(159, 56);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(98, 18);
+            this.label46.TabIndex = 75;
+            this.label46.Text = "Descrição";
+            // 
+            // descricaoproduto
+            // 
+            this.descricaoproduto.BackColor = System.Drawing.SystemColors.Control;
+            this.descricaoproduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.descricaoproduto.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descricaoproduto.Location = new System.Drawing.Point(263, 21);
+            this.descricaoproduto.Multiline = true;
+            this.descricaoproduto.Name = "descricaoproduto";
+            this.descricaoproduto.ReadOnly = true;
+            this.descricaoproduto.Size = new System.Drawing.Size(293, 100);
+            this.descricaoproduto.TabIndex = 74;
+            this.descricaoproduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(370, 158);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(168, 18);
+            this.label45.TabIndex = 73;
+            this.label45.Text = "Família Olfativa";
+            // 
+            // tamanhoproduto
+            // 
+            this.tamanhoproduto.BackColor = System.Drawing.SystemColors.Control;
+            this.tamanhoproduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tamanhoproduto.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tamanhoproduto.Location = new System.Drawing.Point(113, 330);
+            this.tamanhoproduto.Multiline = true;
+            this.tamanhoproduto.Name = "tamanhoproduto";
+            this.tamanhoproduto.ReadOnly = true;
+            this.tamanhoproduto.Size = new System.Drawing.Size(144, 30);
+            this.tamanhoproduto.TabIndex = 72;
+            this.tamanhoproduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(27, 335);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(78, 18);
+            this.label44.TabIndex = 71;
+            this.label44.Text = "Tamanho";
+            // 
+            // linhaproduto
+            // 
+            this.linhaproduto.BackColor = System.Drawing.SystemColors.Control;
+            this.linhaproduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.linhaproduto.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linhaproduto.Location = new System.Drawing.Point(113, 283);
+            this.linhaproduto.Multiline = true;
+            this.linhaproduto.Name = "linhaproduto";
+            this.linhaproduto.ReadOnly = true;
+            this.linhaproduto.Size = new System.Drawing.Size(144, 30);
+            this.linhaproduto.TabIndex = 70;
+            this.linhaproduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label43
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(47, 290);
+            this.label43.Location = new System.Drawing.Point(47, 289);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(58, 18);
             this.label43.TabIndex = 69;
-            this.label43.Text = "Stock";
+            this.label43.Text = "Linha";
             // 
-            // textBox7
+            // categoriaproduto
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(113, 236);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(144, 30);
-            this.textBox7.TabIndex = 68;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.categoriaproduto.BackColor = System.Drawing.SystemColors.Control;
+            this.categoriaproduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.categoriaproduto.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoriaproduto.Location = new System.Drawing.Point(113, 236);
+            this.categoriaproduto.Multiline = true;
+            this.categoriaproduto.Name = "categoriaproduto";
+            this.categoriaproduto.ReadOnly = true;
+            this.categoriaproduto.Size = new System.Drawing.Size(144, 30);
+            this.categoriaproduto.TabIndex = 68;
+            this.categoriaproduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label42
             // 
@@ -1389,18 +1551,18 @@
             this.label42.TabIndex = 67;
             this.label42.Text = "Categoria";
             // 
-            // textBox6
+            // marcaproduto
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(113, 189);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(144, 30);
-            this.textBox6.TabIndex = 66;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.marcaproduto.BackColor = System.Drawing.SystemColors.Control;
+            this.marcaproduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.marcaproduto.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.marcaproduto.Location = new System.Drawing.Point(113, 189);
+            this.marcaproduto.Multiline = true;
+            this.marcaproduto.Name = "marcaproduto";
+            this.marcaproduto.ReadOnly = true;
+            this.marcaproduto.Size = new System.Drawing.Size(144, 30);
+            this.marcaproduto.TabIndex = 66;
+            this.marcaproduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label41
             // 
@@ -1426,24 +1588,24 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(468, 338);
+            this.label40.Location = new System.Drawing.Point(450, 338);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(88, 18);
             this.label40.TabIndex = 63;
             this.label40.Text = "Unidades";
             // 
-            // textBox5
+            // nomeproduto
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(113, 144);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(144, 30);
-            this.textBox5.TabIndex = 62;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nomeproduto.BackColor = System.Drawing.SystemColors.Control;
+            this.nomeproduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nomeproduto.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeproduto.Location = new System.Drawing.Point(113, 144);
+            this.nomeproduto.Multiline = true;
+            this.nomeproduto.Name = "nomeproduto";
+            this.nomeproduto.ReadOnly = true;
+            this.nomeproduto.Size = new System.Drawing.Size(144, 30);
+            this.nomeproduto.TabIndex = 62;
+            this.nomeproduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label16
             // 
@@ -1634,6 +1796,7 @@
             this.lojagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.lojagrid.Size = new System.Drawing.Size(767, 291);
             this.lojagrid.TabIndex = 2;
+            this.lojagrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lojagrid_CellContentClick);
             // 
             // dataGridViewButtonColumn6
             // 
@@ -1936,6 +2099,11 @@
             this.dataGridViewButtonColumn3.ToolTipText = "Comprar";
             this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1976,6 +2144,7 @@
             this.Loja.ResumeLayout(false);
             this.Produto.ResumeLayout(false);
             this.Produto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoproduto)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -2130,17 +2299,30 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn6;
         private System.Windows.Forms.Button addcupon;
         private System.Windows.Forms.Panel Produto;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox categoriaproduto;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox marcaproduto;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox nomeproduto;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox fotoproduto;
         private System.Windows.Forms.Button fecharproduto;
+        private System.Windows.Forms.TextBox destinatarioproduto;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox precoproduto;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox familiaproduto;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox descricaoproduto;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox tamanhoproduto;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox linhaproduto;
+        private System.Windows.Forms.NumericUpDown unidades;
+        private System.Windows.Forms.Label semstock;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

@@ -86,7 +86,7 @@ namespace Perfumaria
             pontosbox.Text = C.Pontos.ToString();
             selectPayment();
             pictureBox1.Load(C.Foto);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
 
         }
 
@@ -478,7 +478,31 @@ namespace Perfumaria
 
         }
 
-        
+        private void lojagrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ignore clicks that are not in our 
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            {
+                Produto p = ProdutosList.ElementAt(e.RowIndex);
+                Produto.Visible = true;
+                fotoproduto.Load(p.Imagem);
+                fotoproduto.SizeMode = PictureBoxSizeMode.StretchImage;
+                descricaoproduto.Text = p.Descricao;
+                nomeproduto.Text = p.Nome;
+                marcaproduto.Text = p.Marca;
+                categoriaproduto.Text = p.Categoria;
+                linhaproduto.Text = p.Linha;
+                tamanhoproduto.Text = p.Tamanho.ToString();
+                familiaproduto.Text = p.Familiaolfativa;
+                destinatarioproduto.Text = p.Destinatario;
+                precoproduto.Text = p.Preco.ToString() + "€";
+
+
+            }
+
+        }
+
+
 
 
         private void selectPanel(int compra)
@@ -606,7 +630,6 @@ namespace Perfumaria
 
             SqlCommand cmd = new SqlCommand("perf.clientUsesCupon", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            Console.WriteLine(cupontextbox.Text);
             cmd.Parameters.AddWithValue("@cupao_id", cupontextbox.Text);
             cmd.Parameters.AddWithValue("@cliente_email", C.Email);
             cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
@@ -690,7 +713,6 @@ namespace Perfumaria
             while(reader.Read())
             {
 
-                Console.WriteLine("AQUI1");
                 Produto P = new Produto();
                 
                 P.Id = (int)reader["id"];
@@ -708,7 +730,6 @@ namespace Perfumaria
                 P.Stock = Convert.ToInt16(reader["stock"]);
                 P.Destinatario = reader["destinatario"].ToString();
                 P.Deleted = (bool)reader["deleted"];
-                Console.WriteLine(P.Id);
 
                 ProdutosList.Add(P);
         }
