@@ -21,6 +21,8 @@ namespace Perfumaria
         private Contacto Contacto = new Contacto();
         List<Contacto> ContactosList = new List<Contacto>();
         List<Produto> ProdutosList = new List<Produto>();
+        List<Produto> Carrinho = new List<Produto>();
+
         public Cliente()
         {
             InitializeComponent();
@@ -189,6 +191,8 @@ namespace Perfumaria
                 case 5:
                     Favourites.DataSource = getClientFavourites();
                     break;
+                case 6:
+                    break;
 
             }
         }
@@ -247,7 +251,9 @@ namespace Perfumaria
                     compraOnlineDetalhes();
                     break;
                 case 1:
-                    compraonlinegrid.DataSource = getCompraProducts();
+                    getCompraProducts();
+                    compraonlinegrid.DataSource = ProdutosList.Select(o => new
+                    { Nome = o.Nome, Marca = o.Marca, Categoria = o.Categoria, Preço = o.Preco, Unidades = o.Unidades }).ToList();
                     break;
             }
 
@@ -262,7 +268,9 @@ namespace Perfumaria
                     compraPresencialDetalhes();
                     break;
                 case 1:
-                    compraofflinegrid.DataSource = getCompraProducts();
+                    getCompraProducts();
+                    compraofflinegrid.DataSource = ProdutosList.Select(o => new
+                    { Nome = o.Nome, Marca = o.Marca, Categoria = o.Categoria, Preço = o.Preco, Unidades = o.Unidades }).ToList();
                     break;
             }
 
@@ -452,19 +460,45 @@ namespace Perfumaria
             return dtRecord;
         }
 
-        private DataTable getCompraProducts()
+        private void getCompraProducts()
         {
             if (!verifySGBDConnection())
                 throw new Exception("Failed to connect to database. \n ERROR");
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM perf.getProductsFromBuy ('" + Compra.Numero + "')", cn);
 
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
+            SqlDataReader reader = cmd.ExecuteReader();
 
-            DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
+
+            ProdutosList.Clear();
+
+            while (reader.Read())
+            {
+
+                Produto P = new Produto();
+
+                P.Id = (int)reader["id"];
+                P.Preco = (double)reader["preco"];
+                if (!DBNull.Value.Equals(reader["tamanho"]))
+                    P.Familiaolfativa = reader["familiaolfativa"].ToString();
+                P.Categoria = reader["categoria"].ToString();
+                P.Nome = reader["nome"].ToString();
+                P.Marca = reader["marca"].ToString();
+                P.Linha = reader["linha"].ToString();
+                if (!DBNull.Value.Equals(reader["tamanho"]))
+                    P.Tamanho = Convert.ToInt16(reader["tamanho"]);
+                P.Descricao = reader["descricao"].ToString();
+                P.Imagem = reader["imagem"].ToString();
+                P.Stock = Convert.ToInt16(reader["stock"]);
+                P.Destinatario = reader["destinatario"].ToString();
+                P.Deleted = (bool)reader["deleted"];
+                P.Unidades = (int)reader["unidades"];
+
+                ProdutosList.Add(P);
+            }
+
             cn.Close();
-            return dtRecord;
+            
         }
 
         private void buyHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -500,6 +534,53 @@ namespace Perfumaria
 
             }
 
+        }
+
+        private void compraonlinegrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ignore clicks that are not in our 
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            {
+                Console.WriteLine("AQUI");
+                Produto p = ProdutosList.ElementAt(e.RowIndex);
+                produtocompra.Visible = true;
+                produtofoto.Load(p.Imagem);
+                produtofoto.SizeMode = PictureBoxSizeMode.StretchImage;
+                produtodescricao.Text = p.Descricao;
+                produtonome.Text = p.Nome;
+                produtomarca.Text = p.Marca;
+                produtocategoria.Text = p.Categoria;
+                produtolinha.Text = p.Linha;
+                produtotamanho.Text = p.Tamanho.ToString();
+                produtofamilia.Text = p.Familiaolfativa;
+                produtodestinatario.Text = p.Destinatario;
+                produtopreco.Text = p.Preco.ToString() + "€";
+
+
+            }
+
+        }
+
+        private void compraofflinegrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ignore clicks that are not in our 
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            {
+                Console.WriteLine("AQUI1");
+                Produto p = ProdutosList.ElementAt(e.RowIndex);
+                produtocompra.Visible = true;
+                produtofoto.Load(p.Imagem);
+                produtofoto.SizeMode = PictureBoxSizeMode.StretchImage;
+                produtodescricao.Text = p.Descricao;
+                produtonome.Text = p.Nome;
+                produtomarca.Text = p.Marca;
+                produtocategoria.Text = p.Categoria;
+                produtolinha.Text = p.Linha;
+                produtotamanho.Text = p.Tamanho.ToString();
+                produtofamilia.Text = p.Familiaolfativa;
+                produtodestinatario.Text = p.Destinatario;
+                produtopreco.Text = p.Preco.ToString() + "€";
+            }
         }
 
 
@@ -744,6 +825,11 @@ namespace Perfumaria
             searchProducts();
             lojagrid.DataSource = ProdutosList.Select(o => new
             { Nome = o.Nome, Marca = o.Marca, Categoria = o.Categoria, Destinatário = o.Destinatario, Preço = o.Preco }).ToList();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            produtocompra.Visible = false;
         }
     }
 }

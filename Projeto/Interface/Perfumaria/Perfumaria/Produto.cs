@@ -22,6 +22,7 @@ namespace Perfumaria
 		private int stock;
 		private String destinatario;
 		private bool deleted;
+		private int unidades;
 
 
 
@@ -42,6 +43,7 @@ namespace Perfumaria
 		public int Stock { get => stock; set => stock = value; }
 		public string Destinatario { get => destinatario; set => destinatario = value; }
 		public bool Deleted { get => deleted; set => deleted = value; }
+		public int Unidades { get => unidades; set => unidades = value; }
 	}
 	}
 
