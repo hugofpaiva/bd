@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Conta = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -67,6 +68,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Contactos = new System.Windows.Forms.TabPage();
             this.contactsgrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Histórico = new System.Windows.Forms.TabPage();
             this.historico = new System.Windows.Forms.TabControl();
             this.Compras = new System.Windows.Forms.TabPage();
@@ -124,19 +126,20 @@
             this.Servicos = new System.Windows.Forms.TabPage();
             this.servicosgrid = new System.Windows.Forms.DataGridView();
             this.Loja = new System.Windows.Forms.TabPage();
+            this.lojagrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.orderdescasc = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.destinatariocombo = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.categoriacombo = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.marcacombo = new System.Windows.Forms.ComboBox();
             this.search = new System.Windows.Forms.Button();
             this.order = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.orderby = new System.Windows.Forms.ComboBox();
+            this.pesquisa = new System.Windows.Forms.TextBox();
             this.Marcações = new System.Windows.Forms.TabPage();
             this.marcacoes = new System.Windows.Forms.TabControl();
             this.marcar = new System.Windows.Forms.TabPage();
@@ -152,17 +155,16 @@
             this.future = new System.Windows.Forms.TabPage();
             this.futureMarcGrid = new System.Windows.Forms.DataGridView();
             this.Cupões = new System.Windows.Forms.TabPage();
+            this.cupoesgrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.cupoespontos = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cupontextbox = new System.Windows.Forms.TextBox();
             this.Favoritos = new System.Windows.Forms.TabPage();
             this.Favourites = new System.Windows.Forms.DataGridView();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Remover = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cupoesgrid = new System.Windows.Forms.DataGridView();
+            this.addcupon = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -188,6 +190,7 @@
             this.Servicos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).BeginInit();
             this.Loja.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lojagrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.Marcações.SuspendLayout();
             this.marcacoes.SuspendLayout();
@@ -195,10 +198,10 @@
             this.future.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.futureMarcGrid)).BeginInit();
             this.Cupões.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cupoesgrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.Favoritos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Favourites)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cupoesgrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -311,7 +314,6 @@
             this.label17.Size = new System.Drawing.Size(88, 18);
             this.label17.TabIndex = 46;
             this.label17.Text = "Password";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // textBox3
             // 
@@ -565,7 +567,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Contactos
             // 
@@ -595,6 +596,18 @@
             this.contactsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.contactsgrid.Size = new System.Drawing.Size(765, 378);
             this.contactsgrid.TabIndex = 1;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle19;
+            this.dataGridViewButtonColumn2.HeaderText = "Eliminar";
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
+            this.dataGridViewButtonColumn2.Text = "Eliminar";
+            this.dataGridViewButtonColumn2.ToolTipText = "Eliminar Contacto";
+            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             // 
             // Histórico
             // 
@@ -997,9 +1010,9 @@
             // 
             // dataGridViewButtonColumn5
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewButtonColumn5.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
             this.dataGridViewButtonColumn5.ReadOnly = true;
@@ -1215,9 +1228,9 @@
             // 
             // dataGridViewButtonColumn4
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewButtonColumn4.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             this.dataGridViewButtonColumn4.ReadOnly = true;
@@ -1246,9 +1259,9 @@
             // 
             // Detalhes
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10);
-            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle22;
             this.Detalhes.HeaderText = "Detalhes";
             this.Detalhes.Name = "Detalhes";
             this.Detalhes.ReadOnly = true;
@@ -1285,8 +1298,8 @@
             // 
             // Loja
             // 
+            this.Loja.Controls.Add(this.lojagrid);
             this.Loja.Controls.Add(this.panel1);
-            this.Loja.Controls.Add(this.tableLayoutPanel4);
             this.Loja.Location = new System.Drawing.Point(4, 22);
             this.Loja.Name = "Loja";
             this.Loja.Size = new System.Drawing.Size(768, 400);
@@ -1294,20 +1307,50 @@
             this.Loja.Text = "Loja Online";
             this.Loja.UseVisualStyleBackColor = true;
             // 
+            // lojagrid
+            // 
+            this.lojagrid.AllowUserToAddRows = false;
+            this.lojagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.lojagrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.lojagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lojagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewButtonColumn6});
+            this.lojagrid.Location = new System.Drawing.Point(2, 109);
+            this.lojagrid.MultiSelect = false;
+            this.lojagrid.Name = "lojagrid";
+            this.lojagrid.ReadOnly = true;
+            this.lojagrid.RowHeadersVisible = false;
+            this.lojagrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.lojagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.lojagrid.Size = new System.Drawing.Size(765, 291);
+            this.lojagrid.TabIndex = 2;
+            // 
+            // dataGridViewButtonColumn6
+            // 
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle23;
+            this.dataGridViewButtonColumn6.HeaderText = "Comprar";
+            this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
+            this.dataGridViewButtonColumn6.ReadOnly = true;
+            this.dataGridViewButtonColumn6.Text = "Comprar";
+            this.dataGridViewButtonColumn6.ToolTipText = "Comprar";
+            this.dataGridViewButtonColumn6.UseColumnTextForButtonValue = true;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.orderdescasc);
             this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.comboBox6);
+            this.panel1.Controls.Add(this.destinatariocombo);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.comboBox5);
+            this.panel1.Controls.Add(this.categoriacombo);
             this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.marcacombo);
             this.panel1.Controls.Add(this.search);
             this.panel1.Controls.Add(this.order);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.orderby);
+            this.panel1.Controls.Add(this.pesquisa);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(768, 110);
@@ -1317,7 +1360,7 @@
             // 
             this.orderdescasc.FormattingEnabled = true;
             this.orderdescasc.Items.AddRange(new object[] {
-            "Descrescente",
+            "Descendente",
             "Ascendente"});
             this.orderdescasc.Location = new System.Drawing.Point(608, 26);
             this.orderdescasc.Name = "orderdescasc";
@@ -1333,15 +1376,15 @@
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(128, 18);
             this.label22.TabIndex = 12;
-            this.label22.Text = "Destinatario";
+            this.label22.Text = "Destinatário";
             // 
-            // comboBox6
+            // destinatariocombo
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(577, 82);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(151, 21);
-            this.comboBox6.TabIndex = 11;
+            this.destinatariocombo.FormattingEnabled = true;
+            this.destinatariocombo.Location = new System.Drawing.Point(577, 82);
+            this.destinatariocombo.Name = "destinatariocombo";
+            this.destinatariocombo.Size = new System.Drawing.Size(151, 21);
+            this.destinatariocombo.TabIndex = 11;
             // 
             // label21
             // 
@@ -1354,13 +1397,13 @@
             this.label21.TabIndex = 10;
             this.label21.Text = "Categoria";
             // 
-            // comboBox5
+            // categoriacombo
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(300, 82);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(151, 21);
-            this.comboBox5.TabIndex = 9;
+            this.categoriacombo.FormattingEnabled = true;
+            this.categoriacombo.Location = new System.Drawing.Point(300, 82);
+            this.categoriacombo.Name = "categoriacombo";
+            this.categoriacombo.Size = new System.Drawing.Size(151, 21);
+            this.categoriacombo.TabIndex = 9;
             // 
             // label20
             // 
@@ -1372,16 +1415,14 @@
             this.label20.Size = new System.Drawing.Size(58, 18);
             this.label20.TabIndex = 8;
             this.label20.Text = "Marca";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
-            // comboBox1
+            // marcacombo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(41, 82);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 21);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.marcacombo.FormattingEnabled = true;
+            this.marcacombo.Location = new System.Drawing.Point(41, 82);
+            this.marcacombo.Name = "marcacombo";
+            this.marcacombo.Size = new System.Drawing.Size(151, 21);
+            this.marcacombo.TabIndex = 7;
             // 
             // search
             // 
@@ -1403,39 +1444,30 @@
             this.order.Size = new System.Drawing.Size(118, 18);
             this.order.TabIndex = 2;
             this.order.Text = "Ordenar Por";
-            this.order.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // comboBox2
+            // orderby
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(451, 26);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 21);
-            this.comboBox2.TabIndex = 1;
+            this.orderby.AutoCompleteCustomSource.AddRange(new string[] {
+            "Preço",
+            "Nome",
+            "Marca",
+            "Categoria"});
+            this.orderby.FormattingEnabled = true;
+            this.orderby.Location = new System.Drawing.Point(451, 26);
+            this.orderby.Name = "orderby";
+            this.orderby.Size = new System.Drawing.Size(151, 21);
+            this.orderby.TabIndex = 1;
             // 
-            // textBox5
+            // pesquisa
             // 
-            this.textBox5.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(20, 20);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(212, 27);
-            this.textBox5.TabIndex = 0;
-            this.textBox5.Text = "Pesquisar...";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 109);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(768, 291);
-            this.tableLayoutPanel4.TabIndex = 0;
+            this.pesquisa.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pesquisa.Location = new System.Drawing.Point(20, 20);
+            this.pesquisa.Multiline = true;
+            this.pesquisa.Name = "pesquisa";
+            this.pesquisa.Size = new System.Drawing.Size(212, 27);
+            this.pesquisa.TabIndex = 0;
+            this.pesquisa.Text = "Pesquisar...";
+            this.pesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Marcações
             // 
@@ -1525,7 +1557,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 13;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label11
             // 
@@ -1603,42 +1634,47 @@
             this.Cupões.Text = "Cupões";
             this.Cupões.UseVisualStyleBackColor = true;
             // 
+            // cupoesgrid
+            // 
+            this.cupoesgrid.AllowUserToAddRows = false;
+            this.cupoesgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cupoesgrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.cupoesgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cupoesgrid.Location = new System.Drawing.Point(2, 64);
+            this.cupoesgrid.MultiSelect = false;
+            this.cupoesgrid.Name = "cupoesgrid";
+            this.cupoesgrid.ReadOnly = true;
+            this.cupoesgrid.RowHeadersVisible = false;
+            this.cupoesgrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.cupoesgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cupoesgrid.Size = new System.Drawing.Size(765, 336);
+            this.cupoesgrid.TabIndex = 4;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.addcupon);
+            this.panel2.Controls.Add(this.cupoespontos);
             this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.textBox6);
+            this.panel2.Controls.Add(this.cupontextbox);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(768, 67);
             this.panel2.TabIndex = 3;
             // 
-            // label16
+            // cupoespontos
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(248, 23);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(78, 18);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "Erro...";
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox7.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(594, 31);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(145, 27);
-            this.textBox7.TabIndex = 3;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cupoespontos.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cupoespontos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cupoespontos.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cupoespontos.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cupoespontos.Location = new System.Drawing.Point(594, 31);
+            this.cupoespontos.Multiline = true;
+            this.cupoespontos.Name = "cupoespontos";
+            this.cupoespontos.ReadOnly = true;
+            this.cupoespontos.Size = new System.Drawing.Size(145, 27);
+            this.cupoespontos.TabIndex = 3;
+            this.cupoespontos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
@@ -1651,16 +1687,16 @@
             this.label15.TabIndex = 2;
             this.label15.Text = "Pontos Atuais";
             // 
-            // textBox6
+            // cupontextbox
             // 
-            this.textBox6.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(20, 20);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(212, 27);
-            this.textBox6.TabIndex = 0;
-            this.textBox6.Text = "Inserir Cupão";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cupontextbox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cupontextbox.Location = new System.Drawing.Point(20, 20);
+            this.cupontextbox.Multiline = true;
+            this.cupontextbox.Name = "cupontextbox";
+            this.cupontextbox.Size = new System.Drawing.Size(212, 27);
+            this.cupontextbox.TabIndex = 0;
+            this.cupontextbox.Text = "Inserir Cupão...";
+            this.cupontextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Favoritos
             // 
@@ -1691,18 +1727,6 @@
             this.Favourites.Size = new System.Drawing.Size(765, 400);
             this.Favourites.TabIndex = 1;
             // 
-            // dataGridViewButtonColumn2
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewButtonColumn2.HeaderText = "Eliminar";
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Text = "Eliminar";
-            this.dataGridViewButtonColumn2.ToolTipText = "Eliminar Contacto";
-            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
-            // 
             // Remover
             // 
             this.Remover.HeaderText = "Remover";
@@ -1713,9 +1737,9 @@
             // 
             // dataGridViewButtonColumn3
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridViewButtonColumn3.HeaderText = "Comprar";
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
             this.dataGridViewButtonColumn3.ReadOnly = true;
@@ -1723,21 +1747,16 @@
             this.dataGridViewButtonColumn3.ToolTipText = "Comprar";
             this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
             // 
-            // cupoesgrid
+            // addcupon
             // 
-            this.cupoesgrid.AllowUserToAddRows = false;
-            this.cupoesgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cupoesgrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.cupoesgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cupoesgrid.Location = new System.Drawing.Point(2, 64);
-            this.cupoesgrid.MultiSelect = false;
-            this.cupoesgrid.Name = "cupoesgrid";
-            this.cupoesgrid.ReadOnly = true;
-            this.cupoesgrid.RowHeadersVisible = false;
-            this.cupoesgrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.cupoesgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cupoesgrid.Size = new System.Drawing.Size(765, 336);
-            this.cupoesgrid.TabIndex = 4;
+            this.addcupon.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addcupon.Location = new System.Drawing.Point(242, 22);
+            this.addcupon.Name = "addcupon";
+            this.addcupon.Size = new System.Drawing.Size(88, 23);
+            this.addcupon.TabIndex = 5;
+            this.addcupon.Text = "Adicionar";
+            this.addcupon.UseVisualStyleBackColor = true;
+            this.addcupon.Click += new System.EventHandler(this.addcupon_Click);
             // 
             // Cliente
             // 
@@ -1777,6 +1796,7 @@
             this.Servicos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).EndInit();
             this.Loja.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lojagrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.Marcações.ResumeLayout(false);
@@ -1786,11 +1806,11 @@
             this.future.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.futureMarcGrid)).EndInit();
             this.Cupões.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cupoesgrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.Favoritos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Favourites)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cupoesgrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1829,9 +1849,8 @@
         private System.Windows.Forms.TabPage Servicos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label order;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.ComboBox orderby;
+        private System.Windows.Forms.TextBox pesquisa;
         private System.Windows.Forms.TabControl marcacoes;
         private System.Windows.Forms.TabPage marcar;
         private System.Windows.Forms.Label label14;
@@ -1845,10 +1864,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage future;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox cupoespontos;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox cupontextbox;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Panel changepw;
@@ -1867,11 +1885,11 @@
         private System.Windows.Forms.DataGridView futureMarcGrid;
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox marcacombo;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox destinatariocombo;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox categoriacombo;
         private System.Windows.Forms.ComboBox orderdescasc;
         private System.Windows.Forms.DataGridView Favourites;
         private System.Windows.Forms.Panel compraonline;
@@ -1927,5 +1945,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn Remover;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
         private System.Windows.Forms.DataGridView cupoesgrid;
+        private System.Windows.Forms.DataGridView lojagrid;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn6;
+        private System.Windows.Forms.Button addcupon;
     }
 }

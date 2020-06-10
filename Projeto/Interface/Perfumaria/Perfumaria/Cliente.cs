@@ -29,6 +29,10 @@ namespace Perfumaria
             marcacoes.SelectedIndexChanged += new EventHandler(marcacoes_SelectedIndexChanged);
             onlinetab.SelectedIndexChanged += new EventHandler(onlinetab_SelectedIndexChanged);
             offlinetab.SelectedIndexChanged += new EventHandler(offlinetab_SelectedIndexChanged);
+            pesquisa.GotFocus += new EventHandler(RemoveText);
+            pesquisa.LostFocus += new EventHandler(AddText);
+            cupontextbox.GotFocus += new EventHandler(RemoveText);
+            cupontextbox.LostFocus += new EventHandler(AddText);
         }
 
     
@@ -136,30 +140,6 @@ namespace Perfumaria
             cn.Close();
 
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -190,10 +170,12 @@ namespace Perfumaria
                     break;
                 case 2:
                     orderdescasc.SelectedIndex = 0;
+                    getProductsProperties();
                     break;
                 case 3:
                     break;
                 case 4:
+                    cupoespontos.Text = C.Pontos.ToString();
                     cupoesgrid.DataSource = getClientCupons();
                     break;
                 case 5:
@@ -277,6 +259,54 @@ namespace Perfumaria
             }
 
 
+        }
+
+
+        private void getProductsProperties()
+        {
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
+            SqlCommand cmd = new SqlCommand("SELECT DISTINCT marca FROM perf.getAllProducts ()", cn);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                marcacombo.Items.Add(reader["marca"].ToString());
+            };
+
+            reader.Close();
+
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
+            cmd = new SqlCommand("SELECT DISTINCT categoria FROM perf.getAllProducts ()", cn);
+
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                categoriacombo.Items.Add(reader["categoria"].ToString());
+            };
+
+            reader.Close();
+
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
+            cmd = new SqlCommand("SELECT DISTINCT destinatario FROM perf.getAllProducts () WHERE destinatario IS NOT NULL", cn);
+
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                destinatariocombo.Items.Add(reader["destinatario"].ToString());
+            };
+
+            reader.Close();
+
+            cn.Close();
         }
 
         private DataTable getClientBuyHistory()
@@ -435,35 +465,41 @@ namespace Perfumaria
 
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
+
 
         private void search_Click(object sender, EventArgs e)
         {
 
+            Console.WriteLine("OK");
+
+            if (!pesquisa.Text.Equals("") || !pesquisa.Text.Equals("Pesquisar..."))
+            {
+                
+            }
+
+            if (marcacombo.SelectedValue != null)
+            {
+               
+
+            }
+
+            if (categoriacombo.SelectedValue != null)
+            {
+            }
+
+            if (destinatariocombo.SelectedValue != null)
+            {
+            }
+
+            if (orderby.SelectedValue != null)
+            {
+            }
+
+            if (orderdescasc.SelectedValue != null)
+            {
+            }
         }
 
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void selectPanel(int compra)
         {
@@ -559,6 +595,68 @@ namespace Perfumaria
         private void fecharoffline_Click_1(object sender, EventArgs e)
         {
             compraoffline.Visible = false;
+        }
+
+        public void RemoveText(object sender, EventArgs e)
+        {
+            if (pesquisa.Text == "Pesquisar...")
+            {
+                pesquisa.Text = "";
+            }
+
+            if (cupontextbox.Text == "Inserir Cupão...")
+            {
+                pesquisa.Text = "";
+            }
+        }
+
+        public void AddText(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(pesquisa.Text))
+                pesquisa.Text = "Pesquisar...";
+
+            if (string.IsNullOrWhiteSpace(cupontextbox.Text))
+                pesquisa.Text = "Inserir Cupão...";
+        }
+
+        private void addcupon_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+                return;
+
+            SqlCommand cmd = new SqlCommand("perf.clientUsesCupon", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            Console.WriteLine(cupontextbox.Text);
+            cmd.Parameters.AddWithValue("@cupao_id", cupontextbox.Text);
+            cmd.Parameters.AddWithValue("@cliente_email", C.Email);
+            cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+            String rm = "" ;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                rm = cmd.Parameters["@responseMessage"].Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to login. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                if (rm.Equals("Success"))
+                {
+                    tabControl1_SelectedIndexChanged(tabControl1, null);
+                    loadInfo(C.Email);
+                    MessageBox.Show("Cupão Adicionado com sucesso!");
+                }
+                else
+                    MessageBox.Show("Cupão Inválido!");
+            }
+
+
+            cn.Close();
         }
     }
 }

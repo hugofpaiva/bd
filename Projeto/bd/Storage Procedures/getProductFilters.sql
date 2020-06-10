@@ -1,5 +1,4 @@
-GO
-CREATE PROCEDURE perf.getDetailsFromBuy
+CREATE PROCEDURE perf.getProductFilters
     @deleted BIT = NULL,
     @nome VARCHAR(30) = NULL,
     @marca VARCHAR(30) = NULL,
@@ -10,9 +9,9 @@ CREATE PROCEDURE perf.getDetailsFromBuy
 AS
 BEGIN
         SET NOCOUNT ON
-        IF (ordem = 'Ascendente')
+        IF (@ordem = 'Ascendente')
         BEGIN
-            SELECT nome, marca, categoria, destinatario, deleted
+            SELECT nome, marca, categoria, destinatario, preco, deleted
             FROM Perfumaria.perf.produto
             WHERE stock > 0 AND
                   deleted = 0 AND
@@ -20,14 +19,15 @@ BEGIN
                   marca = ISNULL(@marca,marca) AND
                   categoria = ISNULL(@categoria,categoria) AND 
 	              destinatario = ISNULL(@destinatario,destinatario)
-            ORDER BY CASE WHEN @orderby='nome' THEN nome END,
-                     CASE WHEN @orderby='marca' THEN marca END,
-                     CASE WHEN @orderby='categoria' THEN categoria END
+            ORDER BY CASE WHEN @orderby='Nome' THEN nome END,
+                     CASE WHEN @orderby='Marca' THEN marca END,
+                     CASE WHEN @orderby='Categoria' THEN categoria END,
+                     CASE WHEN @orderby='Preço' THEN preco END
         END
 
-        ELSE IF (ordem = 'Descendente')
+        ELSE IF (@ordem = 'Descendente')
         BEGIN
-            SELECT nome, marca, categoria, destinatario, deleted
+            SELECT nome, marca, categoria, destinatario, preco, deleted
             FROM Perfumaria.perf.produto
             WHERE stock > 0 AND
                   deleted = 0 AND
@@ -35,13 +35,14 @@ BEGIN
                   marca = ISNULL(@marca,marca) AND
                   categoria = ISNULL(@categoria,categoria) AND 
 	              destinatario = ISNULL(@destinatario,destinatario)
-            ORDER BY CASE WHEN @orderby='nome' THEN nome END DESC,
-                     CASE WHEN @orderby='marca' THEN marca END DESC,
-                     CASE WHEN @orderby='categoria' THEN categoria END DESC
+            ORDER BY CASE WHEN @orderby='Nome' THEN nome END DESC,
+                     CASE WHEN @orderby='Marca' THEN marca END DESC,
+                     CASE WHEN @orderby='Categoria' THEN categoria END DESC,
+                     CASE WHEN @orderby='Preço' THEN preco END DESC
         END
             
 END
-
+GO
 ---------------
 --pronta a usar
 ---------------

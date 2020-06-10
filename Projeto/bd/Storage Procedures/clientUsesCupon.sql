@@ -1,4 +1,6 @@
+DROP PROCEDURE perf.clientUsesCupon;
 GO
+
 CREATE PROCEDURE perf.clientUsesCupon
     @cliente_email VARCHAR(255),
     @cupao_id CHAR(10),
@@ -24,3 +26,4 @@ BEGIN
     END CATCH
 
 END
+GO
