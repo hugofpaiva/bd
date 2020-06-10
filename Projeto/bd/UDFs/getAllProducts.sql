@@ -1,5 +1,8 @@
+DROP FUNCTION perf.getAllProducts;
+GO
+
 CREATE FUNCTION perf.getAllProducts () RETURNS @table TABLE (preco INT NOT NULL, familiaolfativa VARCHAR(30), categoria VARCHAR(30) NOT NULL,
-                                                            nome VARCHAR(30) NOT NULL, marca VARCHAR(30) NOT NULL, linha VARCHAR(30) NOT NULL,
+                                                            nome VARCHAR(30) NOT NULL, marca VARCHAR(30) NOT NULL, linha VARCHAR(30),
                                                             tamanho SMALLINT, descricao VARCHAR(280), imagem VARCHAR(100) NOT NULL,
                                                             stock SMALLINT NOT NULL, destinatario VARCHAR(10))
                                                         
