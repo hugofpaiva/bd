@@ -1,3 +1,6 @@
+DROP PROCEDURE perf.getProductFilters;
+GO
+
 CREATE PROCEDURE perf.getProductFilters
     @deleted BIT = NULL,
     @nome VARCHAR(30) = NULL,
@@ -11,11 +14,11 @@ BEGIN
         SET NOCOUNT ON
         IF (@ordem = 'Ascendente')
         BEGIN
-            SELECT nome, marca, categoria, destinatario, preco, deleted
+            SELECT id, preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted
             FROM Perfumaria.perf.produto
             WHERE stock > 0 AND
                   deleted = 0 AND
-                  nome = ISNULL(@nome, nome) AND
+                  nome LIKE ('%'+ISNULL(@nome, nome)+'%') AND
                   marca = ISNULL(@marca,marca) AND
                   categoria = ISNULL(@categoria,categoria) AND 
 	              destinatario = ISNULL(@destinatario,destinatario)
@@ -27,11 +30,11 @@ BEGIN
 
         ELSE IF (@ordem = 'Descendente')
         BEGIN
-            SELECT nome, marca, categoria, destinatario, preco, deleted
+            SELECT id, preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted
             FROM Perfumaria.perf.produto
             WHERE stock > 0 AND
                   deleted = 0 AND
-                  nome = ISNULL(@nome, nome) AND
+                  nome LIKE ('%'+ISNULL(@nome, nome)+'%') AND
                   marca = ISNULL(@marca,marca) AND
                   categoria = ISNULL(@categoria,categoria) AND 
 	              destinatario = ISNULL(@destinatario,destinatario)

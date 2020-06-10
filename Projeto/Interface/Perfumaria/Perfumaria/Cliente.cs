@@ -20,6 +20,7 @@ namespace Perfumaria
         private Compra Compra = new Compra();
         private Contacto Contacto = new Contacto();
         List<Contacto> ContactosList = new List<Contacto>();
+        List<Produto> ProdutosList = new List<Produto>();
         public Cliente()
         {
             InitializeComponent();
@@ -170,7 +171,14 @@ namespace Perfumaria
                     break;
                 case 2:
                     orderdescasc.SelectedIndex = 0;
+                    orderby.SelectedIndex = 0;
+                    categoriacombo.SelectedIndex = 0;
+                    marcacombo.SelectedIndex = 0;
+                    destinatariocombo.SelectedIndex = 0;
                     getProductsProperties();
+                    searchProducts();
+                    lojagrid.DataSource = ProdutosList.Select(o => new
+                    {Nome = o.Nome, Marca = o.Marca, Categoria = o.Categoria, Destinatário = o.Destinatario, Preço = o.Preco }).ToList();
                     break;
                 case 3:
                     break;
@@ -270,7 +278,8 @@ namespace Perfumaria
             SqlCommand cmd = new SqlCommand("SELECT DISTINCT marca FROM perf.getAllProducts ()", cn);
 
             SqlDataReader reader = cmd.ExecuteReader();
-
+            marcacombo.Items.Clear();
+            marcacombo.Items.Add("Todos");
             while (reader.Read())
             {
                 marcacombo.Items.Add(reader["marca"].ToString());
@@ -285,6 +294,8 @@ namespace Perfumaria
 
             reader = cmd.ExecuteReader();
 
+            categoriacombo.Items.Clear();
+            categoriacombo.Items.Add("Todos");
             while (reader.Read())
             {
                 categoriacombo.Items.Add(reader["categoria"].ToString());
@@ -299,6 +310,8 @@ namespace Perfumaria
 
             reader = cmd.ExecuteReader();
 
+            destinatariocombo.Items.Clear();
+            destinatariocombo.Items.Add("Todos");
             while (reader.Read())
             {
                 destinatariocombo.Items.Add(reader["destinatario"].ToString());
@@ -465,40 +478,7 @@ namespace Perfumaria
 
         }
 
-
-
-        private void search_Click(object sender, EventArgs e)
-        {
-
-            Console.WriteLine("OK");
-
-            if (!pesquisa.Text.Equals("") || !pesquisa.Text.Equals("Pesquisar..."))
-            {
-                
-            }
-
-            if (marcacombo.SelectedValue != null)
-            {
-               
-
-            }
-
-            if (categoriacombo.SelectedValue != null)
-            {
-            }
-
-            if (destinatariocombo.SelectedValue != null)
-            {
-            }
-
-            if (orderby.SelectedValue != null)
-            {
-            }
-
-            if (orderdescasc.SelectedValue != null)
-            {
-            }
-        }
+        
 
 
         private void selectPanel(int compra)
@@ -606,7 +586,7 @@ namespace Perfumaria
 
             if (cupontextbox.Text == "Inserir Cupão...")
             {
-                pesquisa.Text = "";
+                cupontextbox.Text = "";
             }
         }
 
@@ -616,7 +596,7 @@ namespace Perfumaria
                 pesquisa.Text = "Pesquisar...";
 
             if (string.IsNullOrWhiteSpace(cupontextbox.Text))
-                pesquisa.Text = "Inserir Cupão...";
+                cupontextbox.Text = "Inserir Cupão...";
         }
 
         private void addcupon_Click(object sender, EventArgs e)
@@ -659,6 +639,90 @@ namespace Perfumaria
             cn.Close();
         }
 
+        private void fecharproduto_Click(object sender, EventArgs e)
+        {
+            Produto.Visible = false;
+        }
 
+        private void searchProducts()
+        {
+            if (!verifySGBDConnection())
+                return;
+
+            SqlCommand cmd = new SqlCommand("perf.getProductFilters", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            if (!pesquisa.Text.Equals("") && !pesquisa.Text.Equals("Pesquisar..."))
+            {
+                cmd.Parameters.AddWithValue("@nome", pesquisa.Text);
+            }
+
+            if (marcacombo.SelectedIndex > 0)
+            {
+                cmd.Parameters.AddWithValue("@marca", marcacombo.SelectedItem.ToString());
+            }
+
+            if (categoriacombo.SelectedIndex > 0)
+            {
+                cmd.Parameters.AddWithValue("@categoria", categoriacombo.SelectedItem.ToString());
+            }
+
+            if (destinatariocombo.SelectedIndex > 0)
+            {
+                cmd.Parameters.AddWithValue("@destinatario", destinatariocombo.SelectedItem.ToString());
+            }
+
+            if (orderby.SelectedIndex > -1)
+            {
+                cmd.Parameters.AddWithValue("@orderby", orderby.SelectedItem.ToString());
+            }
+
+            if (orderdescasc.SelectedIndex > -1)
+            {
+                cmd.Parameters.AddWithValue("@ordem", orderdescasc.SelectedItem.ToString());
+            }
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+
+            ProdutosList.Clear();
+
+            while(reader.Read())
+            {
+
+                Console.WriteLine("AQUI1");
+                Produto P = new Produto();
+                
+                P.Id = (int)reader["id"];
+                P.Preco = (double)reader["preco"];
+                 if (!DBNull.Value.Equals(reader["tamanho"]))
+                P.Familiaolfativa = reader["familiaolfativa"].ToString();
+                P.Categoria = reader["categoria"].ToString();
+                P.Nome = reader["nome"].ToString();
+                P.Marca = reader["marca"].ToString();
+                P.Linha = reader["linha"].ToString();
+                if (!DBNull.Value.Equals(reader["tamanho"]))
+                    P.Tamanho = Convert.ToInt16(reader["tamanho"]);
+                P.Descricao = reader["descricao"].ToString();
+                P.Imagem = reader["imagem"].ToString();
+                P.Stock = Convert.ToInt16(reader["stock"]);
+                P.Destinatario = reader["destinatario"].ToString();
+                P.Deleted = (bool)reader["deleted"];
+                Console.WriteLine(P.Id);
+
+                ProdutosList.Add(P);
+        }
+
+
+
+        cn.Close();
+        }
+
+        private void search_Click(object sender, EventArgs e)
+        {
+            searchProducts();
+            lojagrid.DataSource = ProdutosList.Select(o => new
+            { Nome = o.Nome, Marca = o.Marca, Categoria = o.Categoria, Destinatário = o.Destinatario, Preço = o.Preco }).ToList();
+        }
     }
 }
