@@ -233,6 +233,14 @@ namespace Perfumaria
                     Favourites.DataSource = getClientFavourites();
                     break;
                 case 6:
+                    int countunit = 0;
+                    double countprice = 0;
+                    foreach (Produto p in Carrinho) { 
+                        countunit += p.Unidades;
+                        countprice += p.Unidades * p.Preco;
+                            }
+                    itemscarrinho.Text = countunit.ToString();
+                    totalcarrinho.Text = countprice.ToString() + " €";
                     carrinhogrid.DataSource = Carrinho.Select(o => new
                     { Nome = o.Nome, Marca = o.Marca, Categoria = o.Categoria, Preço = o.Preco, Unidades = o.Unidades }).ToList();
                     break;
@@ -1249,6 +1257,7 @@ namespace Perfumaria
                 Carrinho.RemoveAll(x => x.Id == ProdutosList[selectedProductIndex].Id);
                 ProdutosList[selectedProductIndex].Unidades += (int)numericUpDown1.Value;
                 Carrinho.Add(ProdutosList[selectedProductIndex]);
+                MessageBox.Show("Adicionado com sucesso!");
 
             }
             else
@@ -1262,8 +1271,10 @@ namespace Perfumaria
                 Carrinho.RemoveAll(x => x.Id == ProdutosList[selectedProductIndex].Id);
                 ProdutosList[selectedProductIndex].Unidades += (int)unidades.Value;
                 Carrinho.Add(ProdutosList[selectedProductIndex]);
+                MessageBox.Show("Adicionado com sucesso!");
 
-            }else
+            }
+            else
                 MessageBox.Show("Verifique as unidades!");
         }
     }
