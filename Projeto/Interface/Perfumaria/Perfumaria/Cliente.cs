@@ -25,6 +25,7 @@ namespace Perfumaria
         List<Servico> ServicesList = new List<Servico>();
         List<String> FuncMailList = new List<String>();
         bool typeofbuy;
+        int selectedProductIndex;
 
         public Cliente()
         {
@@ -571,6 +572,7 @@ namespace Perfumaria
             // Ignore clicks that are not in our 
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
+                selectedProductIndex = e.RowIndex;
                 Produto p = ProdutosList.ElementAt(e.RowIndex);
                 Produto.Visible = true;
                 fotoproduto.Load(p.Imagem);
@@ -595,6 +597,7 @@ namespace Perfumaria
             // Ignore clicks that are not in our 
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
+                selectedProductIndex = e.RowIndex;
                 Produto p = ProdutosList.ElementAt(e.RowIndex);
                 compraonline.Visible = false;
                 produtocompra.Visible = true;
@@ -620,6 +623,7 @@ namespace Perfumaria
             // Ignore clicks that are not in our 
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
+                selectedProductIndex = e.RowIndex;
                 Produto p = ProdutosList.ElementAt(e.RowIndex);
                 compraoffline.Visible = false;
                 produtocompra.Visible = true;
@@ -1148,6 +1152,75 @@ namespace Perfumaria
 
                 cn.Close();
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+                return;
+
+            SqlCommand cmd = new SqlCommand("perf.clientAddFavourite", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@produtoid", ProdutosList[selectedProductIndex].Id);
+            cmd.Parameters.AddWithValue("@clienteemail", C.Email);
+
+
+            cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+            String rm = "";
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                rm = cmd.Parameters["@responseMessage"].Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to Execute");
+            }
+            finally
+            {
+                MessageBox.Show(rm);
+            }
+
+
+            cn.Close();
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+                return;
+
+            SqlCommand cmd = new SqlCommand("perf.clientAddFavourite", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@produtoid", ProdutosList[selectedProductIndex].Id);
+            cmd.Parameters.AddWithValue("@clienteemail", C.Email);
+
+
+            cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+            String rm = "";
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                rm = cmd.Parameters["@responseMessage"].Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to Execute");
+            }
+            finally
+            {
+                MessageBox.Show(rm);
+            }
+
+
+            cn.Close();
         }
     }
 }
