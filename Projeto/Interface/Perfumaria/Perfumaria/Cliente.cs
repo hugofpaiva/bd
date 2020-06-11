@@ -1057,9 +1057,39 @@ namespace Perfumaria
 
             }
 
-            if (e.ColumnIndex == contactsgrid.Columns["Predefinido"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == 1 && e.RowIndex >= 0)
             {
-                selectPanel((int)buyHistory.Rows[e.RowIndex].Cells[3].Value);
+                if (!verifySGBDConnection())
+                    return;
+
+                SqlCommand cmd = new SqlCommand("perf.changeDefaultContact", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", ContactosList[e.RowIndex].Id);
+                cmd.Parameters.AddWithValue("@email", C.Email);
+
+
+                cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+                String rm = "";
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    rm = cmd.Parameters["@responseMessage"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Failed to Execute");
+                }
+                finally
+                {
+                    MessageBox.Show(rm);
+                    tabControl2_SelectedIndexChanged(tabControl2, null);
+                }
+
+
+                cn.Close();
 
             }
         }
