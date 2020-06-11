@@ -13,17 +13,22 @@ BEGIN
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
-                INSERT INTO Perfumaria.perf.cupao
-                (id, datainicio, datafim, pontos_atribuidos)
-                VALUES(@id, @datainicio, @datafim, @pontos_atribuidos) 
-                SET @responseMessage='Success'
+                IF EXISTS(SELECT id FROM Perfumaria.perf.cupao WHERE id=@id)
+                    SET @responseMessage = 'Id do cupão já existe'
+                ELSE
+                BEGIN
+                    INSERT INTO Perfumaria.perf.cupao
+                    (id, datainicio, datafim, pontos_atribuidos)
+                    VALUES(@id, @datainicio, @datafim, @pontos_atribuidos) 
+                    SET @responseMessage='Success'
+                END
             END
         ELSE
             SET @responseMessage='Permition denied'
 
     END TRY
     BEGIN CATCH
-        SET @responseMessage=ERROR_MESSAGE() 
+        SET @responseMessage='Failed'
     END CATCH
 
 END
