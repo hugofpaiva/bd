@@ -25,6 +25,7 @@ namespace Perfumaria
         List<Servico> ServicesList = new List<Servico>();
         List<String> FuncMailList = new List<String>();
         bool typeofbuy;
+        bool active;
         int selectedProductIndex;
 
         public Cliente()
@@ -230,7 +231,9 @@ namespace Perfumaria
                     cupoesgrid.DataSource = getClientCupons();
                     break;
                 case 5:
-                    Favourites.DataSource = getClientFavourites();
+                    getClientFavourites();
+                    Favourites.DataSource = ProdutosList.Select(o => new
+                    { Nome = o.Nome, Marca = o.Marca, Categoria = o.Categoria, Destinatário = o.Destinatario, Preço = o.Preco }).ToList();
                     break;
                 case 6:
                     int countunit = 0;
@@ -271,6 +274,10 @@ namespace Perfumaria
             {
                 case 0:
                     buyHistory.DataSource = getClientBuyHistory();
+                    if(!typeofbuy && active)
+                        onlinetab_SelectedIndexChanged(onlinetab, null);
+                    else if(typeofbuy && active)
+                        offlinetab_SelectedIndexChanged(offlinetab, null);
                     break;
                 case 1:
                     servicosgrid.DataSource = getClientServicesHistory();
@@ -510,19 +517,41 @@ namespace Perfumaria
             return dtRecord;
         }
 
-        private DataTable getClientFavourites()
+        private void getClientFavourites()
         {
             if (!verifySGBDConnection())
                 throw new Exception("Failed to connect to database. \n ERROR");
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM perf.clientFavourites ('" + C.Email + "')", cn);
 
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(cmd);
+            ProdutosList.Clear();
 
-            DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                Produto P = new Produto();
+
+                P.Id = (int)reader["id"];
+                P.Preco = (double)reader["preco"];
+                if (!DBNull.Value.Equals(reader["tamanho"]))
+                    P.Familiaolfativa = reader["familiaolfativa"].ToString();
+                P.Categoria = reader["categoria"].ToString();
+                P.Nome = reader["nome"].ToString();
+                P.Marca = reader["marca"].ToString();
+                P.Linha = reader["linha"].ToString();
+                if (!DBNull.Value.Equals(reader["tamanho"]))
+                    P.Tamanho = Convert.ToInt16(reader["tamanho"]);
+                P.Descricao = reader["descricao"].ToString();
+                P.Imagem = reader["imagem"].ToString();
+                P.Stock = Convert.ToInt16(reader["stock"]);
+                P.Destinatario = reader["destinatario"].ToString();
+
+                ProdutosList.Add(P);
+            }
             cn.Close();
-            return dtRecord;
+
         }
 
         private void getCompraProducts()
@@ -607,6 +636,7 @@ namespace Perfumaria
             // Ignore clicks that are not in our 
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
+                active = true;
                 selectedProductIndex = e.RowIndex;
                 Produto p = ProdutosList.ElementAt(e.RowIndex);
                 compraonline.Visible = false;
@@ -633,6 +663,7 @@ namespace Perfumaria
             // Ignore clicks that are not in our 
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
+                active = true;
                 selectedProductIndex = e.RowIndex;
                 Produto p = ProdutosList.ElementAt(e.RowIndex);
                 compraoffline.Visible = false;
@@ -895,6 +926,7 @@ namespace Perfumaria
         private void button6_Click(object sender, EventArgs e)
         {
             produtocompra.Visible = false;
+            active = false;
             if (typeofbuy)
                 compraoffline.Visible = true;
             else
@@ -1255,7 +1287,7 @@ namespace Perfumaria
             if (!semstoock.Visible && numericUpDown1.Value > 0)
             {
                 Carrinho.RemoveAll(x => x.Id == ProdutosList[selectedProductIndex].Id);
-                ProdutosList[selectedProductIndex].Unidades += (int)numericUpDown1.Value;
+                ProdutosList[selectedProductIndex].Unidades = (int)numericUpDown1.Value;
                 Carrinho.Add(ProdutosList[selectedProductIndex]);
                 MessageBox.Show("Adicionado com sucesso!");
 
@@ -1269,13 +1301,53 @@ namespace Perfumaria
             if (!semstock.Visible && unidades.Value>0)
             {
                 Carrinho.RemoveAll(x => x.Id == ProdutosList[selectedProductIndex].Id);
-                ProdutosList[selectedProductIndex].Unidades += (int)unidades.Value;
+                ProdutosList[selectedProductIndex].Unidades = (int)unidades.Value;
                 Carrinho.Add(ProdutosList[selectedProductIndex]);
                 MessageBox.Show("Adicionado com sucesso!");
 
             }
             else
                 MessageBox.Show("Verifique as unidades!");
+        }
+
+        private void Favourites_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            {
+                if (!verifySGBDConnection())
+                    return;
+
+                SqlCommand cmd = new SqlCommand("perf.clientRemoveFavourite", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@produtoid", ProdutosList[e.RowIndex].Id);
+                cmd.Parameters.AddWithValue("@clienteemail", C.Email);
+
+
+                cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+                String rm = "";
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    rm = cmd.Parameters["@responseMessage"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Failed to Execute");
+                }
+                finally
+                {
+                    MessageBox.Show(rm);
+                    tabControl1_SelectedIndexChanged(tabControl1, null);
+                }
+
+
+                cn.Close();
+
+            }
+
         }
     }
 }
