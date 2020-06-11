@@ -1,7 +1,10 @@
+drop procedure perf.addService;
+go
+
 GO
-CREATE PROCEDURE perf.addCupon
-    @tipo INT,
-    @preco VARCHAR(30),
+CREATE PROCEDURE perf.addService
+    @tipo  VARCHAR(40),
+    @preco FLOAT,
     @emailFunc VARCHAR(255),
     @responseMessage NVARCHAR(250) OUTPUT
 AS
@@ -21,7 +24,7 @@ BEGIN
 
     END TRY
     BEGIN CATCH
-        SET @responseMessage=ERROR_MESSAGE() 
+        SET @responseMessage='Failed' 
     END CATCH
 
 END
