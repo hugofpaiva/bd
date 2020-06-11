@@ -31,35 +31,35 @@ BEGIN
                     WHERE id = @id
                 END
 
-                IF @familiaolfativa <> 'None'
+                IF @familiaolfativa IS NOT NULL
                 BEGIN
                     UPDATE Perfumaria.perf.produto
                     SET familiaolfativa = @familiaolfativa
                     WHERE id = @id
                 END
 
-                IF @categoria <> 'None'
+                IF @categoria IS NOT NULL
                 BEGIN
                     UPDATE Perfumaria.perf.produto
                     SET categoria = @categoria
                     WHERE id = @id
                 END
 
-                IF @nome <> 'None'
+                IF @nome IS NOT NULL
                 BEGIN
                     UPDATE Perfumaria.perf.produto
                     SET nome = @nome
                     WHERE id = @id
                 END
 
-                IF @marca <> 'None'
+                IF @marca IS NOT NULL
                 BEGIN
                     UPDATE Perfumaria.perf.produto
                     SET marca = @marca
                     WHERE id = @id
                 END
 
-                IF @linha <> 'None'
+                IF @linha IS NOT NULL
                 BEGIN
                     UPDATE Perfumaria.perf.produto
                     SET linha = @linha
@@ -73,14 +73,14 @@ BEGIN
                     WHERE id = @id
                 END
 
-                IF @descricao <> 'None'
+                IF @descricao IS NOT NULL
                 BEGIN
                     UPDATE Perfumaria.perf.produto
                     SET descricao = @descricao
                     WHERE id = @id
                 END
 
-                IF @imagem <> 'None'
+                IF @imagem IS NOT NULL
                 BEGIN
                     UPDATE Perfumaria.perf.produto
                     SET imagem = @imagem
@@ -94,12 +94,13 @@ BEGIN
                     WHERE id = @id
                 END
 
-                IF @destinatario <> 'None'
+                IF @destinatario IS NOT NULL
                 BEGIN
                     UPDATE Perfumaria.perf.produto
                     SET destinatario = @destinatario
                     WHERE id = @id
                 END
+                
                 UPDATE Perfumaria.perf.produto
                 SET deleted = @deleted
                 WHERE id = @id
