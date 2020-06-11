@@ -7,7 +7,6 @@ CREATE PROCEDURE perf.updateFunc
     @password VARCHAR(25), 
     @fname VARCHAR(20),
     @lname VARCHAR(20),
-	@photo VARCHAR(100),
     @admin TINYINT,
     @salario INT,
     @emailOP VARCHAR(255) = NULL, -- Só introduzido na parte de gerir funcionários de admin = 2
@@ -36,13 +35,6 @@ BEGIN
 		BEGIN
 			UPDATE Perfumaria.perf.utilizador
 			SET pw = hashbytes('SHA2_512', @password)
-			WHERE  email = @email
-		END
-
-		IF @photo <> 'None'
-		BEGIN
-			UPDATE Perfumaria.perf.utilizador
-			SET foto = @photo
 			WHERE  email = @email
 		END
 

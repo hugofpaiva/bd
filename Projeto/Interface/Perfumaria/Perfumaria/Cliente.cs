@@ -160,6 +160,43 @@ namespace Perfumaria
         private void change_Click(object sender, EventArgs e)
         {
             changepw.Visible = false;
+            if (pw2.Text.Equals(confirmpw2.Text))
+            {
+                if (!verifySGBDConnection())
+                    return;
+
+                SqlCommand cmd = new SqlCommand("perf.updateClient", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@email", C.Email);
+                cmd.Parameters.AddWithValue("@password", confirmpw2.Text);
+                cmd.Parameters.Add("@responseMsg", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+                String rm = "";
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    rm = cmd.Parameters["@responseMsg"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Failed to Execute.");
+                }
+                finally
+                {
+
+                    MessageBox.Show(rm);
+
+
+                }
+
+
+                cn.Close();
+
+            }
+            else
+                MessageBox.Show("Palavra-Passes diferentes!");
         }
 
         // TAB PRINCIPAL
@@ -207,6 +244,7 @@ namespace Perfumaria
             switch ((sender as TabControl).SelectedIndex)
             {
                 case 0:
+                    loadInfo(C.Email);
                     showMainInfo();
                     break;
                 case 1:
@@ -952,6 +990,54 @@ namespace Perfumaria
             }
             else
                 MessageBox.Show("Selecione as opções.");
+
+        }
+
+        private void Favourites_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            if (!verifySGBDConnection())
+                return;
+
+            SqlCommand cmd = new SqlCommand("perf.updateClient", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@fname", namebox.Text);
+            cmd.Parameters.AddWithValue("@email", C.Email);
+            cmd.Parameters.AddWithValue("@lname", lnamebox.Text);
+
+            if(newsletter.Checked)
+                cmd.Parameters.AddWithValue("@newsletter", 1);
+            else
+                cmd.Parameters.AddWithValue("@newsletter", 0);
+            cmd.Parameters.AddWithValue("@pagamento", pagamentobox.Text);
+            cmd.Parameters.Add("@responseMsg", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+            String rm = "";
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                rm = cmd.Parameters["@responseMsg"].Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to Execute");
+            }
+            finally
+            {
+                MessageBox.Show(rm);
+            }
+
+
+            cn.Close();
+
+            tabControl2_SelectedIndexChanged(tabControl2, null);
 
         }
     }

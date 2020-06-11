@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Conta = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -42,15 +42,11 @@
             this.changepw = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.confirmpw2 = new System.Windows.Forms.TextBox();
+            this.pw2 = new System.Windows.Forms.TextBox();
             this.change = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.lnamebox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pontosbox = new System.Windows.Forms.TextBox();
@@ -317,8 +313,6 @@
             // 
             this.Informações.Controls.Add(this.changepw);
             this.Informações.Controls.Add(this.button5);
-            this.Informações.Controls.Add(this.textBox8);
-            this.Informações.Controls.Add(this.textBox4);
             this.Informações.Controls.Add(this.lnamebox);
             this.Informações.Controls.Add(this.label4);
             this.Informações.Controls.Add(this.pontosbox);
@@ -347,15 +341,13 @@
             // 
             this.changepw.Controls.Add(this.label19);
             this.changepw.Controls.Add(this.label18);
-            this.changepw.Controls.Add(this.label17);
-            this.changepw.Controls.Add(this.textBox3);
-            this.changepw.Controls.Add(this.textBox2);
-            this.changepw.Controls.Add(this.textBox1);
+            this.changepw.Controls.Add(this.confirmpw2);
+            this.changepw.Controls.Add(this.pw2);
             this.changepw.Controls.Add(this.change);
             this.changepw.Controls.Add(this.cancel);
             this.changepw.Location = new System.Drawing.Point(28, 16);
             this.changepw.Name = "changepw";
-            this.changepw.Size = new System.Drawing.Size(710, 353);
+            this.changepw.Size = new System.Drawing.Size(710, 339);
             this.changepw.TabIndex = 64;
             this.changepw.Visible = false;
             // 
@@ -363,7 +355,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(241, 164);
+            this.label19.Location = new System.Drawing.Point(241, 140);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(238, 18);
             this.label19.TabIndex = 48;
@@ -373,51 +365,31 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(291, 107);
+            this.label18.Location = new System.Drawing.Point(291, 83);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(138, 18);
             this.label18.TabIndex = 47;
             this.label18.Text = "Nova Password";
             // 
-            // label17
+            // confirmpw2
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(314, 12);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(88, 18);
-            this.label17.TabIndex = 46;
-            this.label17.Text = "Password";
+            this.confirmpw2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmpw2.Location = new System.Drawing.Point(224, 161);
+            this.confirmpw2.Multiline = true;
+            this.confirmpw2.Name = "confirmpw2";
+            this.confirmpw2.Size = new System.Drawing.Size(268, 30);
+            this.confirmpw2.TabIndex = 45;
+            this.confirmpw2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // pw2
             // 
-            this.textBox3.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(224, 185);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(268, 30);
-            this.textBox3.TabIndex = 45;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(224, 128);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(268, 30);
-            this.textBox2.TabIndex = 44;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(224, 45);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 30);
-            this.textBox1.TabIndex = 43;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pw2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pw2.Location = new System.Drawing.Point(224, 104);
+            this.pw2.Multiline = true;
+            this.pw2.Name = "pw2";
+            this.pw2.Size = new System.Drawing.Size(268, 30);
+            this.pw2.TabIndex = 44;
+            this.pw2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // change
             // 
@@ -449,30 +421,7 @@
             this.button5.TabIndex = 63;
             this.button5.Text = "Guardar";
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Location = new System.Drawing.Point(248, 325);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(268, 30);
-            this.textBox8.TabIndex = 62;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(24, 319);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(242, 50);
-            this.textBox4.TabIndex = 61;
-            this.textBox4.Text = "Contacto Predefinido";
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // lnamebox
             // 
@@ -673,9 +622,9 @@
             // 
             // dataGridViewButtonColumn2
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridViewButtonColumn2.HeaderText = "Eliminar";
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             this.dataGridViewButtonColumn2.ReadOnly = true;
@@ -1395,9 +1344,9 @@
             // 
             // dataGridViewButtonColumn5
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridViewButtonColumn5.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
             this.dataGridViewButtonColumn5.ReadOnly = true;
@@ -1614,9 +1563,9 @@
             // 
             // dataGridViewButtonColumn4
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridViewButtonColumn4.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             this.dataGridViewButtonColumn4.ReadOnly = true;
@@ -1645,9 +1594,9 @@
             // 
             // Detalhes
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10);
-            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle28;
             this.Detalhes.HeaderText = "Detalhes";
             this.Detalhes.Name = "Detalhes";
             this.Detalhes.ReadOnly = true;
@@ -2167,9 +2116,9 @@
             // 
             // dataGridViewButtonColumn6
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle29;
             this.dataGridViewButtonColumn6.HeaderText = "Comprar";
             this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
             this.dataGridViewButtonColumn6.ReadOnly = true;
@@ -2474,6 +2423,7 @@
             this.Favourites.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Favourites.Size = new System.Drawing.Size(765, 400);
             this.Favourites.TabIndex = 1;
+            this.Favourites.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Favourites_CellContentClick);
             // 
             // Remover
             // 
@@ -2485,9 +2435,9 @@
             // 
             // dataGridViewButtonColumn3
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle30;
             this.dataGridViewButtonColumn3.HeaderText = "Comprar";
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
             this.dataGridViewButtonColumn3.ReadOnly = true;
@@ -2689,7 +2639,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox emailbox;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TabControl historico;
         private System.Windows.Forms.TabPage Compras;
         private System.Windows.Forms.TabPage Servicos;
@@ -2714,12 +2663,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox cupontextbox;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Panel changepw;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox confirmpw2;
+        private System.Windows.Forms.TextBox pw2;
         private System.Windows.Forms.Button change;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Label label19;
