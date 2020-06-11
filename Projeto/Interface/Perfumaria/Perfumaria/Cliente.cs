@@ -218,7 +218,6 @@ namespace Perfumaria
                     orderby.SelectedIndex = 0;
                     categoriacombo.SelectedIndex = 0;
                     marcacombo.SelectedIndex = 0;
-                    destinatariocombo.SelectedIndex = 0;
                     lojagrid.DataSource = ProdutosList.Select(o => new
                     {Nome = o.Nome, Marca = o.Marca, Categoria = o.Categoria, Destinatário = o.Destinatario, Preço = o.Preco }).ToList();
                     break;
@@ -378,22 +377,6 @@ namespace Perfumaria
             while (reader.Read())
             {
                 categoriacombo.Items.Add(reader["categoria"].ToString());
-            };
-
-            reader.Close();
-
-            if (!verifySGBDConnection())
-                throw new Exception("Failed to connect to database. \n ERROR");
-
-            cmd = new SqlCommand("SELECT DISTINCT destinatario FROM perf.getAllProducts () WHERE destinatario IS NOT NULL", cn);
-
-            reader = cmd.ExecuteReader();
-
-            destinatariocombo.Items.Clear();
-            destinatariocombo.Items.Add("Todos");
-            while (reader.Read())
-            {
-                destinatariocombo.Items.Add(reader["destinatario"].ToString());
             };
 
             reader.Close();
@@ -844,11 +827,6 @@ namespace Perfumaria
                 cmd.Parameters.AddWithValue("@categoria", categoriacombo.SelectedItem.ToString());
             }
 
-            if (destinatariocombo.SelectedIndex > 0)
-            {
-                cmd.Parameters.AddWithValue("@destinatario", destinatariocombo.SelectedItem.ToString());
-            }
-
             if (orderby.SelectedIndex > -1)
             {
                 cmd.Parameters.AddWithValue("@orderby", orderby.SelectedItem.ToString());
@@ -1039,6 +1017,51 @@ namespace Perfumaria
 
             tabControl2_SelectedIndexChanged(tabControl2, null);
 
+        }
+
+        private void contactsgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            {
+                if (!verifySGBDConnection())
+                    return;
+
+                SqlCommand cmd = new SqlCommand("perf.removeContact", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", ContactosList[e.RowIndex].Id);
+                cmd.Parameters.AddWithValue("@email", C.Email);
+
+
+                cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+                String rm = "";
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    rm = cmd.Parameters["@responseMessage"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Failed to Execute");
+                }
+                finally
+                {
+                    MessageBox.Show(rm);
+                    tabControl2_SelectedIndexChanged(tabControl2, null);
+                }
+
+
+                cn.Close();
+
+            }
+
+            if (e.ColumnIndex == contactsgrid.Columns["Predefinido"].Index && e.RowIndex >= 0)
+            {
+                selectPanel((int)buyHistory.Rows[e.RowIndex].Cells[3].Value);
+
+            }
         }
     }
 }

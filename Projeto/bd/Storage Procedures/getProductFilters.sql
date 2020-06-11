@@ -20,8 +20,7 @@ BEGIN
                   deleted = 0 AND
                   nome LIKE ('%'+ISNULL(@nome, nome)+'%') AND
                   marca = ISNULL(@marca,marca) AND
-                  categoria = ISNULL(@categoria,categoria) AND 
-	              destinatario = ISNULL(@destinatario,destinatario)
+                  categoria = ISNULL(@categoria,categoria) 
             ORDER BY CASE WHEN @orderby='Nome' THEN nome END,
                      CASE WHEN @orderby='Marca' THEN marca END,
                      CASE WHEN @orderby='Categoria' THEN categoria END,
@@ -36,8 +35,7 @@ BEGIN
                   deleted = 0 AND
                   nome LIKE ('%'+ISNULL(@nome, nome)+'%') AND
                   marca = ISNULL(@marca,marca) AND
-                  categoria = ISNULL(@categoria,categoria) AND 
-	              destinatario = ISNULL(@destinatario,destinatario)
+                  categoria = ISNULL(@categoria,categoria)
             ORDER BY CASE WHEN @orderby='Nome' THEN nome END DESC,
                      CASE WHEN @orderby='Marca' THEN marca END DESC,
                      CASE WHEN @orderby='Categoria' THEN categoria END DESC,
