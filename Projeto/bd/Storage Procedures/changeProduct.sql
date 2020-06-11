@@ -100,12 +100,9 @@ BEGIN
                     SET destinatario = @destinatario
                     WHERE id = @id
                 END
-				IF @deleted <> 0
-                BEGIN
-                    UPDATE Perfumaria.perf.produto
-                    SET deleted = @deleted
-                    WHERE id = @id
-                END
+                UPDATE Perfumaria.perf.produto
+                SET deleted = @deleted
+                WHERE id = @id
             END
  
 
