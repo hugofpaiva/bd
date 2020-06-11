@@ -1017,10 +1017,6 @@ namespace Perfumaria
 
         }
 
-        private void Favourites_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -1346,6 +1342,23 @@ namespace Perfumaria
 
                 cn.Close();
 
+            } else if(e.ColumnIndex == 1 && e.RowIndex >=0 )
+            {
+                selectedProductIndex = e.RowIndex;
+                Produto p = ProdutosList.ElementAt(e.RowIndex);
+                comprafav.Visible = true;
+                favpic.Load(p.Imagem);
+                favpic.SizeMode = PictureBoxSizeMode.StretchImage;
+                favdesc.Text = p.Descricao;
+                favnome.Text = p.Nome;
+                favmarca.Text = p.Marca;
+                favcategoria.Text = p.Categoria;
+                favlinha.Text = p.Linha;
+                favtamanho.Text = p.Tamanho.ToString();
+                favfamilia.Text = p.Familiaolfativa;
+                favdestinatario.Text = p.Destinatario;
+                favpreco.Text = p.Preco.ToString() + "€";
+
             }
 
         }
@@ -1384,6 +1397,134 @@ namespace Perfumaria
 
 
             cn.Close();
+        }
+
+        private void carrinhogrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            {
+                Carrinho[e.RowIndex].Unidades -= 1;
+                if (Carrinho[e.RowIndex].Unidades == 0)
+                    Carrinho.RemoveAt(e.RowIndex);
+                tabControl1_SelectedIndexChanged(tabControl1, null);
+
+            }
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if(Carrinho.Count > 0) { 
+                comprafinal.Visible = true;
+                totaltotal.Text = totalcarrinho.Text;
+            }
+        }
+
+        private void cloose_Click(object sender, EventArgs e)
+        {
+            comprafinal.Visible = false;
+        }
+
+        private void finalcompra_Click(object sender, EventArgs e)
+        {
+
+            if (!verifySGBDConnection())
+                return;
+
+            SqlCommand cmd = new SqlCommand("perf.verifyPaymentContact", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@email", C.Email);
+            cmd.Parameters.Add("@result", SqlDbType.Bit).Direction = ParameterDirection.Output;
+
+            bool result = false;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                result = (bool)cmd.Parameters["@result"].Value;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to Execute.");
+            }
+ 
+            if (!result)
+            {
+                MessageBox.Show("Verifique o contacto e pagamento da sua conta.");
+                return;
+            }
+
+
+
+
+            
+
+
+            cn.Close();
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDown2.Value > ProdutosList[selectedProductIndex].Stock)
+                warningstock.Visible = true;
+            else
+                warningstock.Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            comprafav.Visible = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!warningstock.Visible && numericUpDown2.Value > 0)
+            {
+                Carrinho.RemoveAll(x => x.Id == ProdutosList[selectedProductIndex].Id);
+                ProdutosList[selectedProductIndex].Unidades = (int)numericUpDown2.Value;
+                Carrinho.Add(ProdutosList[selectedProductIndex]);
+                MessageBox.Show("Adicionado com sucesso!");
+
+            }
+            else
+                MessageBox.Show("Verifique as unidades!");
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+                return;
+
+            SqlCommand cmd = new SqlCommand("perf.clientAddFavourite", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@produtoid", ProdutosList[selectedProductIndex].Id);
+            cmd.Parameters.AddWithValue("@clienteemail", C.Email);
+
+
+            cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+            String rm = "";
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                rm = cmd.Parameters["@responseMessage"].Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to Execute");
+            }
+            finally
+            {
+                MessageBox.Show(rm);
+            }
+
+
+            cn.Close();
+
         }
     }
 }
