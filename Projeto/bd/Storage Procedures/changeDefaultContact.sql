@@ -2,8 +2,8 @@ DROP PROCEDURE perf.changeDefaultContact
 GO
 
 CREATE PROCEDURE perf.changeDefaultContact
-    @id INT NOT NULL,
-    @email VARCHAR(255) NOT NULL,
+    @id INT,
+    @email VARCHAR(255),
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN

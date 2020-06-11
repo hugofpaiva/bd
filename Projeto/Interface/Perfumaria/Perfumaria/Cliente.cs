@@ -1093,5 +1093,61 @@ namespace Perfumaria
 
             }
         }
+
+        private void contactcreate_Click(object sender, EventArgs e)
+        {
+
+            if (telele.Text.Length != 9)
+                MessageBox.Show("O número de telemóvel necessita 9 dígitos!");
+            else if(codigopostal.Text.Length != 8 && codigopostal.Text.IndexOf("-") == -1)
+                MessageBox.Show("Formato do código-postal incorreto!");
+            else if (!(country.Text.Length<=20 && country.Text.Length>0))
+                MessageBox.Show("País necessita de ser entre 1 e 20 caractéres!");
+            else  if (!(endereco.Text.Length <= 50 && endereco.Text.Length > 0))
+                MessageBox.Show("Endereço necessita de ser entre 1 e 50 caractéres!");
+            else if (!(apartment.Text.Length <= 50))
+                MessageBox.Show("Apartamento necessita de ser entre 0 e 50 caractéres!");
+            else if (!(locality.Text.Length <= 20 && locality.Text.Length > 0))
+                MessageBox.Show("Localidade necessita de ser entre 1 e 20 caractéres!");
+            else
+            {
+                if (!verifySGBDConnection())
+                    return;
+
+                SqlCommand cmd = new SqlCommand("perf.addContact", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@utilizador_email", C.Email);
+                cmd.Parameters.AddWithValue("@telemovel", telele.Text);
+                cmd.Parameters.AddWithValue("@codigo_postal", codigopostal.Text);
+                cmd.Parameters.AddWithValue("@pais", country.Text);
+                cmd.Parameters.AddWithValue("@endereco", endereco.Text);
+                if (apartment.Text.Length > 0)
+                    cmd.Parameters.AddWithValue("@apartamento", apartment.Text);
+                cmd.Parameters.AddWithValue("@localidade", locality.Text);
+
+
+                cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+                String rm = "";
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    rm = cmd.Parameters["@responseMessage"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Failed to Execute");
+                }
+                finally
+                {
+                    MessageBox.Show(rm);
+                }
+
+
+                cn.Close();
+            }
+        }
     }
 }

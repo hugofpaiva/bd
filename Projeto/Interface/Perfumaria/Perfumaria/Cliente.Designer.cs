@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Conta = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -177,6 +177,8 @@
             this.fecharproduto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.orderdescasc = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.categoriacombo = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.marcacombo = new System.Windows.Forms.ComboBox();
             this.search = new System.Windows.Forms.Button();
@@ -215,14 +217,27 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label61 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label21 = new System.Windows.Forms.Label();
-            this.categoriacombo = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.telele = new System.Windows.Forms.TextBox();
+            this.telm = new System.Windows.Forms.Label();
+            this.country = new System.Windows.Forms.TextBox();
+            this.locality = new System.Windows.Forms.TextBox();
+            this.pais = new System.Windows.Forms.Label();
+            this.postal = new System.Windows.Forms.Label();
+            this.codigopostal = new System.Windows.Forms.TextBox();
+            this.endereco = new System.Windows.Forms.TextBox();
+            this.apartment = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.apart = new System.Windows.Forms.Label();
+            this.local = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.contactcreate = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -269,6 +284,7 @@
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -301,6 +317,7 @@
             // 
             this.tabControl2.Controls.Add(this.Informações);
             this.tabControl2.Controls.Add(this.Contactos);
+            this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -621,9 +638,9 @@
             // 
             // dataGridViewButtonColumn2
             // 
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewButtonColumn2.HeaderText = "Eliminar";
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             this.dataGridViewButtonColumn2.ReadOnly = true;
@@ -1343,9 +1360,9 @@
             // 
             // dataGridViewButtonColumn5
             // 
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle44.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewButtonColumn5.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
             this.dataGridViewButtonColumn5.ReadOnly = true;
@@ -1562,9 +1579,9 @@
             // 
             // dataGridViewButtonColumn4
             // 
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle45.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewButtonColumn4.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             this.dataGridViewButtonColumn4.ReadOnly = true;
@@ -1593,9 +1610,9 @@
             // 
             // Detalhes
             // 
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle46.Padding = new System.Windows.Forms.Padding(10);
-            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle10;
             this.Detalhes.HeaderText = "Detalhes";
             this.Detalhes.Name = "Detalhes";
             this.Detalhes.ReadOnly = true;
@@ -1979,6 +1996,27 @@
             this.orderdescasc.Size = new System.Drawing.Size(151, 21);
             this.orderdescasc.TabIndex = 13;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label21.Location = new System.Drawing.Point(492, 61);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(98, 18);
+            this.label21.TabIndex = 10;
+            this.label21.Text = "Categoria";
+            // 
+            // categoriacombo
+            // 
+            this.categoriacombo.FormattingEnabled = true;
+            this.categoriacombo.Items.AddRange(new object[] {
+            "Todos"});
+            this.categoriacombo.Location = new System.Drawing.Point(463, 82);
+            this.categoriacombo.Name = "categoriacombo";
+            this.categoriacombo.Size = new System.Drawing.Size(151, 21);
+            this.categoriacombo.TabIndex = 9;
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -2071,9 +2109,9 @@
             // 
             // dataGridViewButtonColumn6
             // 
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle47.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewButtonColumn6.HeaderText = "Comprar";
             this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
             this.dataGridViewButtonColumn6.ReadOnly = true;
@@ -2390,9 +2428,9 @@
             // 
             // dataGridViewButtonColumn3
             // 
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle48.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewButtonColumn3.HeaderText = "Comprar";
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
             this.dataGridViewButtonColumn3.ReadOnly = true;
@@ -2432,6 +2470,32 @@
             this.panel3.Size = new System.Drawing.Size(768, 75);
             this.panel3.TabIndex = 2;
             // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(318, 33);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(170, 30);
+            this.textBox2.TabIndex = 86;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(33, 33);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(137, 30);
+            this.textBox1.TabIndex = 85;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2469,52 +2533,157 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label21
+            // telele
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label21.Location = new System.Drawing.Point(492, 61);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(98, 18);
-            this.label21.TabIndex = 10;
-            this.label21.Text = "Categoria";
+            this.telele.Location = new System.Drawing.Point(59, 101);
+            this.telele.Multiline = true;
+            this.telele.Name = "telele";
+            this.telele.Size = new System.Drawing.Size(268, 30);
+            this.telele.TabIndex = 35;
             // 
-            // categoriacombo
+            // telm
             // 
-            this.categoriacombo.FormattingEnabled = true;
-            this.categoriacombo.Items.AddRange(new object[] {
-            "Todos"});
-            this.categoriacombo.Location = new System.Drawing.Point(463, 82);
-            this.categoriacombo.Name = "categoriacombo";
-            this.categoriacombo.Size = new System.Drawing.Size(151, 21);
-            this.categoriacombo.TabIndex = 9;
+            this.telm.AutoSize = true;
+            this.telm.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telm.Location = new System.Drawing.Point(132, 68);
+            this.telm.Name = "telm";
+            this.telm.Size = new System.Drawing.Size(127, 23);
+            this.telm.TabIndex = 36;
+            this.telm.Text = "Telemóvel";
             // 
-            // textBox1
+            // country
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(33, 33);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(137, 30);
-            this.textBox1.TabIndex = 85;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.country.Location = new System.Drawing.Point(59, 165);
+            this.country.Multiline = true;
+            this.country.Name = "country";
+            this.country.Size = new System.Drawing.Size(268, 30);
+            this.country.TabIndex = 37;
             // 
-            // textBox2
+            // locality
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(318, 33);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(170, 30);
-            this.textBox2.TabIndex = 86;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.locality.Location = new System.Drawing.Point(59, 228);
+            this.locality.Multiline = true;
+            this.locality.Name = "locality";
+            this.locality.Size = new System.Drawing.Size(268, 30);
+            this.locality.TabIndex = 38;
+            // 
+            // pais
+            // 
+            this.pais.AutoSize = true;
+            this.pais.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pais.Location = new System.Drawing.Point(158, 139);
+            this.pais.Name = "pais";
+            this.pais.Size = new System.Drawing.Size(62, 23);
+            this.pais.TabIndex = 39;
+            this.pais.Text = "País";
+            // 
+            // postal
+            // 
+            this.postal.AutoSize = true;
+            this.postal.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postal.Location = new System.Drawing.Point(489, 68);
+            this.postal.Name = "postal";
+            this.postal.Size = new System.Drawing.Size(179, 23);
+            this.postal.TabIndex = 40;
+            this.postal.Text = "Código Postal";
+            // 
+            // codigopostal
+            // 
+            this.codigopostal.Location = new System.Drawing.Point(437, 101);
+            this.codigopostal.Multiline = true;
+            this.codigopostal.Name = "codigopostal";
+            this.codigopostal.Size = new System.Drawing.Size(268, 30);
+            this.codigopostal.TabIndex = 41;
+            // 
+            // endereco
+            // 
+            this.endereco.Location = new System.Drawing.Point(437, 165);
+            this.endereco.Multiline = true;
+            this.endereco.Name = "endereco";
+            this.endereco.Size = new System.Drawing.Size(268, 93);
+            this.endereco.TabIndex = 42;
+            // 
+            // apartment
+            // 
+            this.apartment.Location = new System.Drawing.Point(59, 296);
+            this.apartment.Multiline = true;
+            this.apartment.Name = "apartment";
+            this.apartment.Size = new System.Drawing.Size(268, 30);
+            this.apartment.TabIndex = 43;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(521, 139);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(114, 23);
+            this.label65.TabIndex = 44;
+            this.label65.Text = "Endereço";
+            // 
+            // apart
+            // 
+            this.apart.AutoSize = true;
+            this.apart.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apart.Location = new System.Drawing.Point(119, 270);
+            this.apart.Name = "apart";
+            this.apart.Size = new System.Drawing.Size(153, 23);
+            this.apart.TabIndex = 45;
+            this.apart.Text = "Apartamento";
+            // 
+            // local
+            // 
+            this.local.AutoSize = true;
+            this.local.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.local.Location = new System.Drawing.Point(119, 200);
+            this.local.Name = "local";
+            this.local.Size = new System.Drawing.Size(140, 23);
+            this.local.TabIndex = 46;
+            this.local.Text = "Localidade";
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.label14);
+            this.tabPage6.Controls.Add(this.contactcreate);
+            this.tabPage6.Controls.Add(this.local);
+            this.tabPage6.Controls.Add(this.apart);
+            this.tabPage6.Controls.Add(this.label65);
+            this.tabPage6.Controls.Add(this.apartment);
+            this.tabPage6.Controls.Add(this.endereco);
+            this.tabPage6.Controls.Add(this.codigopostal);
+            this.tabPage6.Controls.Add(this.postal);
+            this.tabPage6.Controls.Add(this.pais);
+            this.tabPage6.Controls.Add(this.locality);
+            this.tabPage6.Controls.Add(this.country);
+            this.tabPage6.Controls.Add(this.telm);
+            this.tabPage6.Controls.Add(this.telele);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(764, 378);
+            this.tabPage6.TabIndex = 2;
+            this.tabPage6.Text = "Criar Contacto";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // contactcreate
+            // 
+            this.contactcreate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactcreate.Location = new System.Drawing.Point(496, 283);
+            this.contactcreate.Name = "contactcreate";
+            this.contactcreate.Size = new System.Drawing.Size(139, 45);
+            this.contactcreate.TabIndex = 47;
+            this.contactcreate.Text = "Criar";
+            this.contactcreate.UseVisualStyleBackColor = true;
+            this.contactcreate.Click += new System.EventHandler(this.contactcreate_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(247, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(278, 27);
+            this.label14.TabIndex = 48;
+            this.label14.Text = "Criação de Contacto";
             // 
             // Cliente
             // 
@@ -2581,6 +2750,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2775,5 +2946,20 @@
         private System.Windows.Forms.ComboBox categoriacombo;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button contactcreate;
+        private System.Windows.Forms.Label local;
+        private System.Windows.Forms.Label apart;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.TextBox apartment;
+        private System.Windows.Forms.TextBox endereco;
+        private System.Windows.Forms.TextBox codigopostal;
+        private System.Windows.Forms.Label postal;
+        private System.Windows.Forms.Label pais;
+        private System.Windows.Forms.TextBox locality;
+        private System.Windows.Forms.TextBox country;
+        private System.Windows.Forms.Label telm;
+        private System.Windows.Forms.TextBox telele;
     }
 }
