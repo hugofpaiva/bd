@@ -1,27 +1,30 @@
+drop procedure perf.changeProduct
+go
+
 GO
 CREATE PROCEDURE perf.changeProduct
     @id INT,
-    @preco FLOAT,
+    @preco FLOAT = 0,
     @familiaolfativa VARCHAR(30) = NULL,
-    @categoria VARCHAR(30),
-    @nome VARCHAR(30),
-    @marca VARCHAR(30),
-    @linha VARCHAR(30),
-    @tamanho SMALLINT = NULL,
+    @categoria VARCHAR(30) = NULL,
+    @nome VARCHAR(30)  = NULL,
+    @marca VARCHAR(30)  = NULL,
+    @linha VARCHAR(30)  = NULL,
+    @tamanho SMALLINT = 0,
     @descricao VARCHAR(280) = NULL,
-    @imagem VARCHAR(100),
-    @stock SMALLINT,
+    @imagem VARCHAR(100)  = NULL,
+    @stock SMALLINT = 0,
     @destinatario VARCHAR(10) = NULL,
-    @emailFunc VARCHAR(255),
-    @responseMessage NVARCHAR(250) OUTPUT
+	@deleted BIT = 0,
+    @emailFunc VARCHAR(255)
 AS
 BEGIN
     SET NOCOUNT ON
     
-    BEGIN TRY
+
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator>0)
             BEGIN
-                IF @preco <> 'None'
+                IF @preco <> 0
                 BEGIN
                     UPDATE Perfumaria.perf.produto
                     SET preco = @preco
@@ -63,7 +66,7 @@ BEGIN
                     WHERE id = @id
                 END
                 
-                IF @tamanho <> 'None'
+                IF @tamanho <> 0
                 BEGIN
                     UPDATE Perfumaria.perf.produto
                     SET tamanho = @tamanho
@@ -84,7 +87,7 @@ BEGIN
                     WHERE id = @id
                 END
 
-                IF @stock <> 'None'
+                IF @stock <> 0
                 BEGIN
                     UPDATE Perfumaria.perf.produto
                     SET stock = @stock
@@ -97,15 +100,13 @@ BEGIN
                     SET destinatario = @destinatario
                     WHERE id = @id
                 END
-
-                SET @responseMessage='Success'
+				IF @deleted <> 0
+                BEGIN
+                    UPDATE Perfumaria.perf.produto
+                    SET deleted = @deleted
+                    WHERE id = @id
+                END
             END
-        ELSE
-            SET @responseMessage='Permition denied'
-
-    END TRY
-    BEGIN CATCH
-        SET @responseMessage=ERROR_MESSAGE() 
-    END CATCH
+ 
 
 END
