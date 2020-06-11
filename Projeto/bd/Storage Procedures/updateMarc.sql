@@ -4,8 +4,6 @@ GO
 GO
 CREATE PROCEDURE perf.updateMarc
     @idMarc INT,
-	@cliente_email VARCHAR(255),
-    @servico_id INT = 0,
     @funcionario_email VARCHAR(255),
     @dataMarc DATETIME = null,
 	@responseMessage NVARCHAR(250) = 'Erro! Tente noutra hora.' OUTPUT
@@ -15,19 +13,6 @@ BEGIN
 		SET NOCOUNT ON
 			IF EXISTS (SELECT email=@funcionario_email from Perfumaria.perf.funcionario)
 			BEGIN
-				IF @cliente_email <> 'None'
-				BEGIN
-					UPDATE Perfumaria.perf.marcacao
-					SET cliente_email = @cliente_email
-					WHERE  id = @idMarc 
-				END
-
-				IF @servico_id <> 0
-				BEGIN
-					UPDATE Perfumaria.perf.marcacao
-					SET servico_id = @servico_id
-					WHERE  id = @idMarc 
-				END
 				
 				IF (@dataMarc IS NOT NULL)
 				BEGIN
