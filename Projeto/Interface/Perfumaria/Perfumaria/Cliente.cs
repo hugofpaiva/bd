@@ -215,11 +215,11 @@ namespace Perfumaria
                     break;
                 case 2:
                     getProductsProperties();
-                    searchProducts();
                     orderdescasc.SelectedIndex = 0;
                     orderby.SelectedIndex = 0;
                     categoriacombo.SelectedIndex = 0;
                     marcacombo.SelectedIndex = 0;
+                    searchProducts();
                     lojagrid.DataSource = ProdutosList.Select(o => new
                     {Nome = o.Nome, Marca = o.Marca, Categoria = o.Categoria, Destinatário = o.Destinatario, Preço = o.Preco }).ToList();
                     break;
@@ -840,7 +840,7 @@ namespace Perfumaria
                     MessageBox.Show("Cupão Inválido!");
             }
 
-
+            tabControl1_SelectedIndexChanged(tabControl1, null);
             cn.Close();
         }
 

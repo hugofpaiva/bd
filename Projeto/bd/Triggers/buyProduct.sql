@@ -2,7 +2,7 @@ DROP TRIGGER perf.buyProductTrigger;
 GO
 
 CREATE TRIGGER perf.buyProductTrigger ON perf.[compra_tem_produto]
-AFTER INSERT, UPDATE
+AFTER INSERT
 AS
 BEGIN
     SET NOCOUNT ON;
