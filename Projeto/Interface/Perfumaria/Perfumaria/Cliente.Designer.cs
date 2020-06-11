@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Conta = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -196,13 +196,15 @@
             this.Marcações = new System.Windows.Forms.TabPage();
             this.marcacoes = new System.Windows.Forms.TabControl();
             this.marcar = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.precoservico = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.erroservico = new System.Windows.Forms.Label();
+            this.marcarbutton = new System.Windows.Forms.Button();
+            this.funcombo = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datamarc = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboservico = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.future = new System.Windows.Forms.TabPage();
@@ -671,9 +673,9 @@
             // 
             // dataGridViewButtonColumn2
             // 
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle55.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewButtonColumn2.HeaderText = "Eliminar";
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             this.dataGridViewButtonColumn2.ReadOnly = true;
@@ -743,7 +745,7 @@
             this.produtocompra.Controls.Add(this.label59);
             this.produtocompra.Controls.Add(this.produtofoto);
             this.produtocompra.Controls.Add(this.button6);
-            this.produtocompra.Location = new System.Drawing.Point(2, 0);
+            this.produtocompra.Location = new System.Drawing.Point(6, 0);
             this.produtocompra.Name = "produtocompra";
             this.produtocompra.Size = new System.Drawing.Size(749, 379);
             this.produtocompra.TabIndex = 1;
@@ -1393,9 +1395,9 @@
             // 
             // dataGridViewButtonColumn5
             // 
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle56.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewButtonColumn5.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
             this.dataGridViewButtonColumn5.ReadOnly = true;
@@ -1612,9 +1614,9 @@
             // 
             // dataGridViewButtonColumn4
             // 
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle57.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewButtonColumn4.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             this.dataGridViewButtonColumn4.ReadOnly = true;
@@ -1643,9 +1645,9 @@
             // 
             // Detalhes
             // 
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle58.Padding = new System.Windows.Forms.Padding(10);
-            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle10;
             this.Detalhes.HeaderText = "Detalhes";
             this.Detalhes.Name = "Detalhes";
             this.Detalhes.ReadOnly = true;
@@ -2165,9 +2167,9 @@
             // 
             // dataGridViewButtonColumn6
             // 
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle59.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewButtonColumn6.HeaderText = "Comprar";
             this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
             this.dataGridViewButtonColumn6.ReadOnly = true;
@@ -2197,13 +2199,15 @@
             // 
             // marcar
             // 
-            this.marcar.Controls.Add(this.label14);
-            this.marcar.Controls.Add(this.button4);
-            this.marcar.Controls.Add(this.comboBox4);
+            this.marcar.Controls.Add(this.precoservico);
+            this.marcar.Controls.Add(this.label62);
+            this.marcar.Controls.Add(this.erroservico);
+            this.marcar.Controls.Add(this.marcarbutton);
+            this.marcar.Controls.Add(this.funcombo);
             this.marcar.Controls.Add(this.label12);
-            this.marcar.Controls.Add(this.dateTimePicker1);
+            this.marcar.Controls.Add(this.datamarc);
             this.marcar.Controls.Add(this.label11);
-            this.marcar.Controls.Add(this.comboBox3);
+            this.marcar.Controls.Add(this.comboservico);
             this.marcar.Controls.Add(this.label8);
             this.marcar.Controls.Add(this.label5);
             this.marcar.Location = new System.Drawing.Point(4, 22);
@@ -2214,35 +2218,61 @@
             this.marcar.Text = "Marcar";
             this.marcar.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // precoservico
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(295, 261);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(152, 16);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "Selecionar Serviço";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.precoservico.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.precoservico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.precoservico.Cursor = System.Windows.Forms.Cursors.Default;
+            this.precoservico.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precoservico.Location = new System.Drawing.Point(299, 152);
+            this.precoservico.Multiline = true;
+            this.precoservico.Name = "precoservico";
+            this.precoservico.ReadOnly = true;
+            this.precoservico.Size = new System.Drawing.Size(145, 27);
+            this.precoservico.TabIndex = 19;
+            this.precoservico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button4
+            // label62
             // 
-            this.button4.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(308, 316);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 41);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Marcar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label62.Location = new System.Drawing.Point(341, 131);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(58, 18);
+            this.label62.TabIndex = 18;
+            this.label62.Text = "Preço";
             // 
-            // comboBox4
+            // erroservico
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(283, 237);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(173, 21);
-            this.comboBox4.TabIndex = 15;
+            this.erroservico.AutoSize = true;
+            this.erroservico.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erroservico.ForeColor = System.Drawing.Color.Red;
+            this.erroservico.Location = new System.Drawing.Point(295, 261);
+            this.erroservico.Name = "erroservico";
+            this.erroservico.Size = new System.Drawing.Size(152, 16);
+            this.erroservico.TabIndex = 17;
+            this.erroservico.Text = "Selecionar Serviço";
+            this.erroservico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // marcarbutton
+            // 
+            this.marcarbutton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.marcarbutton.Location = new System.Drawing.Point(308, 316);
+            this.marcarbutton.Name = "marcarbutton";
+            this.marcarbutton.Size = new System.Drawing.Size(128, 41);
+            this.marcarbutton.TabIndex = 16;
+            this.marcarbutton.Text = "Marcar";
+            this.marcarbutton.UseVisualStyleBackColor = true;
+            this.marcarbutton.Click += new System.EventHandler(this.marcarbutton_Click);
+            // 
+            // funcombo
+            // 
+            this.funcombo.FormattingEnabled = true;
+            this.funcombo.Location = new System.Drawing.Point(283, 237);
+            this.funcombo.Name = "funcombo";
+            this.funcombo.Size = new System.Drawing.Size(173, 21);
+            this.funcombo.TabIndex = 15;
             // 
             // label12
             // 
@@ -2254,15 +2284,15 @@
             this.label12.TabIndex = 14;
             this.label12.Text = "Funcionário";
             // 
-            // dateTimePicker1
+            // datamarc
             // 
-            this.dateTimePicker1.AllowDrop = true;
-            this.dateTimePicker1.Location = new System.Drawing.Point(491, 158);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2079, 6, 6, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2020, 6, 6, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 13;
+            this.datamarc.AllowDrop = true;
+            this.datamarc.Location = new System.Drawing.Point(491, 158);
+            this.datamarc.MaxDate = new System.DateTime(2079, 6, 6, 0, 0, 0, 0);
+            this.datamarc.MinDate = new System.DateTime(2020, 6, 6, 0, 0, 0, 0);
+            this.datamarc.Name = "datamarc";
+            this.datamarc.Size = new System.Drawing.Size(200, 20);
+            this.datamarc.TabIndex = 13;
             // 
             // label11
             // 
@@ -2274,13 +2304,14 @@
             this.label11.TabIndex = 12;
             this.label11.Text = "Data";
             // 
-            // comboBox3
+            // comboservico
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(65, 158);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(173, 21);
-            this.comboBox3.TabIndex = 11;
+            this.comboservico.FormattingEnabled = true;
+            this.comboservico.Location = new System.Drawing.Point(65, 158);
+            this.comboservico.Name = "comboservico";
+            this.comboservico.Size = new System.Drawing.Size(173, 21);
+            this.comboservico.TabIndex = 11;
+            this.comboservico.SelectedIndexChanged += new System.EventHandler(this.comboservico_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -2454,9 +2485,9 @@
             // 
             // dataGridViewButtonColumn3
             // 
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle60.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewButtonColumn3.HeaderText = "Comprar";
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
             this.dataGridViewButtonColumn3.ReadOnly = true;
@@ -2668,13 +2699,13 @@
         private System.Windows.Forms.TextBox pesquisa;
         private System.Windows.Forms.TabControl marcacoes;
         private System.Windows.Forms.TabPage marcar;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label erroservico;
+        private System.Windows.Forms.Button marcarbutton;
+        private System.Windows.Forms.ComboBox funcombo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datamarc;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboservico;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage future;
@@ -2824,5 +2855,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel produtocompra;
+        private System.Windows.Forms.TextBox precoservico;
+        private System.Windows.Forms.Label label62;
     }
 }

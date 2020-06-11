@@ -22,6 +22,9 @@ namespace Perfumaria
         List<Contacto> ContactosList = new List<Contacto>();
         List<Produto> ProdutosList = new List<Produto>();
         List<Produto> Carrinho = new List<Produto>();
+        List<Servico> ServicesList = new List<Servico>();
+        List<String> FuncMailList = new List<String>();
+        bool typeofbuy;
 
         public Cliente()
         {
@@ -172,17 +175,18 @@ namespace Perfumaria
                     historico_SelectedIndexChanged(historico, null);
                     break;
                 case 2:
+                    getProductsProperties();
+                    searchProducts();
                     orderdescasc.SelectedIndex = 0;
                     orderby.SelectedIndex = 0;
                     categoriacombo.SelectedIndex = 0;
                     marcacombo.SelectedIndex = 0;
                     destinatariocombo.SelectedIndex = 0;
-                    getProductsProperties();
-                    searchProducts();
                     lojagrid.DataSource = ProdutosList.Select(o => new
                     {Nome = o.Nome, Marca = o.Marca, Categoria = o.Categoria, Destinatário = o.Destinatario, Preço = o.Preco }).ToList();
                     break;
                 case 3:
+                    marcacoes_SelectedIndexChanged(marcacoes, null);
                     break;
                 case 4:
                     cupoespontos.Text = C.Pontos.ToString();
@@ -233,7 +237,10 @@ namespace Perfumaria
             switch ((sender as TabControl).SelectedIndex)
             {
                 case 0:
-                    dateTimePicker1.MinDate = DateTime.Today;
+                    datamarc.Format = DateTimePickerFormat.Custom;
+                    datamarc.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+                    datamarc.MinDate = DateTime.Now;
+                    getServicos();
                     break;
                 case 1:
                     futureMarcGrid.DataSource = getClientFutureMarc();
@@ -241,6 +248,32 @@ namespace Perfumaria
             }
 
 
+        }
+
+        private void getServicos()
+        {
+
+            if (!verifySGBDConnection())
+                throw new Exception("Failed to connect to database. \n ERROR");
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM perf.getServicesType ()", cn);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            comboservico.SelectedIndex = -1;
+            comboservico.Items.Clear();
+            funcombo.SelectedIndex = -1;
+            ServicesList.Clear();
+            while (reader.Read())
+            {
+                Servico s = new Servico();
+                s.Tipo = (reader["tipo"].ToString());
+                comboservico.Items.Add(s.Tipo);
+                s.Preco = (Convert.ToDouble(reader["preco"]));
+                s.Id = (int)(reader["id"]);
+                ServicesList.Add(s);
+            };
+
+            cn.Close();
         }
 
         private void onlinetab_SelectedIndexChanged(Object sender, EventArgs e)
@@ -541,8 +574,8 @@ namespace Perfumaria
             // Ignore clicks that are not in our 
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
-                Console.WriteLine("AQUI");
                 Produto p = ProdutosList.ElementAt(e.RowIndex);
+                compraonline.Visible = false;
                 produtocompra.Visible = true;
                 produtofoto.Load(p.Imagem);
                 produtofoto.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -566,8 +599,8 @@ namespace Perfumaria
             // Ignore clicks that are not in our 
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
-                Console.WriteLine("AQUI1");
                 Produto p = ProdutosList.ElementAt(e.RowIndex);
+                compraoffline.Visible = false;
                 produtocompra.Visible = true;
                 produtofoto.Load(p.Imagem);
                 produtofoto.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -644,6 +677,7 @@ namespace Perfumaria
 
         public void compraPresencialDetalhes()
         {
+            typeofbuy = true;
             compraoffline.Visible = true;
             datacompraoff.Text = Compra.Datacompra;
             numcompraoff.Text = Compra.Numero.ToString();
@@ -653,7 +687,8 @@ namespace Perfumaria
         }
 
         public void compraOnlineDetalhes()
-        {   
+        {
+            typeofbuy = false;
             compraonline.Visible = true;
             datacompraon.Text = Compra.Datacompra;
             numerocompraon.Text = Compra.Numero.ToString();
@@ -830,6 +865,94 @@ namespace Perfumaria
         private void button6_Click(object sender, EventArgs e)
         {
             produtocompra.Visible = false;
+            if (typeofbuy)
+                compraoffline.Visible = true;
+            else
+                compraonline.Visible = true;
+        }
+
+        private void comboservico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboservico.SelectedIndex >= 0)
+            {
+                if (!verifySGBDConnection())
+                    throw new Exception("Failed to connect to database. \n ERROR");
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM perf.getFuncService (" + ServicesList[comboservico.SelectedIndex].Id + ")", cn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                funcombo.SelectedIndex = -1;
+                funcombo.Items.Clear();
+
+                FuncMailList.Clear();
+                while (reader.Read()) {
+                    funcombo.Items.Add(reader["fname"].ToString() + " " + reader["lname"].ToString());
+                    FuncMailList.Add(reader["funcionario_email"].ToString());
+
+                }
+                
+              
+       
+
+                precoservico.Text = ServicesList[comboservico.SelectedIndex].Preco.ToString() + "€";
+                erroservico.Visible = false;
+                
+
+                cn.Close();
+            }
+            else {
+                erroservico.Visible = true;
+                precoservico.Text = "";
+                funcombo.Items.Clear();
+                funcombo.SelectedIndex = -1;
+            }
+                
+
+        }
+
+        private void marcarbutton_Click(object sender, EventArgs e)
+        {
+
+            if (comboservico.SelectedIndex > -1 && funcombo.SelectedIndex > -1)
+            {
+                if (!verifySGBDConnection())
+                    return;
+
+                SqlCommand cmd = new SqlCommand("perf.addMarc", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cliente_email", C.Email);
+                cmd.Parameters.AddWithValue("@servico_id", ServicesList[comboservico.SelectedIndex].Id);
+                cmd.Parameters.AddWithValue("@funcionario_email", FuncMailList[funcombo.SelectedIndex]);
+                Console.WriteLine(datamarc.Value);
+                cmd.Parameters.AddWithValue("@dataMarc", datamarc.Value);
+                cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+                String rm = "";
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    rm = cmd.Parameters["@responseMessage"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Failed to Execute.");
+                }
+                finally
+                {
+
+                    MessageBox.Show(rm);
+
+
+                }
+
+
+                cn.Close();
+            }
+            else
+                MessageBox.Show("Selecione as opções.");
+
         }
     }
 }
