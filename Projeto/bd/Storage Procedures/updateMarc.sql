@@ -3,6 +3,7 @@ GO
 
 GO
 CREATE PROCEDURE perf.updateMarc
+	@cliente_email VARCHAR(255),
     @idMarc INT,
     @funcionario_email VARCHAR(255),
     @dataMarc DATETIME = null,
