@@ -233,6 +233,8 @@ namespace Perfumaria
                     Favourites.DataSource = getClientFavourites();
                     break;
                 case 6:
+                    carrinhogrid.DataSource = Carrinho.Select(o => new
+                    { Nome = o.Nome, Marca = o.Marca, Categoria = o.Categoria, Preço = o.Preco, Unidades = o.Unidades }).ToList();
                     break;
 
             }
@@ -1221,6 +1223,48 @@ namespace Perfumaria
 
 
             cn.Close();
+        }
+
+        private void unidades_ValueChanged(object sender, EventArgs e)
+        {
+            if (unidades.Value > ProdutosList[selectedProductIndex].Stock)
+                semstock.Visible = true;
+            else
+                semstock.Visible = false;
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDown1.Value > ProdutosList[selectedProductIndex].Stock)
+                semstoock.Visible = true;
+            else
+                semstoock.Visible = false;
+
+        }
+
+        private void carrinhobutton_Click(object sender, EventArgs e)
+        {
+            if (!semstoock.Visible && numericUpDown1.Value > 0)
+            {
+                Carrinho.RemoveAll(x => x.Id == ProdutosList[selectedProductIndex].Id);
+                ProdutosList[selectedProductIndex].Unidades += (int)numericUpDown1.Value;
+                Carrinho.Add(ProdutosList[selectedProductIndex]);
+
+            }
+            else
+                MessageBox.Show("Verifique as unidades!");
+        }
+
+        private void carrinhobutton2_Click(object sender, EventArgs e)
+        {
+            if (!semstock.Visible && unidades.Value>0)
+            {
+                Carrinho.RemoveAll(x => x.Id == ProdutosList[selectedProductIndex].Id);
+                ProdutosList[selectedProductIndex].Unidades += (int)unidades.Value;
+                Carrinho.Add(ProdutosList[selectedProductIndex]);
+
+            }else
+                MessageBox.Show("Verifique as unidades!");
         }
     }
 }

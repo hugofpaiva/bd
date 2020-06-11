@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Conta = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -72,7 +72,7 @@
             this.produtocompra = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label49 = new System.Windows.Forms.Label();
+            this.semstoock = new System.Windows.Forms.Label();
             this.produtodestinatario = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
             this.produtopreco = new System.Windows.Forms.TextBox();
@@ -212,10 +212,7 @@
             this.cupontextbox = new System.Windows.Forms.TextBox();
             this.Favoritos = new System.Windows.Forms.TabPage();
             this.Favourites = new System.Windows.Forms.DataGridView();
-            this.Remover = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -238,6 +235,10 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.contactcreate = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
+            this.Remover = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.carrinhogrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.Conta.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -282,9 +283,9 @@
             this.Favoritos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Favourites)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carrinhogrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -638,9 +639,9 @@
             // 
             // dataGridViewButtonColumn2
             // 
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewButtonColumn2.HeaderText = "Eliminar";
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             this.dataGridViewButtonColumn2.ReadOnly = true;
@@ -687,7 +688,7 @@
             // 
             this.produtocompra.Controls.Add(this.button8);
             this.produtocompra.Controls.Add(this.numericUpDown1);
-            this.produtocompra.Controls.Add(this.label49);
+            this.produtocompra.Controls.Add(this.semstoock);
             this.produtocompra.Controls.Add(this.produtodestinatario);
             this.produtocompra.Controls.Add(this.label50);
             this.produtocompra.Controls.Add(this.produtopreco);
@@ -734,18 +735,19 @@
             this.numericUpDown1.Size = new System.Drawing.Size(58, 20);
             this.numericUpDown1.TabIndex = 82;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // label49
+            // semstoock
             // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.ForeColor = System.Drawing.Color.DarkRed;
-            this.label49.Location = new System.Drawing.Point(548, 361);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(77, 14);
-            this.label49.TabIndex = 81;
-            this.label49.Text = "Sem Stock!";
-            this.label49.Visible = false;
+            this.semstoock.AutoSize = true;
+            this.semstoock.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.semstoock.ForeColor = System.Drawing.Color.DarkRed;
+            this.semstoock.Location = new System.Drawing.Point(534, 361);
+            this.semstoock.Name = "semstoock";
+            this.semstoock.Size = new System.Drawing.Size(91, 14);
+            this.semstoock.TabIndex = 81;
+            this.semstoock.Text = "Stock Insuf.";
+            this.semstoock.Visible = false;
             // 
             // produtodestinatario
             // 
@@ -940,6 +942,7 @@
             this.carrinhobutton.TabIndex = 64;
             this.carrinhobutton.Text = "Adicionar ao Carrinho";
             this.carrinhobutton.UseVisualStyleBackColor = true;
+            this.carrinhobutton.Click += new System.EventHandler(this.carrinhobutton_Click);
             // 
             // label58
             // 
@@ -1361,9 +1364,9 @@
             // 
             // dataGridViewButtonColumn5
             // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn5.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewButtonColumn5.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
             this.dataGridViewButtonColumn5.ReadOnly = true;
@@ -1580,9 +1583,9 @@
             // 
             // dataGridViewButtonColumn4
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewButtonColumn4.HeaderText = "Detalhes";
             this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             this.dataGridViewButtonColumn4.ReadOnly = true;
@@ -1611,9 +1614,9 @@
             // 
             // Detalhes
             // 
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(10);
-            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle4;
             this.Detalhes.HeaderText = "Detalhes";
             this.Detalhes.Name = "Detalhes";
             this.Detalhes.ReadOnly = true;
@@ -1713,6 +1716,7 @@
             this.carrinhobutton2.TabIndex = 83;
             this.carrinhobutton2.Text = "Adicionar ao Carrinho";
             this.carrinhobutton2.UseVisualStyleBackColor = true;
+            this.carrinhobutton2.Click += new System.EventHandler(this.carrinhobutton2_Click);
             // 
             // unidades
             // 
@@ -1721,17 +1725,18 @@
             this.unidades.Size = new System.Drawing.Size(58, 20);
             this.unidades.TabIndex = 82;
             this.unidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.unidades.ValueChanged += new System.EventHandler(this.unidades_ValueChanged);
             // 
             // semstock
             // 
             this.semstock.AutoSize = true;
             this.semstock.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.semstock.ForeColor = System.Drawing.Color.DarkRed;
-            this.semstock.Location = new System.Drawing.Point(548, 361);
+            this.semstock.Location = new System.Drawing.Point(527, 361);
             this.semstock.Name = "semstock";
-            this.semstock.Size = new System.Drawing.Size(77, 14);
+            this.semstock.Size = new System.Drawing.Size(91, 14);
             this.semstock.TabIndex = 81;
-            this.semstock.Text = "Sem Stock!";
+            this.semstock.Text = "Stock Insuf.";
             this.semstock.Visible = false;
             // 
             // destinatarioproduto
@@ -2111,9 +2116,9 @@
             // 
             // dataGridViewButtonColumn6
             // 
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn6.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewButtonColumn6.HeaderText = "Comprar";
             this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
             this.dataGridViewButtonColumn6.ReadOnly = true;
@@ -2420,29 +2425,9 @@
             this.Favourites.TabIndex = 1;
             this.Favourites.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Favourites_CellContentClick);
             // 
-            // Remover
-            // 
-            this.Remover.HeaderText = "Remover";
-            this.Remover.Name = "Remover";
-            this.Remover.ReadOnly = true;
-            this.Remover.Text = "Remover";
-            this.Remover.ToolTipText = "Remover";
-            // 
-            // dataGridViewButtonColumn3
-            // 
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(10);
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle30;
-            this.dataGridViewButtonColumn3.HeaderText = "Comprar";
-            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-            this.dataGridViewButtonColumn3.ReadOnly = true;
-            this.dataGridViewButtonColumn3.Text = "Comprar";
-            this.dataGridViewButtonColumn3.ToolTipText = "Comprar";
-            this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
-            // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.dataGridView1);
+            this.tabPage5.Controls.Add(this.carrinhogrid);
             this.tabPage5.Controls.Add(this.panel3);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
@@ -2450,14 +2435,6 @@
             this.tabPage5.TabIndex = 6;
             this.tabPage5.Text = "Carrinho";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(768, 326);
-            this.dataGridView1.TabIndex = 3;
             // 
             // panel3
             // 
@@ -2687,6 +2664,54 @@
             this.label14.TabIndex = 48;
             this.label14.Text = "Criação de Contacto";
             // 
+            // Remover
+            // 
+            this.Remover.HeaderText = "Remover";
+            this.Remover.Name = "Remover";
+            this.Remover.ReadOnly = true;
+            this.Remover.Text = "Remover";
+            this.Remover.ToolTipText = "Remover";
+            this.Remover.UseColumnTextForButtonValue = true;
+            // 
+            // dataGridViewButtonColumn3
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewButtonColumn3.HeaderText = "Comprar";
+            this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
+            this.dataGridViewButtonColumn3.ReadOnly = true;
+            this.dataGridViewButtonColumn3.Text = "Comprar";
+            this.dataGridViewButtonColumn3.ToolTipText = "Comprar";
+            this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
+            // 
+            // carrinhogrid
+            // 
+            this.carrinhogrid.AllowUserToAddRows = false;
+            this.carrinhogrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.carrinhogrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.carrinhogrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.carrinhogrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewButtonColumn1});
+            this.carrinhogrid.Location = new System.Drawing.Point(2, 69);
+            this.carrinhogrid.MultiSelect = false;
+            this.carrinhogrid.Name = "carrinhogrid";
+            this.carrinhogrid.ReadOnly = true;
+            this.carrinhogrid.RowHeadersVisible = false;
+            this.carrinhogrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.carrinhogrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.carrinhogrid.Size = new System.Drawing.Size(765, 331);
+            this.carrinhogrid.TabIndex = 3;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.HeaderText = "Remover";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Text = "Remover";
+            this.dataGridViewButtonColumn1.ToolTipText = "Remover";
+            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2749,11 +2774,11 @@
             this.Favoritos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Favourites)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carrinhogrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2877,8 +2902,6 @@
         private System.Windows.Forms.Button fecharonline;
         private System.Windows.Forms.Button fecharoffline;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private System.Windows.Forms.DataGridViewButtonColumn Remover;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
         private System.Windows.Forms.DataGridView cupoesgrid;
         private System.Windows.Forms.DataGridView lojagrid;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn6;
@@ -2909,7 +2932,7 @@
         private System.Windows.Forms.Label semstock;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label semstoock;
         private System.Windows.Forms.TextBox produtodestinatario;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TextBox produtopreco;
@@ -2936,7 +2959,6 @@
         private System.Windows.Forms.Button carrinhobutton2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Button button8;
@@ -2963,5 +2985,9 @@
         private System.Windows.Forms.TextBox country;
         private System.Windows.Forms.Label telm;
         private System.Windows.Forms.TextBox telele;
+        private System.Windows.Forms.DataGridViewButtonColumn Remover;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
+        private System.Windows.Forms.DataGridView carrinhogrid;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
     }
 }
