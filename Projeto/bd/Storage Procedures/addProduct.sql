@@ -1,6 +1,6 @@
 GO
 CREATE PROCEDURE perf.addProduct
-    @preco INT,
+    @preco FLOAT,
     @familiaolfativa VARCHAR(30) = NULL,
     @categoria VARCHAR(30),
     @nome VARCHAR(30),

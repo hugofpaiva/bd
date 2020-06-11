@@ -1,7 +1,7 @@
 GO
 CREATE PROCEDURE perf.changeProduct
     @id INT,
-    @preco INT,
+    @preco FLOAT,
     @familiaolfativa VARCHAR(30) = NULL,
     @categoria VARCHAR(30),
     @nome VARCHAR(30),
