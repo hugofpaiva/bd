@@ -1349,5 +1349,41 @@ namespace Perfumaria
             }
 
         }
+
+        private void ratingbutton_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+                return;
+
+            SqlCommand cmd = new SqlCommand("perf.changeRating", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@compranum", numerocompraon.Text);
+            cmd.Parameters.AddWithValue("@clienteemail", C.Email);
+            cmd.Parameters.AddWithValue("@rating", rating.Text);
+
+
+            cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+            String rm = "";
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                rm = cmd.Parameters["@responseMessage"].Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to Execute");
+            }
+            finally
+            {
+                MessageBox.Show(rm);
+                tabControl1_SelectedIndexChanged(tabControl1, null);
+            }
+
+
+            cn.Close();
+        }
     }
 }
