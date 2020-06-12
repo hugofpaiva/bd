@@ -1,3 +1,6 @@
+DROP PROCEDURE perf.getDetailsFromBuy;
+GO
+
 CREATE PROCEDURE perf.getDetailsFromBuy
     @numero INT
 AS

@@ -1,3 +1,6 @@
+DROP FUNCTION perf.clientServicesHistory;
+GO
+
 CREATE FUNCTION perf.clientServicesHistory (@email VARCHAR(255)) RETURNS TABLE 
 AS
     RETURN (SELECT dataMarc, tipo, servico.preco

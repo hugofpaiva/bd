@@ -8,7 +8,8 @@ BEGIN
     BEGIN TRAN
     SET NOCOUNT ON;
     DECLARE @stock as INT;
-    SELECT @stock = stock FROM inserted;
+	DECLARE @produtoid as INT;
+    SELECT @stock = stock, @produtoid = id FROM inserted;
     IF (@stock < 0)
     BEGIN
         RAISERROR('Stock inválido.', 16, 1);
@@ -28,3 +29,4 @@ BEGIN
     END CATCH
 	END
 END
+GO
