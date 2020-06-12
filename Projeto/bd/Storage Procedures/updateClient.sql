@@ -11,8 +11,8 @@ CREATE PROCEDURE perf.updateClient
     @responseMsg nvarchar(250) output
 AS
 BEGIN
+	BEGIN TRANSACTION
 	SET NOCOUNT ON
-
 	BEGIN TRY
 
 		IF @fname IS NOT NULL
@@ -51,9 +51,11 @@ BEGIN
 		END
 
 		SET @responseMsg='Success'
+		COMMIT TRANSACTION
 	END TRY
 	BEGIN CATCH
 		SET @responseMsg='Erro'
+		ROLLBACK
 	END CATCH
 END
 GO

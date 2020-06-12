@@ -10,7 +10,6 @@ CREATE PROCEDURE perf.addMarc
     @responseMessage VARCHAR(250) = 'Erro! Tente noutra hora.' OUTPUT
 AS
 BEGIN
-	BEGIN TRANSACTION
     SET NOCOUNT ON
     BEGIN TRY	
 		DECLARE @duracao INT
@@ -29,11 +28,9 @@ BEGIN
 				SET @responseMessage='Marcação efetuado com sucesso!'
 				END
 			END
-			COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Failure'
-		ROLLBACK
     END CATCH
 	
 

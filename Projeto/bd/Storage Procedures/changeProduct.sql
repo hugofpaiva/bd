@@ -19,7 +19,9 @@ CREATE PROCEDURE perf.changeProduct
     @emailFunc VARCHAR(255)
 AS
 BEGIN
+    BEGIN TRANSACTION
     SET NOCOUNT ON
+    BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator>0)
             BEGIN
                 IF @preco <> 0
@@ -103,6 +105,11 @@ BEGIN
                 SET deleted = @deleted
                 WHERE id = @id
             END
+            COMMIT TRANSACTION
+    END TRY
+    BEGIN CATCH
+    ROLLBACK
+    END CATCH
             
 END
 GO

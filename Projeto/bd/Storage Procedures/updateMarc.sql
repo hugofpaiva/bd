@@ -10,7 +10,6 @@ CREATE PROCEDURE perf.updateMarc
 	@responseMessage NVARCHAR(250) = 'Erro! Tente noutra hora.' OUTPUT
 AS
 BEGIN
-	BEGIN TRANSACTION
 	BEGIN TRY
 		SET NOCOUNT ON
 			IF EXISTS (SELECT email=@funcionario_email from Perfumaria.perf.funcionario)
@@ -45,11 +44,9 @@ BEGIN
 
 				
 			END
-	COMMIT TRANSACTION
 	END TRY
 	BEGIN CATCH
 		SET @responseMessage='Failed'
-		ROLLBACK
 	END CATCH 
 END
 GO

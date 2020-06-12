@@ -5,7 +5,6 @@ CREATE TRIGGER perf.createContactTrigger ON perf.[contacto]
 AFTER INSERT
 AS
 BEGIN
-    BEGIN TRAN
     SET NOCOUNT ON;
     DECLARE @id AS INT;
     DECLARE @email AS VARCHAR(255); 
@@ -16,7 +15,6 @@ BEGIN
 		UPDATE Perfumaria.perf.utilizador
 		SET  contacto_default_id = @id
 		WHERE  email = @email
-        COMMIT TRAN
     END TRY
     BEGIN CATCH
         raiserror ('Não foi possível colocar o contacto como default', 16, 1);

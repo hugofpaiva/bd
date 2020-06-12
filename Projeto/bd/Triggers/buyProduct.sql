@@ -5,7 +5,6 @@ CREATE TRIGGER perf.buyProductTrigger ON perf.[compra_tem_produto]
 AFTER INSERT
 AS
 BEGIN
-    BEGIN TRAN
     SET NOCOUNT ON;
     DECLARE @unidades AS INT;
     DECLARE @produtoid AS INT;
@@ -23,7 +22,6 @@ BEGIN
 		UPDATE Perfumaria.perf.produto
 		SET stock = 0, deleted = 1
 		WHERE  id = @produtoid
-        COMMIT TRAN
     END TRY
     BEGIN CATCH
         raiserror ('Não foi possível atribuir os pontos', 16, 1);

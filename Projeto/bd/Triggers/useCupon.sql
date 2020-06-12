@@ -5,7 +5,6 @@ CREATE TRIGGER perf.useCuponTrigger ON perf.[cliente_usa_cupao]
 AFTER INSERT
 AS
 BEGIN
-    BEGIN TRAN
     SET NOCOUNT ON;
     DECLARE @cupao as CHAR(10);
     DECLARE @email as VARCHAR(255);
@@ -16,7 +15,6 @@ BEGIN
         UPDATE perf.cliente
         SET pontos += @pontos
         WHERE email = @email
-        COMMIT TRAN
     END TRY
     BEGIN CATCH
         raiserror ('Não foi possível atribuir os pontos', 16, 1);

@@ -5,7 +5,6 @@ CREATE TRIGGER perf.changeProductTrigger ON perf.[produto]
 AFTER INSERT, UPDATE
 AS
 BEGIN
-    BEGIN TRAN
     SET NOCOUNT ON;
     DECLARE @stock as INT;
 	DECLARE @produtoid as INT;
@@ -21,7 +20,6 @@ BEGIN
 		UPDATE Perfumaria.perf.produto
 		SET deleted = 1
 		WHERE  id = @produtoid
-        COMMIT TRAN
     END TRY
     BEGIN CATCH
         raiserror ('Não foi possível mudar o produto.', 16, 1);
