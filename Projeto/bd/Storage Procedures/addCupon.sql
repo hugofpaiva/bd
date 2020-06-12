@@ -10,6 +10,7 @@ CREATE PROCEDURE perf.addCupon
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
+BEGIN TRANSACTION
     SET NOCOUNT ON
     
     BEGIN TRY
@@ -27,10 +28,11 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Permition denied'
-
+    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Failed'
+        ROLLBACK
     END CATCH
 
 END

@@ -16,6 +16,7 @@ CREATE PROCEDURE perf.RegisterFunc
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
+    BEGIN TRANSACTION
     SET NOCOUNT ON
 
     BEGIN TRY
@@ -29,10 +30,11 @@ BEGIN
     VALUES(@email, @administrator, @salario)
 
     SET @responseMessage='Success'
-
+    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage=ERROR_MESSAGE() 
+        ROLLBACK
     END CATCH
 
 END
@@ -57,6 +59,7 @@ CREATE PROCEDURE perf.RegisterClient
     @responseMessage VARCHAR(250) OUTPUT
 AS
 BEGIN
+    BEGIN TRANSACTION
     SET NOCOUNT ON
 
     BEGIN TRY
@@ -70,10 +73,11 @@ BEGIN
     VALUES(@email, @pontos, @newsletter, @pagamento)
 
     SET @responseMessage='Success'
-
+    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage=ERROR_MESSAGE() 
+        ROLLBACK
     END CATCH
 
 END

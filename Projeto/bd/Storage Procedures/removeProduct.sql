@@ -5,6 +5,7 @@ CREATE PROCEDURE perf.removeProduct
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
+    BEGIN TRANSACTION
     SET NOCOUNT ON
     
     BEGIN TRY
@@ -17,10 +18,11 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Permition denied'
-
+    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage=ERROR_MESSAGE() 
+        ROLLBACK
     END CATCH
 
 END
