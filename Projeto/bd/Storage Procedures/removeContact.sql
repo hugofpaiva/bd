@@ -8,7 +8,6 @@ CREATE PROCEDURE perf.removeContact
 AS
 BEGIN
     SET NOCOUNT ON
-    BEGIN TRANSACTION
     BEGIN TRY
         IF EXISTS(SELECT 1 FROM Perfumaria.perf.contacto WHERE utilizador_email=@email AND id=@id)
             BEGIN
@@ -24,11 +23,9 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Permition denied'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='ERRO' 
-        ROLLBACK
     END CATCH
 
 END

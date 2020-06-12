@@ -20,8 +20,6 @@ CREATE PROCEDURE perf.changeProduct
 AS
 BEGIN
     SET NOCOUNT ON
-    
-
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator>0)
             BEGIN
                 IF @preco <> 0

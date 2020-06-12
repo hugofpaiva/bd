@@ -122,7 +122,6 @@ namespace Perfumaria
                     orderby.SelectedIndex = 0; 
                     getProductsProperties();
                     marcacombo.SelectedIndex = 0;
-                    destinatariocombo.SelectedIndex = 0;
                     categoriacombo.SelectedIndex = 0;
                     searchProducts();
                     lojagrid.DataSource = ProdutosList.Select(o => new
@@ -473,17 +472,7 @@ namespace Perfumaria
                 categoriacombo.Items.Add(reader["categoria"].ToString());
             };
             reader.Close();
-            if (!verifySGBDConnection())
-                throw new Exception("Failed to connect to database. \n ERROR");
-            cmd = new SqlCommand("SELECT DISTINCT destinatario FROM perf.getAllProducts () WHERE destinatario IS NOT NULL", cn);
-            reader = cmd.ExecuteReader();
-            destinatariocombo.Items.Clear();
-            destinatariocombo.Items.Add("Todos");
-            while (reader.Read())
-            {
-                destinatariocombo.Items.Add(reader["destinatario"].ToString());
-            };
-            reader.Close();
+
             cn.Close();
         }
 
@@ -505,10 +494,7 @@ namespace Perfumaria
             {
                 cmd.Parameters.AddWithValue("@categoria", categoriacombo.SelectedItem.ToString());
             }
-            if (destinatariocombo.SelectedIndex > 0)
-            {
-                cmd.Parameters.AddWithValue("@destinatario", destinatariocombo.SelectedItem.ToString());
-            }
+
             if (orderby.SelectedIndex > -1)
             {
                 cmd.Parameters.AddWithValue("@orderby", orderby.SelectedItem.ToString());

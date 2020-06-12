@@ -12,19 +12,15 @@ CREATE PROCEDURE perf.addContact
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-BEGIN TRANSACTION
     SET NOCOUNT ON
     BEGIN TRY
         INSERT INTO Perfumaria.perf.contacto
         (utilizador_email, telemovel, codigo_postal, pais, endereco, apartamento, localidade)
         VALUES(@utilizador_email, @telemovel, @codigo_postal, @pais, @endereco, @apartamento, @localidade) 
         SET @responseMessage='Success'
-        COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Erro'
-        ROLLBACK
     END CATCH
-
 END
 GO

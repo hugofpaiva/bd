@@ -7,7 +7,6 @@ CREATE PROCEDURE perf.clientAddFavourite
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-    BEGIN TRANSACTION
     SET NOCOUNT ON
     BEGIN TRY
         IF NOT EXISTS(SELECT produtoid FROM Perfumaria.perf.clientefavorita WHERE clienteemail=@clienteemail AND produtoid=@produtoid)
@@ -19,11 +18,9 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Já existe!'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Erro' 
-        ROLLBACK
     END CATCH
 
 END

@@ -10,9 +10,7 @@ CREATE PROCEDURE perf.addCupon
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-BEGIN TRANSACTION
     SET NOCOUNT ON
-    
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
@@ -28,11 +26,9 @@ BEGIN TRANSACTION
             END
         ELSE
             SET @responseMessage='Permition denied'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Failed'
-        ROLLBACK
     END CATCH
 
 END

@@ -10,7 +10,6 @@ CREATE PROCEDURE perf.Login
 AS
 BEGIN
     SET NOCOUNT ON
-
     IF EXISTS (SELECT TOP 1 email FROM Perfumaria.perf.utilizador WHERE email = @email)
     BEGIN
         SET @email=(SELECT email FROM Perfumaria.perf.utilizador

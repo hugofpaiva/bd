@@ -28,11 +28,18 @@ namespace Perfumaria
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.conta = new System.Windows.Forms.TabPage();
             this.contafunc = new System.Windows.Forms.TabControl();
             this.Informações = new System.Windows.Forms.TabPage();
+            this.changepw = new System.Windows.Forms.Panel();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.newpw2 = new System.Windows.Forms.TextBox();
+            this.newpw = new System.Windows.Forms.TextBox();
+            this.change = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
             this.lname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.salario = new System.Windows.Forms.TextBox();
@@ -134,10 +141,9 @@ namespace Perfumaria
             this.label36 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lojagrid = new System.Windows.Forms.DataGridView();
+            this.changeproduct = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.botaopesquisar = new System.Windows.Forms.Button();
-            this.label35 = new System.Windows.Forms.Label();
-            this.destinatariocombo = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.categoriacombo = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -252,18 +258,11 @@ namespace Perfumaria
             this.addservbotao = new System.Windows.Forms.Button();
             this.servicosgrid = new System.Windows.Forms.DataGridView();
             this.servfuncs = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.changepw = new System.Windows.Forms.Panel();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.newpw2 = new System.Windows.Forms.TextBox();
-            this.newpw = new System.Windows.Forms.TextBox();
-            this.change = new System.Windows.Forms.Button();
-            this.cancel = new System.Windows.Forms.Button();
-            this.changeproduct = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.conta.SuspendLayout();
             this.contafunc.SuspendLayout();
             this.Informações.SuspendLayout();
+            this.changepw.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto)).BeginInit();
             this.Contactos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactsgrid)).BeginInit();
@@ -311,7 +310,6 @@ namespace Perfumaria
             this.addnewservico.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).BeginInit();
-            this.changepw.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -335,7 +333,7 @@ namespace Perfumaria
             this.conta.Controls.Add(this.contafunc);
             this.conta.Location = new System.Drawing.Point(4, 22);
             this.conta.Name = "conta";
-            this.conta.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.conta.Padding = new System.Windows.Forms.Padding(3);
             this.conta.Size = new System.Drawing.Size(768, 400);
             this.conta.TabIndex = 0;
             this.conta.Text = "Conta";
@@ -368,11 +366,87 @@ namespace Perfumaria
             this.Informações.Controls.Add(this.foto);
             this.Informações.Location = new System.Drawing.Point(4, 22);
             this.Informações.Name = "Informações";
-            this.Informações.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Informações.Padding = new System.Windows.Forms.Padding(3);
             this.Informações.Size = new System.Drawing.Size(764, 378);
             this.Informações.TabIndex = 0;
             this.Informações.Text = "Informações";
             this.Informações.UseVisualStyleBackColor = true;
+            // 
+            // changepw
+            // 
+            this.changepw.Controls.Add(this.label80);
+            this.changepw.Controls.Add(this.label81);
+            this.changepw.Controls.Add(this.newpw2);
+            this.changepw.Controls.Add(this.newpw);
+            this.changepw.Controls.Add(this.change);
+            this.changepw.Controls.Add(this.cancel);
+            this.changepw.Location = new System.Drawing.Point(28, 16);
+            this.changepw.Name = "changepw";
+            this.changepw.Size = new System.Drawing.Size(709, 343);
+            this.changepw.TabIndex = 65;
+            this.changepw.Visible = false;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label80.Location = new System.Drawing.Point(241, 140);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(238, 18);
+            this.label80.TabIndex = 48;
+            this.label80.Text = "Confirmar Nova Password";
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label81.Location = new System.Drawing.Point(291, 83);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(138, 18);
+            this.label81.TabIndex = 47;
+            this.label81.Text = "Nova Password";
+            // 
+            // newpw2
+            // 
+            this.newpw2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newpw2.Location = new System.Drawing.Point(224, 161);
+            this.newpw2.Multiline = true;
+            this.newpw2.Name = "newpw2";
+            this.newpw2.Size = new System.Drawing.Size(268, 30);
+            this.newpw2.TabIndex = 45;
+            this.newpw2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // newpw
+            // 
+            this.newpw.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newpw.Location = new System.Drawing.Point(224, 104);
+            this.newpw.Multiline = true;
+            this.newpw.Name = "newpw";
+            this.newpw.Size = new System.Drawing.Size(268, 30);
+            this.newpw.TabIndex = 44;
+            this.newpw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // change
+            // 
+            this.change.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.change.Location = new System.Drawing.Point(244, 289);
+            this.change.Name = "change";
+            this.change.Size = new System.Drawing.Size(94, 38);
+            this.change.TabIndex = 1;
+            this.change.Text = "Alterar";
+            this.change.UseVisualStyleBackColor = true;
+            this.change.Click += new System.EventHandler(this.change_Click);
+            // 
+            // cancel
+            // 
+            this.cancel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel.Location = new System.Drawing.Point(389, 289);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(103, 38);
+            this.cancel.TabIndex = 0;
+            this.cancel.Text = "Cancelar";
+            this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // lname
             // 
@@ -497,7 +571,7 @@ namespace Perfumaria
             this.Contactos.Controls.Add(this.contactsgrid);
             this.Contactos.Location = new System.Drawing.Point(4, 22);
             this.Contactos.Name = "Contactos";
-            this.Contactos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Contactos.Padding = new System.Windows.Forms.Padding(3);
             this.Contactos.Size = new System.Drawing.Size(764, 378);
             this.Contactos.TabIndex = 1;
             this.Contactos.Text = "Contactos";
@@ -524,7 +598,7 @@ namespace Perfumaria
             this.Histórico.Controls.Add(this.historico);
             this.Histórico.Location = new System.Drawing.Point(4, 22);
             this.Histórico.Name = "Histórico";
-            this.Histórico.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Histórico.Padding = new System.Windows.Forms.Padding(3);
             this.Histórico.Size = new System.Drawing.Size(768, 400);
             this.Histórico.TabIndex = 1;
             this.Histórico.Text = "Histórico";
@@ -546,7 +620,7 @@ namespace Perfumaria
             this.Compras.Controls.Add(this.sellHistory);
             this.Compras.Location = new System.Drawing.Point(4, 22);
             this.Compras.Name = "Compras";
-            this.Compras.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Compras.Padding = new System.Windows.Forms.Padding(3);
             this.Compras.Size = new System.Drawing.Size(764, 378);
             this.Compras.TabIndex = 0;
             this.Compras.Text = "Vendas";
@@ -587,7 +661,7 @@ namespace Perfumaria
             this.tabPage1.Controls.Add(this.label32);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(747, 343);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Detalhes da Venda";
@@ -735,7 +809,7 @@ namespace Perfumaria
             this.tabPage2.Controls.Add(this.produtosvenda);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(747, 343);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Produtos";
@@ -778,9 +852,9 @@ namespace Perfumaria
             // 
             // Detalhes
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10);
-            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle1;
             this.Detalhes.HeaderText = "Detalhes";
             this.Detalhes.MinimumWidth = 10;
             this.Detalhes.Name = "Detalhes";
@@ -794,7 +868,7 @@ namespace Perfumaria
             this.Servicos.Controls.Add(this.funcservicos);
             this.Servicos.Location = new System.Drawing.Point(4, 22);
             this.Servicos.Name = "Servicos";
-            this.Servicos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Servicos.Padding = new System.Windows.Forms.Padding(3);
             this.Servicos.Size = new System.Drawing.Size(764, 378);
             this.Servicos.TabIndex = 1;
             this.Servicos.Text = "Serviços";
@@ -857,10 +931,10 @@ namespace Perfumaria
             this.altpanel.Controls.Add(this.label71);
             this.altpanel.Controls.Add(this.label72);
             this.altpanel.Controls.Add(this.label73);
-            this.altpanel.Location = new System.Drawing.Point(0, 2);
-            this.altpanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altpanel.Location = new System.Drawing.Point(2, 2);
+            this.altpanel.Margin = new System.Windows.Forms.Padding(2);
             this.altpanel.Name = "altpanel";
-            this.altpanel.Size = new System.Drawing.Size(766, 397);
+            this.altpanel.Size = new System.Drawing.Size(764, 397);
             this.altpanel.TabIndex = 33;
             this.altpanel.Visible = false;
             this.altpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.altpanel_Paint);
@@ -869,7 +943,7 @@ namespace Perfumaria
             // 
             this.deleteproduct.AutoSize = true;
             this.deleteproduct.Location = new System.Drawing.Point(404, 357);
-            this.deleteproduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteproduct.Margin = new System.Windows.Forms.Padding(2);
             this.deleteproduct.Name = "deleteproduct";
             this.deleteproduct.Size = new System.Drawing.Size(99, 17);
             this.deleteproduct.TabIndex = 33;
@@ -879,7 +953,7 @@ namespace Perfumaria
             // alterarfechar
             // 
             this.alterarfechar.Location = new System.Drawing.Point(560, 22);
-            this.alterarfechar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.alterarfechar.Margin = new System.Windows.Forms.Padding(2);
             this.alterarfechar.Name = "alterarfechar";
             this.alterarfechar.Size = new System.Drawing.Size(158, 31);
             this.alterarfechar.TabIndex = 25;
@@ -890,7 +964,7 @@ namespace Perfumaria
             // alterarcheck
             // 
             this.alterarcheck.Location = new System.Drawing.Point(560, 347);
-            this.alterarcheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.alterarcheck.Margin = new System.Windows.Forms.Padding(2);
             this.alterarcheck.Name = "alterarcheck";
             this.alterarcheck.Size = new System.Drawing.Size(158, 31);
             this.alterarcheck.TabIndex = 24;
@@ -901,7 +975,7 @@ namespace Perfumaria
             // altpreco
             // 
             this.altpreco.Location = new System.Drawing.Point(140, 124);
-            this.altpreco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altpreco.Margin = new System.Windows.Forms.Padding(2);
             this.altpreco.Name = "altpreco";
             this.altpreco.Size = new System.Drawing.Size(209, 20);
             this.altpreco.TabIndex = 23;
@@ -909,7 +983,7 @@ namespace Perfumaria
             // altmarca
             // 
             this.altmarca.Location = new System.Drawing.Point(140, 177);
-            this.altmarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altmarca.Margin = new System.Windows.Forms.Padding(2);
             this.altmarca.Name = "altmarca";
             this.altmarca.Size = new System.Drawing.Size(209, 20);
             this.altmarca.TabIndex = 22;
@@ -917,7 +991,7 @@ namespace Perfumaria
             // altstock
             // 
             this.altstock.Location = new System.Drawing.Point(140, 241);
-            this.altstock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altstock.Margin = new System.Windows.Forms.Padding(2);
             this.altstock.Name = "altstock";
             this.altstock.Size = new System.Drawing.Size(209, 20);
             this.altstock.TabIndex = 21;
@@ -925,7 +999,7 @@ namespace Perfumaria
             // altdesc
             // 
             this.altdesc.Location = new System.Drawing.Point(140, 296);
-            this.altdesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altdesc.Margin = new System.Windows.Forms.Padding(2);
             this.altdesc.Name = "altdesc";
             this.altdesc.Size = new System.Drawing.Size(209, 20);
             this.altdesc.TabIndex = 20;
@@ -933,7 +1007,7 @@ namespace Perfumaria
             // altimagem
             // 
             this.altimagem.Location = new System.Drawing.Point(140, 355);
-            this.altimagem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altimagem.Margin = new System.Windows.Forms.Padding(2);
             this.altimagem.Name = "altimagem";
             this.altimagem.Size = new System.Drawing.Size(209, 20);
             this.altimagem.TabIndex = 19;
@@ -941,7 +1015,7 @@ namespace Perfumaria
             // alttamanho
             // 
             this.alttamanho.Location = new System.Drawing.Point(536, 81);
-            this.alttamanho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.alttamanho.Margin = new System.Windows.Forms.Padding(2);
             this.alttamanho.Name = "alttamanho";
             this.alttamanho.Size = new System.Drawing.Size(209, 20);
             this.alttamanho.TabIndex = 18;
@@ -949,7 +1023,7 @@ namespace Perfumaria
             // altcat
             // 
             this.altcat.Location = new System.Drawing.Point(536, 124);
-            this.altcat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altcat.Margin = new System.Windows.Forms.Padding(2);
             this.altcat.Name = "altcat";
             this.altcat.Size = new System.Drawing.Size(209, 20);
             this.altcat.TabIndex = 17;
@@ -957,7 +1031,7 @@ namespace Perfumaria
             // altlinha
             // 
             this.altlinha.Location = new System.Drawing.Point(536, 177);
-            this.altlinha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altlinha.Margin = new System.Windows.Forms.Padding(2);
             this.altlinha.Name = "altlinha";
             this.altlinha.Size = new System.Drawing.Size(209, 20);
             this.altlinha.TabIndex = 16;
@@ -965,7 +1039,7 @@ namespace Perfumaria
             // altdest
             // 
             this.altdest.Location = new System.Drawing.Point(536, 241);
-            this.altdest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altdest.Margin = new System.Windows.Forms.Padding(2);
             this.altdest.Name = "altdest";
             this.altdest.Size = new System.Drawing.Size(209, 20);
             this.altdest.TabIndex = 15;
@@ -973,7 +1047,7 @@ namespace Perfumaria
             // altfam
             // 
             this.altfam.Location = new System.Drawing.Point(536, 296);
-            this.altfam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altfam.Margin = new System.Windows.Forms.Padding(2);
             this.altfam.Name = "altfam";
             this.altfam.Size = new System.Drawing.Size(209, 20);
             this.altfam.TabIndex = 14;
@@ -981,7 +1055,7 @@ namespace Perfumaria
             // altnome
             // 
             this.altnome.Location = new System.Drawing.Point(140, 81);
-            this.altnome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altnome.Margin = new System.Windows.Forms.Padding(2);
             this.altnome.Name = "altnome";
             this.altnome.Size = new System.Drawing.Size(209, 20);
             this.altnome.TabIndex = 13;
@@ -1153,7 +1227,7 @@ namespace Perfumaria
             this.paineladdproduto.Controls.Add(this.label37);
             this.paineladdproduto.Controls.Add(this.label36);
             this.paineladdproduto.Location = new System.Drawing.Point(2, 0);
-            this.paineladdproduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paineladdproduto.Margin = new System.Windows.Forms.Padding(2);
             this.paineladdproduto.Name = "paineladdproduto";
             this.paineladdproduto.Size = new System.Drawing.Size(764, 398);
             this.paineladdproduto.TabIndex = 3;
@@ -1246,7 +1320,7 @@ namespace Perfumaria
             // fecharadd
             // 
             this.fecharadd.Location = new System.Drawing.Point(560, 22);
-            this.fecharadd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fecharadd.Margin = new System.Windows.Forms.Padding(2);
             this.fecharadd.Name = "fecharadd";
             this.fecharadd.Size = new System.Drawing.Size(158, 31);
             this.fecharadd.TabIndex = 25;
@@ -1257,7 +1331,7 @@ namespace Perfumaria
             // addcheck
             // 
             this.addcheck.Location = new System.Drawing.Point(560, 347);
-            this.addcheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addcheck.Margin = new System.Windows.Forms.Padding(2);
             this.addcheck.Name = "addcheck";
             this.addcheck.Size = new System.Drawing.Size(158, 31);
             this.addcheck.TabIndex = 24;
@@ -1268,7 +1342,7 @@ namespace Perfumaria
             // addpreco
             // 
             this.addpreco.Location = new System.Drawing.Point(140, 124);
-            this.addpreco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addpreco.Margin = new System.Windows.Forms.Padding(2);
             this.addpreco.Name = "addpreco";
             this.addpreco.Size = new System.Drawing.Size(209, 20);
             this.addpreco.TabIndex = 23;
@@ -1276,7 +1350,7 @@ namespace Perfumaria
             // addmarca
             // 
             this.addmarca.Location = new System.Drawing.Point(140, 177);
-            this.addmarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addmarca.Margin = new System.Windows.Forms.Padding(2);
             this.addmarca.Name = "addmarca";
             this.addmarca.Size = new System.Drawing.Size(209, 20);
             this.addmarca.TabIndex = 22;
@@ -1284,7 +1358,7 @@ namespace Perfumaria
             // addstock
             // 
             this.addstock.Location = new System.Drawing.Point(140, 241);
-            this.addstock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addstock.Margin = new System.Windows.Forms.Padding(2);
             this.addstock.Name = "addstock";
             this.addstock.Size = new System.Drawing.Size(209, 20);
             this.addstock.TabIndex = 21;
@@ -1292,7 +1366,7 @@ namespace Perfumaria
             // adddesc
             // 
             this.adddesc.Location = new System.Drawing.Point(140, 296);
-            this.adddesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.adddesc.Margin = new System.Windows.Forms.Padding(2);
             this.adddesc.Name = "adddesc";
             this.adddesc.Size = new System.Drawing.Size(209, 20);
             this.adddesc.TabIndex = 20;
@@ -1300,7 +1374,7 @@ namespace Perfumaria
             // addimagem
             // 
             this.addimagem.Location = new System.Drawing.Point(140, 355);
-            this.addimagem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addimagem.Margin = new System.Windows.Forms.Padding(2);
             this.addimagem.Name = "addimagem";
             this.addimagem.Size = new System.Drawing.Size(209, 20);
             this.addimagem.TabIndex = 19;
@@ -1308,7 +1382,7 @@ namespace Perfumaria
             // addtamanho
             // 
             this.addtamanho.Location = new System.Drawing.Point(536, 81);
-            this.addtamanho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addtamanho.Margin = new System.Windows.Forms.Padding(2);
             this.addtamanho.Name = "addtamanho";
             this.addtamanho.Size = new System.Drawing.Size(209, 20);
             this.addtamanho.TabIndex = 18;
@@ -1316,7 +1390,7 @@ namespace Perfumaria
             // addcat
             // 
             this.addcat.Location = new System.Drawing.Point(536, 124);
-            this.addcat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addcat.Margin = new System.Windows.Forms.Padding(2);
             this.addcat.Name = "addcat";
             this.addcat.Size = new System.Drawing.Size(209, 20);
             this.addcat.TabIndex = 17;
@@ -1324,7 +1398,7 @@ namespace Perfumaria
             // addlinha
             // 
             this.addlinha.Location = new System.Drawing.Point(536, 177);
-            this.addlinha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addlinha.Margin = new System.Windows.Forms.Padding(2);
             this.addlinha.Name = "addlinha";
             this.addlinha.Size = new System.Drawing.Size(209, 20);
             this.addlinha.TabIndex = 16;
@@ -1332,7 +1406,7 @@ namespace Perfumaria
             // addsexo
             // 
             this.addsexo.Location = new System.Drawing.Point(536, 241);
-            this.addsexo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addsexo.Margin = new System.Windows.Forms.Padding(2);
             this.addsexo.Name = "addsexo";
             this.addsexo.Size = new System.Drawing.Size(209, 20);
             this.addsexo.TabIndex = 15;
@@ -1340,7 +1414,7 @@ namespace Perfumaria
             // addfamilia
             // 
             this.addfamilia.Location = new System.Drawing.Point(536, 296);
-            this.addfamilia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addfamilia.Margin = new System.Windows.Forms.Padding(2);
             this.addfamilia.Name = "addfamilia";
             this.addfamilia.Size = new System.Drawing.Size(209, 20);
             this.addfamilia.TabIndex = 14;
@@ -1348,7 +1422,7 @@ namespace Perfumaria
             // addnome
             // 
             this.addnome.Location = new System.Drawing.Point(140, 81);
-            this.addnome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addnome.Margin = new System.Windows.Forms.Padding(2);
             this.addnome.Name = "addnome";
             this.addnome.Size = new System.Drawing.Size(209, 20);
             this.addnome.TabIndex = 13;
@@ -1490,7 +1564,7 @@ namespace Perfumaria
             // 
             this.panel3.Controls.Add(this.lojagrid);
             this.panel3.Location = new System.Drawing.Point(2, 120);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(765, 280);
             this.panel3.TabIndex = 0;
@@ -1504,7 +1578,7 @@ namespace Perfumaria
             this.lojagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.changeproduct});
             this.lojagrid.Location = new System.Drawing.Point(0, -2);
-            this.lojagrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lojagrid.Margin = new System.Windows.Forms.Padding(2);
             this.lojagrid.MultiSelect = false;
             this.lojagrid.Name = "lojagrid";
             this.lojagrid.ReadOnly = true;
@@ -1515,12 +1589,20 @@ namespace Perfumaria
             this.lojagrid.TabIndex = 2;
             this.lojagrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lojagrid_CellContentClick);
             // 
+            // changeproduct
+            // 
+            this.changeproduct.HeaderText = "Editar Produto";
+            this.changeproduct.MinimumWidth = 10;
+            this.changeproduct.Name = "changeproduct";
+            this.changeproduct.ReadOnly = true;
+            this.changeproduct.Text = "Editar";
+            this.changeproduct.ToolTipText = "Editar";
+            this.changeproduct.UseColumnTextForButtonValue = true;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.botaopesquisar);
-            this.panel1.Controls.Add(this.label35);
-            this.panel1.Controls.Add(this.destinatariocombo);
             this.panel1.Controls.Add(this.label34);
             this.panel1.Controls.Add(this.categoriacombo);
             this.panel1.Controls.Add(this.label33);
@@ -1545,31 +1627,12 @@ namespace Perfumaria
             this.botaopesquisar.UseVisualStyleBackColor = true;
             this.botaopesquisar.Click += new System.EventHandler(this.botaopesquisar_Click);
             // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label35.Location = new System.Drawing.Point(428, 57);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(128, 18);
-            this.label35.TabIndex = 12;
-            this.label35.Text = "Destinatario";
-            // 
-            // destinatariocombo
-            // 
-            this.destinatariocombo.FormattingEnabled = true;
-            this.destinatariocombo.Location = new System.Drawing.Point(414, 86);
-            this.destinatariocombo.Name = "destinatariocombo";
-            this.destinatariocombo.Size = new System.Drawing.Size(151, 21);
-            this.destinatariocombo.TabIndex = 11;
-            // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label34.Location = new System.Drawing.Point(254, 57);
+            this.label34.Location = new System.Drawing.Point(384, 57);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(98, 18);
             this.label34.TabIndex = 10;
@@ -1578,7 +1641,7 @@ namespace Perfumaria
             // categoriacombo
             // 
             this.categoriacombo.FormattingEnabled = true;
-            this.categoriacombo.Location = new System.Drawing.Point(226, 86);
+            this.categoriacombo.Location = new System.Drawing.Point(356, 86);
             this.categoriacombo.Name = "categoriacombo";
             this.categoriacombo.Size = new System.Drawing.Size(151, 21);
             this.categoriacombo.TabIndex = 9;
@@ -1602,7 +1665,7 @@ namespace Perfumaria
             "Ascendente",
             "Descendente"});
             this.orderdescasc.Location = new System.Drawing.Point(620, 32);
-            this.orderdescasc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.orderdescasc.Margin = new System.Windows.Forms.Padding(2);
             this.orderdescasc.Name = "orderdescasc";
             this.orderdescasc.Size = new System.Drawing.Size(114, 21);
             this.orderdescasc.TabIndex = 7;
@@ -1616,7 +1679,7 @@ namespace Perfumaria
             "Categoria",
             "Preço"});
             this.orderby.Location = new System.Drawing.Point(490, 32);
-            this.orderby.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.orderby.Margin = new System.Windows.Forms.Padding(2);
             this.orderby.Name = "orderby";
             this.orderby.Size = new System.Drawing.Size(114, 21);
             this.orderby.TabIndex = 6;
@@ -1680,7 +1743,7 @@ namespace Perfumaria
             this.altmarc.Controls.Add(this.altbotao);
             this.altmarc.Controls.Add(this.label55);
             this.altmarc.Location = new System.Drawing.Point(2, 2);
-            this.altmarc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altmarc.Margin = new System.Windows.Forms.Padding(2);
             this.altmarc.Name = "altmarc";
             this.altmarc.Size = new System.Drawing.Size(764, 400);
             this.altmarc.TabIndex = 4;
@@ -1689,7 +1752,7 @@ namespace Perfumaria
             // datamarc
             // 
             this.datamarc.Location = new System.Drawing.Point(213, 152);
-            this.datamarc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datamarc.Margin = new System.Windows.Forms.Padding(2);
             this.datamarc.Name = "datamarc";
             this.datamarc.Size = new System.Drawing.Size(278, 20);
             this.datamarc.TabIndex = 13;
@@ -1697,7 +1760,7 @@ namespace Perfumaria
             // altfechar
             // 
             this.altfechar.Location = new System.Drawing.Point(651, 15);
-            this.altfechar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altfechar.Margin = new System.Windows.Forms.Padding(2);
             this.altfechar.Name = "altfechar";
             this.altfechar.Size = new System.Drawing.Size(96, 26);
             this.altfechar.TabIndex = 12;
@@ -1708,7 +1771,7 @@ namespace Perfumaria
             // altbotao
             // 
             this.altbotao.Location = new System.Drawing.Point(261, 274);
-            this.altbotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altbotao.Margin = new System.Windows.Forms.Padding(2);
             this.altbotao.Name = "altbotao";
             this.altbotao.Size = new System.Drawing.Size(174, 43);
             this.altbotao.TabIndex = 11;
@@ -1940,7 +2003,7 @@ namespace Perfumaria
             this.add.Controls.Add(this.label56);
             this.add.Location = new System.Drawing.Point(4, 22);
             this.add.Name = "add";
-            this.add.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.add.Padding = new System.Windows.Forms.Padding(3);
             this.add.Size = new System.Drawing.Size(768, 378);
             this.add.TabIndex = 0;
             this.add.Text = "Adicionar";
@@ -1949,7 +2012,7 @@ namespace Perfumaria
             // addpromobotao
             // 
             this.addpromobotao.Location = new System.Drawing.Point(278, 282);
-            this.addpromobotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addpromobotao.Margin = new System.Windows.Forms.Padding(2);
             this.addpromobotao.Name = "addpromobotao";
             this.addpromobotao.Size = new System.Drawing.Size(202, 49);
             this.addpromobotao.TabIndex = 10;
@@ -2004,7 +2067,7 @@ namespace Perfumaria
             // addpromofim
             // 
             this.addpromofim.Location = new System.Drawing.Point(574, 185);
-            this.addpromofim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addpromofim.Margin = new System.Windows.Forms.Padding(2);
             this.addpromofim.Name = "addpromofim";
             this.addpromofim.Size = new System.Drawing.Size(160, 20);
             this.addpromofim.TabIndex = 5;
@@ -2012,7 +2075,7 @@ namespace Perfumaria
             // addpromoinicio
             // 
             this.addpromoinicio.Location = new System.Drawing.Point(574, 107);
-            this.addpromoinicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addpromoinicio.Margin = new System.Windows.Forms.Padding(2);
             this.addpromoinicio.Name = "addpromoinicio";
             this.addpromoinicio.Size = new System.Drawing.Size(160, 20);
             this.addpromoinicio.TabIndex = 4;
@@ -2020,7 +2083,7 @@ namespace Perfumaria
             // addpromodesc
             // 
             this.addpromodesc.Location = new System.Drawing.Point(153, 185);
-            this.addpromodesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addpromodesc.Margin = new System.Windows.Forms.Padding(2);
             this.addpromodesc.Name = "addpromodesc";
             this.addpromodesc.Size = new System.Drawing.Size(195, 20);
             this.addpromodesc.TabIndex = 3;
@@ -2028,7 +2091,7 @@ namespace Perfumaria
             // addpromonome
             // 
             this.addpromonome.Location = new System.Drawing.Point(153, 107);
-            this.addpromonome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addpromonome.Margin = new System.Windows.Forms.Padding(2);
             this.addpromonome.Name = "addpromonome";
             this.addpromonome.Size = new System.Drawing.Size(195, 20);
             this.addpromonome.TabIndex = 1;
@@ -2050,7 +2113,7 @@ namespace Perfumaria
             this.history.Controls.Add(this.panelpromocoeshist);
             this.history.Location = new System.Drawing.Point(4, 22);
             this.history.Name = "history";
-            this.history.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.history.Padding = new System.Windows.Forms.Padding(3);
             this.history.Size = new System.Drawing.Size(768, 378);
             this.history.TabIndex = 1;
             this.history.Text = "Histórico";
@@ -2106,7 +2169,7 @@ namespace Perfumaria
             this.funcs.Controls.Add(this.funcsgrid);
             this.funcs.Location = new System.Drawing.Point(4, 22);
             this.funcs.Name = "funcs";
-            this.funcs.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.funcs.Padding = new System.Windows.Forms.Padding(3);
             this.funcs.Size = new System.Drawing.Size(764, 374);
             this.funcs.TabIndex = 0;
             this.funcs.Text = "Funcionários";
@@ -2122,7 +2185,7 @@ namespace Perfumaria
             this.altfpanel.Controls.Add(this.label76);
             this.altfpanel.Controls.Add(this.label84);
             this.altfpanel.Location = new System.Drawing.Point(2, 2);
-            this.altfpanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altfpanel.Margin = new System.Windows.Forms.Padding(2);
             this.altfpanel.Name = "altfpanel";
             this.altfpanel.Size = new System.Drawing.Size(758, 374);
             this.altfpanel.TabIndex = 4;
@@ -2131,7 +2194,7 @@ namespace Perfumaria
             // altffechar
             // 
             this.altffechar.Location = new System.Drawing.Point(677, 23);
-            this.altffechar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altffechar.Margin = new System.Windows.Forms.Padding(2);
             this.altffechar.Name = "altffechar";
             this.altffechar.Size = new System.Drawing.Size(57, 26);
             this.altffechar.TabIndex = 65;
@@ -2142,7 +2205,7 @@ namespace Perfumaria
             // altfbotao
             // 
             this.altfbotao.Location = new System.Drawing.Point(280, 315);
-            this.altfbotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.altfbotao.Margin = new System.Windows.Forms.Padding(2);
             this.altfbotao.Name = "altfbotao";
             this.altfbotao.Size = new System.Drawing.Size(141, 38);
             this.altfbotao.TabIndex = 64;
@@ -2233,7 +2296,7 @@ namespace Perfumaria
             this.addfunc.Controls.Add(this.Registo);
             this.addfunc.Location = new System.Drawing.Point(4, 22);
             this.addfunc.Name = "addfunc";
-            this.addfunc.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.addfunc.Padding = new System.Windows.Forms.Padding(3);
             this.addfunc.Size = new System.Drawing.Size(764, 374);
             this.addfunc.TabIndex = 1;
             this.addfunc.Text = "Criar";
@@ -2273,7 +2336,7 @@ namespace Perfumaria
             // newfunc
             // 
             this.newfunc.Location = new System.Drawing.Point(666, 15);
-            this.newfunc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newfunc.Margin = new System.Windows.Forms.Padding(2);
             this.newfunc.Name = "newfunc";
             this.newfunc.Size = new System.Drawing.Size(84, 24);
             this.newfunc.TabIndex = 41;
@@ -2514,7 +2577,7 @@ namespace Perfumaria
             this.servicefuncs.Controls.Add(this.servfuncsgrid);
             this.servicefuncs.Controls.Add(this.panel5);
             this.servicefuncs.Location = new System.Drawing.Point(105, 74);
-            this.servicefuncs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.servicefuncs.Margin = new System.Windows.Forms.Padding(2);
             this.servicefuncs.Name = "servicefuncs";
             this.servicefuncs.Size = new System.Drawing.Size(532, 298);
             this.servicefuncs.TabIndex = 7;
@@ -2532,7 +2595,7 @@ namespace Perfumaria
             this.addfuncservpanel.Controls.Add(this.label78);
             this.addfuncservpanel.Controls.Add(this.label77);
             this.addfuncservpanel.Location = new System.Drawing.Point(3, 2);
-            this.addfuncservpanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addfuncservpanel.Margin = new System.Windows.Forms.Padding(2);
             this.addfuncservpanel.Name = "addfuncservpanel";
             this.addfuncservpanel.Size = new System.Drawing.Size(526, 292);
             this.addfuncservpanel.TabIndex = 3;
@@ -2555,7 +2618,7 @@ namespace Perfumaria
             "0",
             "1"});
             this.funcservdel.Location = new System.Drawing.Point(173, 151);
-            this.funcservdel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.funcservdel.Margin = new System.Windows.Forms.Padding(2);
             this.funcservdel.Name = "funcservdel";
             this.funcservdel.Size = new System.Drawing.Size(213, 21);
             this.funcservdel.TabIndex = 7;
@@ -2563,7 +2626,7 @@ namespace Perfumaria
             // addfuncservfechar
             // 
             this.addfuncservfechar.Location = new System.Drawing.Point(382, 233);
-            this.addfuncservfechar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addfuncservfechar.Margin = new System.Windows.Forms.Padding(2);
             this.addfuncservfechar.Name = "addfuncservfechar";
             this.addfuncservfechar.Size = new System.Drawing.Size(86, 21);
             this.addfuncservfechar.TabIndex = 6;
@@ -2574,7 +2637,7 @@ namespace Perfumaria
             // addfuncservcheck
             // 
             this.addfuncservcheck.Location = new System.Drawing.Point(103, 218);
-            this.addfuncservcheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addfuncservcheck.Margin = new System.Windows.Forms.Padding(2);
             this.addfuncservcheck.Name = "addfuncservcheck";
             this.addfuncservcheck.Size = new System.Drawing.Size(128, 36);
             this.addfuncservcheck.TabIndex = 5;
@@ -2585,7 +2648,7 @@ namespace Perfumaria
             // addfuncservduracao
             // 
             this.addfuncservduracao.Location = new System.Drawing.Point(173, 114);
-            this.addfuncservduracao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addfuncservduracao.Margin = new System.Windows.Forms.Padding(2);
             this.addfuncservduracao.Name = "addfuncservduracao";
             this.addfuncservduracao.Size = new System.Drawing.Size(213, 20);
             this.addfuncservduracao.TabIndex = 4;
@@ -2593,7 +2656,7 @@ namespace Perfumaria
             // addfuncservmail
             // 
             this.addfuncservmail.Location = new System.Drawing.Point(173, 69);
-            this.addfuncservmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addfuncservmail.Margin = new System.Windows.Forms.Padding(2);
             this.addfuncservmail.Name = "addfuncservmail";
             this.addfuncservmail.Size = new System.Drawing.Size(213, 20);
             this.addfuncservmail.TabIndex = 3;
@@ -2651,7 +2714,7 @@ namespace Perfumaria
             this.panel5.Controls.Add(this.servfuncsfechar);
             this.panel5.Controls.Add(this.addfuncservbotao);
             this.panel5.Location = new System.Drawing.Point(2, 2);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(531, 43);
             this.panel5.TabIndex = 1;
@@ -2659,7 +2722,7 @@ namespace Perfumaria
             // servfuncsfechar
             // 
             this.servfuncsfechar.Location = new System.Drawing.Point(356, 8);
-            this.servfuncsfechar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.servfuncsfechar.Margin = new System.Windows.Forms.Padding(2);
             this.servfuncsfechar.Name = "servfuncsfechar";
             this.servfuncsfechar.Size = new System.Drawing.Size(132, 27);
             this.servfuncsfechar.TabIndex = 2;
@@ -2670,7 +2733,7 @@ namespace Perfumaria
             // addfuncservbotao
             // 
             this.addfuncservbotao.Location = new System.Drawing.Point(56, 8);
-            this.addfuncservbotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addfuncservbotao.Margin = new System.Windows.Forms.Padding(2);
             this.addfuncservbotao.Name = "addfuncservbotao";
             this.addfuncservbotao.Size = new System.Drawing.Size(132, 27);
             this.addfuncservbotao.TabIndex = 1;
@@ -2688,7 +2751,7 @@ namespace Perfumaria
             this.addnewservico.Controls.Add(this.addservtipo);
             this.addnewservico.Controls.Add(this.label25);
             this.addnewservico.Location = new System.Drawing.Point(2, 2);
-            this.addnewservico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addnewservico.Margin = new System.Windows.Forms.Padding(2);
             this.addnewservico.Name = "addnewservico";
             this.addnewservico.Size = new System.Drawing.Size(762, 397);
             this.addnewservico.TabIndex = 6;
@@ -2697,7 +2760,7 @@ namespace Perfumaria
             // newservfechar
             // 
             this.newservfechar.Location = new System.Drawing.Point(630, 21);
-            this.newservfechar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newservfechar.Margin = new System.Windows.Forms.Padding(2);
             this.newservfechar.Name = "newservfechar";
             this.newservfechar.Size = new System.Drawing.Size(100, 28);
             this.newservfechar.TabIndex = 6;
@@ -2708,7 +2771,7 @@ namespace Perfumaria
             // addservcheck
             // 
             this.addservcheck.Location = new System.Drawing.Point(242, 302);
-            this.addservcheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addservcheck.Margin = new System.Windows.Forms.Padding(2);
             this.addservcheck.Name = "addservcheck";
             this.addservcheck.Size = new System.Drawing.Size(190, 50);
             this.addservcheck.TabIndex = 5;
@@ -2730,7 +2793,7 @@ namespace Perfumaria
             // addservpreco
             // 
             this.addservpreco.Location = new System.Drawing.Point(319, 205);
-            this.addservpreco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addservpreco.Margin = new System.Windows.Forms.Padding(2);
             this.addservpreco.Name = "addservpreco";
             this.addservpreco.Size = new System.Drawing.Size(319, 20);
             this.addservpreco.TabIndex = 3;
@@ -2749,7 +2812,7 @@ namespace Perfumaria
             // addservtipo
             // 
             this.addservtipo.Location = new System.Drawing.Point(319, 118);
-            this.addservtipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addservtipo.Margin = new System.Windows.Forms.Padding(2);
             this.addservtipo.Name = "addservtipo";
             this.addservtipo.Size = new System.Drawing.Size(319, 20);
             this.addservtipo.TabIndex = 1;
@@ -2770,7 +2833,7 @@ namespace Perfumaria
             this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.Controls.Add(this.addservbotao);
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(765, 52);
             this.panel4.TabIndex = 5;
@@ -2778,7 +2841,7 @@ namespace Perfumaria
             // addservbotao
             // 
             this.addservbotao.Location = new System.Drawing.Point(504, 10);
-            this.addservbotao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addservbotao.Margin = new System.Windows.Forms.Padding(2);
             this.addservbotao.Name = "addservbotao";
             this.addservbotao.Size = new System.Drawing.Size(172, 33);
             this.addservbotao.TabIndex = 0;
@@ -2814,92 +2877,6 @@ namespace Perfumaria
             this.servfuncs.Text = "Ver";
             this.servfuncs.UseColumnTextForButtonValue = true;
             // 
-            // changepw
-            // 
-            this.changepw.Controls.Add(this.label80);
-            this.changepw.Controls.Add(this.label81);
-            this.changepw.Controls.Add(this.newpw2);
-            this.changepw.Controls.Add(this.newpw);
-            this.changepw.Controls.Add(this.change);
-            this.changepw.Controls.Add(this.cancel);
-            this.changepw.Location = new System.Drawing.Point(28, 16);
-            this.changepw.Name = "changepw";
-            this.changepw.Size = new System.Drawing.Size(709, 343);
-            this.changepw.TabIndex = 65;
-            this.changepw.Visible = false;
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.Location = new System.Drawing.Point(241, 140);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(238, 18);
-            this.label80.TabIndex = 48;
-            this.label80.Text = "Confirmar Nova Password";
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.Location = new System.Drawing.Point(291, 83);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(138, 18);
-            this.label81.TabIndex = 47;
-            this.label81.Text = "Nova Password";
-            // 
-            // newpw2
-            // 
-            this.newpw2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newpw2.Location = new System.Drawing.Point(224, 161);
-            this.newpw2.Multiline = true;
-            this.newpw2.Name = "newpw2";
-            this.newpw2.Size = new System.Drawing.Size(268, 30);
-            this.newpw2.TabIndex = 45;
-            this.newpw2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // newpw
-            // 
-            this.newpw.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newpw.Location = new System.Drawing.Point(224, 104);
-            this.newpw.Multiline = true;
-            this.newpw.Name = "newpw";
-            this.newpw.Size = new System.Drawing.Size(268, 30);
-            this.newpw.TabIndex = 44;
-            this.newpw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // change
-            // 
-            this.change.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.change.Location = new System.Drawing.Point(244, 289);
-            this.change.Name = "change";
-            this.change.Size = new System.Drawing.Size(94, 38);
-            this.change.TabIndex = 1;
-            this.change.Text = "Alterar";
-            this.change.UseVisualStyleBackColor = true;
-            this.change.Click += new System.EventHandler(this.change_Click);
-            // 
-            // cancel
-            // 
-            this.cancel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel.Location = new System.Drawing.Point(389, 289);
-            this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(103, 38);
-            this.cancel.TabIndex = 0;
-            this.cancel.Text = "Cancelar";
-            this.cancel.UseVisualStyleBackColor = true;
-            this.cancel.Click += new System.EventHandler(this.cancel_Click);
-            // 
-            // changeproduct
-            // 
-            this.changeproduct.HeaderText = "Editar Produto";
-            this.changeproduct.MinimumWidth = 10;
-            this.changeproduct.Name = "changeproduct";
-            this.changeproduct.ReadOnly = true;
-            this.changeproduct.Text = "Editar";
-            this.changeproduct.ToolTipText = "Editar";
-            this.changeproduct.UseColumnTextForButtonValue = true;
-            // 
             // Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2914,6 +2891,8 @@ namespace Perfumaria
             this.contafunc.ResumeLayout(false);
             this.Informações.ResumeLayout(false);
             this.Informações.PerformLayout();
+            this.changepw.ResumeLayout(false);
+            this.changepw.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto)).EndInit();
             this.Contactos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.contactsgrid)).EndInit();
@@ -2972,8 +2951,6 @@ namespace Perfumaria
             this.addnewservico.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.servicosgrid)).EndInit();
-            this.changepw.ResumeLayout(false);
-            this.changepw.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3078,8 +3055,6 @@ namespace Perfumaria
         private System.Windows.Forms.ComboBox orderby;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button botaopesquisar;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.ComboBox destinatariocombo;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.ComboBox categoriacombo;
         private System.Windows.Forms.Panel panel3;

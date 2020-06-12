@@ -8,7 +8,6 @@ CREATE PROCEDURE perf.changeRating
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-    BEGIN TRANSACTION
     SET NOCOUNT ON
     BEGIN TRY
         IF EXISTS(SELECT 1 FROM (Perfumaria.perf.compra_online JOIN Perfumaria.perf.compra ON compra.numero=compra_online.numero) WHERE compra_online.numero=@compranum AND clienteemail=@clienteemail)
@@ -20,11 +19,9 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Sem permissões!'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Erro' 
-        ROLLBACK
     END CATCH
 
 END

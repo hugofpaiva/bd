@@ -7,9 +7,7 @@ CREATE PROCEDURE perf.clientUsesCupon
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-    BEGIN TRANSACTION
     SET NOCOUNT ON
-    
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.cliente WHERE email=@cliente_email) AND EXISTS(SELECT id, datainicio, datafim FROM Perfumaria.perf.cupao WHERE (id=@cupao_id) AND (GETDATE() BETWEEN datainicio AND datafim))
             BEGIN
@@ -20,11 +18,9 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Failed'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage=ERROR_MESSAGE()
-        ROLLBACK 
     END CATCH
 
 END

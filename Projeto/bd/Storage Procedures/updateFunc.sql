@@ -10,7 +10,6 @@ CREATE PROCEDURE perf.updateFunc
     @responseMsg nvarchar(250) output
 AS
 BEGIN
-    BEGIN TRANSACTION
 	SET NOCOUNT ON
 
 	BEGIN TRY
@@ -48,11 +47,9 @@ BEGIN
                 SET @responseMsg='Success'
             END
 
-	COMMIT TRANSACTION
 	END TRY
 	BEGIN CATCH
 		SET @responseMsg='Failed'
-        ROLLBACK
 	END CATCH
 END
 GO

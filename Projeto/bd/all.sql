@@ -701,7 +701,7 @@ BEGIN
     DECLARE @produtoid AS INT;
     DECLARE @stock as INT;
     SELECT @unidades = unidades, @produtoid = produtoid FROM inserted;
-    SELECT @stock = stock FROM Perfumaria.perf.produto;
+    SELECT @stock = stock FROM Perfumaria.perf.produto WHERE id = @produtoid;
     IF (@stock - @unidades < 0)
     BEGIN
         RAISERROR('Encomenda não processada. Stock insuficente.', 16, 1);
@@ -833,22 +833,20 @@ CREATE PROCEDURE perf.addContact
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-BEGIN TRANSACTION
     SET NOCOUNT ON
     BEGIN TRY
         INSERT INTO Perfumaria.perf.contacto
         (utilizador_email, telemovel, codigo_postal, pais, endereco, apartamento, localidade)
         VALUES(@utilizador_email, @telemovel, @codigo_postal, @pais, @endereco, @apartamento, @localidade) 
         SET @responseMessage='Success'
-        COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Erro'
-        ROLLBACK
     END CATCH
-
 END
 GO
+
+
 
 DROP PROCEDURE perf.addCupon;
 GO
@@ -862,9 +860,7 @@ CREATE PROCEDURE perf.addCupon
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-BEGIN TRANSACTION
     SET NOCOUNT ON
-    
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
@@ -880,14 +876,16 @@ BEGIN TRANSACTION
             END
         ELSE
             SET @responseMessage='Permition denied'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Failed'
-        ROLLBACK
     END CATCH
 
 END
+GO
+
+
+DROP PROCEDURE perf.addFuncService;
 GO
 
 DROP PROCEDURE perf.addFuncService;
@@ -902,9 +900,7 @@ CREATE PROCEDURE perf.addFuncService
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-BEGIN TRANSACTION
-    SET NOCOUNT ON
-    
+    SET NOCOUNT ON  
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
@@ -915,11 +911,9 @@ BEGIN TRANSACTION
             END
         ELSE
             SET @responseMessage='Permition denied'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage=ERROR_MESSAGE() 
-        ROLLBACK
     END CATCH
 
 END
@@ -986,9 +980,7 @@ CREATE PROCEDURE perf.addNewFunc
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-BEGIN TRANSACTION
     SET NOCOUNT ON
-    
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
@@ -1004,11 +996,9 @@ BEGIN TRANSACTION
             END
         ELSE
             SET @responseMessage='Permition denied'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Failed'
-        ROLLBACK
     END CATCH
 
 END
@@ -1033,9 +1023,7 @@ CREATE PROCEDURE perf.addProduct
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-BEGIN TRANSACTION
     SET NOCOUNT ON
-    
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator>0)
             BEGIN
@@ -1046,13 +1034,10 @@ BEGIN TRANSACTION
             END
         ELSE
             SET @responseMessage='Permition denied'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage=ERROR_MESSAGE() 
-        ROLLBACK
     END CATCH
-
 END
 GO
 
@@ -1068,9 +1053,7 @@ CREATE PROCEDURE perf.addPromotion
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-BEGIN TRANSACTION
     SET NOCOUNT ON
-    
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
@@ -1081,11 +1064,9 @@ BEGIN TRANSACTION
             END
         ELSE
             SET @responseMessage='Permition denied'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Failed'
-        ROLLBACK
     END CATCH
 
 END
@@ -1102,7 +1083,6 @@ CREATE PROCEDURE perf.addService
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-BEGIN TRANSACTION
     SET NOCOUNT ON
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
@@ -1114,11 +1094,9 @@ BEGIN TRANSACTION
             END
         ELSE
             SET @responseMessage='Permition denied'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Failed' 
-        ROLLBACK
     END CATCH
 
 END
@@ -1160,7 +1138,6 @@ CREATE PROCEDURE perf.changeDefaultContact
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-    BEGIN TRANSACTION
     SET NOCOUNT ON
     BEGIN TRY
         IF EXISTS(SELECT 1 FROM Perfumaria.perf.contacto WHERE id=@id)
@@ -1185,16 +1162,15 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Permition denied'
-        COMMIT TRANSACTION
 
     END TRY
     BEGIN CATCH
         SET @responseMessage='ERRO' 
-        ROLLBACK
     END CATCH
 
 END
 GO
+
 
 DROP PROCEDURE perf.changeProduct
 GO
@@ -1218,8 +1194,6 @@ CREATE PROCEDURE perf.changeProduct
 AS
 BEGIN
     SET NOCOUNT ON
-    
-
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator>0)
             BEGIN
                 IF @preco <> 0
@@ -1317,7 +1291,6 @@ CREATE PROCEDURE perf.changeRating
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-    BEGIN TRANSACTION
     SET NOCOUNT ON
     BEGIN TRY
         IF EXISTS(SELECT 1 FROM (Perfumaria.perf.compra_online JOIN Perfumaria.perf.compra ON compra.numero=compra_online.numero) WHERE compra_online.numero=@compranum AND clienteemail=@clienteemail)
@@ -1329,11 +1302,9 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Sem permissões!'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Erro' 
-        ROLLBACK
     END CATCH
 
 END
@@ -1348,7 +1319,6 @@ CREATE PROCEDURE perf.clientAddFavourite
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-    BEGIN TRANSACTION
     SET NOCOUNT ON
     BEGIN TRY
         IF NOT EXISTS(SELECT produtoid FROM Perfumaria.perf.clientefavorita WHERE clienteemail=@clienteemail AND produtoid=@produtoid)
@@ -1360,11 +1330,9 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Já existe!'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Erro' 
-        ROLLBACK
     END CATCH
 
 END
@@ -1379,7 +1347,6 @@ CREATE PROCEDURE perf.clientRemoveFavourite
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-    BEGIN TRANSACTION
     SET NOCOUNT ON
     BEGIN TRY
         IF EXISTS(SELECT produtoid FROM Perfumaria.perf.clientefavorita WHERE clienteemail=@clienteemail AND produtoid=@produtoid)
@@ -1390,11 +1357,9 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Produto não faz parte dos favoritos do utilizador!'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='Erro' 
-        ROLLBACK
     END CATCH
 
 END
@@ -1409,9 +1374,7 @@ CREATE PROCEDURE perf.clientUsesCupon
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-    BEGIN TRANSACTION
     SET NOCOUNT ON
-    
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.cliente WHERE email=@cliente_email) AND EXISTS(SELECT id, datainicio, datafim FROM Perfumaria.perf.cupao WHERE (id=@cupao_id) AND (GETDATE() BETWEEN datainicio AND datafim))
             BEGIN
@@ -1422,11 +1385,9 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Failed'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage=ERROR_MESSAGE()
-        ROLLBACK 
     END CATCH
 
 END
@@ -1573,7 +1534,6 @@ CREATE PROCEDURE perf.Login
 AS
 BEGIN
     SET NOCOUNT ON
-
     IF EXISTS (SELECT TOP 1 email FROM Perfumaria.perf.utilizador WHERE email = @email)
     BEGIN
         SET @email=(SELECT email FROM Perfumaria.perf.utilizador
@@ -1601,6 +1561,7 @@ BEGIN
 
 END
 GO
+
 
 DROP PROCEDURE perf.newBuy;
 GO
@@ -1659,7 +1620,6 @@ CREATE PROCEDURE perf.RegisterFunc
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-    BEGIN TRANSACTION
     SET NOCOUNT ON
 
     BEGIN TRY
@@ -1673,11 +1633,9 @@ BEGIN
     VALUES(@email, @administrator, @salario)
 
     SET @responseMessage='Success'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage=ERROR_MESSAGE() 
-        ROLLBACK
     END CATCH
 
 END
@@ -1702,7 +1660,6 @@ CREATE PROCEDURE perf.RegisterClient
     @responseMessage VARCHAR(250) OUTPUT
 AS
 BEGIN
-    BEGIN TRANSACTION
     SET NOCOUNT ON
 
     BEGIN TRY
@@ -1716,17 +1673,15 @@ BEGIN
     VALUES(@email, @pontos, @newsletter, @pagamento)
 
     SET @responseMessage='Success'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage=ERROR_MESSAGE() 
-        ROLLBACK
     END CATCH
 
 END
 GO
 
-
+   
 DROP PROCEDURE perf.removeContact
 GO
 
@@ -1737,7 +1692,6 @@ CREATE PROCEDURE perf.removeContact
 AS
 BEGIN
     SET NOCOUNT ON
-    BEGIN TRANSACTION
     BEGIN TRY
         IF EXISTS(SELECT 1 FROM Perfumaria.perf.contacto WHERE utilizador_email=@email AND id=@id)
             BEGIN
@@ -1753,11 +1707,9 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Permition denied'
-    COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
         SET @responseMessage='ERRO' 
-        ROLLBACK
     END CATCH
 
 END
@@ -1776,7 +1728,6 @@ CREATE PROCEDURE perf.updateClient
     @responseMsg nvarchar(250) output
 AS
 BEGIN
-	BEGIN TRANSACTION
 	SET NOCOUNT ON
 
 	BEGIN TRY
@@ -1817,11 +1768,9 @@ BEGIN
 		END
 
 		SET @responseMsg='Success'
-	COMMIT TRANSACTION
 	END TRY
 	BEGIN CATCH
 		SET @responseMsg='Erro'
-		ROLLBACK
 	END CATCH
 END
 GO
@@ -1838,7 +1787,6 @@ CREATE PROCEDURE perf.updateFunc
     @responseMsg nvarchar(250) output
 AS
 BEGIN
-    BEGIN TRANSACTION
 	SET NOCOUNT ON
 
 	BEGIN TRY
@@ -1876,11 +1824,9 @@ BEGIN
                 SET @responseMsg='Success'
             END
 
-	COMMIT TRANSACTION
 	END TRY
 	BEGIN CATCH
 		SET @responseMsg='Failed'
-        ROLLBACK
 	END CATCH
 END
 GO
@@ -1984,9 +1930,9 @@ GO
 
 -- produto
 
-INSERT INTO Perfumaria.perf.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (75.25, 'Cítrico Masculino', 'Eau de Toilette', 'Wanted', 'AZZARO', 'Azzaro Wanted', 100, 'Azzaro Wanted é um tributo a uma nova forma de masculinidade livre e resplandecente. Uma eau de toilette amadeirada, cítrica e condimentada com um rasto cativante e elegante.', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500002696.jpg', 2, 'Homem', 0)
+INSERT INTO Perfumaria.perf.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (75.25, 'Cítrico Masculino', 'Eau de Toilette', 'Wanted', 'AZZARO', 'Azzaro Wanted', 100, 'Azzaro Wanted é um tributo a uma nova forma de masculinidade livre e resplandecente. Uma eau de toilette amadeirada, cítrica e condimentada com um rasto cativante e elegante.', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500002696.jpg', 5, 'Homem', 0)
 INSERT INTO Perfumaria.perf.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (71.3, 'Amadeirado Masculino', 'Eau de Toilette', 'Wanted', 'AZZARO', 'Azzaro Wanted', 100, 'Azzaro Wanted é um tributo a uma nova forma de masculinidade livre e resplandecente. Uma eau de toilette amadeirada, cítrica e condimentada com um rasto cativante e elegante.', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500002696.jpg', 3, 'Homem', 0)
-INSERT INTO Perfumaria.perf.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (81.65, 'Amadeirado Masculino', 'Eau de Toilette', 'Pour Homme', 'AZZARO', 'Azzaro Pour Homme', 100, 'Azzaro Pour Homme é um perfume de sedução em estado puro, talhado pela elegância e pelo requinte italiano.', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500980543_1.jpg', 1, 'Homem', 0)
+INSERT INTO Perfumaria.perf.produto (preco, familiaolfativa, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (81.65, 'Amadeirado Masculino', 'Eau de Toilette', 'Pour Homme', 'AZZARO', 'Azzaro Pour Homme', 100, 'Azzaro Pour Homme é um perfume de sedução em estado puro, talhado pela elegância e pelo requinte italiano.', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500980543_1.jpg', 5, 'Homem', 0)
 INSERT INTO Perfumaria.perf.produto (preco, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (27.2, 'Deo Spray', 'Pour Homme', 'AZZARO', 'Azzaro Pour Homme', 150, 'Num gesto só, este spray oferece uma proteção eficaz de longa duração e uma sensação de frescura, durante todo o dia. ', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500002771_1.jpg', 4, 'Homem', 0)
 INSERT INTO Perfumaria.perf.produto (preco, familiaolfativa, categoria, nome, marca, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (77.3, 'Floral Feminino', 'Eau de Parfum', '212 Vip Rosé', 'CAROLINA HERRERA', 50, 'Atrevida, sofisticada, sempre pronta para a acção de noite & dia, o NOVO 212 VIP ROSÉ Eau de Parfum introduz uma ainda maior sedução ao universo! ', 'https://www.perfumesecompanhia.pt/fotos/produtos/8411061777176.jpg', 10, 'Mulher', 0)
 INSERT INTO Perfumaria.perf.produto (preco, categoria, nome, marca, linha, tamanho, descricao, imagem, stock, destinatario, deleted) VALUES (75.25, 'Eau de Toilette', 'Under The Pole', 'AZZARO', 'Azzaro Chrome', 100, 'A assinatura emblemática de Chrome —um acorde cítrico e amadeirado, ao qual se acrescenta um grande coração aquático, que inspira frescura e força — é reinterpretada numa fórmula original 100% sem álcool, substituído pela água. ', 'https://www.perfumesecompanhia.pt/fotos/produtos/3351500009756_1.jpg', 3, 'Homem', 0)
@@ -2281,7 +2227,7 @@ INSERT INTO Perfumaria.perf.compra_tem_produto (compranumero, produtoid, unidade
 INSERT INTO Perfumaria.perf.compra_tem_produto (compranumero, produtoid, unidades) VALUES ( 4, 20, 1)
 INSERT INTO Perfumaria.perf.compra_tem_produto (compranumero, produtoid, unidades) VALUES ( 4, 14, 2)
 INSERT INTO Perfumaria.perf.compra_tem_produto (compranumero, produtoid, unidades) VALUES ( 4, 10, 3)
-INSERT INTO Perfumaria.perf.compra_tem_produto (compranumero, produtoid, unidades) VALUES ( 5, 1, 4)
+INSERT INTO Perfumaria.perf.compra_tem_produto (compranumero, produtoid, unidades) VALUES ( 5, 1, 2)
 INSERT INTO Perfumaria.perf.compra_tem_produto (compranumero, produtoid, unidades) VALUES ( 6, 8, 2)
 INSERT INTO Perfumaria.perf.compra_tem_produto (compranumero, produtoid, unidades) VALUES ( 7, 3, 3)
 INSERT INTO Perfumaria.perf.compra_tem_produto (compranumero, produtoid, unidades) VALUES ( 8, 23, 1)

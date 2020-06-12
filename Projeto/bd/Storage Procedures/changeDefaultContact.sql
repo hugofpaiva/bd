@@ -7,7 +7,6 @@ CREATE PROCEDURE perf.changeDefaultContact
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-    BEGIN TRANSACTION
     SET NOCOUNT ON
     BEGIN TRY
         IF EXISTS(SELECT 1 FROM Perfumaria.perf.contacto WHERE id=@id)
@@ -32,12 +31,10 @@ BEGIN
             END
         ELSE
             SET @responseMessage='Permition denied'
-        COMMIT TRANSACTION
 
     END TRY
     BEGIN CATCH
         SET @responseMessage='ERRO' 
-        ROLLBACK
     END CATCH
 
 END
