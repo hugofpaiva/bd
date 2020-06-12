@@ -1,4 +1,6 @@
+DROP PROCEDURE perf.addProduct;
 GO
+
 CREATE PROCEDURE perf.addProduct
     @preco FLOAT,
     @familiaolfativa VARCHAR(30) = NULL,
@@ -34,3 +36,4 @@ BEGIN
     END CATCH
 
 END
+GO

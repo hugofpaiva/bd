@@ -1,4 +1,6 @@
+DROP PROCEDURE perf.addPromotion;
 GO
+
 CREATE PROCEDURE perf.addPromotion
     @nome VARCHAR(30),
     @desconto TINYINT,
@@ -27,3 +29,4 @@ BEGIN
     END CATCH
 
 END
+GO

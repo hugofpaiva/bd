@@ -1,3 +1,6 @@
+DROP FUNCTION perf.clientContacts;
+GO
+
 CREATE FUNCTION perf.clientContacts (@email VARCHAR(255)) RETURNS TABLE 
 AS
     RETURN (SELECT id, telemovel, codigo_postal, pais, endereco, apartamento, localidade

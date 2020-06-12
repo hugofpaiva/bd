@@ -1,7 +1,7 @@
-DROP function perf.getAllFuncs;
+DROP FUNCTION perf.getAllFuncs;
 GO
 
-CREATE function perf.getAllFuncs ( @emailFunc VARCHAR(255)) returns @table table (email VARCHAR(255) NOT NULL, contribuinte CHAR(9) NOT NULL, fname VARCHAR(20) NOT NULL,
+CREATE FUNCTION perf.getAllFuncs ( @emailFunc VARCHAR(255)) returns @table table (email VARCHAR(255) NOT NULL, contribuinte CHAR(9) NOT NULL, fname VARCHAR(20) NOT NULL,
                                                                                 lname VARCHAR(20) NOT NULL, sexo BIT NOT NULL, dataNasc DATE NOT NULL,
                                                                                 foto VARCHAR(100) NOT NULL, contacto_default_id INT,  
                                                                                 administrator TINYINT NOT NULL, salario INT NOT NULL, deleted BIT NOT NULL DEFAULT 0)                                            
@@ -16,3 +16,4 @@ BEGIN
                             FROM Perfumaria.perf.utilizador JOIN Perfumaria.perf.funcionario ON utilizador.email=funcionario.email
             RETURN;
         END;
+GO

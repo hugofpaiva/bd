@@ -1,5 +1,5 @@
-drop function perf.funcFutureMarc;
-go
+DROP FUNCTION perf.funcFutureMarc;
+GO
 
 CREATE FUNCTION perf.funcFutureMarc (@email VARCHAR(255)) RETURNS TABLE 
 AS

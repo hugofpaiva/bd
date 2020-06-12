@@ -1,7 +1,7 @@
-drop procedure perf.changeProduct
-go
-
+DROP PROCEDURE perf.changeProduct
 GO
+
+
 CREATE PROCEDURE perf.changeProduct
     @id INT,
     @preco FLOAT = 0,
@@ -105,6 +105,6 @@ BEGIN
                 SET deleted = @deleted
                 WHERE id = @id
             END
- 
-
+            
 END
+GO

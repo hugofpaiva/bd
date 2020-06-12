@@ -4,7 +4,3 @@ AS
                     FROM Perfumaria.perf.produto
                     WHERE id = @id) 
 GO
-
-----------------
--- pronta a usar
-----------------

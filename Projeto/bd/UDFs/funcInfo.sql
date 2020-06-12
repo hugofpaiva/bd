@@ -8,5 +8,4 @@ AS
                     JOIN Perfumaria.perf.funcionario ON utilizador.email = funcionario.email
                     WHERE utilizador.email = @emailFunc) 
 GO         
-                
---SELECT * FROM perf.AveragePricebyItems (15.00)
+       

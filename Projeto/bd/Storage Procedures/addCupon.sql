@@ -1,4 +1,6 @@
+DROP PROCEDURE perf.addCupon;
 GO
+
 CREATE PROCEDURE perf.addCupon
     @id CHAR(10),
     @datainicio SMALLDATETIME,
@@ -32,3 +34,4 @@ BEGIN
     END CATCH
 
 END
+GO

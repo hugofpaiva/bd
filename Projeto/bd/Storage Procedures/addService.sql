@@ -1,7 +1,7 @@
-drop procedure perf.addService;
-go
-
+DROP PROCEDURE perf.addService;
 GO
+
+
 CREATE PROCEDURE perf.addService
     @tipo  VARCHAR(40),
     @preco FLOAT,
@@ -28,3 +28,4 @@ BEGIN
     END CATCH
 
 END
+GO

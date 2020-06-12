@@ -1,5 +1,4 @@
-DROP PROCEDURE
-perf.addContact
+DROP PROCEDURE perf.addContact;
 GO
 
 CREATE PROCEDURE perf.addContact

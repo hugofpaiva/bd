@@ -1,9 +1,12 @@
+DROP PROCEDURE perf.addFuncService;
 GO
+
 CREATE PROCEDURE perf.addFuncService
     @funcionario_email VARCHAR(255),
     @servico_id INT,
     @duracao_media INT,
     @emailFunc VARCHAR(255),
+    @deleted BIT,
     @responseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
@@ -13,8 +16,8 @@ BEGIN
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN
                 INSERT INTO Perfumaria.perf.funcionario_faz_servico
-                (funcionario_email, servico_id, duracao_media)
-                VALUES(@funcionario_email, @servico_id, @duracao_media) 
+                (funcionario_email, servico_id, duracao_media, deleted)
+                VALUES(@funcionario_email, @servico_id, @duracao_media, @deleted) 
                 SET @responseMessage='Success'
             END
         ELSE
@@ -26,3 +29,4 @@ BEGIN
     END CATCH
 
 END
+GO

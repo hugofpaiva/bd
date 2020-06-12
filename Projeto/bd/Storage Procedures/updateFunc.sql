@@ -1,12 +1,12 @@
 DROP PROCEDURE perf.updateFunc;
 GO
 
-GO
 CREATE PROCEDURE perf.updateFunc
 	@email VARCHAR(255), 
     @admin TINYINT = null,
     @salario INT = null,
-    @emailOP VARCHAR(255),
+    @pw VARCHAR(25) = null,
+    @emailOP VARCHAR(255)=null,
     @responseMsg nvarchar(250) output
 AS
 BEGIN
@@ -39,10 +39,18 @@ BEGIN
                 RAISERROR ('Insuficient Permissions.', 14, 1);
 		END
 
+        IF @pw IS NOT NULL
+            BEGIN
+                UPDATE Perfumaria.perf.utilizador
+                SET pw = hashbytes('SHA2_512', @pw)
+                WHERE  email = @email
+                SET @responseMsg='Success'
+            END
+
 		
 	END TRY
 	BEGIN CATCH
 		SET @responseMsg='Failed'
 	END CATCH
 END
-go
+GO

@@ -1,4 +1,6 @@
+DROP PROCEDURE perf.addNewFunc;
 GO
+
 CREATE PROCEDURE perf.addNewFunc
     @email VARCHAR(255),
     @contribuinte CHAR(9),
@@ -38,3 +40,4 @@ BEGIN
     END CATCH
 
 END
+GO

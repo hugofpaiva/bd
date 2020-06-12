@@ -7,5 +7,5 @@ AS
                     FROM (((Perfumaria.perf.compra_tem_produto JOIN Perfumaria.perf.compra ON compranumero=numero)JOIN Perfumaria.perf.produto ON produtoid=id) JOIN Perfumaria.perf.compra_presencial ON compra_presencial.numero=compra.numero)
                     WHERE (funcemail=@email)
                     GROUP BY datacompra, clienteemail, compranumero
-                    ORDER BY datacompra DESC)
+                    ORDER BY datacompra DESC OFFSET 0 ROWS)
 GO

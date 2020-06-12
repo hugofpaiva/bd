@@ -1,3 +1,6 @@
+DROP PROCEDURE perf.getDetailsFromSell;
+GO
+
 CREATE PROCEDURE perf.getDetailsFromSell
     @numero INT
 AS
@@ -7,7 +10,3 @@ BEGIN
     WHERE compra.numero=@numero
 END
 GO
-
----------------
---pronta a usar
----------------

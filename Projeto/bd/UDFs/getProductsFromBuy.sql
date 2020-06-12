@@ -7,8 +7,3 @@ AS
                     FROM Perfumaria.perf.compra_tem_produto JOIN Perfumaria.perf.produto ON produtoid=id
                     WHERE compranumero = @numero) 
 GO
-
-
----------------
---pronta a usar
----------------

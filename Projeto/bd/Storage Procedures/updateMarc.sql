@@ -1,7 +1,7 @@
 DROP PROCEDURE perf.updateMarc;
 GO
 
-GO
+
 CREATE PROCEDURE perf.updateMarc
 	@cliente_email VARCHAR(255),
     @idMarc INT,
@@ -17,13 +17,12 @@ BEGIN
 				
 				IF (@dataMarc IS NOT NULL)
 				BEGIN
-					SET @responseMessage = 'aqui'
 					BEGIN TRY
 						DECLARE @duracao INT
 						SELECT @duracao=duracao_media FROM Perfumaria.perf.funcionario_faz_servico join Perfumaria.perf.marcacao on funcionario_faz_servico.servico_id=marcacao.servico_id
 								WHERE marcacao.funcionario_email=@funcionario_email  
 										AND marcacao.deleted = 0 
-										AND marcacao.id=5
+										AND marcacao.id=@idMarc
 										AND funcionario_faz_servico.funcionario_email=@funcionario_email
 							IF (@duracao IS NOT NULL AND @dataMarc > GETDATE()) 
 							BEGIN
@@ -34,7 +33,6 @@ BEGIN
 									UPDATE Perfumaria.perf.marcacao
 									SET dataMarc=@dataMarc
 									WHERE id=@idMarc
-
 									SET @responseMessage='Marcação efetuado com sucesso!'
 								END
 							END
@@ -51,3 +49,4 @@ BEGIN
 		SET @responseMessage='Failed'
 	END CATCH 
 END
+GO
