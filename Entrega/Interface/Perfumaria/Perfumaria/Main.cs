@@ -45,7 +45,11 @@ namespace Perfumaria
 
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= HUGOPAIVA450A;integrated security=true;initial catalog=Perfumaria");
+            String dbServer = "tcp:mednat.ieeta.pt\\SQLSERVER,8101";
+            String dbName = "p6g1";
+            String userName = "p6g1";
+            String userPass = "almeidapaiva1@Bd";
+            return new SqlConnection("Data Source = " + dbServer + " ;" + "Initial Catalog = " + dbName + "; uid = " + userName + ";" + "password = " + userPass);
         }
 
         private bool verifySGBDConnection()
