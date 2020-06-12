@@ -119,9 +119,10 @@ showstringspaces=false}
 
 \section{Introdução}
 
-\pa
+\par No âmbito da disciplina de Base de Dados, foi pedido o desenvolvimento de um projeto que envolvesse a elaboração de um sistema de Base de Dados.
 
-\clearpage
+\par Como tema do trabalho, foi escolhido um problema real, de uma Perfumaria que tem também um gabinete de estética e necessitava de um sistema deste tipo. A construção deste sistema foi realizada em SQL e com uma aplicação \textit{Windows Forms} em \textit{Visual Studio} com \textit{C\#}.
+
 \section{Análise de Requisitos}
 
 \par Esta solução de base de dados está idealizada para ser implementada numa plataforma online de vendas de uma perfumaria que também tem um salão de estética. Após o processo de comunicação com o cliente da solução de base de dados, familiar de um membro do grupo, foi feita esta análise de requisitos.
@@ -272,15 +273,15 @@ Uma compra presencial tem obrigatoriamente um funcionário a supervisionar.
 
 \section{SQL DDL}
 
-\par Foi criada uma Base de dados local com o nome de "Perfumaria" e posteriormente criado o \textit{Schema} \textit{"perf"}. Assim, as tabelas têm como nome "Perfumaria.perf.[TableName]".
+\par Foi criada uma Base de dados local com o nome de \textit{Perfumaria} e posteriormente criado o \textit{Schema} \textit{perf}. Assim, as tabelas têm como nome \textit{Perfumaria.perf.[TableName]}.
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=300]{images/DDL_BD.png}
-    \caption{Criação da Base de dados e Schema}
+    \caption{Criação da Base de dados e \textit{Schema}}
 \end{figure}
 
-\par A criação das tabelas é sempre feita da mesma forma, como visível na Figura 4. A tabela \textit{Perfumaria.perf.utilizador} tem a particularidade de, por questões de segurança, apenas guardar o valor do \textit{Hash} da password que o utilizador coloca (criado através de um \textit{Stored Procedure}). Assim, a password nunca chega a ser guardada na BD, apenas é guardado o \textit{Hash}. 
+\par A criação das tabelas é sempre feita da mesma forma, como demonstrado na Figura 4. A tabela \textit{Perfumaria.perf.utilizador} tem a particularidade de, por questões de segurança, apenas guardar o valor do \textit{Hash} da password que o utilizador coloca (criado através de um \textit{Stored Procedure}). Assim, a password nunca chega a ser guardada na BD, apenas é guardado o \textit{Hash}. 
 
 \begin{figure}[!h]
     \centering
@@ -299,11 +300,11 @@ Uma compra presencial tem obrigatoriamente um funcionário a supervisionar.
 \section{Normalização}
 \par Tendo em conta o objetivo do processo de desenho de uma base de dados relacional relativamente a minimizar a redundância dos dados, foram feitos diversos testes para verificar que formas normais esta respeitava (processo de normalização).
 
-\par Após estas verificações, foi concluído que o modelo de dados se encontrava na Terceira Forma Normal (\textit{3FN}), respeitando também as formas normais anteriores. Com isto em consideração, concluiu-se que as relações estavam normalizadas, não necessitando quando tipo de alterações.
+\par Após estas verificações, foi concluído que o modelo de dados se encontrava na Terceira Forma Normal (\textit{3FN}), respeitando também as formas normais anteriores. Com isto em consideração, concluiu-se que as relações estavam normalizadas, não necessitando qualquer tipo de alterações.
 
 \section{Índices}
 
-\par Ao analisar o tipo de \textit{queries} feitas pela aplicação e qual a sua frequência, foi concluído que faria sentido utilizar um índice composto \textit{Non-clustered} para melhorar a performance das pesquisas e filtros da visualização dos produtos. Dito isto, foi criado o \textbf{índice composto \textit{Non-clustered} (preco, marca, nome, categoria)} da tabela \textbf{produto}, permitindo melhoria da performance a \textit{queries} que incluam filtros ou pesquisas com:
+\par Ao analisar o tipo de \textit{queries} feitas pela aplicação e qual a sua frequência, foi concluído que faria sentido utilizar um índice composto \textit{Non-clustered} para melhorar a performance das pesquisas e filtros da visualização dos produtos. Dito isto, foi criado o \textbf{índice composto \textit{Non-clustered} (preco, marca, nome, categoria)} da tabela \textbf{produto}, permitindo melhoria da \textit{performance} a \textit{queries} que incluam filtros ou pesquisas com:
 \begin{itemize}
     \item Preço 
     \item Preço e Marca
@@ -311,9 +312,9 @@ Uma compra presencial tem obrigatoriamente um funcionário a supervisionar.
     \item Preço, Marca, Nome e Categoria
 \end{itemize}
 
-\par É expectável a utilização destes filtros, especialmente com preço, pois os produtos são carregados inicialmente na aplicação ordenados pelo preço. Futuramente com a utilização da aplicação por utilizadores, faria sentido verificar se o restante das presunções se mantêm no entanto, nos testes que foram feitos à performance da \textit{queries} antes e depois da utilização do índice, ao utilizá-lo, o \textit{Estimated Subtree Cost} foi inferior.
+\par É expectável a utilização destes filtros, especialmente com preço, pois os produtos são carregados inicialmente na aplicação ordenados pelo preço. Futuramente com a utilização da aplicação por utilizadores, faria sentido verificar se o restante das presunções se mantêm. No entanto, nos testes que foram feitos à performance das \textit{queries} antes e depois da utilização do índice, ao utilizá-lo, o \textit{Estimated Subtree Cost} foi inferior.
 
-\par Por outro lado, não foram utilizados outros índices pelo simples facto que maior parte das restantes \textit{queries} lidam com as entidades através de pesquisa com as \textit{Primary Keys} que, por si só, já são por \textit{default} um índice \textit{Clustered}.
+\par Por outro lado, não foram utilizados outros índices pelo simples facto que a maior parte das restantes \textit{queries} lidam com as entidades através de pesquisa com as \textit{Primary Keys} que, por si só, já são por \textit{default} um índice \textit{Clustered}.
 
 \clearpage
 
@@ -329,47 +330,47 @@ Uma compra presencial tem obrigatoriamente um funcionário a supervisionar.
     \caption{\textit{Trigger After Insert} de um cupão na tabela \textit{cliente\_usa\_cupao}}
 \end{figure}
 
-\par Os outros 3 \textit{Triggers After}, \textit{buyProduct}, \textit{changeProduct} e \textit{createContact} verificam se os produtos necessitam de passar para eliminados (através do atributo \textit{deleted}) consoante o \textit{stock} ou, se o utilizador passa a ter um contacto como \textit{default}, após a sua criação, se ainda não tiver nenhum.
+\par Os outros 3 \textit{Triggers After}, \textit{buyProduct}, \textit{changeProduct} e \textit{createContact} verificam se os produtos necessitam de passar para eliminados (através do atributo \textit{deleted}) consoante o \textit{stock}, ou se o utilizador passa a ter um contacto como \textit{default}, após a sua criação, se ainda não tiver nenhum.
 
-\par Foi escolhido o uso de \textit{Stored Procedures} ao invés de \textit{Triggers Instead Of} para verificações antes da execução de chamadas \textit{DML} pois, a aplicação utiliza-os sempre para fazer alterações de dados e nunca foi necessária a substituição de uma chamada por outra.
+\par Foi escolhido o uso de \textit{Stored Procedures} ao invés de \textit{Triggers Instead Of} para verificações antes da execução de chamadas \textit{DML} pois a aplicação utiliza-os sempre para fazer alterações de dados e nunca foi necessária a substituição de uma chamada por outra.
 
 \clearpage
 
 \section{Stored Procedures}
 
-\par Com foi referido anteriormente, grande parte das chamadas à BD são feitas através de Stored Procedures, criando assim a camada de abstração. Resumindo, foram criadas SPs para adicionar elementos às tabelas, como por exemplo addContact, addCupon, addFuncService, addMarc, etc.
+\par Com foi referido anteriormente, grande parte das chamadas à Base de Dados são feitas através de \textit{Stored Procedures}, criando assim a camada de abstração. Resumindo, foram criadas \textit{SPs} para adicionar elementos às tabelas, como por exemplo \textit{addContact}, \textit{addCupon}, \textit{addFuncService}, \textit{addMarc}, etc.
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=410]{images/addMarc.png}
-    \caption{Exemplo de uma Stored Procedure de adição}
+    \caption{Exemplo de uma \textit{Stored Procedure} de adição}
 \end{figure}
 
 
-\par Foram também criadas SPs para alterar valores de uma tabela, como por exemplo changeDefaultContact, changeProduct, updateFunc, updateMarc, etc.
+\par Foram também criadas \textit{SPs} para alterar valores de uma tabela, como por exemplo \textit{changeDefaultContact}, \textit{changeProduct}, \textit{updateFunc}, \textit{updateMarc}, etc.
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=410]{images/updateMarc.png}
-    \caption{Exemplo de uma Stored Procedure de update}
+    \caption{Exemplo de uma \textit{Stored Procedure} de \textit{update}}
 \end{figure}
 
-\par Tem também alguns gets mais complexos, como por exemplo o getDetailsFromBuy, getDetailsFromSell, getProductFilters, etc.
+\par Existem também alguns \textit{gets} mais complexos, como por exemplo o \textit{getDetailsFromBuy}, \textit{getDetailsFromSell}, \textit{getProductFilters}, etc.
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=500]{images/getProductFilters.png}
-    \caption{Exemplo de uma Stored Procedure de um get}
+    \caption{Exemplo de uma \textit{Stored Procedure} de um \textit{get}}
 \end{figure}
 
 \clearpage
 
-\par Finalmente, tem algumas SPs para ações mais específicas. Dentro destas, as mais importantes são login, registerFunc e registerClient, que permitem o sistema de login inicial da nossa BD.
+\par Finalmente, existem algumas \textit{SPs} para ações mais específicas. Dentro destas, as mais importantes são \textit{login}, \textit{registerFunc} e \textit{registerClient}, que permitem o sistema de \textit{login} inicial da nossa aplicação.
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=\textwidth]{images/registerFunc.png}
-    \caption{SP de Registo de um funcionário}
+    \caption{\textit{Stored Procedure} de Registo de um funcionário}
 \end{figure}
 
 
@@ -377,20 +378,20 @@ Uma compra presencial tem obrigatoriamente um funcionário a supervisionar.
 
 \section{UDF}
 
-\par Foram também utilizadas UDFs para a execução de queries mais simples, isto é, para apenas ir buscar valores de certas tabelas. Usamos UDFs Inline Table-Valued, como por exemplo clientBuyHistory, funcFutureMarc, etc.
+\par Foram também utilizadas \textit{UDFs} para a execução de \textit{queries} mais simples, isto é, para apenas ir buscar valores de certas tabelas, tendo em conta as suas restrições. Preferiram-se \textit{UDFs} a \textit{Views}, não só devido ao seu maior desempenho, mas também por permitir passar parâmetros. Usaram-se \textit{UDFs Inline Table-Valued}, como por exemplo \textit{clientBuyHistory}, \textit{funcFutureMarc}, etc.
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=\textwidth]{images/funcFutureMarc.png}
-    \caption{Exemplo de UDF Inline Table-Valued}
+    \caption{Exemplo de \textit{UDF Inline Table-Valued}}
 \end{figure}
 
-\par Alem das Inline, utilizamos também as Multi-Statement Table-Valued para queries simples mas que necessitavam de verificações iniciais, como por exemplo getAllFuncs, getAllProducts, etc.
+\par Além das \textit{Inline}, utilizámos também as \textit{Multi-Statement Table-Valued} para \textit{queries} simples mas que necessitavam de verificações iniciais, como por exemplo \textit{getAllFuncs}, \textit{getAllProducts}, etc.
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=\textwidth]{images/getAllFuncs.png}
-    \caption{Exemplo de UDF Multi-Statement Table-Valued}
+    \caption{Exemplo de \textit{UDF Multi-Statement Table-Valued}}
 \end{figure}
 
 \clearpage
@@ -407,6 +408,12 @@ Uma compra presencial tem obrigatoriamente um funcionário a supervisionar.
 
 \section{Conclusão}
 
+\par Além das decisões já referidas e não havendo nenhuma \textit{query} que álgebra relacional não conseguisse resolver, optou-se também por não utilizar Cursores devido à sua falta de desempenho.
+
+\par De notar que a interface da aplicação não era o foco do projeto, pelo que a mesma poderá não estar visualmente bem concebida.
+
+\par Concluindo, pensa-se que os objetivos do trabalho foram superados e que foi desenvolvido conhecimento na área do mesmo. 
+
 \clearpage
 
 \section{Bibliografia}
@@ -417,7 +424,7 @@ Uma compra presencial tem obrigatoriamente um funcionário a supervisionar.
 
 \vspace{5mm} %5mm vertical space
 
-[1] Material fornecido pelo Docente de Base de Dados
+[1] Material fornecido pelo docente da disciplina
 
 
 
