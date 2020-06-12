@@ -17,7 +17,3 @@ BEGIN
                 END
 END
 GO
-
----------------
---pronta a usar
----------------

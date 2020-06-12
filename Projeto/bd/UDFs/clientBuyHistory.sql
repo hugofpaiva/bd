@@ -1,3 +1,6 @@
+DROP FUNCTION perf.clientBuyHistory;
+GO
+
 CREATE FUNCTION perf.clientBuyHistory (@email VARCHAR(255)) RETURNS TABLE 
 AS
     RETURN (SELECT datacompra as [Data], SUM(unidades * preco) as Total, compranumero
@@ -6,6 +9,3 @@ AS
                     GROUP BY datacompra, clienteemail, compranumero
                     ORDER BY datacompra DESC OFFSET 0 ROWS)
 GO 
------------------
--- pronta a usar
------------------
