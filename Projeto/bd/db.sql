@@ -5,8 +5,10 @@ GO
 USE Perfumaria;
 GO
 
-CREATE SCHEMA perf;
-GO
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'perf')
+BEGIN
+EXEC('CREATE SCHEMA perf')
+END
 
 -- DROPS
 IF OBJECT_ID('Perfumaria.perf.produto_tem_promocao', 'U') IS NOT NULL
