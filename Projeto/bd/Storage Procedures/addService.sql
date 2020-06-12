@@ -11,7 +11,6 @@ AS
 BEGIN
 BEGIN TRANSACTION
     SET NOCOUNT ON
-    
     BEGIN TRY
         IF EXISTS(SELECT email FROM Perfumaria.perf.funcionario WHERE email=@emailFunc AND administrator=2)
             BEGIN

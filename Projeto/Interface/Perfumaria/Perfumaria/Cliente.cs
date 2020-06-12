@@ -992,35 +992,24 @@ namespace Perfumaria
                 cmd.Parameters.AddWithValue("@cliente_email", C.Email);
                 cmd.Parameters.AddWithValue("@servico_id", ServicesList[comboservico.SelectedIndex].Id);
                 cmd.Parameters.AddWithValue("@funcionario_email", FuncMailList[funcombo.SelectedIndex]);
-                Console.WriteLine(datamarc.Value);
                 cmd.Parameters.AddWithValue("@dataMarc", datamarc.Value);
                 cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+                
+                cmd.ExecuteNonQuery();
 
-                String rm = "";
+               
 
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    rm = cmd.Parameters["@responseMessage"].Value.ToString();
-
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Failed to Execute.");
-                }
-                finally
-                {
-
-                    MessageBox.Show(rm);
+                 MessageBox.Show(cmd.Parameters["@responseMessage"].Value.ToString());
 
 
-                }
-
+                
 
                 cn.Close();
             }
             else
                 MessageBox.Show("Selecione as opções.");
+
+            funcombo.SelectedIndex = -1;
 
         }
 

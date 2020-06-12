@@ -569,12 +569,12 @@ namespace Perfumaria
                 SqlCommand cmd = new SqlCommand("perf.addProduct", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@emailFunc", fc.Email);
-                //cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
 
                 prod.Nome = addnome.Text;
                 cmd.Parameters.AddWithValue("@nome", addnome.Text);
 
-                prod.Preco = Convert.ToDouble(addpreco.Text);
+                prod.Preco = double.Parse(addpreco.Text, System.Globalization.CultureInfo.InvariantCulture);
                 cmd.Parameters.AddWithValue("@preco", addpreco.Text);
 
                 prod.Marca = addmarca.Text;

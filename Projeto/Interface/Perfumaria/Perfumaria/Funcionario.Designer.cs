@@ -28,7 +28,7 @@ namespace Perfumaria
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.conta = new System.Windows.Forms.TabPage();
             this.contafunc = new System.Windows.Forms.TabControl();
@@ -134,7 +134,6 @@ namespace Perfumaria
             this.label36 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lojagrid = new System.Windows.Forms.DataGridView();
-            this.changeproduct = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.botaopesquisar = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
@@ -260,6 +259,7 @@ namespace Perfumaria
             this.newpw = new System.Windows.Forms.TextBox();
             this.change = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
+            this.changeproduct = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.conta.SuspendLayout();
             this.contafunc.SuspendLayout();
@@ -778,9 +778,9 @@ namespace Perfumaria
             // 
             // Detalhes
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
-            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10);
+            this.Detalhes.DefaultCellStyle = dataGridViewCellStyle3;
             this.Detalhes.HeaderText = "Detalhes";
             this.Detalhes.MinimumWidth = 10;
             this.Detalhes.Name = "Detalhes";
@@ -1152,10 +1152,10 @@ namespace Perfumaria
             this.paineladdproduto.Controls.Add(this.label39);
             this.paineladdproduto.Controls.Add(this.label37);
             this.paineladdproduto.Controls.Add(this.label36);
-            this.paineladdproduto.Location = new System.Drawing.Point(0, 0);
+            this.paineladdproduto.Location = new System.Drawing.Point(2, 0);
             this.paineladdproduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.paineladdproduto.Name = "paineladdproduto";
-            this.paineladdproduto.Size = new System.Drawing.Size(766, 398);
+            this.paineladdproduto.Size = new System.Drawing.Size(764, 398);
             this.paineladdproduto.TabIndex = 3;
             this.paineladdproduto.Visible = false;
             // 
@@ -1514,14 +1514,6 @@ namespace Perfumaria
             this.lojagrid.Size = new System.Drawing.Size(766, 280);
             this.lojagrid.TabIndex = 2;
             this.lojagrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lojagrid_CellContentClick);
-            // 
-            // changeproduct
-            // 
-            this.changeproduct.HeaderText = "Change Product";
-            this.changeproduct.MinimumWidth = 10;
-            this.changeproduct.Name = "changeproduct";
-            this.changeproduct.ReadOnly = true;
-            this.changeproduct.Text = "Change";
             // 
             // panel1
             // 
@@ -2898,6 +2890,16 @@ namespace Perfumaria
             this.cancel.UseVisualStyleBackColor = true;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
+            // changeproduct
+            // 
+            this.changeproduct.HeaderText = "Editar Produto";
+            this.changeproduct.MinimumWidth = 10;
+            this.changeproduct.Name = "changeproduct";
+            this.changeproduct.ReadOnly = true;
+            this.changeproduct.Text = "Editar";
+            this.changeproduct.ToolTipText = "Editar";
+            this.changeproduct.UseColumnTextForButtonValue = true;
+            // 
             // Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3142,7 +3144,6 @@ namespace Perfumaria
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.CheckBox deleteproduct;
-        private System.Windows.Forms.DataGridViewButtonColumn changeproduct;
         private System.Windows.Forms.DataGridView marcacoesgrid;
         private System.Windows.Forms.DataGridViewButtonColumn changemarc;
         private System.Windows.Forms.Panel altmarc;
@@ -3209,5 +3210,6 @@ namespace Perfumaria
         private System.Windows.Forms.TextBox newpw;
         private System.Windows.Forms.Button change;
         private System.Windows.Forms.Button cancel;
+        private System.Windows.Forms.DataGridViewButtonColumn changeproduct;
     }
 }
