@@ -723,8 +723,15 @@ namespace Perfumaria
                 Contacto.Telemovel = reader["telemovel"].ToString();
                 Contacto.Codigopostal = reader["codigo_postal"].ToString();
                 Contacto.Endereco = reader["endereco"].ToString();
-                Compra.Pontosacumulados = (int)reader["pontosacumulados"];
-                Compra.Pontosgastos = (int)reader["pontosgastos"];
+                    if (reader["pontosacumulados"] != DBNull.Value)
+                    {
+                        Compra.Pontosacumulados = (int)reader["pontosacumulados"];
+                    }
+                    if (reader["pontosgastos"] != DBNull.Value)
+                    {
+                        Compra.Pontosgastos = (int)reader["pontosgastos"];
+                    }
+                    
                 compraOnlineDetalhes();
                 }
 
@@ -1427,41 +1434,104 @@ namespace Perfumaria
 
         private void finalcompra_Click(object sender, EventArgs e)
         {
-
-            if (!verifySGBDConnection())
-                return;
-
-            SqlCommand cmd = new SqlCommand("perf.verifyPaymentContact", cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@email", C.Email);
-            cmd.Parameters.Add("@result", SqlDbType.Bit).Direction = ParameterDirection.Output;
-
-            bool result = false;
-
-            try
+            if (Carrinho.Count > 0 && contribuinte.Text.Length == 9)
             {
+                if (!verifySGBDConnection())
+                    return;
+
+                SqlCommand cmd = new SqlCommand("perf.verifyPaymentContact", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@utilizador_email", C.Email);
+                cmd.Parameters.Add("@result", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("@contacto", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("@pagamento", SqlDbType.VarChar,10).Direction = ParameterDirection.Output;
+
+                int contactoid = 0;
+                String pagamento = null;
+
+                bool result = false;
+
+               
+                    cmd.ExecuteNonQuery();
+                    result = (bool)cmd.Parameters["@result"].Value;
+
+                    if (result)
+                    {
+                    if (cmd.Parameters["@contacto"].Value != DBNull.Value)
+                    {
+                        contactoid = (int)cmd.Parameters["@contacto"].Value;
+                    } else
+                        result = false;
+
+                    if (cmd.Parameters["@pagamento"].Value != DBNull.Value)
+                    {
+                        pagamento = cmd.Parameters["@pagamento"].Value.ToString();
+                    }
+                    else
+                        result = false;
+                    
+                    }
+
+             
+
+
+                if (!result)
+                {
+                    MessageBox.Show("Verifique o contacto e pagamento da sua conta.");
+                    return;
+                }
+
+                cmd = new SqlCommand("perf.newBuy", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@clienteemail", C.Email);
+                cmd.Parameters.AddWithValue("@contribuinte", contribuinte.Text);
+                cmd.Parameters.AddWithValue("@pagamento", pagamento);
+                cmd.Parameters.AddWithValue("@contacto", contactoid);
+                cmd.Parameters.AddWithValue("@presente", present.Checked);
+
+                cmd.Parameters.Add("@compra", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+                String rm = "";
+                int compra;
+              
+                
                 cmd.ExecuteNonQuery();
-                result = (bool)cmd.Parameters["@result"].Value;
+                rm = cmd.Parameters["@responseMessage"].Value.ToString();
 
+                compra = (int)cmd.Parameters["@compra"].Value;
+
+
+
+
+
+                foreach (Produto p in Carrinho)
+                {
+                    cmd = new SqlCommand("perf.buyProduct", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@compranumero", compra);
+                    cmd.Parameters.AddWithValue("@produtoid", p.Id);
+                    cmd.Parameters.AddWithValue("@unidades", p.Unidades);
+
+                    cmd.Parameters.Add("@responseMessage", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+                    
+                    cmd.ExecuteNonQuery();
+                    rm = cmd.Parameters["@responseMessage"].Value.ToString();
+
+
+                  
+
+                    MessageBox.Show(rm);
+
+                }
+
+
+
+                cn.Close();
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Failed to Execute.");
-            }
- 
-            if (!result)
-            {
-                MessageBox.Show("Verifique o contacto e pagamento da sua conta.");
-                return;
-            }
-
-
-
-
-            
-
-
-            cn.Close();
+            else
+                MessageBox.Show("Sem produtos ou contribuinte!");
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)

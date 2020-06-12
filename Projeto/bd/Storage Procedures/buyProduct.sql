@@ -1,32 +1,26 @@
+DROP PROCEDURE perf.buyProduct;
 GO
-CREATE PROCEDURE perf.addContact
-    @contribuinte CHAR(9),
-    @datacompra DATETIME,
-    @pagamento VARCHAR(10),
-    @clienteemail VARCHAR(255),
-    @pontosgastos INT = NULL,
-    @pontosacumulados INT = NULL,
+
+CREATE PROCEDURE perf.buyProduct
     @compranumero INT,
     @produtoid INT,
     @unidades INT,
-    @responseMessage NVARCHAR(250) OUTPUT
+    @responseMessage VARCHAR(250) OUTPUT
 AS
 BEGIN
+    BEGIN TRANSACTION
     SET NOCOUNT ON
-    
     BEGIN TRY
-        INSERT INTO Perfumaria.perf.compra
-        (contribuinte, datacompra, pagamento, clienteemail, pontosgastos, pontosacumulados)
-        VALUES(@contribuinte, @datacompra, @pagamento, @clienteemail, @pontosgastos, @pontosacumulados) 
-
         INSERT INTO Perfumaria.perf.compra_tem_produto
         (compranumero, produtoid, unidades)
         VALUES(@compranumero, @produtoid, @unidades) 
-
         SET @responseMessage='Success'
+        COMMIT TRANSACTION
     END TRY
     BEGIN CATCH
-        SET @responseMessage=ERROR_MESSAGE() 
+        SET @responseMessage='Failure' 
+        ROLLBACK
     END CATCH
 
 END
+GO
